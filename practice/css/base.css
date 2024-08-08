@@ -13,27 +13,27 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: 1rem;
+    font-weight: 400;
     margin-top: 5%;
     margin-bottom: 3%;
-    margin-left:35%;
-    margin-right:35%;
-    color: var(--primary);
+    text-align: center;
+    color: var(--light);
 }
 
 h2 {
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 4rem;
+    font-weight: 800;
     margin-top: 3%;
     margin-bottom: 2%;
-    color: var(--secondary);
+    margin-top: 10%;
+    color: var(--primary);
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 2.0rem;
     margin-top:2%;
-    margin-bottom: 2%;
+    margin-bottom: 50%;
 }
 
 h4 {
@@ -48,4 +48,22 @@ p {
     margin-top: 1%;
     margin-bottom: 1%;
     line-height: 1.2;
+}
+
+nav{
+    font-size: 0.8rem;
+}
+
+img {
+    border-radius: 8px;
+}
+
+nav a {
+    color: var(--light);
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+h1 a {
+    color: var(--light);
 }
