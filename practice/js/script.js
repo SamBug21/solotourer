@@ -19,3 +19,12 @@ console.log(count);
 //Functions to define specific behaviours
 
 //Functions for general use
+
+//ask the server if the data exists
+let response = await fetch(dataAddressURL);
+//extract the data as json or text
+let data = await response.json();
+//do something with data
+console.log(data)
+
+response.json()
