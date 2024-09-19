@@ -3,6 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- link the manifest file -->
+    <link rel="manifest" href="js/manifest.json">
+    <meta name="theme-color" content="#ABD451">
+    <!-- only needed if you have an apple phone -->
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/frame_67.png">
+
+
+    <!-- service worker registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('js/serviceWorker.js')
+            .then((registration) => {
+              console.log('Service Worker registered with scope: ', registration.scope);
+            })
+            .catch((error) => {
+              console.log('Service Worker registration failed: ', error);
+            });
+      });
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -12,6 +33,9 @@
     <link rel="stylesheet" href="./css/layout.css"/>
     <script type="module" src="js/index.js" defer></script>
     <script type="module" src="js/page_load_message.js" defer></script>
+    <script type="module" src="js/serviceWorker.js" defer></script>
+
+
     <title>Home</title>
   </head>
   <body>
