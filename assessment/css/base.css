@@ -5,7 +5,15 @@ h1{
     margin-bottom: 1%;
     text-align: center;
     color: black;
-    /* font-family: 'poppins-thin'; */
+    font-family: "Poppins";
+}
+
+title{
+  font-family: "Poppins"
+}
+
+body{
+  font-family: "Poppins"
 }
 
 
@@ -117,3 +125,4 @@ h1{
     font-style: italic;
   }
   
+
