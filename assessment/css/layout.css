@@ -20,3 +20,35 @@
   }
 
 }
+
+
+#gridcontainer {
+  display: grid; /* turn this element into a grid container */
+  height: 100vh; /* make the grid container take up 100% ofthe window height */
+
+  /* define the grid structure, and content of cells */
+  grid-template-areas:
+  "header header header"
+  "nav nav nav"
+  "main main main"
+  "foot foot foot";
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+header {
+  grid-area: header; /* attach this element tothe grid area named header */
+}
+
+#flexnavbar{
+  grid-area: nav; 
+}
+
+main{
+  grid-area: main;
+}
+
+footer{
+  grid-area: foot;
+}
