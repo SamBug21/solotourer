@@ -22,7 +22,7 @@
 }
 
 
-#gridcontainer {
+#navigation-bar {
   display: grid; /* turn this element into a grid container */
   height: 100vh; /* make the grid container take up 100% ofthe window height */
 

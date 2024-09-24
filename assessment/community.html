@@ -10,24 +10,89 @@
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/components.css"/>
     <link rel="stylesheet" href="./css/layout.css"/>
-    <script type="module" src="js/index.js" defer></script>
-    <script type="module" src="js/page_load_message.js" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
+    <script type="module" src="./js/page_load_message.js" defer></script>
     <title>Community</title>
   </head>
   <body>
-    <div id="gridcontainer">
-      <header>
-        <h1>Community</h1>
-      </header>
-      <nav id = "flexnavbar">
-        <a href="index.html">Home</a>
-        <a href="safetyguides.html">Safety Guides</a>
-        <a href="events.html">Events</a>
-        <a href="community.html">Community</a>
-        <a href="insights_recommendations.html">Insights and Recommendations</a>
+    <header>
+      <img class = "logo" a href = "index.html" src="/DECO7140/assessment/icons/Frame 66.png">
+      <nav>
+        <ul class="nav_links">
+          <li><a class ="active" href="index.html">Home</a></li>
+          <li><a href="safetyguides.html">Safety Guides</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="insights_recommendations.html">Insights and Recommendations</a></li>
+        </ul>
       </nav>
+      <a class = "cta" href ="#"><button>Contact</button></a>
+    </header>
+    <div>
       <main>
-        This is some test text.
+        <div id="nav_buttons">
+          <button type="button">Community</button>
+          <button type="button">Discussion Board</button>
+          <button type="button">Notifications</button>
+        </div>
+        <div>
+          <h2>Your communities</h2>
+        </div>
+          <!-- Slideshow container -->
+          <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides">
+              <div class="slide-container">
+                <div class="image-container">
+                  <img src="./images/budget.jpg" style="width:100%;">
+                  <div class="text">Budget</div>
+                </div>
+                <div class="image-container">
+                  <img src="./images/nature.jpg" style="width:100%;">
+                  <div class="text">Nature</div>
+                </div>
+              </div>
+            </div>
+            <div class="mySlides">
+              <div class="slide-container">
+                <div class="image-container">
+                  <img src="./images/cultural.jpg" style="width: 100%;">
+                  <div class="text">Cultural Experiences</div>
+                </div>
+
+                <div class="image-container">
+                  <img src="./images/foodie.jpg" style="width:100%;">
+                  <div class="text">Foodie Adventures</div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+
+          <!-- The dots/circles -->
+          <div style="text-align:left">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+          
+          <section class="discussion-form">
+            <h2>Post a New Discussion</h2>
+            <form id="postForm">
+                <textarea id="postContent" placeholder="What's on your mind?" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="posts">
+            <h2>Recent Posts</h2>
+        </section>
+        <div id="postFeed"></div>
       </main>
       <footer>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
