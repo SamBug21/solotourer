@@ -9,14 +9,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-} */
-
 h1{
     font-size: 30px;
     font-weight: 600;
@@ -65,6 +57,32 @@ header {
   padding: 0.5px 0.5px;
 }
 
+#flexnavbar{
+  display:flex;
+}
+
+#flexnavbar {
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: space-around;
+}
+
+#flexbar > a {
+  flex: 1;
+}
+/* define a breakpoint for all devices larger than 600px wide */
+@media  and (min-width:600px) {
+  #flexnavbar {
+    justify-content: flex-end; /* justify all items to the end */
+  }
+
+  #flexnavbar > a {
+    flex:none; /* elements will not shrink or grow */
+    padding:3px 10px 3px 10px; /* add some padding to space things out */
+  }
+
+}
+
 .nav_links{
   list-style: none;
 }
@@ -86,7 +104,8 @@ header {
 button{
   padding: 9px 25px;
   background-color: white;
-  border: none;
+  border-color: black;
+  border: 0.1em;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
@@ -113,8 +132,8 @@ button:after{
 }
 
 .slide-container {
-  display: flex; Use flexbox for side-by-side images
-  width: 100%; /* Ensure it fills the parent container */
+  display: flex; /* Use flexbox for side-by-side images */
+  width:100%; /* Ensure it fills the parent container */
 }
 
 .image-container {
@@ -132,7 +151,7 @@ button:after{
   border-radius: 15px; /* Apply border-radius here */
 }
 
-.text {
+.slide-container  .text {
   position: absolute; /* Overlay the text on the image */
   bottom: 10px; /* Distance from the bottom */
   left: 10px;
@@ -335,4 +354,33 @@ textarea {
   box-shadow: 0 2px 10px #0000001a;
   max-width: 800px;
   margin: 0 auto;
+}
+
+
+/* Specific styles for events slideshow */
+#events-slideshow {
+  max-width: 600px; /* Adjust this value as needed */
+  margin: auto; /* Center the slideshow */
+  position: relative;
+  overflow: hidden; /* Hide overflow for a clean look */
+}
+
+#events-slideshow .mySlides img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure they don't exceed the container's width */
+}
+
+#events-slideshow .text {
+  display: inline-block; /* Makes the background color wrap around the text */
+  position: absolute;  
+  bottom: 16px;
+  left: 16px;
+  color: white;
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+  padding: 8px; /* Some padding around the text */
+  border-radius: 4px;
+  width: 150px;
+  text-align: center;
 }

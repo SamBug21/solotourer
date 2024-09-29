@@ -23,7 +23,7 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-    console.log("plusSlides called with:", n);
+    // console.log("plusSlides called with:", n);
     showSlides(slideIndex += n);
 }
 
@@ -60,32 +60,33 @@ window.currentSlide = currentSlide;
 // Form submission handling
 
 // Load posts from Local Storage on page load
-document.addEventListener('DOMContentLoaded', loadPosts);
+document.addEventListener('DOMContentLoaded', function() {
+    // Load posts from Local Storage on page load
+    loadPosts();
 
+    document.getElementById('postForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the form from submitting normally
+
+        const postContent = document.getElementById('postContent').value;
+        const userName = "Claire Williams"; // Replace with actual user name
+        const userPic = "./images/user_profile.jpg"; // Replace with actual user picture path
+
+        if (postContent) {
+            addPost(postContent, userName, userPic);
+            document.getElementById('postContent').value = ''; // Clear the textarea
+        }
+    });
+
+    showCarouselSlides();  // Initialize carousel
+});
+
+
+// Load posts
 function loadPosts() {
     const posts = JSON.parse(localStorage.getItem('posts')) || [];
     posts.forEach(post => {
         addPost(post.content, post.userName, post.userPic);
     });
-}
-
-document.getElementById('postForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent the form from submitting normally
-
-    const postContent = document.getElementById('postContent').value;
-    const userName = "Claire Williams"; // Replace with actual user name
-    const userPic = "./images/user_profile.jpg"; // Replace with actual user picture path
-
-    if (postContent) {
-        addPost(postContent, userName, userPic);
-        document.getElementById('postContent').value = ''; // Clear the textarea
-    }
-});
-
-function savePostToLocalStorage(content, userName, userPic) {
-    const posts = JSON.parse(localStorage.getItem('posts')) || [];
-    posts.push({ content, userName, userPic });
-    localStorage.setItem('posts', JSON.stringify(posts));
 }
 
 // Adding post to the feed
@@ -98,7 +99,6 @@ function addPost(content, userName, userPic) {
     const saveButton = document.createElement('button');
     saveButton.innerHTML = '<img src="icons/save_icon.svg" alt=Save" style="width: 20px; height: 20px;" />';   
     
-    // Add event listener to the save button
     saveButton.addEventListener('click', function() {
         savePost(this);
     });
@@ -116,10 +116,8 @@ function addPost(content, userName, userPic) {
     </div>
 `;
 
-    // Append the save button and comment icon
     postDiv.querySelector('.post-actions').appendChild(saveButton);
 
-    // Create the comment button with an icon
     const commentButton = document.createElement('button');
     commentButton.innerHTML = '<img src="icons/comment-icon.svg" alt="Comment" style="width: 25px; height: 25px;" />';
     commentButton.addEventListener('click', function() {
@@ -127,7 +125,7 @@ function addPost(content, userName, userPic) {
     });
     postDiv.querySelector('.post-actions').appendChild(commentButton);
     
-    postFeed.prepend(postDiv); // Add new post at the top
+    postFeed.prepend(postDiv);
 }
 
 // Toggle like functionality
@@ -159,3 +157,39 @@ function savePost(button) {
 }
 
 window.savePost = savePost;
+
+
+/* Events page carousel */
+let currentIndex = 0;
+const images = document.querySelectorAll('.carousel-image');
+
+function showCarouselSlides() {
+    images.forEach((img, index) => {
+        img.style.display = (index === currentIndex) ? 'block' : 'none';
+    });
+
+    // Move the carousel based on the current index
+    const offset = -currentIndex * 100;
+    document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+}
+
+function changeSlide(direction) {
+    currentIndex += direction;
+
+    // Loop around if we go out of bounds
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1; // Loop to last image
+    } else if (currentIndex >= images.length) {
+        currentIndex = 0; // Loop to first image
+    }
+    showCarouselSlides();
+}
+
+// Initialize the carousel when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    showCarouselSlides();
+});
+
+// Expose changeSlide function globally
+window.changeSlide = changeSlide;
+
