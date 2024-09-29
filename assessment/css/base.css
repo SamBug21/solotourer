@@ -34,7 +34,7 @@ h2{
   display: inline-block;
   vertical-align: top;
   width: 6%;
-  height: 6%;
+  /* height: 6%; */
   cursor: pointer;
 }
 
@@ -52,35 +52,132 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 0px;
-  padding-bottom: 20px;
-  padding: 0.5px 0.5px;
+  padding: 5px;
+  grid-area: header;
 }
 
-#flexnavbar{
-  display:flex;
+/* Style the top navigation */
+.topnav {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 8px; /* Padding around the nav */
+  width: 100%; /* Ensure it spans the full width */
+}
+
+/* Style the search box */
+.topnav input[type=text] {
+  width: 50%; /* Set width to 50% */
+  max-width: 400px; /* Optional: limit max width for larger screens */
+  padding: 6px;
+  border: 1px solid #ccc; /* Add border for better visibility */
+  border-radius: 4px; /* Rounded corners */
+  margin-right: 8px; /* Space between input and button */
+}
+
+/* Style the search button */
+.topnav button {
+  padding: 6px 10px;
+  border: none;
+  background-color: #6412EA; /* Your desired color */
+  color: white;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  width: 80px;
+}
+
+.topnav button:hover {
+  background-color: #B7BFED; /* Darker shade on hover */
 }
 
 #flexnavbar {
   display: flex;
-  flex-flow:row wrap;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0px;
+  margin: 0;
+  list-style: none;
 }
 
-#flexbar > a {
-  flex: 1;
+#flexnavbar a:hover {
+  color: #6412EA;
+  font-weight: 800;
 }
+
+#flexnavbar > a {
+  text-decoration: none;
+  color: #000000;
+  padding: 10px 15px;
+  flex: 1;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+}
+
+#gridcontainer {
+  display: grid;
+  height: 100vh;
+  
+  /* define the grid structure, and content of cells */
+  grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "main main main"
+    "foot foot foot";
+
+  grid-template-columns: 1fr 1fr 1fr; /* set the column widths */
+  grid-template-rows: auto auto 1fr auto; /*set the row height */
+}
+
 /* define a breakpoint for all devices larger than 600px wide */
-@media  and (min-width:600px) {
+@media (min-width:600px) {
   #flexnavbar {
-    justify-content: flex-end; /* justify all items to the end */
+    justify-content: center; /* justify all items to the end */
   }
 
   #flexnavbar > a {
-    flex:none; /* elements will not shrink or grow */
-    padding:3px 10px 3px 10px; /* add some padding to space things out */
+    flex: 1; /* elements will not shrink or grow */
+    padding: 3px 10px; /* add some padding to space things out */
   }
 
+  #gridcontainer {  
+    /* define the grid structure, and content of cells */
+    grid-template-areas:
+    "header header header"
+    "nav . ."
+    "main main main"
+    "foot foot foot";
+  }
+
+  .topnav {
+    align-items: center; /* Center items */
+  }
+  
+  .topnav input[type=text], .topnav button {
+    width: 100%; /* Full width for mobile */
+    margin: 8px 0; /* Space between input and button */
+  }
+
+  .topnav button{
+    width: auto;
+    margin: 8px 0;
+  }
+}
+
+
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: foot;
+}
+
+nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: center;
 }
 
 .nav_links{
@@ -120,8 +217,9 @@ button:after{
 }
 
 #nav_buttons{
-  margin-left: 224px;
-  margin-top: 50px;
+  padding-left: 224px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* Slideshow container */
