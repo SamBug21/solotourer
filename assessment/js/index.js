@@ -115,3 +115,107 @@ document.addEventListener('DOMContentLoaded', function() { // Inside anon functi
 // Expose changeSlide function globally
 window.changeSlide = changeSlide;
 
+
+
+// Form submission handling
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Load posts from Local Storage on page load
+    loadPosts();
+
+    document.getElementById('postForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the form from submitting normally
+
+        const postContent = document.getElementById('postContent').value;
+        const userName = "Claire Williams"; // Replace with actual user name
+        const userPic = "./images/user_profile.jpg"; // Replace with actual user picture path
+
+        if (postContent) {
+            addPost(postContent, userName, userPic);
+            document.getElementById('postContent').value = ''; // Clear the textarea
+        }
+    });
+
+    showCarouselSlides();  // Initialize carousel
+});
+
+
+// Load posts from Local Storage on page load
+
+
+// Load posts
+function loadPosts() {
+    const posts = JSON.parse(localStorage.getItem('posts')) || [];
+    posts.forEach(post => {
+        addPost(post.content, post.userName, post.userPic);
+    });
+}
+
+// Adding post to the feed
+function addPost(content, userName, userPic) {
+    const postFeed = document.getElementById('postFeed');
+    
+    const postDiv = document.createElement('div');
+    postDiv.className = 'post';
+
+    const saveButton = document.createElement('button');
+    saveButton.innerHTML = '<img src="icons/save_icon.svg" alt=Save" style="width: 20px; height: 20px;" />';   
+    
+    saveButton.addEventListener('click', function() {
+        savePost(this);
+    });
+
+    postDiv.innerHTML = `
+    <div class="user-info">
+        <img src="${userPic}" alt="${userName}'s profile picture">
+        <strong>${userName}</strong>
+    </div>
+    <div class="post-content">${content}</div>
+    <div class="post-actions">
+        <button class="like-button" onclick="toggleLike(this)">
+            <span class="heart">&#10084;</span>
+        </button>
+    </div>
+`;
+
+    postDiv.querySelector('.post-actions').appendChild(saveButton);
+
+    const commentButton = document.createElement('button');
+    commentButton.innerHTML = '<img src="icons/comment-icon.svg" alt="Comment" style="width: 25px; height: 25px;" />';
+    commentButton.addEventListener('click', function() {
+        commentPost(this);
+    });
+    postDiv.querySelector('.post-actions').appendChild(commentButton);
+    
+    postFeed.prepend(postDiv);
+}
+
+// Toggle like functionality
+function toggleLike(button) {
+    const heart = button.querySelector('.heart');
+    button.classList.toggle('liked'); // Toggle the 'liked' class
+
+    // Change heart color based on the 'liked' class
+    if (button.classList.contains('liked')) {
+        heart.style.color = 'red'; // Change heart color to red
+    } else {
+        heart.style.color = '#ccc'; // Change heart color back to default
+    }
+}
+
+window.toggleLike = toggleLike;
+
+function commentPost(button) {
+    alert("Comment functionality not implemented yet.");
+}
+
+function savePost(button) {
+    const img = button.querySelector('img'); // Get the img element inside the button
+    if (img.src.includes('icons/save_icon.svg')) {
+        img.src = 'icons/saved-icon.svg'; // Change to saved icon
+    } else {
+        img.src = 'icons/save_icon.svg'; // Change back to save icon
+    }
+}
+
+window.savePost = savePost;
