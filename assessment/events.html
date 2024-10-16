@@ -28,7 +28,8 @@
     <script type="module" src="./js/index.js" defer></script>
     <script type="module" src="./js/page_load_message.js" defer></script>
     <script type="module" src="./js/events.js" defer></script>
-
+    <script type="module" src="./js/components.js" defer></script>
+  
     <!-- Appears in the browser tab and is used by search engines.-->
     <title>Events</title>
   </head>
@@ -134,7 +135,7 @@
           <h2>Tomorrow</h2>
         </div>
 
-        <section id="events-section">
+        <!-- <section id="events-section">
           <div class="event">
             <div class="event-left">
               <div class="event-left-top">
@@ -161,43 +162,44 @@
               </div>
             </div>
           </div>
-          <!-- Add more event blocks as needed -->
-        </section>
+        </section> -->
 
         <div class="wrapper">
           <h2>Enter event details</h2>
           <div class="form-container">
-            <form id="eventForm">
-                <label for="event_name">Event name</label>
-                <input type="text" id="event_name" name="event_name" placeholder="Search..." required>
-
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location" placeholder="Search..." required>
-
-                <label for="organiser">Organiser</label>
-                <input type="text" id="organiser" name="organiser" placeholder="Search..." required>
-
-                <label for="event_type">Event Type</label>
-                <input type="text" id="event_type" name="event_type" placeholder="Search..." required>
-
-                <label for="description">Description</label>
-                <textarea id="description" name="description" rows="4" placeholder="Search..." required></textarea>
-
-                <label for="date_time">Date & Time</label>
-                <input type="datetime-local" id="date_time" name="date_time" required>
-
-                <label for="genericevent_photo">Upload photo</label>
-                <input type="file" id="genericevent_photo" name="genericevent_photo">
-
-                <button type="submit" class="btn btn-action">Post Your Event</button>
-                <div id="submitResponse" class="mt-3 mb-2" role="alert" aria-live="assertive"></div>
+              <form id="eventForm">
+                  <label for="event_name">Event name</label>
+                  <input type="text" id="event_name" name="event_name" placeholder="Search..." required>
+      
+                  <label for="location">Location</label>
+                  <input type="text" id="location" name="location" placeholder="Search..." required>
+      
+                  <label for="organiser">Organiser</label>
+                  <input type="text" id="organiser" name="organiser" placeholder="Search..." required>
+      
+                  <label for="event_type">Event Type</label>
+                  <input type="text" id="event_type" name="event_type" placeholder="Search..." required>
+      
+                  <label for="description">Description</label>
+                  <textarea id="description" name="description" rows="4" placeholder="Search..." required></textarea>
+      
+                  <label for="date_time">Date & Time</label>
+                  <input type="datetime-local" id="date_time" name="date_time" required>
+      
+                  <label for="genericevent_photo">Upload photo</label>
+                  <input type="file" id="genericevent_photo" name="genericevent_photo">
+      
+                  <button type="submit" class="btn btn-action">Post Your Event</button>
+                  <div id="submitResponse" class="mt-3 mb-2" role="alert" aria-live="assertive"></div>
               </form>
           </div>
         </div>
-      </div>
 
-
-
+        <!-- Section for displaying events -->
+        <div id="events-container">
+          <!-- The event cards will be dynamically injected here -->
+        </div>
+      
 
       </main>
     </div>
@@ -206,5 +208,8 @@
     <!-- &copy is unicode equivalent for copyright symbol (©)-->
     <p>&copy; 2024 Your Name. All rights reserved.</p>
   </footer>
+
+  <script type="module" src="./js/components.js" defer></script>
+  <script type="module" src="./js/events.js" defer></script>
   </body>
 </html>

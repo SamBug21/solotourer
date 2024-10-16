@@ -1,0 +1,117 @@
+// Constants
+
+const studentNumber = "s4889410"
+const uqcloudZoneId = "99ad41a3"
+
+// Create headers once as a constant
+const headers = new Headers();
+headers.append("student_number", studentNumber);
+headers.append("uqcloud_zone_id", uqcloudZoneId);
+
+
+//Fetch request function for creating a new event
+function submitEventForm(formData, headers, handleSuccess, handleError) {
+    fetch('https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/', {
+        method: 'POST',
+        headers: headers,
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(err => {
+                console.error('Server error response:', err); //for debugging
+                throw new Error(err.detail || 'Something went wrong');
+            });
+        }
+        return response.json(); //If success, return the response as JSON
+    })
+    .then (result => {
+        console.log('Event created:', result);
+        handleSuccess(result); //Call the success handler
+    })
+    .catch(error => {
+        console.error('Error:', error.message); //Log detailed error
+        handleError(error); //Call the error handler
+    });
+}
+
+export { logPageLoadMessage, submitEventForm, studentNumber, uqcloudZoneId, headers };
+
+
+
+// Function to fetch events from the API
+function fetchEvents(studentNumber, zoneId, displayEvents, handleGetError) {
+    //Reuest option for the GET request
+    const requestOptions = {
+        method: "GET",
+        headers: headers, //Use the predefined headers
+        redirect: "follow"
+    };
+
+    //Fetch data from the Generic Event API
+    fetch("https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/", requestOptions)
+        .then(response => {
+            if(!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); //Parse the JSON response
+        })
+        .then(data => {
+            displayEvents(data); //Call the success handler
+        })
+        .catch(error => {
+            handleGetError(error); //Call the error handler
+        });
+}
+
+// Export headers so that other files can use it
+export { logPageLoadMessage, submitEventForm, studentNumber, uqcloudZoneId, fetchEvents, headers };
+
+//Success handler function to display events
+function displayEvents(data) {
+    let output =""; //Initialise a variable to store HTML
+
+    //Loop through each event in the response data
+    data.forEach(event => {
+        console.log(event); //for debugging
+        //format the date and time using the custom function
+        const formattedDateTime = formatDateTime(event.date_time);
+
+        // Check if the event has an image, otherwise use the placeholder
+        const eventImage = event.genericevent_photo 
+            ? event.genericevent_photo 
+            : "media/icons/event-seo.png"; // Use placeholder if no image
+
+        // Build the HTML structure for the event card
+        output += 
+            <div class="event-card" role="article" aria-labelledby="event-${event.id}-name">
+                <div class="event-card-header">
+                    <h3 class="event-name" id="event-${event.id}-name">${event.event_name}</h3>
+                    <p class="event-date">${formattedDateTime}</p>
+                </div>
+                <div class="event-card-image">
+                    <img src="${eventImage}" alt="${event.event_name}">
+                </div>
+                <div class="event-card-body">
+                    <p class="event-description">${event.description}</p>
+                    <p class="event-location">Location: ${event.location}</p>
+                </div>
+                <div class="event-card-footer">
+                    <p class="event-organiser">Organised by: ${event.organiser}</p>
+                </div>
+            </div>
+        ;
+    });
+
+    // Display the dynamically created HTML in the specified section of the webpage
+    document.getElementById('events-container').innerHTML = output;
+}
+
+// Function to load events (call this on page load and after form submission)
+function loadEvents(){
+    etchEvents(studentNumber, uqcloudZoneId, displayEvents, handleGETError);
+}
+//Call loadEvents whn the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadEvents(); //Load events when the DOM is fully loaded
+});
