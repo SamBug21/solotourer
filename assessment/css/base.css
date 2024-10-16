@@ -29,7 +29,7 @@ h1{
 }
 
 h2{
-  padding: 25px 0 25px 250px; /*Top, right, bottom, left */
+  padding: 25px 0 25px 300px; /*Top, right, bottom, left */
   font-size: 20px;
   font-weight: 500;
   text-align: left;
@@ -137,7 +137,6 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 20px;
   grid-area: main;
 }
@@ -166,7 +165,7 @@ button:after{
 
 #nav_buttons{
   display: block; /* Occupy full width available, stretch out to fill container */
-  padding-left: 224px;
+  padding-left: 30vh;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -184,6 +183,20 @@ button:after{
 
 #nav_buttons button:hover{
   background-color: var(--hover-color);
+}
+
+
+.date-container{
+  display: flex; 
+  justify-content: flex-end; /* Aligns items to the right */
+  margin-top: 20px; /* Optional spacing from other elements */
+  padding-right: 15%;
+  border-radius: 5;
+}
+
+.datefield {
+  width: 150px;
+  padding: 0;
 }
 
 /* Slideshow Styles */
@@ -214,16 +227,24 @@ button:after{
   border-radius: 15px; /* Apply border-radius */
 }
 
+.image-container .text{
+  background-color: #333333;
+  color: white;
+  width: 20%;
+  text-align: center;
+  justify-content: center;
+}
+
 /* Text overlay styles */
-.slide-container  .text {
+/* .slide-container  .text {
   position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
-  bottom: 10px; /* Distance from the bottom */
+  /* bottom: 10px; 
   left: 10px;
   color: var(--background-color);
   font-size: 18px; 
   padding: 5px;
   text-align: left;
-}
+}  */
 
 /* Navigation for slideshow */
 .prev, .next {
@@ -478,33 +499,92 @@ textarea {
   background-color: #B7BFED; /* Darker shade on hover */
 }
 
-/* Specific styles for events slideshow */
-#events-slideshow {
-  max-width: 600px; /* Adjust this value as needed */
-  margin: auto; /* Center the slideshow */
+#events-section {
+  display: flex;
+  flex-direction: column; /* Stack events vertically */
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between event sections */
+  width: 800px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.event {
+  display: flex; /* Align items horizontally */
+  gap: 20px; /* Space between left and right sections */
+  height: 200px;
+  align-items: stretch;
+}
+
+.event-left {
+  flex: 1; /* Middle image on the right */
   position: relative;
-  overflow: hidden; /* Excess content will not be displayed for a clean look */
+  height: 25px;
 }
 
-#events-slideshow .mySlides img {
-  width: 100%; /* Make images responsive */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 100%; /* Ensure they don't exceed the container's width */
+.event-left-top img{
+  flex: 1.5; /* Make top image taller to match the two images on the right */
+  position: relative;
+  height: 168px;
 }
 
-#events-slideshow .text {
-  display: inline-block; /* Background color wraps around the text */
-  position: absolute;  /* Won't push other elements around or be affected by them for example the image underneath this text */
-  bottom: 16px;
-  left: 16px;
-  color: var(--background-color);
-  font-size: 15px;
-  background-color: var(--text-color); /* Semi-transparent background for text */
-  padding: 8px; /* Padding around the text */
+.event-left-bottom img{
+  flex: 1; /* Bottom image takes less space */
+  position: relative;
+  height: 75px;
+}
+
+.event-right {
+  flex: 1; /* Right section takes less space */
+  display: flex;
+  flex-direction: column; /* Stack images vertically */
+  gap: 10px; /*Space between images */
+}
+
+.event-right-top {
+  flex: 1; /* Top image on the right */
+  position: relative;
+  height: 75px; /* Maintain aspect ratio */
+}
+
+.event-right-middle {
+  flex: 1; /* Middle image on the right */
+  position: relative;
+  height: 75px;
+}
+
+.event-right-bottom {
+  flex: 1; /* Bottom image on the right */
+  position: relative;
+  height: 75px;
+}
+
+.event-right-top img{
+  height: 75px;
+}
+
+.event-right-middle img{
+  height: 75px;
+}
+
+.event-right-bottom img{
+  height: 75px;
+}
+
+.event img {
+  width: 635px; /* Responsive images */
+  object-fit: cover;
+}
+
+.event-left-bottom .event-name {
+  position: absolute;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  padding: 8px;
   border-radius: 4px;
-  width: 150px; /* Fixed width */
-  text-align: center; /* Center text */
 }
+
 
 /* Defining styles for devices smaller than 800px wide 
 Apply specific styles based on certain conditions*/
@@ -588,4 +668,62 @@ Apply specific styles based on certain conditions*/
     margin: 8px 0;
   }
 
+}
+
+
+
+.wrapper {
+  width: 75vw; /* Set the entire container width to 75% of the viewport */
+  margin: 50px auto; /* Center it horizontally */
+  background-color: #6a0dad; /* Purple background for the header and form */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  padding: 15px;
+  margin: 0;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"], input[type="datetime-local"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+input[type="file"] {
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5c09c2;
 }
