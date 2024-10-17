@@ -192,3 +192,114 @@ footer {
 .police { background-color: #457b9d; }
 .firefighter { background-color: #f77f00; }
 .friends { background-color: #7b2cbf; }
+
+
+.filter-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.filter-buttons {
+  display: inline-block;
+}
+
+.filter-button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-button:hover {
+  background-color: var(--hover-color);
+}
+
+.filter-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Space between articles */
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Styling for each article */
+.article {
+  display: flex;
+  justify-content: space-between; /* Space between image and text */
+  border-bottom: 1px solid #e0e0e0; /* Separator line */
+  padding-bottom: 20px; /* Space below each article */
+  margin-bottom: 20px; /* Space below each article */
+}
+
+.article-details {
+  display: flex;
+  justify-content: space-between; /* Space between image and text */
+  width: 100%; /* Use full width */
+}
+
+.article-info {
+  max-width: 70%; /* Limit width of text content */
+}
+
+.article-info h3 {
+  font-size: 20px; /* Font size for the title */
+  margin: 5px 0; /* Margin around the title */
+  padding: 0; /* No padding */
+}
+
+.article-info p {
+  color: #555; /* Text color for description */
+  margin: 5px 0; /* Margin around the description */
+  padding: 0; /* No padding */
+}
+
+.article-meta {
+  margin-top: 10px; /* Space above meta information */
+  font-size: 0.9em; /* Smaller font size for meta */
+  color: #777; /* Color for meta information */
+}
+
+.article-image img {
+  width: 400px; /* Set a fixed width for images */
+  height: 250px; /* Fixed height for images */
+  object-fit: cover; /* Cover to maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+/* Author and additional info styling */
+.author {
+  font-size: 0.9em; /* Smaller font size for author */
+  color: #555; /* Color for author name */
+}
+
+.read-button {
+  display: inline-block; /* Make it a block element for better spacing */
+  padding: 10px 15px; /* Padding for button */
+  background-color: var(--primary-color); /* Button background color */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  margin-top: 10px; /* Space above the button */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.read-button:hover {
+  background-color: var(--hover-color); /* Darker shade on hover */
+}
+
+#myBtnContainer{
+  padding: 0;
+  padding-left: 17%;
+  padding-bottom: 5%;
+  padding-top: 2%;
+}

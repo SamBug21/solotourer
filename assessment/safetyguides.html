@@ -25,7 +25,7 @@
 
     <!--<script> tag used to include JavaScript files in your web page, Modules (organize JS code into separate files + import/export functions, objects, or variables between them.-->
     <!--Embed or reference JavaScript + defer which tells the browser to download script in the background while HTML is being read and interpreted.-->
-    <script type="module" src="js/index.js" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
     <script type="module" src="js/page_load_message.js" defer></script>
 
     <!-- Appears in the browser tab and is used by search engines.-->
@@ -48,7 +48,84 @@
      </header>
       <main>
         This is some test text.
+
+        <div class="top-content">
+          <div class="topnav">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <button type="submit">Search</button>
+          </div>
+        </div>
+
+        <div id="myBtnContainer">
+          <button class="filter-button active" data-filter="all" onclick="filterSelection('all')"> Show all</button>
+          <button class="filter-button" data-filter="UI/UX" onclick="filterSelection('Popular')"> Popular</button>
+          <button class="filter-button" data-filter="Development" onclick="filterSelection('Recent')"> Recent</button>
+          <!-- Add more filters as needed -->
+        </div>
+
+        <div class="article-list">
+          <!-- First Article -->
+          <div class="article" data-category="UI/UX">
+              <div class="article-details">
+                  <div class="article-info">
+                      <p class="author">Bahul Neel Upadhyaya in Level Up Coding</p>
+                      <h3>Safety in Brasilia</h3>
+                      <p>Don't let the fear stop you!</p>
+                      <div class="article-meta">
+                          <span>1d ago</span> | 
+                          <span>224 views</span> | 
+                          <span>6 comments</span>
+                      </div>
+                    <a href="guides/brasilia_guide.html" class="read-button">Read More</a> <!-- Added Read More Button -->
+                  </div>
+                  <div class="article-image">
+                      <img src="./images/braisilia.jpg" alt="Brasilia" />
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Second Article -->
+          <div class="article" data-category="UI/UX">
+            <div class="article-details">
+                <div class="article-info">
+                    <p class="author">Bahul Neel Upadhyaya in Level Up Coding</p>
+                    <h3>Travelling to Rio de Janeiro? Learn how you can stay safe!</h3>
+                    <p>5 tips for staying safe in this bustling city!</p>
+                    <div class="article-meta">
+                        <span>1d ago</span> | 
+                        <span>224 views</span> | 
+                        <span>6 comments</span>
+                    </div>
+                  <a href="guides/rio_guide.html" class="read-button">Read More</a> <!-- Added Read More Button -->
+                </div>
+                <div class="article-image">
+                    <img src="./images/Rio de Janeiro.jpg" alt="Rio de Janeiro" />
+                </div>
+            </div>
+        </div>
+  
+          <!-- Third Article -->
+          <div class="article" data-category="Development">
+              <div class="article-details">
+                  <div class="article-info">
+                      <p class="author">Alexander Nguyen in Level Up Coding</p>
+                      <h3>Sao Paulo Travel Safety Guide</h3>
+                      <p>Top tips for staying safe in Sao Paulo</p>
+                      <div class="article-meta">
+                          <span>Aug 20</span> | 
+                          <span>3K views</span> | 
+                          <span>25 comments</span>
+                      </div>
+                    <a href="guides/sao_paulo_guide.html" class="read-button">Read More</a> <!-- Added Read More Button -->
+                  </div>
+                  <div class="article-image">
+                      <img src="./images/sao paulo.jpg" alt="Sao Paulo" />
+                  </div>
+              </div>
+          </div>
+        </div>
       </main>
+
       <footer>
         <!-- &copy is unicode equivalent for copyright symbol (©)-->
         <p>&copy; 2024 Your Name. All rights reserved.</p>
