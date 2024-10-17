@@ -10,14 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         eventForm.addEventListener("submit", function(event) {
             event.preventDefault();  // Prevent the default form submission
 
-            // Get values from the form fields
-            const eventName = document.getElementById("event_name").value;
-            const location = document.getElementById("location").value;
-            const organiser = document.getElementById("organiser").value;
-            const eventType = document.getElementById("event_type").value;
-            const description = document.getElementById("description").value;
-            const dateTime = document.getElementById("date_time").value;
-
             // Prepare FormData for API submission
             const formData = new FormData(event.target);
             const fileInput = document.getElementById('genericevent_photo');
@@ -25,32 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (file) {
                 formData.append('genericevent_photo', file);  // Append the file to the formData
-            }
-
-            // Dynamically create the event card HTML
-            const eventCardHTML = `
-              <div class="event-card" role="article" aria-labelledby="event-id-name">
-                <div class="event-card-header">
-                  <h3 class="event-name" id="event-id-name">${eventName}</h3>
-                  <p class="event-date">${new Date(dateTime).toLocaleString()}</p>
-                </div>
-                <div class="event-card-image">
-                  <img src="./images/noun-event-6998746.png" alt="${eventName}">
-                </div>
-                <div class="event-card-body">
-                  <p class="event-description">${description}</p>
-                  <p class="event-location">Location: ${location}</p>
-                </div>
-                <div class="event-card-footer">
-                  <p class="event-organiser">Organised by: ${organiser}</p>
-                </div>
-              </div>
-            `;
-
-            // Append the new event card to the events container
-            const eventsContainer = document.getElementById("events-container");
-            if (eventsContainer) {
-                eventsContainer.insertAdjacentHTML('beforeend', eventCardHTML);
             }
 
             // Optionally, reset the form after submission
@@ -65,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Success handler for the form submission
 function handleSuccess(result) {
     const messageDiv = document.getElementById('submitResponse');
-    messageDiv.textContent = `Thanks! ${result.event_name} was posted!`; // Use backticks for template literals
+    messageDiv.textContent = `Thanks! ${result.event_name} was posted! Head to the Event's page to check it out!`; // Use backticks for template literals
     messageDiv.style.color = "green";
     loadEvents();  // Reload events to include the new one
 }
@@ -94,6 +60,7 @@ function displayEvents(data) {
         const eventCard = `
             <div class="event-card" role="article" aria-labelledby="event-${event.id}-name">
                 <div class="event-card-header">
+                    <p class="event-type" id = "event-${event.id}-type">${event.event_type}</p>
                     <h3 class="event-name" id="event-${event.id}-name">${event.event_name}</h3>
                     <p class="event-date">${formattedDateTime}</p>
                 </div>

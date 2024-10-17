@@ -38,17 +38,157 @@
 }
 
 header {
-  grid-area: header; /* attach this element tothe grid area named header */
+  display: flex; /* It makes the container a flexbox and be able to align more flexibily*/
+  justify-content: space-between; /* Items are distributed with space between them, with no space at the start or end. */
+  align-items: center; /* Based on vertical space, as long as container height is filled, items are centred accordingly. */
+  padding: 5px;
+  grid-area: header;
 }
 
-#flexnavbar{
-  grid-area: nav; 
+/* Navigation styles */
+#flexnavbar {
+  display: flex;
+  justify-content: center; /* Centers items horizontally within container. If extra space, items are distributed with space equally on either side.*/
+  align-items: center; /* Based on vertical space, as long as container height is filled, items are centred accordingly. */
+  grid-area: nav;
 }
 
-main{
+#flexnavbar a {
+  text-decoration: none; /*  Remove default underline */
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 15px; /* Adds space between navigation links */
+}
+
+#flexnavbar a:hover {
+  color: var(--hover-color);
+  font-weight: 600;
+}
+
+#flexnavbar a.active {
+  color: var(--link-color);
+  font-weight: 600;
+}
+
+/* Grid container layout */
+#gridcontainer {
+  display: grid; /* Turns element into grid container so its children (grid items) can be arranged into rows and columns.*/
+  height: 100vh; /* 100 % of the viewport height */
+    grid-template-areas: /* Define a visual layout of grid items using named areas */
+    "header header header"
+    "nav nav nav"
+    "main main main"
+    "foot foot foot";
+  grid-template-columns: 1fr 1fr 1fr; /* set the column widths, 1 fr, equal share of the available space in the grid container.*/
+  grid-template-rows: auto auto 1fr auto; /*set the row height, auto - automatically adjust based on the content within them, 1fr will take up remaining space*/
+}
+
+/* Main and footer areas */
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
   grid-area: main;
 }
 
-footer{
+footer {
   grid-area: foot;
 }
+
+
+/* Specific Styles for Navigation Buttons in #nav_buttons */
+.nav_buttons {
+  padding: 0;
+  padding-left: 15%;
+  padding-bottom: 2%;
+}
+
+
+.nav_buttons .navigation-button {
+  font-size: 14px;  /* Smaller font size */
+  padding: 8px 15px; /* Smaller padding */
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav_buttons .navigation-button:hover {
+  background-color: var(--hover-color);
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 600px;
+  padding-bottom: 5%;
+}
+
+.container img{
+  height: 100%;
+  object-fit: cover;
+}
+
+.title-container4 {
+  display: flex;               /* Use flexbox layout */
+  align-items: center;        /* Center items vertically */
+  justify-content: center;     /* Center items horizontally */
+  gap: 20px;     
+  background-color: var(--primary-color); 
+  padding: 0;
+}
+
+.title-container4 img {
+  max-width: 100%;            /* Ensure the image is responsive */
+  height: 200px;               /* Maintain aspect ratio */
+  width: 200px; 
+  padding: 0;
+}
+
+.container-headings {
+  text-align: left;      /* Align text to the left */
+}
+
+.title-container4 h1 {
+  color: var(--background-color);
+  padding: 0;
+  text-align: left;
+}
+
+.title-container4 h3 {
+  color: var(--background-color);
+  padding: 0;
+  text-align: left;
+}
+
+.emergency-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.emergency-container div {
+  padding: 20px;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rescue { background-color: #e63946; }
+.hospital { background-color: #9ae3c9; color: black; }
+.parents { background-color: #f4a261; }
+.police { background-color: #457b9d; }
+.firefighter { background-color: #f77f00; }
+.friends { background-color: #7b2cbf; }

@@ -219,3 +219,55 @@ function savePost(button) {
 }
 
 window.savePost = savePost;
+
+// Slideshow on insights and recommendations page
+class Slideshow {
+    constructor(slideshowContainer) {
+      this.slideshowContainer = slideshowContainer;
+      this.slides = slideshowContainer.getElementsByClassName("mySlides");
+      this.slideIndex = 1;
+      this.showSlides(this.slideIndex);
+  
+      // Attach event listeners for buttons
+      const prevButton = slideshowContainer.querySelector('.new-prev');
+      const nextButton = slideshowContainer.querySelector('.new-next');
+  
+      if (prevButton) {
+        prevButton.addEventListener('click', () => this.plusSlides(-1));
+      }
+  
+      if (nextButton) {
+        nextButton.addEventListener('click', () => this.plusSlides(1));
+      }
+    }
+  
+    plusSlides(n) {
+      this.showSlides(this.slideIndex += n);
+    }
+  
+    currentSlide(n) {
+      this.showSlides(this.slideIndex = n);
+    }
+  
+    showSlides(n) {
+      if (n > this.slides.length) { this.slideIndex = 1; }
+      if (n < 1) { this.slideIndex = this.slides.length; }
+  
+      // Hide all slides
+      for (let i = 0; i < this.slides.length; i++) {
+        this.slides[i].style.display = "none";
+      }
+  
+      // Show the current slide
+      this.slides[this.slideIndex - 1].style.display = "block";
+    }
+  }
+  
+  // Initialize both slideshows
+  const firstSlideshow = document.querySelectorAll('.new-slideshow-container')[0];
+  const secondSlideshow = document.querySelectorAll('.new-slideshow-container')[1];
+  
+  const slideshow1 = new Slideshow(firstSlideshow);
+  const slideshow2 = new Slideshow(secondSlideshow);
+  
+  

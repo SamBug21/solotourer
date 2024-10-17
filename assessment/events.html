@@ -36,7 +36,7 @@
   <body>
     <header>
       <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
-      <img class = "logo" a href = "index.html" src="/DECO7140/assessment/icons/Frame 66.png">
+      <img class = "logo" a href = "index.html" src="./icons/Frame 68.png">
       <nav id="flexnavbar">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
@@ -48,9 +48,11 @@
     </header>
     <div>
       <main>
-        <div class="topnav">
-          <input type="text" placeholder="Search..." aria-label="Search">
-          <button type="submit">Search</button>
+        <div class="top-content">
+          <div class="topnav">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <button type="submit">Search</button>
+          </div>
         </div>
 
         <div class="date-container">
@@ -74,14 +76,13 @@
         <div>
           <h2>Today</h2>
         </div>
-        <div id="nav_buttons">
+        <div class="nav_buttons">
           <!--Type = button - Does not have any default behavior like submitting a form.-->
-          <button type="button">Events</button>
-          <button type="button">Adventure</button>
-          <button type="button">Sightseeing</button>
-          <button type="button">Sport</button>
+          <button type="button" class="navigation-button">Events</button>
+          <button type="button" class="navigation-button">Adventure</button>
+          <button type="button" class="navigation-button">Sightseeing</button>
+          <button type="button" class="navigation-button">Sport</button>
         </div>
-
 
         <!-- Slideshow container code reference: https://www.w3schools.com/howto/howto_js_slideshow.asp--> 
         <div class="slideshow-container">
@@ -132,7 +133,12 @@
         </div>
 
         <div>
-          <h2>Tomorrow</h2>
+          <h2>Upcoming</h2>
+        </div>
+
+        
+        <div class="nav_buttons-event">
+          <a href="./add-event.html" class="navigation-button">Add your own event</a>
         </div>
 
         <!-- <section id="events-section">
@@ -163,37 +169,6 @@
             </div>
           </div>
         </section> -->
-
-        <div class="wrapper">
-          <h2>Enter event details</h2>
-          <div class="form-container">
-              <form id="eventForm">
-                  <label for="event_name">Event name</label>
-                  <input type="text" id="event_name" name="event_name" placeholder="Search..." required>
-      
-                  <label for="location">Location</label>
-                  <input type="text" id="location" name="location" placeholder="Search..." required>
-      
-                  <label for="organiser">Organiser</label>
-                  <input type="text" id="organiser" name="organiser" placeholder="Search..." required>
-      
-                  <label for="event_type">Event Type</label>
-                  <input type="text" id="event_type" name="event_type" placeholder="Search..." required>
-      
-                  <label for="description">Description</label>
-                  <textarea id="description" name="description" rows="4" placeholder="Search..." required></textarea>
-      
-                  <label for="date_time">Date & Time</label>
-                  <input type="datetime-local" id="date_time" name="date_time" required>
-      
-                  <label for="genericevent_photo">Upload photo</label>
-                  <input type="file" id="genericevent_photo" name="genericevent_photo">
-      
-                  <button type="submit" class="btn btn-action">Post Your Event</button>
-                  <div id="submitResponse" class="mt-3 mb-2" role="alert" aria-live="assertive"></div>
-              </form>
-          </div>
-        </div>
 
         <!-- Section for displaying events -->
         <div id="events-container">

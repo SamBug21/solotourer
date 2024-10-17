@@ -29,7 +29,7 @@ h1{
 }
 
 h2{
-  padding: 25px 0 25px 300px; /*Top, right, bottom, left */
+  padding: 25px 0 25px 225px; /*Top, right, bottom, left */
   font-size: 20px;
   font-weight: 500;
   text-align: left;
@@ -68,6 +68,9 @@ p {
   color: var(--text-color);
 }
 
+.title-text h2{
+  padding: 0;
+}
 
 /* Logo styles */
 .logo {
@@ -81,423 +84,12 @@ p {
 a, button {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 13px;
   color:var(--text-color);
   text-decoration: none; /*  Remove default underline */
   padding: 0 10px;
 }
 
-header {
-  display: flex; /* It makes the container a flexbox and be able to align more flexibily*/
-  justify-content: space-between; /* Items are distributed with space between them, with no space at the start or end. */
-  align-items: center; /* Based on vertical space, as long as container height is filled, items are centred accordingly. */
-  padding: 5px;
-  grid-area: header;
-}
-
-/* Navigation styles */
-#flexnavbar {
-  display: flex;
-  justify-content: center; /* Centers items horizontally within container. If extra space, items are distributed with space equally on either side.*/
-  align-items: center; /* Based on vertical space, as long as container height is filled, items are centred accordingly. */
-  grid-area: nav;
-}
-
-#flexnavbar a {
-  text-decoration: none; /*  Remove default underline */
-  color: var(--text-color);
-  text-align: center;
-  margin: 0 15px; /* Adds space between navigation links */
-}
-
-#flexnavbar a:hover {
-  color: var(--hover-color);
-  font-weight: 600;
-}
-
-#flexnavbar a.active {
-  color: var(--link-color);
-  font-weight: 600;
-}
-
-/* Grid container layout */
-#gridcontainer {
-  display: grid; /* Turns element into grid container so its children (grid items) can be arranged into rows and columns.*/
-  height: 100vh; /* 100 % of the viewport height */
-    grid-template-areas: /* Define a visual layout of grid items using named areas */
-    "header header header"
-    "nav nav nav"
-    "main main main"
-    "foot foot foot";
-  grid-template-columns: 1fr 1fr 1fr; /* set the column widths, 1 fr, equal share of the available space in the grid container.*/
-  grid-template-rows: auto auto 1fr auto; /*set the row height, auto - automatically adjust based on the content within them, 1fr will take up remaining space*/
-}
-
-/* Main and footer areas */
-main {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  grid-area: main;
-}
-
-footer {
-  grid-area: foot;
-}
-
-/* Button styles */
-button{
-  padding: 9px 25px;
-  background-color: var(--background-color);
-  border-color: var(--border-color);
-  border: 0.1em;
-  border-radius: 50px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--hover-color);
-}
-
-button:after{
-  background-color: var(--primary-color);
-}
-
-#nav_buttons{
-  display: block; /* Occupy full width available, stretch out to fill container */
-  padding-left: 30vh;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-#nav_buttons button{
-  display: inline-block; /* Placed in line with other elements than start on a new line, allows more control with widtth and height */
-  min-width: 120px;
-  margin: 10px;
-  padding: 12px 20px;
-  border: none;
-  background-color: var(--background-color);
-  border-radius: 50px;
-  cursor: pointer;
-}
-
-#nav_buttons button:hover{
-  background-color: var(--hover-color);
-}
-
-
-.date-container{
-  display: flex; 
-  justify-content: flex-end; /* Aligns items to the right */
-  margin-top: 20px; /* Optional spacing from other elements */
-  padding-right: 15%;
-  border-radius: 5;
-}
-
-.datefield {
-  width: 150px;
-  padding: 0;
-}
-
-/* Slideshow Styles */
-.slideshow-container {
-  position: relative; /* Even if moved, original space is kept empty */
-  max-width: 70%; /* Adjust to your desired max width */
-  margin: 0 auto; /* Center the slideshow */
-  overflow: hidden;
-}
-
-.slide-container {
-  display: flex; /* Flexbox for side-by-side images */
-  width: 100%; /* Ensure it fills the parent container */
-}
-
-.image-container {
-  position: relative; /* Won't push other elements around or be affected by them.*/
-  width: 100%; /* Each image takes full width */
-  aspect-ratio: 1;
-  overflow: hidden;
-}
-
-.image-container img {
-  width: 100%; /* Fill the container's width */
-  height: 100%; /* Fixed height */
-  padding: 1%;
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
-  border-radius: 15px; /* Apply border-radius */
-}
-
-.image-container .text{
-  background-color: #333333;
-  color: white;
-  width: 20%;
-  text-align: center;
-  justify-content: center;
-}
-
-/* Text overlay styles */
-/* .slide-container  .text {
-  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
-  /* bottom: 10px; 
-  left: 10px;
-  color: var(--background-color);
-  font-size: 18px; 
-  padding: 5px;
-  text-align: left;
-}  */
-
-/* Navigation for slideshow */
-.prev, .next {
-  cursor: pointer;
-  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: var(--background-color);
-  font-weight: bold;
-  font-size: 2vw;
-  transition: 0.6s ease;
-  border-radius: 3px;
-  user-select: none; /* Prevent users from accidentally selecting text while interacting with those elements. */
-  z-index: 10; /*  Arrows will appear on top of the slideshow images even as they change. */
-}
-
-
-/* Left 0 and Right 0 means they are positioned at the left and rightmost edges of the parent element (slideshow container)*/
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
-}
-
-/* Black background color for navigation arrows */
-.prev:hover, .next:hover {
-  color: var(--text-color);
-}
-
-/* Caption text */
-.text {
-  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
-  bottom: 16px;
-  left: 16px;
-  color: var(--background-color);
-  font-weight: 2vw;
-  font-size: 15px;
-  padding: 8px;
-  width: 100%;
-  text-align: left;
-}
-
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4} /* Starting point of the animation */
-  to {opacity: 1} /* End point of animation */
-}
-
-/* Discussion board */
-.discussion-form {
-  background: var(--background-color);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 70%;
-}
-
-.discussion-form, .posts {
-  width: 70%;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.discussion-form h2 {
-  margin: 0;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#postForm {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-textarea {
-  width: 100vh;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: none;
-  box-sizing: border-box;
-  margin-right: 10px;
-  flex-direction: column;
-  align-items: center;
-}
-
-.discussion-form button {
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.posts {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  width: 70%;
-}
-
-.post {
-  border-bottom: 1px solid #eee;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 0;
-  /* margin-bottom: 15px;
-  margin-top: 10px; */
-  position:relative;
-}
-
-.user-info {
-  display: flex;
-  align-items: center; /* Center the image and name vertically */
-}
-
-.user-info img {
-  width: 50px; /* Set the width of the profile image */
-  height: 50px; /* Set the height of the profile image */
-  border-radius: 50%; /* Make the image circular */
-  margin-right: 10px; /* Add space between the image and name */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-}
-
-.post-actions {
-  display: flex;
-  margin-top: 10px;
-  align-items: center;
-  justify-content:start;
-  margin-left: 3.5%; /* icons margin */
-}
-
-.post-actions button {
-  width: 30px; /* Set a fixed width */
-  margin: 0; /* Remove default margins */
-  padding: 0; /* No padding */
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.post-actions button:hover {
-  transform: scale(1.1); /* Enlarge the button to 110% */
-}
-
-.post:last-child {
-  border-bottom: none;
-}
-
-.post-content {
-  font-size: 16px; /* Adjust text size */
-  color: black; /* Set text color */
-  margin-top: 10px; /* Add space above the text */
-  margin-left: 60px; /*The text of the post */
-  width: 100%;
-}
-
-.like-button {
-  background: transparent;
-  border: none;
-  color: #6412EA;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.heart {
-  font-size: 22px; /* Adjust size as needed */
-  color: #ccc; /* Default color */
-  transition: color 0.3s;
-  margin-bottom: 4px;
-}
-
-.liked .heart {
-  color: red; /* Color when liked */
-}
-
-.post-actions .like-button{
-  margin-left: 5px;
-}
-
-.post-actions button:last-child {
-  margin-left: 2px;
-}
-
-.posts h2 {
-  /* text-align: center; Center the title */
-  margin-left: 25%;
-  margin-right: 25%;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-#postFeed {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px #0000001a;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-
-/* Style the top navigation */
-.topnav {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  padding: 8px; /* Padding around the nav */
-  width: 100%; /* Ensure it spans the full width */
-}
-
-/* Style the search box */
-.topnav input[type=text] {
-  width: 50%; /* Set width to 50% */
-  max-width: 400px; /* Optional: limit max width for larger screens */
-  padding: 6px;
-  border: 1px solid #ccc; /* Add border for better visibility */
-  border-radius: 4px; /* Rounded corners */
-  margin-right: 8px; /* Space between input and button */
-}
-
-/* Style the search button */
-.topnav button {
-  padding: 6px 10px;
-  border: none;
-  background-color: #6412EA; /* Your desired color */
-  color: white;
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer;
-  width: 80px;
-}
-
-.topnav button:hover {
-  background-color: #B7BFED; /* Darker shade on hover */
-}
 
 #events-section {
   display: flex;
@@ -600,11 +192,11 @@ Apply specific styles based on certain conditions*/
   #flexnavbar > a {
     flex: 1; /* Elements will not shrink or grow */
     padding: 3px 10px; /* Padding adjusted to space things out */
-    font-size: 15px;
+    font-size: 10px;
   }
 
   .cta button{
-    font-size: 15px;
+    font-size: 10px;
   }
 
   /* Organizing different sections of layout for clear and structured layout. */
@@ -649,10 +241,10 @@ Apply specific styles based on certain conditions*/
     justify-content: center;
   }
 
-  .slideshow-container{
+  /* .slideshow-container{
     max-width: 70%;
     padding: 0;
-  }
+  } */
 
   .topnav {
     align-items: center; /* Center items */
@@ -673,15 +265,15 @@ Apply specific styles based on certain conditions*/
 
 
 .wrapper {
-  width: 75vw; /* Set the entire container width to 75% of the viewport */
+  width: 75vw;
   margin: 50px auto; /* Center it horizontally */
-  background-color: #6a0dad; /* Purple background for the header and form */
+  background-color: var(--primary-color); 
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.wrapper h2 {
   text-align: center;
   color: white;
   padding: 15px;
@@ -701,7 +293,7 @@ label {
   margin-bottom: 8px;
 }
 
-input[type="text"], input[type="datetime-local"], textarea {
+.form-container input[type="text"], input[type="datetime-local"], textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -714,20 +306,21 @@ input[type="file"] {
   margin-bottom: 20px;
 }
 
-button {
+
+/* Specific Styles for Form Submit Button */
+.submit-button {
   width: 100%;
-  background-color: #6a0dad;
+  max-width: 100%;
+  background-color: var(--primary-color);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
-  cursor: pointer;
 }
 
-button:hover {
-  background-color: #5c09c2;
+.submit-button:hover {
+  background-color: var(--primary-color);
 }
-
 
 /* Style for the main event card container */
 #events-container {
@@ -740,7 +333,7 @@ button:hover {
 .event-card {
   background-color: #ffffff;
   border-radius: 10px;
-  border: 2px solid #6200ea; /* Purple border */
+  border: 2px solid var(--primary-color); 
   padding: 15px;
   width: 400px; /* Adjust width to match */
   margin: 10px;
@@ -762,7 +355,7 @@ button:hover {
 
 /* Event header - title section */
 .event-header {
-  background-color: #6200ea; /* Purple background */
+  background-color: var(--primary-color); /* Purple background */
   color: white;
   text-align: center;
   font-size: 18px;
@@ -778,7 +371,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
-  border: 2px solid #6200ea;
+  border: 2px solid var(--primary-color);
   margin: 15px 0;
   padding: 0;
   width: 100%;
@@ -840,6 +433,343 @@ button:hover {
   justify-content: space-between;
 }
 
+/* Slideshow Styles */
+.new-slideshow-container {
+  position: relative; /* Even if moved, original space is kept empty */
+  max-width: 70%; /* Adjust to your desired max width */
+  margin: 0 auto; /* Center the slideshow */
+  overflow: hidden;
+}
+
+.new-slide-container {
+  display: flex; /* Flexbox for side-by-side images */
+  width: 100%; /* Ensure it fills the parent container */
+}
+
+.new-slide-container .new-slide-container{
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.new-image-container {
+  position: relative; /* Won't push other elements around or be affected by them.*/
+  width: 100%; /* Each image takes full width */
+  aspect-ratio: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.new-image-container img {
+  width: 100%; 
+  height: 60%; 
+  padding: 1%;
+  object-fit: cover;
+  border-radius: 10px; 
+  box-sizing: border-box;
+}
 
 
+.new-image-container .new-text{
+  position: absolute;
+  width: 50%;
+  background: #333333;
+  color: white;
+  text-align:left;
+  font-weight: 600;
+  bottom: 45%;
+  padding-left: 0;
+}
 
+
+Text overlay styles */
+.new-slide-container .text {
+  position: absolute; 
+  bottom: 10px; 
+  left: 10px;
+  color: var(--background-color);
+  font-size: 18px; 
+  padding: 5px;
+  text-align: left;
+} 
+
+/* Caption text */
+.new-text {
+  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
+  bottom: 16px;
+  left: 16px;
+  color: var(--background-color);
+  font-weight: 2vw;
+  font-size: 15px;
+  padding: 8px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.new-text h2, .new-text p{
+  text-align: center;
+}
+
+
+.new-text h2{
+  padding: 0;
+  color: var(--background-color);
+  font-weight: 600;
+}
+
+.new-text p{
+  padding: 0;
+  color: var(--background-color);
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+/* Navigation for slideshow */
+.new-prev, .new-next {
+  cursor: pointer;
+  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
+  top: 28%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--background-color);
+  font-weight: bold;
+  font-size: 2vw;
+  transition: 0.6s ease;
+  border-radius: 3px;
+  user-select: none; /* Prevent users from accidentally selecting text while interacting with those elements. */
+  z-index: 10; /*  Arrows will appear on top of the slideshow images even as they change. */
+}
+
+
+/* Left 0 and Right 0 means they are positioned at the left and rightmost edges of the parent element (slideshow container)*/
+.new-prev {
+  left: 0;
+}
+
+.new-next {
+  right: 0;
+}
+
+/* Black background color for navigation arrows */
+.new-prev:hover, .new-next:hover {
+  color: var(--text-color);
+}
+
+
+/* Slideshow Styles */
+.second-slideshow-container {
+  position: relative; /* Even if moved, original space is kept empty */
+  max-width: 70%; /* Adjust to your desired max width */
+  margin: 0 auto; /* Center the slideshow */
+  overflow: hidden;
+}
+
+.second-slide-container {
+  display: flex; /* Flexbox for side-by-side images */
+  width: 100%; /* Ensure it fills the parent container */
+}
+
+.second-slide-container .second-slide-container{
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.second-image-container {
+  position: relative; /* Won't push other elements around or be affected by them.*/
+  width: 100%; /* Each image takes full width */
+  aspect-ratio: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.second-image-container img {
+  width: 100%; 
+  height: 60%; 
+  padding: 1%;
+  object-fit: cover;
+  border-radius: 10px; 
+  box-sizing: border-box;
+}
+
+
+.second-image-container .new-text{
+  position: absolute;
+  width: 50%;
+  background: #333333;
+  color: white;
+  text-align:left;
+  font-weight: 600;
+  bottom: 45%;
+  padding-left: 0;
+}
+
+
+Text overlay styles */
+.second-slide-container .text {
+  position: absolute; 
+  bottom: 10px; 
+  left: 10px;
+  color: var(--background-color);
+  font-size: 18px; 
+  padding: 5px;
+  text-align: left;
+} 
+
+/* Caption text */
+.second-text {
+  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
+  bottom: 16px;
+  left: 16px;
+  color: var(--background-color);
+  font-weight: 2vw;
+  font-size: 15px;
+  padding: 8px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.second-text h2, .second-text p{
+  text-align: center;
+}
+
+
+.second-text h2{
+  padding: 0;
+  color: var(--background-color);
+  font-weight: 600;
+}
+
+.second-text p{
+  padding: 0;
+  color: var(--background-color);
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+/* Navigation for slideshow */
+.second-prev, .second-next {
+  cursor: pointer;
+  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
+  top: 28%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--background-color);
+  font-weight: bold;
+  font-size: 2vw;
+  transition: 0.6s ease;
+  border-radius: 3px;
+  user-select: none; /* Prevent users from accidentally selecting text while interacting with those elements. */
+  z-index: 10; /*  Arrows will appear on top of the slideshow images even as they change. */
+}
+
+
+/* Left 0 and Right 0 means they are positioned at the left and rightmost edges of the parent element (slideshow container)*/
+.second-prev {
+  left: 0;
+}
+
+.second-next {
+  right: 0;
+}
+
+/* Black background color for navigation arrows */
+.second-prev:hover, .second-next:hover {
+  color: var(--text-color);
+}
+
+.top-content-recomspage{
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  height: 20%;
+  padding-top: 8%;
+  padding-left: 20%;
+  margin-bottom: 5%;
+}
+
+.top-content-recomspage .nav_buttons{
+  padding-left: 1%;
+  padding-top: 2%;
+}
+
+.top-content-recomspage .topnav{
+  width: 100%;
+}
+
+/* Style the search box */
+.top-content-recomspage .topnav input[type=text] {
+  width: 70%; /* Set width to 50% */
+  max-width: 1200px; /* Optional: limit max width for larger screens */
+  padding: 10px;
+  border: 1px solid #ccc; /* Add border for better visibility */
+  border-radius: 10px; /* Rounded corners */
+  margin-right: 8px; /* Space between input and button */
+  box-sizing: border-box;
+}
+
+.event-button{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--background-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary-color);
+  transition: background-color 0.3s ease;
+}
+  
+.event-button:hover {
+  background-color: var(--primary-color);
+}
+
+/* Specific Styles for Navigation Buttons in #nav_buttons */
+.nav_buttons-event {
+  padding: 0;
+  padding-left: 15%;
+  padding-bottom: 2%;
+}
+
+
+.nav_buttons-event .navigation-button {
+  font-size: 14px;  /* Smaller font size */
+  padding: 8px 15px; /* Smaller padding */
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav_buttons-event .navigation-button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  width: 30%;
+  top: 30%;
+}
+
+.top-left h1, .top-left h3{
+  color: var(--background-color);
+  padding-left: 15%;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.top-left h3{
+  font-weight: 400;
+}
+
+.top-left h1{
+  text-align: left;
+}

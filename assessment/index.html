@@ -64,7 +64,7 @@
   <body id="gridcontainer">
     <header>
       <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
-      <img class = "logo" src="/DECO7140/assessment/icons/Frame 66.png" alt="logo">
+      <img class = "logo" src="./icons/Frame 68.png" alt="logo">
       <!--Contains navigation links.-->
       <nav id="flexnavbar">
         <!-- Anchor - create hyperlinks to navigate from one page to another or to a different section of the same page.-->
@@ -78,9 +78,88 @@
       <a class = "cta" href ="#"><button>Contact</button></a>
     </header>
     <main>
-      <div>
-        <h2>Home</h2>
+      <div class="container">
+        <img src="./images/solo-traveller6.jpg" alt="solo-traveller" style="width:100%;">
+        <div class="top-left">
+          <h1>Connecting and empowering female solo travelers of Brazil</h1>
+          <h3>Meet other women, find travel buddies, and share your experience!</h3>
+        </div>
       </div>
+
+      <div>
+        <h2>Upcoming Events</h2>
+      </div>
+
+      <!-- Slideshow container code reference: https://www.w3schools.com/howto/howto_js_slideshow.asp--> 
+      <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides">
+          <div class="slide-container">
+            <div class="image-container">
+              <img src="./images/Carnival_Brazil.png" style="width:100%;">
+              <div class="text">Carnival</div>
+            </div>
+            <div class="image-container">
+              <img src="./images/DJ_Night.png" style="width:100%;">
+              <div class="text">DJ Night</div>
+            </div>
+          </div>
+        </div>
+        <div class="mySlides">
+          <div class="slide-container">
+            <div class="image-container">
+              <img src="./images/Music_Festival.png" style="width: 100%;">
+              <div class="text">Music Festival</div>
+            </div>
+
+            <div class="image-container">
+              <img src="./images/Night_Club.png" style="width:100%;">
+              <div class="text">Night Club</div>
+            </div>
+
+          </div>
+        </div>
+      <!-- Next and previous buttons -->
+      <!--Anchor tag used to perform an action.-->
+      <!--Onclick specifies when link is clicked, execute plusSlides with argument -1, indicating that function should show previous slide in slideshow.-->
+      <!--&#10094 represents special character (left-pointing arrow (◀)) in HTML character reference format.-->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <!-- The dots/circles -->
+      <div style="text-align:left">
+      <!-- Indicate current slide-->
+      <!--Span - inline container to group content for styling or apply JS functions.-->
+      <!--Onclick attribute specifies that when dot is clicked, it executes a JS function called currentSlide with an argument of 1, 2,3 or 4 based on slide number-->
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+
+
+      <div class="title-container4">
+          <div class="container-headings">
+            <h1>Are you feeling unsafe?</h1>
+            <h3>Search for a contact or click on one below.</h3>
+          </div>
+          <img src="./images/sos.png" alt="Group Photo">
+      </div>
+
+      
+      <div class="emergency-container">
+        <div class="rescue">Rescue</div>
+        <div class="hospital">Hospital</div>
+        <div class="parents">Parents</div>
+        <div class="police">Police</div>
+        <div class="firefighter">Firefighter</div>
+        <div class="friends">Friends</div>
+    </div>
+  </div
+      
+
+
     </main>
     <footer>
       <h2>Acknowledgements</h2>
