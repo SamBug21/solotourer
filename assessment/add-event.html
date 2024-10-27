@@ -36,15 +36,38 @@
   <body>
     <header>
       <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
-      <img class = "logo" a href = "index.html" src="./icons/Frame 68.png">
+      <a href="index.html">
+        <img class = "logo" src="./icons/Frame 68.png" alt = "Logo">
+      </a>
+
+      <nav>
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
       <nav id="flexnavbar">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
-        <a class="active" href="events.html">Events</a>
-        <a href="community.html">Community</a>
+        <a href="events.html">Events</a>
+        <a class="active" href="community.html">Community</a>
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
+
       <a class = "cta" href ="#"><button>Contact</button></a>
+
+      <div class="off-screen-menu">
+        <ul>
+          <a href="index.html">Home</a>
+          <a href="safetyguides.html">Safety Guides</a>
+          <a href="events.html">Events</a>
+          <a class="active" href="community.html">Community</a>
+          <a href="insights_recommendations.html">Insights and Recommendations</a>
+        </ul>
+      </div>
+
     </header>
     <div>
       <main>

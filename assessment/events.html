@@ -36,45 +36,51 @@
   <body>
     <header>
       <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
-      <img class = "logo" a href = "index.html" src="./icons/Frame 68.png">
+      <a href="index.html">
+        <img class = "logo" src="./icons/Frame 68.png" alt = "Logo">
+      </a>
+
+      <nav>
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
       <nav id="flexnavbar">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
-        <a class="active" href="events.html">Events</a>
-        <a href="community.html">Community</a>
+        <a href="events.html">Events</a>
+        <a class="active" href="community.html">Community</a>
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
+
       <a class = "cta" href ="#"><button>Contact</button></a>
+
+      <div class="off-screen-menu">
+        <ul>
+          <a href="index.html">Home</a>
+          <a href="safetyguides.html">Safety Guides</a>
+          <a href="events.html">Events</a>
+          <a class="active" href="community.html">Community</a>
+          <a href="insights_recommendations.html">Insights and Recommendations</a>
+        </ul>
+      </div>
+
     </header>
     <div>
       <main>
+
         <div class="top-content">
           <div class="topnav">
-            <input type="text" placeholder="Search..." aria-label="Search">
-            <button type="submit">Search</button>
+            <input type="text" placeholder="Filter..." aria-label="Filter">
           </div>
         </div>
-
-        <div class="date-container">
-          <select name="month" class="datefield month"> <!--https://stackoverflow.com/questions/12928785/month-selection-dropdown-in-html-and-javascript-->
-            <option value="">Month</option>
-            <option value="01">Jan</option>
-            <option value="02">Feb</option>
-            <option value="03">Mar</option>
-            <option value="04">Apr</option>
-            <option value="05">May</option>
-            <option value="06">Jun</option>
-            <option value="07">Jul</option>
-            <option value="08">Aug</option>
-            <option value="09">Sep</option>
-            <option value="10">Oct</option>
-            <option value="11">Nov</option>
-            <option value="12">Dec</option>
-          </select>
-        </div>
+        
 
         <div>
-          <h2>Today</h2>
+          <h2>This month</h2>
         </div>
         <div class="nav_buttons">
           <!--Type = button - Does not have any default behavior like submitting a form.-->
@@ -136,39 +142,9 @@
           <h2>Upcoming</h2>
         </div>
 
-        
         <div class="nav_buttons-event">
           <a href="./add-event.html" class="navigation-button">Add your own event</a>
         </div>
-
-        <!-- <section id="events-section">
-          <div class="event">
-            <div class="event-left">
-              <div class="event-left-top">
-                <img src="./images/budget.jpg" alt="Event 1">
-                <div class="event-name">Event 1</div>
-              </div>
-              <div class="event-left-bottom">
-                <img src="./images/cultural.jpg" alt="Event 2">
-                <div class="event-name">Event 2</div>
-              </div>
-            </div>
-            <div class="event-right">
-              <div class="event-right-top">
-                <img src="./images/Carnival_Brazil.png" alt="Event 3">
-                <div class="event-name">Event 3</div>
-              </div>
-              <div class="event-right-middle">
-                <img src="./images/cultural.jpg" alt="Event 4">
-                <div class="event-name">Event 4</div>
-              </div>
-              <div class="event-right-bottom">
-                <img src="./images/DJ_Night.png" alt="Event 5">
-                <div class="event-name">Event 5</div>
-              </div>
-            </div>
-          </div>
-        </section> -->
 
         <!-- Section for displaying events -->
         <div id="events-container">
@@ -178,13 +154,25 @@
 
       </main>
     </div>
-  This is some test text.
   <footer>
     <!-- &copy is unicode equivalent for copyright symbol (©)-->
     <p>&copy; 2024 Your Name. All rights reserved.</p>
   </footer>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      const navbar = document.getElementById('flexnavbar');
+      if (navbar.style.display === 'flex') {
+        navbar.style.display = 'none';  // Hide if already visible
+      } else {
+        navbar.style.display = 'flex';  // Show the navbar
+      }
+    });
+  </script>
+
 
   <script type="module" src="./js/components.js" defer></script>
   <script type="module" src="./js/events.js" defer></script>
+  <script type="module" src="./js/index.js" defer></script>
+
   </body>
 </html>

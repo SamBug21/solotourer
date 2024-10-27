@@ -35,18 +35,39 @@
     <div id="gridcontainer">
       <header>
         <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
-        <img class = "logo" a href = "index.html" src="./icons/Frame 68.png">
-        <nav id="flexnavbar" class="nav_links">
+        <a href="index.html">
+          <img class = "logo" src="./icons/Frame 68.png" alt = "Logo">
+        </a>
+  
+        <nav>
+          <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+  
+        <nav id="flexnavbar">
           <a href="index.html">Home</a>
           <a href="safetyguides.html">Safety Guides</a>
           <a href="events.html">Events</a>
-          <a href="community.html">Community</a>
-          <a class="active" href="insights_recommendations.html">Insights and Recommendations</a>
+          <a class="active" href="community.html">Community</a>
+          <a href="insights_recommendations.html">Insights and Recommendations</a>
         </nav>
-
-        <!--Type = button - Does not have any default behavior like submitting a form.-->
+  
         <a class = "cta" href ="#"><button>Contact</button></a>
-     </header>
+  
+        <div class="off-screen-menu">
+          <ul>
+            <a href="index.html">Home</a>
+            <a href="safetyguides.html">Safety Guides</a>
+            <a href="events.html">Events</a>
+            <a class="active" href="community.html">Community</a>
+            <a href="insights_recommendations.html">Insights and Recommendations</a>
+          </ul>
+        </div>
+  
+      </header>
       <main>
         <div class="top-content-recomspage">
           <div class="topnav">

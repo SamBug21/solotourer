@@ -25,9 +25,10 @@
     
     <!--<script>: JavaScript files in web page, Modules (organize JS code into separate files + import/export functions, objects, or variables between them.-->
     <!--Embed or reference JavaScript + defer which tells the browser to download script in the background while HTML is being read and interpreted.-->
-    <script type="module" src="js/index.js" defer></script>
     <script type="module" src="js/page_load_message.js" defer></script>
     <script type="module" src="js/serviceWorker.js" defer></script>
+    <script type="module" src="js/index.js" defer></script>
+    <script type="module" src="./js/components.js" defer></script>
 
     <!-- Appears in the browser tab and is used by search engines.-->
     <title>Home</title>
@@ -35,7 +36,18 @@
   <body>
     <header>
       <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
-      <img class = "logo" a href = "index.html" src="./icons/Frame 68.png">
+      <a href="index.html">
+        <img class = "logo" src="./icons/Frame 68.png" alt = "Logo">
+      </a>
+
+      <nav>
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
       <nav id="flexnavbar">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
@@ -43,14 +55,31 @@
         <a class="active" href="community.html">Community</a>
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
+
       <a class = "cta" href ="#"><button>Contact</button></a>
+
+      <div class="off-screen-menu">
+        <ul>
+          <a href="index.html">Home</a>
+          <a href="safetyguides.html">Safety Guides</a>
+          <a href="events.html">Events</a>
+          <a class="active" href="community.html">Community</a>
+          <a href="insights_recommendations.html">Insights and Recommendations</a>
+        </ul>
+      </div>
+
     </header>
+
+
     <div>
       <main>
+
         <div class="nav_buttons">
           <!--Type = button - Does not have any default behavior like submitting a form.-->
           <button type="button" class="navigation-button">Community</button>
-          <button type="button" class="navigation-button">Discussion Board</button>
+          <a href="#discussion-form">
+            <button type="button" class="navigation-button">Discussion Board</button>
+          </a>
           <button type="button" class="navigation-button">Notifications</button>
         </div>
         <div>
@@ -106,7 +135,7 @@
             <span class="dot" onclick="currentSlide(3)"></span>
           </div>
 
-          <section class="discussion-form">
+          <section id="discussion-form" class="discussion-form">
             <h2>Post a New Discussion</h2>
             <form id="postForm">
                 <textarea id="postContent" placeholder="What's on your mind?" required></textarea>
@@ -114,15 +143,14 @@
             </form>
         </section>
 
-        
 
-        <section class="posts">
+        <div class="posts">
             <h2>Recent Posts</h2>
-        </section>
+        </div>
         <div id="postFeed"></div>
 
-        
       </main>
+
       <footer>
         <!-- &copy is unicode equivalent for copyright symbol (©)-->
         <p>&copy; 2024 Your Name. All rights reserved.</p>

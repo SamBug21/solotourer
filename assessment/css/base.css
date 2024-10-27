@@ -29,10 +29,10 @@ h1{
 }
 
 h2{
-  padding: 25px 0 25px 225px; /*Top, right, bottom, left */
   font-size: 20px;
   font-weight: 500;
   text-align: left;
+  padding: 25px 0 25px 225px; /*Top, right, bottom, left */
   color: var(--text-color);
 }
 
@@ -77,7 +77,7 @@ p {
   padding-left: 1%;
   display: inline-block; /* Placed in line with other elements than start on a new line, allows more control with width and height */
   vertical-align: top;
-  width: 6%;
+  width: 30%;
   cursor: pointer;
 }
 
@@ -88,6 +88,10 @@ a, button {
   color:var(--text-color);
   text-decoration: none; /*  Remove default underline */
   padding: 0 10px;
+}
+
+.menu-toggle {
+  display: none;
 }
 
 
@@ -178,91 +182,36 @@ a, button {
 }
 
 
-/* Defining styles for devices smaller than 800px wide 
-Apply specific styles based on certain conditions*/
-@media (max-width:800px) {
-  .logo {
-    width: 10%;
-  }
-
-  #flexnavbar {
-    justify-content: center;
-  }
-
-  #flexnavbar > a {
-    flex: 1; /* Elements will not shrink or grow */
-    padding: 3px 10px; /* Padding adjusted to space things out */
-    font-size: 10px;
-  }
-
-  .cta button{
-    font-size: 10px;
-  }
-
-  /* Organizing different sections of layout for clear and structured layout. */
-  #gridcontainer {  
-    grid-template-areas:
-    "header header header" /*spans across three columns. */
-    "nav nav nav"
-    "main main main"
-    "foot foot foot";
-  }
-
-  #nav_buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-  }
-
-  #nav_buttons button{
-    flex: 1 1 auto;
-    min-width: 80px;
-    margin: 5px;
-    font-size: 12px;
-    box-sizing: border-box;
-  }
-
-  .text{
-    font-size: 3vw;
-    padding: 5px;
-  }
-
-  .prev .next {
-    font-size: 3vw;
-    padding: 12px;
-  }
-
-  .parent-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  /* .slideshow-container{
-    max-width: 70%;
-    padding: 0;
-  } */
-
-  .topnav {
-    align-items: center; /* Center items */
-  }
-  
-  .topnav input[type=text], .topnav button {
-    width: 100%; /* Full width for mobile */
-    margin: 8px 0; /* Space between input and button */
-  }
-
-  .topnav button{
-    width: auto;
-    margin: 8px 0;
-  }
-
+/* Navigation styles */
+#flexnavbar {
+  display: flex;
+  justify-content: center; /* Centers items horizontally within container. If extra space, items are distributed with space equally on either side.*/
+  align-items: center; /* Based on vertical space, as long as container height is filled, items are centred accordingly. */
+  grid-area: nav;
+  padding-left: 5%;
 }
 
+/* select all the <a> elements inside my #flexnavbar container */
+#flexnavbar > a {
+  flex:1; /* each element tries to take up an equal amount of space */
+}
 
+#flexnavbar a {
+  text-decoration: none; /*  Remove default underline */
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 15px; /* Adds space between navigation links */
+}
+
+#flexnavbar a:hover {
+  color: var(--hover-color);
+  font-weight: 600;
+}
+
+#flexnavbar a.active {
+  color: var(--link-color);
+  font-weight: 600;
+}
 
 .wrapper {
   width: 75vw;
@@ -772,4 +721,264 @@ Text overlay styles */
 
 .top-left h1{
   text-align: left;
+}
+
+.nav_buttons-event {
+  margin-right: 15px; /* Adjusts right alignment */
+}
+
+.nav-links {
+  position: fixed;
+  left: -100%; /* Hide off-screen */
+  top: 0;
+  height: 100%;
+  width: 250px; /* Adjust based on your design */
+  background-color: white; /* Set background color */
+  transition: left 0.3s ease; /* Transition for slide effect */
+  z-index: 1000; /* Ensure it's on top */
+}
+
+
+/* Defining styles for devices smaller than 800px wide 
+Apply specific styles based on certain conditions*/
+@media (max-width:750px) {
+  #flexnavbar {
+    flex-direction: column; /* Stack the links vertically */
+    display: none; /* Hide the navbar initially */
+    align-items: flex-start; 
+    padding: 10px;
+  }
+
+  #flexnavbar a {
+    font-size: 14px;
+    padding: 8px 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .menu-list{
+    padding: 0;
+    padding-bottom: 5%;
+    padding-right: 50%;
+  }
+  
+
+  .menu-toggle {
+    display: block; /* Show the menu toggle button in mobile view */
+    font-size: 14px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+  }
+
+
+  cta. button {
+    font-size: 10px;
+  }
+
+  /* Organizing different sections of layout for clear and structured layout. */
+  #gridcontainer {  
+    grid-template-areas:
+    "header header header" /*spans across three columns. */
+    "nav nav nav"
+    "main main main"
+    "foot foot foot";
+  }
+
+  #nav_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  #nav_buttons button{
+    flex: 1 1 auto;
+    min-width: 80px;
+    margin: 5px;
+    font-size: 12px;
+    box-sizing: border-box;
+  }
+
+  .text{
+    font-size: 3vw;
+    padding: 5px;
+  }
+
+  .prev .next {
+    font-size: 3vw;
+    padding: 12px;
+  }
+
+  .parent-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .topnav {
+    align-items: center; /* Center items */
+  }
+  
+  .topnav input[type=text], .topnav button {
+    width: 100%; /* Full width for mobile */
+    margin: 8px 0; /* Space between input and button */
+  }
+
+  .topnav button{
+    width: auto;
+    margin: 8px 0;
+  }
+
+}
+
+@media screen and (min-width: 600px) {
+  #flexnavbar {
+    justify-content: center;
+    padding-right: 15%;
+  }
+
+  #flexnavbar > a {
+    flex: none;
+    padding: 3px 10px;
+  }
+
+}
+
+
+/* Styles for mobile devices (up to 600px wide) */
+@media only screen and (max-width: 600px) {
+  /* Make the logo and navbar items stack vertically */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    width: 30%; /* Adjust logo size */
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  #flexnavbar {
+    flex-direction: column; /* Stack the links vertically */
+    align-items: flex-start; /* Align links to the left */
+    padding: 10px; /* Add some padding around the navbar */
+  }
+
+  #flexnavbar a {
+    font-size: 14px; /* Reduce font size */
+    padding: 8px 0; /* Adjust padding for mobile view */
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Make links take the full width */
+  }
+
+  /* Style for buttons and inputs */
+  .topnav input {
+    width: 80%; /* Make search input take full width */
+    margin: 10px auto;
+  }
+
+  .nav_buttons {
+    flex-direction: column; /* Stack buttons vertically */
+  }
+
+  .nav_buttons .navigation-button {
+    margin-bottom: 10px;
+  }
+
+  /* Adjust image sizes for mobile */
+  .slideshow-container img {
+    width: 100%; /* Ensure images are responsive */
+  }
+
+  /* Adjust footer text */
+  footer p {
+    text-align: center;
+    font-size: 14px;
+  }
+
+
+  body {
+    font-size: 16px; /* Reduce base font size */
+  }
+
+  h2 {
+    font-size: 14px;
+    margin: 10px 0;
+    text-align: left;
+    padding: 15px 0 15px 50px; 
+    margin-left: -20px
+  }
+
+  .top-content {
+    padding: 10px;
+  }
+
+  .nav_buttons .navigation-button {
+    padding: 10px 20px;
+  }
+  
+  /* Ensure other elements align correctly */
+  body, main {
+    text-align: left;
+  }
+
+  .nav_buttons {
+    display: none; /* Hide navigation buttons in mobile view */
+  }
+
+  .nav_buttons-event {
+    display: block; /* Show the button in mobile view */
+    padding-right: 3%;
+  }
+  
+  .upcoming-title {
+    margin-right: auto; /* Push the title to the left */
+    padding-bottom: 5%;
+  }
+
+  /* Styles for smaller button text */
+  .nav_buttons-event a.navigation-button {
+    font-size: 10px; /* Smaller font size */
+    padding: 5px 10px; /* Smaller padding */
+  }
+
+  .new-slideshow-container,
+  .second-slideshow-container {
+    max-width: 100%; /* Full width for smaller screens */
+  }
+
+  .new-image-container,
+  .second-image-container {
+    height: auto; /* Allow height to adjust */
+    aspect-ratio: auto; /* Remove fixed aspect ratio */
+  }
+
+  .new-text,
+  .second-text {
+    font-size: 14px; /* Adjust text size for mobile */
+    padding: 5px; /* Reduce padding */
+  }
+
+  .new-prev, .new-next,
+  .second-prev, .second-next {
+    font-size: 10px; /* Responsive font size for buttons */
+    padding: 1px; /* Adjust padding for buttons */
+  }
+
+  .slideshow-container {
+    height: 20%; /* Make the slideshow taller on mobile */
+  }
+
+  .image-container .text {
+    font-size: 10px; /* Adjust the font size of the overlay text */
+    padding: 0;
+  }
+
 }

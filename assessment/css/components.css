@@ -1,70 +1,87 @@
 /* Global Button Styles */
 button {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--background-color);
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    background-color: var(--primary-color);
-    transition: background-color 0.3s ease;
-  }
-  
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--background-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary-color);
+  transition: background-color 0.3s ease;
+}
+
 button:hover {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
+}
+
+a.button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--background-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--primary-color);
+  transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+  background-color: var(--primary-color);
 }
 
 
-.date-container{
-display: flex; 
-justify-content: flex-end; /* Aligns items to the right */
-margin-top: 20px; /* Optional spacing from other elements */
-padding-right: 15%;
-border-radius: 5;
+.date-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+  margin-top: 20px; /* Optional spacing from other elements */
+  padding-right: 15%;
+  border-radius: 5;
 }
 
 .datefield {
-width: 150px;
-padding: 0;
+  width: 150px;
+  padding: 0;
 }
 
 /* Slideshow Styles */
 .slideshow-container {
-    position: relative; /* Even if moved, original space is kept empty */
-    max-width: 70%; /* Adjust to your desired max width */
-    margin: 0 auto; /* Center the slideshow */
-    overflow: hidden;
-    padding-bottom: 10%;
+  position: relative; /* Even if moved, original space is kept empty */
+  max-width: 70%; /* Adjust to your desired max width */
+  margin: 0 auto; /* Center the slideshow */
+  overflow: hidden;
+  padding-bottom: 10%;
 }
 
 .slide-container {
-    display: flex; /* Flexbox for side-by-side images */
-    width: 100%; /* Ensure it fills the parent container */
+  display: flex; /* Flexbox for side-by-side images */
+  width: 100%; /* Ensure it fills the parent container */
 }
 
 .image-container {
-position: relative; /* Won't push other elements around or be affected by them.*/
-width: 100%; /* Each image takes full width */
-aspect-ratio: 1;
-overflow: hidden;
+  position: relative; /* Won't push other elements around or be affected by them.*/
+  width: 100%; /* Each image takes full width */
+  aspect-ratio: 1;
+  overflow: hidden;
 }
 
 .image-container img {
-width: 100%; /* Fill the container's width */
-height: 100%; /* Fixed height */
-padding: 1%;
-object-fit: cover; /* Maintain aspect ratio and cover the container */
-border-radius: 15px; /* Apply border-radius */
+  width: 100%; /* Fill the container's width */
+  height: 100%; /* Fixed height */
+  padding: 1%;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 15px; /* Apply border-radius */
 }
 
-.image-container .text{
-background-color: #333333;
-color: white;
-width: 20%;
-text-align: center;
-justify-content: center;
+.image-container .text {
+  background-color: #333333;
+  color: white;
+  width: 20%;
+  text-align: center;
+  justify-content: center;
 }
 
 /* Text overlay styles */
@@ -79,264 +96,389 @@ text-align: left;
 }  */
 
 /* Navigation for slideshow */
-.prev, .next {
-cursor: pointer;
-position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
-top: 50%;
-width: auto;
-margin-top: -22px;
-padding: 16px;
-color: var(--background-color);
-font-weight: bold;
-font-size: 2vw;
-transition: 0.6s ease;
-border-radius: 3px;
-user-select: none; /* Prevent users from accidentally selecting text while interacting with those elements. */
-z-index: 10; /*  Arrows will appear on top of the slideshow images even as they change. */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
+  top: 38%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--background-color);
+  font-weight: bold;
+  font-size: 2vw;
+  transition: 0.6s ease;
+  border-radius: 3px;
+  user-select: none; /* Prevent users from accidentally selecting text while interacting with those elements. */
+  z-index: 10; /*  Arrows will appear on top of the slideshow images even as they change. */
 }
-
 
 /* Left 0 and Right 0 means they are positioned at the left and rightmost edges of the parent element (slideshow container)*/
 .prev {
-left: 0;
+  left: 0;
 }
 
 .next {
-right: 0;
+  right: 0;
 }
 
 /* Black background color for navigation arrows */
-.prev:hover, .next:hover {
-color: var(--text-color);
+.prev:hover,
+.next:hover {
+  color: var(--text-color);
 }
 
 /* Caption text */
 .text {
-position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
-bottom: 16px;
-left: 16px;
-color: var(--background-color);
-font-weight: 2vw;
-font-size: 15px;
-padding: 8px;
-width: 100%;
-text-align: left;
+  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
+  bottom: 16px;
+  left: 16px;
+  color: var(--background-color);
+  font-weight: 2vw;
+  font-size: 15px;
+  padding: 8px;
+  width: 100%;
+  text-align: left;
 }
-
 
 /* Fading animation */
 .fade {
-animation-name: fade;
-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 @keyframes fade {
-from {opacity: .4} /* Starting point of the animation */
-to {opacity: 1} /* End point of animation */
+  from {
+    opacity: 0.4;
+  } /* Starting point of the animation */
+  to {
+    opacity: 1;
+  } /* End point of animation */
 }
 
 /* Discussion board */
 .discussion-form {
-background: var(--background-color);
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-margin-bottom: 20px auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 70%;
+  background: var(--background-color);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
 }
 
-.discussion-form, .posts {
-width: 70%;
-margin: 20px auto;
-display: flex;
-flex-direction: column;
-align-items: center;
+.discussion-form,
+.posts {
+  width: 70%;
+  margin: 20px auto;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2%;
 }
 
 .discussion-form h2 {
-margin: 0;
-text-align: center;
-margin-bottom: 20px;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0;
+  padding-top: 2%;
 }
 
 #postForm {
-display: flex;
-align-items: center;
-width: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  padding-left:10% ;
 }
 
 textarea {
-width: 100vh;
-padding: 10px;
-border: 1px solid #ccc;
-border-radius: 4px;
-resize: none;
-box-sizing: border-box;
-margin-right: 10px;
-flex-direction: column;
-align-items: center;
+  width: 100vh;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  box-sizing: border-box;
+  margin-right: 10px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .discussion-form button {
-padding: 10px 20px;
-border: none;
-cursor: pointer;
-}
-
-.posts {
-background: #fff;
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-margin: 20px auto;
-width: 70%;
+  padding: 10px 20px;
+  margin-bottom: 2.5%;
+  border: none;
+  cursor: pointer;
 }
 
 .post {
-border-bottom: 1px solid #eee;
-border-radius: 8px;
-padding: 15px;
-margin: 0;
-/* margin-bottom: 15px;
-margin-top: 10px; */
-position:relative;
+  border-bottom: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 0;
+  position: relative;
 }
 
 .user-info {
-display: flex;
-align-items: center; /* Center the image and name vertically */
+  display: flex;
+  align-items: center; /* Center the image and name vertically */
 }
 
 .user-info img {
-width: 50px; /* Set the width of the profile image */
-height: 50px; /* Set the height of the profile image */
-border-radius: 50%; /* Make the image circular */
-margin-right: 10px; /* Add space between the image and name */
-object-fit: cover; /* Ensure the image covers the area without distortion */
+  width: 50px; /* Set the width of the profile image */
+  height: 50px; /* Set the height of the profile image */
+  border-radius: 50%; /* Make the image circular */
+  margin-right: 20px; /* Add space between the image and name */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
 }
 
 .post-actions {
-display: flex;
-margin-top: 10px;
-align-items: center;
-justify-content:start;
-margin-left: 3.5%; /* icons margin */
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: start;
+  margin-left: 6%; /* icons margin */
 }
 
 .post-actions button {
-width: 30px; /* Set a fixed width */
-margin: 0; /* Remove default margins */
-padding: 0; /* No padding */
-background: transparent;
-border: none;
-cursor: pointer;
+  width: 30px; /* Set a fixed width */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* No padding */
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .post-actions button:hover {
-transform: scale(1.1); /* Enlarge the button to 110% */
+  transform: scale(1.1); /* Enlarge the button to 110% */
 }
 
 .post:last-child {
-border-bottom: none;
+  border-bottom: none;
 }
 
 .post-content {
-font-size: 16px; /* Adjust text size */
-color: black; /* Set text color */
-margin-top: 10px; /* Add space above the text */
-margin-left: 60px; /*The text of the post */
-width: 100%;
+  font-size: 16px; /* Adjust text size */
+  color: black; /* Set text color */
+  margin-top: 10px; /* Add space above the text */
+  margin-left: 70px; /*The text of the post */
+  margin-bottom: 2%;
+  width: 100%;
 }
 
 .like-button {
-background: transparent;
-border: none;
-color: #6412EA;
-cursor: pointer;
-display: flex;
-align-items: center;
+  background: transparent;
+  border: none;
+  color: #6412ea;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .heart {
-font-size: 22px; /* Adjust size as needed */
-color: #ccc; /* Default color */
-transition: color 0.3s;
-margin-bottom: 4px;
+  font-size: 22px; /* Adjust size as needed */
+  color: #ccc; /* Default color */
+  transition: color 0.3s;
+  margin-bottom: 4px;
 }
 
 .liked .heart {
-color: red; /* Color when liked */
+  color: red; /* Color when liked */
 }
 
-.post-actions .like-button{
-margin-left: 5px;
+.post-actions .like-button {
+  margin-left: 5px;
 }
 
 .post-actions button:last-child {
-margin-left: 2px;
+  margin-left: 2px;
 }
 
 .posts h2 {
-/* text-align: center; Center the title */
-margin-left: 25%;
-margin-right: 25%;
-font-weight: 600;
-margin-bottom: 20px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
 }
 
 #postFeed {
-background-color: white;
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0 2px 10px #0000001a;
-max-width: 800px;
-margin: 0 auto;
+  background-color: white;
+  padding: 30;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px #0000001a;
+  width: 1040px;
+  margin: 0 auto;
 }
 
-
 /* Style the top navigation */
-.top-content{
-align-items: center;
-justify-content: center;
+.top-content {
+  align-items: center;
+  justify-content: center;
 }
 
 .top-content .topnav {
-display: flex; /* Use flexbox for alignment */
-justify-content: center; /* Center items horizontally */
-align-items: center; /* Center items vertically */
-padding: 8px; /* Padding around the nav */
-width: 100%; /* Ensure it spans the full width */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 8px; /* Padding around the nav */
+  width: 100%; /* Ensure it spans the full width */
 }
 
-.top-content-recomspage .topnav button{
-border: 1px solid white;
+.top-content-recomspage .topnav button {
+  border: 1px solid white;
 }
 
 /* Style the search box */
-.topnav input[type=text] {
-width: 50%; /* Set width to 50% */
-max-width: 600px; /* Optional: limit max width for larger screens */
-padding: 6px;
-border: 1px solid #ccc; /* Add border for better visibility */
-border-radius: 4px; /* Rounded corners */
-margin-right: 8px; /* Space between input and button */
-box-sizing: border-box;
+.topnav input[type="text"] {
+  width: 50%; /* Set width to 50% */
+  max-width: 600px; /* Optional: limit max width for larger screens */
+  padding: 6px;
+  border: 1px solid #ccc; /* Add border for better visibility */
+  border-radius: 4px; /* Rounded corners */
+  margin-right: 8px; /* Space between input and button */
+  box-sizing: border-box;
 }
 
 /* Style the search button */
 .topnav button {
-padding: 6px 10px;
-border: none;
-background-color: var(--primary-color); /* Your desired color */
-color: white;
-border-radius: 4px; /* Rounded corners */
-cursor: pointer;
-width: 80px;
+  padding: 6px 10px;
+  border: none;
+  background-color: var(--primary-color); /* Your desired color */
+  color: white;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  width: 80px;
 }
 
 .topnav button:hover {
-background-color: var(--hover-color); 
+  background-color: var(--hover-color);
+}
+
+.read-more {
+  padding: 0;
+  padding-top: 40%;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Navigation for slideshow */
+  .prev,
+  .next {
+    padding: 5%;
+    top: 45%;
+  }
+}
+
+
+/* ham menu */
+.ham-menu {
+  display: none; /* Ensure it displays in flexbox mode */
+  flex-direction: column; /* Align the bars in a column */
+  bottom: 70px;
+  left: 95px;
+  height: 40px;
+  width: 40px;
+  margin-left: auto;
+  position: relative;
+  z-index: 2000; /* Ensure this is higher than the off-screen menu's z-index */
+}
+
+/* Style each bar */
+.ham-menu span {
+  height: 4px;
+  width: 70%;
+  background-color: var(--primary-color); /* Default bar color */
+  border-radius: 25px;
+  margin: 2px 0; /* Space between bars */
+  transition: .3s ease;
+}
+
+/* Active state styles */
+.ham-menu.active span {
+  background-color: var(--primary-color); /* Change color when active */
+}
+
+.ham-menu.active span:nth-child(1) {
+  top: 50%; /* Adjust the first bar */
+  transform: translate(-10%, 300%) rotate(45deg); /* Rotate to form X */
+}
+
+.ham-menu.active span:nth-child(2) {
+  opacity: 0; /* Hide the middle bar */
+  height: 0;
+  margin: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+  top: 50%; /* Adjust the third bar */
+  transform: translate(-10%, 120%) rotate(-45deg); /* Rotate to form X */
+}
+
+
+/* off-screen-menu */
+.off-screen-menu {
+  background-color: var(--background-color);
+  height: 100vh;
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hidden off-screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  justify-content: center;
+  text-align: center;
+  font-size: 3rem;
+  transition: .3s ease;
+  z-index: 1000; /* Ensure this is lower than the hamburger menu */
+}
+
+.off-screen-menu.active {
+  right: 0; /* Slide in from the right */
+  padding-right: 5%;
+  flex-direction: column;
+  list-style-type: none; /* Remove bullet points */
+  width: 100%; /* Make the list take the full width of the menu */
+}
+
+.off-screen-menu li {
+  width: 100%; /* Ensure each item takes full width */
+}
+
+.off-screen-menu a {
+  display: block; /* Make each link a block element */
+  padding: 15px; /* Add padding for better touch targets */
+  color: #000; /* Change text color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effect for links */
+.off-screen-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Change background on hover */
+}
+
+/* nav */
+nav {
+  padding: 1rem;
+  display: flex;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+  #flexnavbar {
+      display: none; /* Hide regular navbar on mobile */
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu on mobile */
+  }
+
+  .ham-menu {
+    display: flex; /* Ensure the hamburger menu shows */
+  }
 }

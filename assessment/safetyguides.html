@@ -35,68 +35,86 @@
     <div id="gridcontainer">
       <header>
         <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
-        <img class = "logo" a href = "index.html" src="./icons/Frame 68.png">
+        <a href="index.html">
+          <img class = "logo" src="./icons/Frame 68.png" alt = "Logo">
+        </a>
+  
+        <nav>
+          <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+  
         <nav id="flexnavbar">
           <a href="index.html">Home</a>
-          <a class="active" href="safetyguides.html">Safety Guides</a>
+          <a href="safetyguides.html">Safety Guides</a>
           <a href="events.html">Events</a>
-          <a href="community.html">Community</a>
+          <a class="active" href="community.html">Community</a>
           <a href="insights_recommendations.html">Insights and Recommendations</a>
         </nav>
-        <!--Type = button - Does not have any default behavior like submitting a form.-->
+  
         <a class = "cta" href ="#"><button>Contact</button></a>
-     </header>
+  
+        <div class="off-screen-menu">
+          <ul>
+            <a href="index.html">Home</a>
+            <a href="safetyguides.html">Safety Guides</a>
+            <a href="events.html">Events</a>
+            <a class="active" href="community.html">Community</a>
+            <a href="insights_recommendations.html">Insights and Recommendations</a>
+          </ul>
+        </div>
+  
+      </header>
       <main>
-        This is some test text.
-
         <div class="top-content">
           <div class="topnav">
-            <input type="text" placeholder="Search..." aria-label="Search">
-            <button type="submit">Search</button>
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+            <button id="searchButton" type="submit">Search</button>
           </div>
-        </div>
-
-        <div id="myBtnContainer">
-          <button class="filter-button active" data-filter="all" onclick="filterSelection('all')"> Show all</button>
-          <button class="filter-button" data-filter="UI/UX" onclick="filterSelection('Popular')"> Popular</button>
-          <button class="filter-button" data-filter="Development" onclick="filterSelection('Recent')"> Recent</button>
-          <!-- Add more filters as needed -->
         </div>
 
         <div class="article-list">
           <!-- First Article -->
-          <div class="article" data-category="UI/UX">
-              <div class="article-details">
-                  <div class="article-info">
-                      <p class="author">Bahul Neel Upadhyaya in Level Up Coding</p>
-                      <h3>Safety in Brasilia</h3>
-                      <p>Don't let the fear stop you!</p>
-                      <div class="article-meta">
-                          <span>1d ago</span> | 
-                          <span>224 views</span> | 
-                          <span>6 comments</span>
-                      </div>
-                    <a href="guides/brasilia_guide.html" class="read-button">Read More</a> <!-- Added Read More Button -->
-                  </div>
-                  <div class="article-image">
-                      <img src="./images/braisilia.jpg" alt="Brasilia" />
-                  </div>
-              </div>
-          </div>
-  
-          <!-- Second Article -->
-          <div class="article" data-category="UI/UX">
+          <div class="article" data-category="Popular">
             <div class="article-details">
                 <div class="article-info">
-                    <p class="author">Bahul Neel Upadhyaya in Level Up Coding</p>
-                    <h3>Travelling to Rio de Janeiro? Learn how you can stay safe!</h3>
-                    <p>5 tips for staying safe in this bustling city!</p>
-                    <div class="article-meta">
-                        <span>1d ago</span> | 
-                        <span>224 views</span> | 
-                        <span>6 comments</span>
-                    </div>
-                  <a href="guides/rio_guide.html" class="read-button">Read More</a> <!-- Added Read More Button -->
+                  <p>Claire Willows</p>
+                  <h3>Brasilia Travel Safety Guide</h3>
+                  <p class="author">Don't let the fear stop you!</p>
+                  <div class="article-meta">
+                      <span>1d ago</span> | 
+                      <span>224 views</span> | 
+                      <span>6 comments</span>
+                  </div>
+                  <div class="read-more">
+                    <a href="./read-more.html" class="button">Read More</a>
+                  </div>
+                </div>
+                <div class="article-image">
+                    <img src="./images/sao paulo.jpg" alt="Sao Paulo" />
+                </div>
+            </div>
+          </div>
+
+
+          <!-- Second Article -->
+          <div class="article" data-category="Recent">
+            <div class="article-details">
+                <div class="article-info">
+                  <p>Poppy Evans</p>
+                  <h3>Travelling to Rio de Janeiro?</h3>
+                  <p class="author">5 tips for staying safe in this bustling city!</p>
+                  <div class="article-meta">
+                      <span>1d ago</span> | 
+                      <span>224 views</span> | 
+                      <span>6 comments</span>
+                  </div>
+                  <div class="read-more">
+                    <a href="./read-more.html" class="button">Read More</a>
+                  </div>                 
                 </div>
                 <div class="article-image">
                     <img src="./images/Rio de Janeiro.jpg" alt="Rio de Janeiro" />
@@ -105,18 +123,20 @@
         </div>
   
           <!-- Third Article -->
-          <div class="article" data-category="Development">
+          <div class="article" data-category="Popular">
               <div class="article-details">
                   <div class="article-info">
-                      <p class="author">Alexander Nguyen in Level Up Coding</p>
-                      <h3>Sao Paulo Travel Safety Guide</h3>
-                      <p>Top tips for staying safe in Sao Paulo</p>
-                      <div class="article-meta">
-                          <span>Aug 20</span> | 
-                          <span>3K views</span> | 
-                          <span>25 comments</span>
-                      </div>
-                    <a href="guides/sao_paulo_guide.html" class="read-button">Read More</a> <!-- Added Read More Button -->
+                    <p>Alexis Bianchi</p>
+                    <h3>Sao Paulo Travel Safety Guide</h3>
+                    <p class="author">Top tips for staying safe in Sao Paulo</p>
+                    <div class="article-meta">
+                        <span>Aug 20</span> | 
+                        <span>3K views</span> | 
+                        <span>25 comments</span>
+                    </div>
+                    <div class="read-more">
+                      <a href="./read-more.html" class="button">Read More</a>
+                    </div>                  
                   </div>
                   <div class="article-image">
                       <img src="./images/sao paulo.jpg" alt="Sao Paulo" />
@@ -125,7 +145,6 @@
           </div>
         </div>
       </main>
-
       <footer>
         <!-- &copy is unicode equivalent for copyright symbol (©)-->
         <p>&copy; 2024 Your Name. All rights reserved.</p>
