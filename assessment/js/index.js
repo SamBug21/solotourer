@@ -102,7 +102,12 @@ class Carousel {
 }
 
 // Post functionality
-class PostManager {
+document.addEventListener('DOMContentLoaded', () => {
+    // Instantiate the postForm class
+    const postManager = new postForm();
+});
+
+class postForm {
     constructor() {
         this.initialize();
     }

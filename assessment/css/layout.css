@@ -15,8 +15,6 @@
 
 header {
   display: flex; /* It makes the container a flexbox and be able to align more flexibily*/
-  justify-content: space-between; /* Items are distributed with space between them, with no space at the start or end. */
-  align-items: center; /* Based on vertical space, as long as container height is filled, items are centred accordingly. */
   padding: 5px;
   grid-area: header;
 }
@@ -47,6 +45,7 @@ main {
   padding: 0;
   padding-left: 15%;
   padding-bottom: 2%;
+  /* margin-top: 5%; */
 }
 
 
@@ -558,4 +557,159 @@ footer h2{
   cursor: pointer; /* Change cursor to pointer on hover */
   float: right; /* Position the button to the right */
   background-color: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .container {
+    height: 300px;
+    margin-bottom: 10%;
+  }
+
+  .container img{
+    height: 100%;
+  }
+
+  .title-container4{
+    padding-left: 10%;
+    margin-top: 10%;
+  }
+
+  .title-container4 img{
+    padding-right: 2%;
+  }
+
+  .title-container4 h1{
+    font-size: 20px;
+  }
+
+  .title-container4 h3{
+    font-size: 15px;
+  }
+
+  .emergency-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding-top: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+  }
+
+  .emergency-container div{
+    font-size: 12px;
+  }
+
+  .top-left{
+    width: 90%;
+    top: 60%;
+  }
+
+  .top-left h1{
+    font-size: 18px;
+    padding: 0;
+    padding-left: 5%;
+    margin: 0;
+    margin-bottom: 2%;
+    text-align: center;
+  }
+
+  .top-left h3{
+    font-size: 12px;
+    padding: 0;
+    padding-left: 5%;
+    text-align: center;
+  }
+
+  .article-list {
+    width: 90%;
+    margin-right: 10%;
+  }
+  
+  /* Styling for each article */
+  .article {
+    display: flex;
+    justify-content: space-between; /* Space between image and text */
+    border-bottom: 1px solid #e0e0e0; /* Separator line */
+    padding-bottom: 20px; /* Space below each article */
+    margin-bottom: 20px; /* Space below each article */
+    margin-right: 10%;
+    width: 75%;
+  }
+  
+  .article-details {
+    width: 75%; /* Use full width */
+  }
+  
+  .article-info {
+    width: 100%;
+    margin: 0;
+    margin-left: 8%;
+  }
+  
+  .article-info h3 {
+    font-size: 14px; /* Font size for the title */
+  }
+  
+  .article-info p {
+    color: #555; /* Text color for description */
+    font-size: 10px;
+  }
+  
+  .article-meta {
+    width: 160px;
+  }
+  
+  .article-image img {
+    width: 200px; /* Set a fixed width for images */
+    height: 140px; /* Fixed height for images */
+    margin: 0;
+    margin-left: 5%;
+  }
+
+  .read-more{
+    padding: 0;
+    padding-top: 20%;
+  }
+
+  a.button{
+    padding: 0;
+    padding: 3px 8px; /* Padding for button */
+    bottom: 10%;
+    font-size: 12px;
+  }
+  
+  .read-button:hover {
+    background-color: var(--hover-color); /* Darker shade on hover */
+  }
+
+  .footer {
+    grid-area: foot;
+    background-color: black; /* Black background */
+    color: white; /* White text color */
+    padding: 30px 0px; /* Padding at top and bottom */
+    margin-top: 10%;
+    text-align: center; /* Center-align text */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto; /* Center content horizontally */
+    padding: 0 20px;
+  }
+  
+  footer h2{
+    font-size: 15px;
+    text-align: center; /* Center-align text */
+    padding-bottom: 0;
+  }
+  
+  .footer p {
+    font-size: 11px;
+  }
+  
+  .footer-links a {
+    font-size: 10px;
+  }
 }

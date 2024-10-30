@@ -37,7 +37,7 @@
     <header>
       <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
       <a href="index.html">
-        <img class = "logo" src="./icons/Frame 68.png" alt = "Logo">
+        <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
       </a>
 
       <nav>
@@ -79,7 +79,7 @@
         </div>
         
 
-        <div>
+        <div class="events-titles">
           <h2>This month</h2>
         </div>
         <div class="nav_buttons">
@@ -104,7 +104,7 @@
               <div class="new-image-container">
                 <img src="./images/event2.jpg" alt="Carnival Poster Brazil">
                 <div class="new-text">
-                  <h2>Carnival celebrations at this time of year</h2>
+                  <h2>Carnival celebrations!</h2>
                   <p>6 places to immerse yourself into the colourful festivities!</p>
                 </div>
               </div>
@@ -139,7 +139,22 @@
           <a class="new-next" onclick="slideshow1.plusSlides(1)">&#10095;</a>
         </div>
 
-        <h2>Adventure</h2>
+        <div class="events-titles">
+          <h2>Upcoming</h2>
+        </div>
+
+        <div class="nav_buttons-event">
+          <a href="./add-event.html" class="navigation-button">Add your own event</a>
+        </div>
+
+        <!-- Section for displaying events -->
+        <div id="events-container">
+          <!-- The event cards will be dynamically injected here -->
+        </div>
+
+        <div class="events-slide-titles">
+          <h2>Adventure</h2>
+        </div>
         <!-- Second Slideshow -->
         <div class="new-slideshow-container slideshow2" id="new-slideshow-container slideshow2">
           <div class="mySlides">
@@ -154,8 +169,8 @@
               <div class="new-image-container">
                 <img src="./images/adventure2.jpg" alt="Adventure 2">
                 <div class="new-text">
-                  <h2>Swim with the sharks in Fernando de Noronha!</h2>
-                  <p>6 places to explore the seas!</p>
+                  <h2>Swim with the sharks!</h2>
+                  <p>6 places to explore Fernando de Noronha's seas!</p>
                 </div>
               </div>
             </div>
@@ -182,7 +197,9 @@
           <a class="new-next" onclick="slideshow2.plusSlides(1)">&#10095;</a>
         </div>
 
-        <h2>Sport</h2>
+        <div class="events-slide-titles">
+          <h2>Sport</h2>
+        </div>
         <!-- Third Slideshow -->
         <div class="new-slideshow-container slideshow3" id="new-slideshow-container slideshow3">
           <div class="mySlides">
@@ -197,7 +214,7 @@
               <div class="new-image-container">
                 <img src="./images/sport2.jpg" alt="Sport 2">
                 <div class="new-text">
-                  <h2>Make the most of your time at the beaches of Jijoca de Jericoacoara!</h2>
+                  <h2>The beaches of Jijoca de Jericoacoara!</h2>
                   <p>Here are 5 beaches with the equipment and the people!</p>
                 </div>
               </div>
@@ -208,14 +225,14 @@
               <div class="new-image-container">
                 <img src="./images/sport3.jpg" alt="Music Festival">
                 <div class="new-text">
-                  <h2>Looking to spend more time in Fortaleza's water?</h2>
+                  <h2>Fortaleza's waters!</h2>
                   <p>3 top places to try out a nice day of sailing!</p>
                 </div>
               </div>
               <div class="new-image-container">
                 <img src="./images/sport4.jpg" alt="Night Club">
                 <div class="new-text">
-                  <h2>Try windsurfing at these 5 spots in Salvador</h2>
+                  <h2>5 spots to windsurf in Salvador</h2>
                   <p>Enjoy a budget friendly adventurous time!</p>
                 </div>
               </div>
@@ -224,8 +241,10 @@
           <a class="new-prev" onclick="slideshow3.plusSlides(-1)">&#10094;</a>
           <a class="new-next" onclick="slideshow3.plusSlides(1)">&#10095;</a>
         </div>
-
-        <h2>Sightseeing</h2>
+        
+        <div class="events-slide-titles">
+          <h2>Sightseeing</h2>
+        </div>
         <!-- Third Slideshow -->
         <div class="new-slideshow-container slideshow4" id="new-slideshow-container slideshow4">
           <div class="mySlides">
@@ -264,23 +283,10 @@
               </div>
             </div>
           </div>
-          <a class="new-prev" onclick="slideshow3.plusSlides(-1)">&#10094;</a>
-          <a class="new-next" onclick="slideshow3.plusSlides(1)">&#10095;</a>
+          <a class="new-prev" onclick="slideshow4.plusSlides(-1)">&#10094;</a>
+          <a class="new-next" onclick="slideshow4.plusSlides(1)">&#10095;</a>
         </div>
 
-
-        <div>
-          <h2>Upcoming</h2>
-        </div>
-
-        <div class="nav_buttons-event">
-          <a href="./add-event.html" class="navigation-button">Add your own event</a>
-        </div>
-
-        <!-- Section for displaying events -->
-        <div id="events-container">
-          <!-- The event cards will be dynamically injected here -->
-        </div>
       
       </main>
     </div>

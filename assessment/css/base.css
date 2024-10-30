@@ -33,7 +33,6 @@ h2{
   font-weight: 500;
   color: var(--text-color);
   text-align: left;
-  padding: 25px 0 25px 225px; /*Top, right, bottom, left */
 }
 
 h2.read-more-page{
@@ -43,6 +42,19 @@ h2.read-more-page{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.events-slide-titles h2{
+  padding: 0;
+  padding-left: 16%;
+  padding-bottom: 2%;
+}
+
+.events-titles h2{
+  padding: 0;
+  padding-left: 16%;
+  padding-bottom: 2%;
+  padding-top: 5%;
 }
 
 h3{
@@ -86,6 +98,7 @@ p {
   padding-left: 1%;
   display: inline-block; /* Placed in line with other elements than start on a new line, allows more control with width and height */
   vertical-align: top;
+  top: 0;
   width: 30%;
   cursor: pointer;
 }
@@ -197,7 +210,7 @@ a, button {
   justify-content: center; /* Centers items horizontally within container. If extra space, items are distributed with space equally on either side.*/
   align-items: center; /* Based on vertical space, as long as container height is filled, items are centred accordingly. */
   grid-area: nav;
-  padding-left: 5%;
+  padding-left: 15%;
 }
 
 /* select all the <a> elements inside my #flexnavbar container */
@@ -285,6 +298,7 @@ input[type="file"] {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 10%;
 }
 
 /* Individual event card styles */
@@ -644,7 +658,7 @@ Text overlay styles */
   align-items: center;
   justify-content: center;
   background-color: var(--primary-color);
-  height: 20%;
+  height: 150px;
   padding-top: 8%;
   padding-left: 20%;
   margin-bottom: 5%;
@@ -664,9 +678,10 @@ Text overlay styles */
   width: 70%; /* Set width to 50% */
   max-width: 1200px; /* Optional: limit max width for larger screens */
   padding: 10px;
+  height: 50px;
   border: 1px solid #ccc; /* Add border for better visibility */
   border-radius: 10px; /* Rounded corners */
-  margin-right: 8px; /* Space between input and button */
+  margin-left: 2.5%; /* Space between input and button */
   box-sizing: border-box;
 }
 
@@ -833,14 +848,9 @@ Apply specific styles based on certain conditions*/
     align-items: center; /* Center items */
   }
   
-  .topnav input[type=text], .topnav button {
+  .topnav input[type=text] {
     width: 100%; /* Full width for mobile */
     margin: 8px 0; /* Space between input and button */
-  }
-
-  .topnav button{
-    width: auto;
-    margin: 8px 0;
   }
 
 }
@@ -865,12 +875,13 @@ Apply specific styles based on certain conditions*/
   header {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   .logo {
-    width: 30%; /* Adjust logo size */
-    margin-bottom: 10px;
+    width: 15%; /* Adjust logo size */
+    margin: 0;
+    margin-right: 25%;
+    bottom: 10px;
     padding: 0;
   }
 
@@ -921,11 +932,13 @@ Apply specific styles based on certain conditions*/
     font-size: 14px;
     margin: 10px 0;
     text-align: left;
-    margin-left: -20px
+    padding: 0;
+    padding-left: 6%;
   }
 
-  .top-content {
-    padding: 10px;
+  .events-titles h2{
+    padding: 0;
+    padding-left: 6%;
   }
 
   .nav_buttons .navigation-button {
@@ -943,7 +956,9 @@ Apply specific styles based on certain conditions*/
 
   .nav_buttons-event {
     display: block; /* Show the button in mobile view */
-    padding-right: 3%;
+    padding: 0;
+    padding-left: 6%;
+    margin: 2% 0;
   }
   
   .upcoming-title {
@@ -959,13 +974,39 @@ Apply specific styles based on certain conditions*/
 
   .new-slideshow-container,
   .second-slideshow-container {
-    max-width: 100%; /* Full width for smaller screens */
+    max-width: 90%; 
+    
+    /* Full width for smaller screens */
+  }
+
+  .new-slideshow-container{
+    padding-bottom: 10%;
   }
 
   .new-image-container,
   .second-image-container {
     height: auto; /* Allow height to adjust */
     aspect-ratio: auto; /* Remove fixed aspect ratio */
+  }
+
+  .new-slideshow-container img{
+    height: 120px;
+  }
+
+  .new-image-container .new-text{
+    padding: 0;
+    margin: 0;
+    top: 70%;
+    width: 70%;
+    height: fit-content;
+  }
+
+  .new-image-container h2{
+    font-size: 10px;
+  }
+
+  .new-image-container p{
+    display: none;
   }
 
   .new-text,
@@ -977,7 +1018,11 @@ Apply specific styles based on certain conditions*/
   .new-prev, .new-next,
   .second-prev, .second-next {
     font-size: 10px; /* Responsive font size for buttons */
-    padding: 1px; /* Adjust padding for buttons */
+    /* padding: 1px; */
+  }
+
+  .new-prev, .new-next{
+    margin: 0;
   }
 
   .slideshow-container {
@@ -987,6 +1032,32 @@ Apply specific styles based on certain conditions*/
   .image-container .text {
     font-size: 10px; /* Adjust the font size of the overlay text */
     padding: 0;
+  }
+
+  .wrapper {
+    width: 90%;
+    margin: auto; /* Center it horizontally */
+    border-radius: 5px;
+  }
+  
+  .wrapper h2 {
+    font-size: 18px;
+  }
+
+  .form-container {
+    border-radius: 5px;
+  }
+  
+  label {
+    font-weight: 600;
+    padding-top: 5%;
+  }
+  
+  /* Specific Styles for Form Submit Button */
+  .submit-button {
+    padding: 5px;
+    margin-top: 5%;
+    border-radius: 5px;
   }
 
 }

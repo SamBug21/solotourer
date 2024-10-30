@@ -1,55 +1,82 @@
 // Constants for API interaction
+// components.js
+
+// Using these values to identify yourself and the zone where your data is stored when interacting with the API 
 const studentNumber = "s4889410";
 const uqcloudZoneId = "99ad41a3";
+
+// Create headers object once as a constant that will store key value pairs to send to server 
 const headers = new Headers();
+// Adds header with key student_number and uqcloud_zone_id and values from both
 headers.append("student_number", studentNumber);
 headers.append("uqcloud_zone_id", uqcloudZoneId);
 
-// API Functions
-export function submitEventForm(formData, handleSuccess, handleError) {
-    // ... [keep existing submitEventForm code]
-}
+// Function to submit the event form - THE POST request
+// export makes it available to other JS files
+export function submitEventForm(formData, handleSuccess, handleError) { // formData : holds data from form, handleSuccess and Error tells function to run if successful or error
+    // Sending post request to the URL
+    fetch('https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/', {
+        method: 'POST', // Wants to send data
+        headers: headers, // Sends headers (student number and cloud zone id)
+        body: formData // Sends form data to server
+    })
 
-export function fetchEvents(displayEvents, handleGetError) {
-    // ... [keep existing fetchEvents code]
-}
-
-// Section toggle functionality - defined outside DOMContentLoaded
-function toggleSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (!section) return;
-    
-    const items = section.querySelectorAll('.item');
-    const seeMoreToggle = section.querySelector('.see-more, #see-more-toggle');
-    
-    if (items.length > 0) {
-        const isExpanded = Array.from(items).slice(4).some(item => !item.classList.contains('hidden'));
-        
-        // Toggle visibility of items after the first three
-        items.forEach((item, index) => {
-            if (index >= 4) {
-                if (isExpanded) {
-                    item.classList.add('hidden');
-                } else {
-                    item.classList.remove('hidden');
-                }
-            }
-        });
-        
-        // Update the toggle button text and arrow
-        if (seeMoreToggle) {
-            const textElement = seeMoreToggle.querySelector('p') || seeMoreToggle.firstChild;
-            const arrowElement = seeMoreToggle.querySelector('.arrow');
-            
-            if (textElement) {
-                textElement.textContent = isExpanded ? 'See more' : 'See less';
-            }
-            if (arrowElement) {
-                arrowElement.textContent = isExpanded ? '⌄' : '▲';
-            }
+    // Wait for server response
+    .then(response => {
+        // If server responds error, run this
+        if (!response.ok) {
+            // convert response from JSON to Javascript
+            return response.json().then(err => {
+                // Logs server error message
+                console.error('Server error response:', err);
+                throw new Error(err.detail || 'Something went wrong');
+            });
         }
-    }
+        return response.json(); // Return the response as JSON
+    })
+    // if successful however, run this
+    .then(result => {
+        // Logs result (server's confirmation)
+        console.log('Event created:', result);
+        // calls success handler, passing created event
+        handleSuccess(result);
+    })
+
+    // If network issue, log error to console and call error handler
+    .catch(error => {
+        console.error('Error:', error.message); // Log detailed error
+        handleError(error); // Call the error handler
+    });
 }
+
+// Function to fetch events from the API - GET request to URL to retrieve data
+// Do function based on success or error 
+export function fetchEvents(displayEvents, handleGetError) {
+    fetch("https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/", {
+        method: "GET",
+        headers: headers, // Sends headers (student number and zone ID)
+    })
+    .then(response => {
+        // If response is not okay, throw error)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        // Convert JSON response
+        return response.json();
+    })
+
+    // if successful, call displayEvents(data) to show events on page.
+    .then(data => {
+        displayEvents(data); // Call the success handler
+    })
+
+    // If error, call error handler and pass error 
+    .catch(error => {
+        handleGetError(error); // Call the error handler
+    });
+}
+
+
 
 // Single DOMContentLoaded event listener
 document.addEventListener("DOMContentLoaded", function() {

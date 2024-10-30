@@ -26,7 +26,9 @@
     <!--<script> tag used to include JavaScript files in your web page, Modules (organize JS code into separate files + import/export functions, objects, or variables between them.-->
     <!--Embed or reference JavaScript + defer which tells the browser to download script in the background while HTML is being read and interpreted.-->
     <script type="module" src="./js/index.js" defer></script>
-    <script type="module" src="js/page_load_message.js" defer></script>
+    <script type="module" src="./js/page_load_message.js" defer></script>
+    <script type="module" src="./js/events.js" defer></script>
+    <script type="module" src="./js/components.js" defer></script>
 
     <!-- Appears in the browser tab and is used by search engines.-->
     <title>Safety Guides</title>
@@ -36,9 +38,9 @@
       <header>
         <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
         <a href="index.html">
-          <img class = "logo" src="./icons/Frame 68.png" alt = "Logo">
+          <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
         </a>
-  
+
         <nav>
           <div class="ham-menu">
             <span></span>
@@ -49,8 +51,8 @@
   
         <nav id="flexnavbar">
           <a href="index.html">Home</a>
-          <a class="active" href="safetyguides.html">Safety Guides</a>
-          <a href="events.html">Events</a>
+          <a href="safetyguides.html">Safety Guides</a>
+          <a class="active" href="events.html">Events</a>
           <a href="community.html">Community</a>
           <a href="insights_recommendations.html">Insights and Recommendations</a>
         </nav>
@@ -60,19 +62,18 @@
         <div class="off-screen-menu">
           <ul>
             <a href="index.html">Home</a>
-            <a class="active" href="safetyguides.html">Safety Guides</a>
+            <a href="safetyguides.html">Safety Guides</a>
             <a href="events.html">Events</a>
-            <a href="community.html">Community</a>
+            <a class="active" href="community.html">Community</a>
             <a href="insights_recommendations.html">Insights and Recommendations</a>
           </ul>
-        </div>
-  
+        </div>  
       </header>
+
       <main>
         <div class="top-content">
           <div class="topnav">
             <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
-            <button id="searchButton" type="submit">Search</button>
           </div>
         </div>
 

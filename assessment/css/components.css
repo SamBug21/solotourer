@@ -313,6 +313,7 @@ textarea {
 
 /* Style the top navigation */
 .top-content {
+  margin-top: 2%;
   align-items: center;
   justify-content: center;
 }
@@ -331,9 +332,9 @@ textarea {
 
 /* Style the search box */
 .topnav input[type="text"] {
-  width: 50%; /* Set width to 50% */
-  max-width: 600px; /* Optional: limit max width for larger screens */
-  padding: 6px;
+  width: 100%; /* Set width to 50% */
+  max-width: 900px; /* Optional: limit max width for larger screens */
+  padding: 10px;
   border: 1px solid #ccc; /* Add border for better visibility */
   border-radius: 4px; /* Rounded corners */
   margin-right: 8px; /* Space between input and button */
@@ -374,9 +375,7 @@ textarea {
 .ham-menu {
   display: none; /* Ensure it displays in flexbox mode */
   flex-direction: column; /* Align the bars in a column */
-  bottom: 70px;
-  left: 95px;
-  height: 40px;
+  bottom: 38px;
   width: 40px;
   margin-left: auto;
   position: relative;
@@ -599,6 +598,11 @@ nav {
 
 /* Media query for mobile */
 @media (max-width: 768px) {
+
+  body{
+    font-size: 12px;
+  }
+
   #flexnavbar {
       display: none; /* Hide regular navbar on mobile */
   }
@@ -613,6 +617,245 @@ nav {
 
   .ham-menu {
     display: flex; /* Ensure the hamburger menu shows */
+  }
+
+  .top-content {
+    padding: 0;
+    padding-bottom: 5%;
+  }
+
+  .top-content .top-nav {
+    padding: 0;
+    width: 100%;
+  }
+  
+  .topnav input[type="text"]{
+    width: 80%;
+  }
+
+  .slideshow-container {
+    max-width: 90%; /* Adjust to your desired max width */
+  }
+  
+  .image-container img {
+    border-radius: 8px; /* Apply border-radius */
+  }
+  
+  .image-container .text {
+    background-color: var(--text-color);
+    color: white;
+    width:fit-content;
+    padding: 2%;
+    border-radius: 5%;
+    text-align: center;
+    justify-content: center;
+  }  
+  
+  .item {
+    flex: 1 1 calc(50% - 20px); /* 2 items per row on tablet/small screens */
+    width: 10%;
+    margin-top: 5%;
+  }
+  
+  .item img {
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+  }
+
+  .info {
+    margin-top: 8px;
+    padding: 0;
+  }
+  
+  .info h3{
+    padding: 0;
+    font-size: 14px;
+  }
+  
+  .info p{
+    font-size: 10px;
+    padding: 0;
+    margin-top: 2%;
+    margin-bottom: 5%;
+  }
+
+  .see-more {
+    padding: 0;
+    padding-top: 10%;
+    padding-left: 15%;
+    cursor: pointer;
+  }
+  
+  .see-more p{
+    font-size: 12px;
+    font-weight: 400;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .arrow{
+    padding: 0;
+    padding-left: 40%;
+    transition: transform 0.3s ease; /* Smooth rotation */
+    display: inline-block; /* Ensure it rotates correctly */
+  }
+
+  .activities h1{
+    font-size: 20px;
+  }
+
+  .activities h2{
+    padding: 0;
+    padding-left: 16%;
+  }
+
+  
+  .food-drink h2{
+    padding: 0;
+    padding-left: 16%;
+  }
+  
+  .food-drink .see-more {
+    margin: 0;
+    margin-left: 25%;
+  }
+  
+  .food-drink .arrow{
+    padding: 0;
+    padding-left: 45%;
+    margin-bottom: 50%;
+  }
+  
+  .title-button{
+    display: flex;
+  }
+  
+  .accommodations h1{
+    padding-top: 5%;
+    font-size: 20px;
+  }
+  
+  .accommodations h2{
+    padding: 0;
+    padding-left: 16%;
+  }
+  
+  .accommodations .see-more{
+    margin: 0;
+    padding: 0;
+    padding-top: 5%;
+    margin-left: 41%;
+  }
+  
+  .accommodations .arrow {
+    margin: 0;
+    padding: 0;
+    margin-left: 40%;
+  }
+  
+  .visa h2{
+    padding: 0;
+    padding-left: 16%;
+  }
+  
+  .visa .see-more {
+    margin-left: 26%;
+  }
+  
+  .visa .arrow{
+    padding: 0;
+    margin-left: 45%;
+  }
+
+  nav {
+    padding: 0;
+    margin: 0;
+  }
+
+  .top-content-recomspage{
+    height: 120px;
+  }
+
+  .discussion-form{
+    padding: 0;
+  }
+  
+  .discussion-form,
+  .posts {
+    width: 90%;
+  }
+  
+  .discussion-form h2 {
+    font-size: 15px;
+    margin-top: 5%;
+  }
+
+  .user-info{
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  #postForm {
+    display:block;
+    align-items: center;
+    width:75%;
+    padding: 0;
+  }
+  
+  textarea {
+    width: 270px;
+    padding: 5%;
+    margin: 0;
+  }
+  
+  .discussion-form button {
+    padding: 5px 8px;
+    font-size: 12px;
+    margin-top: 5%;
+    margin-left: 35%;
+    margin-bottom: 5%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .post-actions {
+    padding-left: 14%;
+    padding-top: 2%;
+    width: 30%;
+    gap: 20%;
+  }
+  
+  .post-content {
+    font-size: 14px; /* Adjust text size */
+    color: black; /* Set text color */
+    margin-top: 10px; /* Add space above the text */
+    margin-left: 70px; /*The text of the post */
+    margin-bottom: 2%;
+    width: 90%;
+  }
+  
+  .like-button {
+    background: transparent;
+    border: none;
+    color: #6412ea;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .post-actions .like-button {
+    margin-right: 5px;
+  }
+  
+  .posts h2 {
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #postFeed {
+    width: 90%;
   }
 }
 
