@@ -1,114 +1,136 @@
-// components.js
-
-// Using these values to identify yourself and the zone where your data is stored when interacting with the API 
+// Constants for API interaction
 const studentNumber = "s4889410";
 const uqcloudZoneId = "99ad41a3";
-
-// Create headers object once as a constant that will store key value pairs to send to server 
 const headers = new Headers();
-// Adds header with key student_number and uqcloud_zone_id and values from both
 headers.append("student_number", studentNumber);
 headers.append("uqcloud_zone_id", uqcloudZoneId);
 
-// Function to submit the event form - THE POST request
-// export makes it available to other JS files
-export function submitEventForm(formData, handleSuccess, handleError) { // formData : holds data from form, handleSuccess and Error tells function to run if successful or error
-    // Sending post request to the URL
-    fetch('https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/', {
-        method: 'POST', // Wants to send data
-        headers: headers, // Sends headers (student number and cloud zone id)
-        body: formData // Sends form data to server
-    })
-
-    // Wait for server response
-    .then(response => {
-        // If server responds error, run this
-        if (!response.ok) {
-            // convert response from JSON to Javascript
-            return response.json().then(err => {
-                // Logs server error message
-                console.error('Server error response:', err);
-                throw new Error(err.detail || 'Something went wrong');
-            });
-        }
-        return response.json(); // Return the response as JSON
-    })
-    // if successful however, run this
-    .then(result => {
-        // Logs result (server's confirmation)
-        console.log('Event created:', result);
-        // calls success handler, passing created event
-        handleSuccess(result);
-    })
-
-    // If network issue, log error to console and call error handler
-    .catch(error => {
-        console.error('Error:', error.message); // Log detailed error
-        handleError(error); // Call the error handler
-    });
+// API Functions
+export function submitEventForm(formData, handleSuccess, handleError) {
+    // ... [keep existing submitEventForm code]
 }
 
-// Function to fetch events from the API - GET request to URL to retrieve data
-// Do function based on success or error 
 export function fetchEvents(displayEvents, handleGetError) {
-    fetch("https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/", {
-        method: "GET",
-        headers: headers, // Sends headers (student number and zone ID)
-    })
-    .then(response => {
-        // If response is not okay, throw error)
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        // Convert JSON response
-        return response.json();
-    })
-
-    // if successful, call displayEvents(data) to show events on page.
-    .then(data => {
-        displayEvents(data); // Call the success handler
-    })
-
-    // If error, call error handler and pass error 
-    .catch(error => {
-        handleGetError(error); // Call the error handler
-    });
+    // ... [keep existing fetchEvents code]
 }
 
+// Section toggle functionality - defined outside DOMContentLoaded
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    
+    const items = section.querySelectorAll('.item');
+    const seeMoreToggle = section.querySelector('.see-more, #see-more-toggle');
+    
+    if (items.length > 0) {
+        const isExpanded = Array.from(items).slice(4).some(item => !item.classList.contains('hidden'));
+        
+        // Toggle visibility of items after the first three
+        items.forEach((item, index) => {
+            if (index >= 4) {
+                if (isExpanded) {
+                    item.classList.add('hidden');
+                } else {
+                    item.classList.remove('hidden');
+                }
+            }
+        });
+        
+        // Update the toggle button text and arrow
+        if (seeMoreToggle) {
+            const textElement = seeMoreToggle.querySelector('p') || seeMoreToggle.firstChild;
+            const arrowElement = seeMoreToggle.querySelector('.arrow');
+            
+            if (textElement) {
+                textElement.textContent = isExpanded ? 'See more' : 'See less';
+            }
+            if (arrowElement) {
+                arrowElement.textContent = isExpanded ? '⌄' : '▲';
+            }
+        }
+    }
+}
 
-const hamMenu = document.querySelector(".ham-menu");
-const offScreenMenu = document.querySelector(".off-screen-menu");
+// Single DOMContentLoaded event listener
+document.addEventListener("DOMContentLoaded", function() {
+    // Navigation menu functionality
+    const hamMenu = document.querySelector(".ham-menu");
+    const offScreenMenu = document.querySelector(".off-screen-menu");
+    
+    if (hamMenu && offScreenMenu) {
+        hamMenu.addEventListener("click", () => {
+            offScreenMenu.classList.toggle("active");
+            hamMenu.classList.toggle("active");
+        });
+    }
 
-hamMenu.addEventListener("click", () => {
-  // Toggle the 'active' class on the off-screen menu
-  offScreenMenu.classList.toggle("active");
-  // Toggle the 'active' class on the hamburger menu for animation
-  hamMenu.classList.toggle("active");
+    // Scroll header functionality
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector("header");
+        if (header) {
+            if (window.pageYOffset > 100) {
+                header.classList.add('is-scrolling');
+            } else {
+                header.classList.remove('is-scrolling');
+            }
+        }
+    });
+
+    // Newsletter signup functionality
+    const signupButton = document.querySelector('.signup-button');
+    if (signupButton) {
+        signupButton.addEventListener('click', function() {
+            localStorage.setItem('signupMessage', 'Thank you for signing up for this newsletter.');
+            location.reload();
+        });
+    }
+
+    // Display signup message if exists
+    const signupMessage = localStorage.getItem('signupMessage');
+    if (signupMessage) {
+        const messageElement = document.getElementById('signupMessage');
+        if (messageElement) {
+            messageElement.innerText = signupMessage;
+            messageElement.style.display = 'block';
+            localStorage.removeItem('signupMessage');
+        }
+    }
+
+    // Initialize sections
+    const sections = ['todo-section', 'food-drink-section', 'accommodations-section', 'visa-section'];
+    
+    sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            // Hide items after the first three
+            const items = section.querySelectorAll('.item');
+            items.forEach((item, index) => {
+                if (index >= 4) {
+                    item.classList.add('hidden');
+                }
+            });
+            
+            // Add click event listeners to see more/less buttons
+            const seeMoreToggle = section.querySelector('.see-more');
+            if (seeMoreToggle) {
+                // Remove any existing onclick attribute
+                seeMoreToggle.removeAttribute('onclick');
+                // Add event listener
+                seeMoreToggle.addEventListener('click', () => toggleSection(sectionId));
+            }
+        }
+    });
+
+    // Comments functionality
+    window.toggleComments = function() {
+        const commentsSection = document.getElementById("commentsSection");
+        if (commentsSection) {
+            commentsSection.style.display = commentsSection.style.display === "none" ? "block" : "none";
+        }
+    };
+
+    window.replyPost = function(event, button) {
+        event.preventDefault();
+        alert("Reply functionality not implemented yet.");
+    };
 });
-
-// Keep your existing code for scrolling
-window.onload = function () {
-  window.addEventListener('scroll', function (e) {
-      if (window.pageYOffset > 100) {
-          document.querySelector("header").classList.add('is-scrolling');
-      } else {
-          document.querySelector("header").classList.remove('is-scrolling');
-      }
-  });
-
-  const menu_btn = document.querySelector('.hamburger');
-  if (!menu_btn) {
-      console.error("Hamburger button not found");
-  } else {
-      console.log("Hamburger button found");
-  }
-  
-  const nav_links = document.querySelector('.nav-links');
-
-  menu_btn.addEventListener('click', function () {
-      console.log("Hamburger clicked"); // Check if this logs
-
-      menu_btn.classList.toggle('is-active');
-      nav_links.classList.toggle('active');
-  });
-};

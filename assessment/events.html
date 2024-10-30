@@ -51,8 +51,8 @@
       <nav id="flexnavbar">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
-        <a href="events.html">Events</a>
-        <a class="active" href="community.html">Community</a>
+        <a class="active" href="events.html">Events</a>
+        <a href="community.html">Community</a>
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
 
@@ -85,58 +85,189 @@
         <div class="nav_buttons">
           <!--Type = button - Does not have any default behavior like submitting a form.-->
           <button type="button" class="navigation-button">Events</button>
-          <button type="button" class="navigation-button">Adventure</button>
-          <button type="button" class="navigation-button">Sightseeing</button>
-          <button type="button" class="navigation-button">Sport</button>
+          <a href="#new-slideshow-container slideshow2">
+            <button type="button" class="navigation-button">Adventure</button>
+          </a>
+          <a href="#new-slideshow-container slideshow3">
+            <button type="button" class="navigation-button">Sport</button>
+          </a>
+          <a href="#new-slideshow-container slideshow4">
+            <button type="button" class="navigation-button">Sightseeing</button>
+          </a>
         </div>
 
         <!-- Slideshow container code reference: https://www.w3schools.com/howto/howto_js_slideshow.asp--> 
-        <div class="slideshow-container">
-
-          <!-- Full-width images with number and caption text -->
+         <!-- First Slideshow -->
+        <div class="new-slideshow-container slideshow1">
           <div class="mySlides">
-            <div class="slide-container">
-              <div class="image-container">
-                <img src="./images/Carnival_Brazil.png" style="width:100%;">
-                <div class="text">Carnival</div>
+            <div class="new-slide-container">
+              <div class="new-image-container">
+                <img src="./images/event2.jpg" alt="Carnival Poster Brazil">
+                <div class="new-text">
+                  <h2>Carnival celebrations at this time of year</h2>
+                  <p>6 places to immerse yourself into the colourful festivities!</p>
+                </div>
               </div>
-              <div class="image-container">
-                <img src="./images/DJ_Night.png" style="width:100%;">
-                <div class="text">DJ Night</div>
+              <div class="new-image-container">
+                <img src="./images/events1.jpg" alt="Photo of girl smiling at a party">
+                <div class="new-text">
+                  <h2>Top 5 in Nightlife</h2>
+                  <p>The top 5 clubs in Rio for all kinds of people.</p>
+                </div>
               </div>
             </div>
           </div>
           <div class="mySlides">
-            <div class="slide-container">
-              <div class="image-container">
-                <img src="./images/Music_Festival.png" style="width: 100%;">
-                <div class="text">Music Festival</div>
+            <div class="new-slide-container">
+              <div class="new-image-container">
+                <img src="./images/event3.jpg" alt="Music Festival Digital Flyer">
+                <div class="new-text">
+                  <h2>Calling all Jazz Lovers!</h2>
+                  <p>Jazz events around Brasilia...</p>
+                </div>
               </div>
-
-              <div class="image-container">
-                <img src="./images/Night_Club.png" style="width:100%;">
-                <div class="text">Night Club</div>
+              <div class="new-image-container">
+                <img src="./images/event4.jpg" alt="Night Club Event Digital Flyer">
+                <div class="new-text">
+                  <h2>✨Night Club Magic✨</h2>
+                  <p>Dance the night away at my favourite night clubs of the Sao Paulo!</p>
+                </div>
               </div>
-
             </div>
           </div>
-        <!-- Next and previous buttons -->
-        <!--Anchor tag used to perform an action.-->
-        <!--Onclick specifies when link is clicked, execute plusSlides with argument -1, indicating that function should show previous slide in slideshow.-->
-        <!--&#10094 represents special character (left-pointing arrow (◀)) in HTML character reference format.-->
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <a class="new-prev" onclick="slideshow1.plusSlides(-1)">&#10094;</a>
+          <a class="new-next" onclick="slideshow1.plusSlides(1)">&#10095;</a>
         </div>
-        <br>
 
-        <!-- The dots/circles -->
-        <div style="text-align:left">
-        <!-- Indicate current slide-->
-        <!--Span - inline container to group content for styling or apply JS functions.-->
-        <!--Onclick attribute specifies that when dot is clicked, it executes a JS function called currentSlide with an argument of 1, 2,3 or 4 based on slide number-->
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
+        <h2>Adventure</h2>
+        <!-- Second Slideshow -->
+        <div class="new-slideshow-container slideshow2" id="new-slideshow-container slideshow2">
+          <div class="mySlides">
+            <div class="new-slide-container">
+              <div class="new-image-container">
+                <img src="./images/adventure1.jpg" alt="Adventure 1">
+                <div class="new-text">
+                  <h2>Top 5 Adventures</h2>
+                  <p>Explore the best adventure spots in Foz do Iguaçu!</p>
+                </div>
+              </div>
+              <div class="new-image-container">
+                <img src="./images/adventure2.jpg" alt="Adventure 2">
+                <div class="new-text">
+                  <h2>Swim with the sharks in Fernando de Noronha!</h2>
+                  <p>6 places to explore the seas!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="new-slide-container">
+              <div class="new-image-container">
+                <img src="./images/adventure3.jpg" alt="Music Festival">
+                <div class="new-text">
+                  <h2>The Amazon!</h2>
+                  <p>4 secret spots for photography lovers!</p>
+                </div>
+              </div>
+              <div class="new-image-container">
+                <img src="./images/adventure4.jpg" alt="Night Club">
+                <div class="new-text">
+                  <h2>Want to get away from the city?</h2>
+                  <p>Relax under the sun at 3 of my favourite spots in Foz do Iguaçu!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="new-prev" onclick="slideshow2.plusSlides(-1)">&#10094;</a>
+          <a class="new-next" onclick="slideshow2.plusSlides(1)">&#10095;</a>
         </div>
+
+        <h2>Sport</h2>
+        <!-- Third Slideshow -->
+        <div class="new-slideshow-container slideshow3" id="new-slideshow-container slideshow3">
+          <div class="mySlides">
+            <div class="new-slide-container">
+              <div class="new-image-container">
+                <img src="./images/sport1.jpg" alt="Sport 1">
+                <div class="new-text">
+                  <h2>Top 5 Sports</h2>
+                  <p>Exciting sports events in Rio to check out!</p>
+                </div>
+              </div>
+              <div class="new-image-container">
+                <img src="./images/sport2.jpg" alt="Sport 2">
+                <div class="new-text">
+                  <h2>Make the most of your time at the beaches of Jijoca de Jericoacoara!</h2>
+                  <p>Here are 5 beaches with the equipment and the people!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="new-slide-container">
+              <div class="new-image-container">
+                <img src="./images/sport3.jpg" alt="Music Festival">
+                <div class="new-text">
+                  <h2>Looking to spend more time in Fortaleza's water?</h2>
+                  <p>3 top places to try out a nice day of sailing!</p>
+                </div>
+              </div>
+              <div class="new-image-container">
+                <img src="./images/sport4.jpg" alt="Night Club">
+                <div class="new-text">
+                  <h2>Try windsurfing at these 5 spots in Salvador</h2>
+                  <p>Enjoy a budget friendly adventurous time!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="new-prev" onclick="slideshow3.plusSlides(-1)">&#10094;</a>
+          <a class="new-next" onclick="slideshow3.plusSlides(1)">&#10095;</a>
+        </div>
+
+        <h2>Sightseeing</h2>
+        <!-- Third Slideshow -->
+        <div class="new-slideshow-container slideshow4" id="new-slideshow-container slideshow4">
+          <div class="mySlides">
+            <div class="new-slide-container">
+              <div class="new-image-container">
+                <img src="./images/sightseeing1.jpg" alt="Sport 1">
+                <div class="new-text">
+                  <h2>Hidden Gems</h2>
+                  <p>6 hidden gems in Rio for photography lovers!</p>
+                </div>
+              </div>
+              <div class="new-image-container">
+                <img src="./images/sightseeing3.jpg" alt="Sport 2">
+                <div class="new-text">
+                  <h2>Hiking Trails</h2>
+                  <p>3 hiking trails in Rio that blew me away!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="new-slide-container">
+              <div class="new-image-container">
+                <img src="./images/sightseeing2.jpg" alt="Music Festival">
+                <div class="new-text">
+                  <h2>Mountains to explore</h2>
+                  <p>4 mountains that offer the best view of Rio!</p>
+                </div>
+              </div>
+              <div class="new-image-container">
+                <img src="./images/sightseeing4.jpg" alt="Night Club">
+                <div class="new-text">
+                  <h2>Coast of Rio de Janeiro</h2>
+                  <p>12 things to do at the coast!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="new-prev" onclick="slideshow3.plusSlides(-1)">&#10094;</a>
+          <a class="new-next" onclick="slideshow3.plusSlides(1)">&#10095;</a>
+        </div>
+
 
         <div>
           <h2>Upcoming</h2>
@@ -151,23 +282,31 @@
           <!-- The event cards will be dynamically injected here -->
         </div>
       
-
       </main>
     </div>
-  <footer>
-    <!-- &copy is unicode equivalent for copyright symbol (©)-->
-    <p>&copy; 2024 Your Name. All rights reserved.</p>
-  </footer>
-  <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      const navbar = document.getElementById('flexnavbar');
-      if (navbar.style.display === 'flex') {
-        navbar.style.display = 'none';  // Hide if already visible
-      } else {
-        navbar.style.display = 'flex';  // Show the navbar
-      }
-    });
-  </script>
+    <footer class="footer">
+      <h2>Acknowledgements</h2>
+      <p>In this report, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
+        I critically reviewed and edited all AI-generated content to ensure it reflects my own
+        understanding and perspective.</p>
+      <nav class="footer-links">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy Policy</a>
+      </nav>
+      <!-- &copy is unicode equivalent for copyright symbol (©)-->
+      <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+    <script>
+      document.querySelector('.menu-toggle').addEventListener('click', function() {
+        const navbar = document.getElementById('flexnavbar');
+        if (navbar.style.display === 'flex') {
+          navbar.style.display = 'none';  // Hide if already visible
+        } else {
+          navbar.style.display = 'flex';  // Show the navbar
+        }
+      });
+    </script>
 
 
   <script type="module" src="./js/components.js" defer></script>

@@ -88,10 +88,10 @@
 
       <div class="off-screen-menu">
         <ul>
-          <a href="index.html">Home</a>
+          <a class="active" href="index.html">Home</a>
           <a href="safetyguides.html">Safety Guides</a>
           <a href="events.html">Events</a>
-          <a class="active" href="community.html">Community</a>
+          <a href="community.html">Community</a>
           <a href="insights_recommendations.html">Insights and Recommendations</a>
         </ul>
       </div>
@@ -140,10 +140,10 @@
 
           </div>
         </div>
-      <!-- Next and previous buttons -->
-      <!--Anchor tag used to perform an action.-->
-      <!--Onclick specifies when link is clicked, execute plusSlides with argument -1, indicating that function should show previous slide in slideshow.-->
-      <!--&#10094 represents special character (left-pointing arrow (◀)) in HTML character reference format.-->
+        <!-- Next and previous buttons -->
+        <!--Anchor tag used to perform an action.-->
+        <!--Onclick specifies when link is clicked, execute plusSlides with argument -1, indicating that function should show previous slide in slideshow.-->
+        <!--&#10094 represents special character (left-pointing arrow (◀)) in HTML character reference format.-->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
@@ -175,17 +175,18 @@
         <div class="police">Police</div>
         <div class="firefighter">Firefighter</div>
         <div class="friends">Friends</div>
-    </div>
-  </div
-      
-
-
+      </div>      
     </main>
-    <footer>
+    <footer class="footer">
       <h2>Acknowledgements</h2>
       <p>In this report, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
         I critically reviewed and edited all AI-generated content to ensure it reflects my own
         understanding and perspective.</p>
+      <nav class="footer-links">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy">Privacy Policy</a>
+      </nav>
       <!-- &copy is unicode equivalent for copyright symbol (©)-->
       <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>

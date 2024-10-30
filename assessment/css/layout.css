@@ -38,14 +38,9 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding-bottom: 1px;
   grid-area: main;
 }
-
-footer {
-  grid-area: foot;
-}
-
 
 /* Specific Styles for Navigation Buttons in #nav_buttons */
 .nav_buttons {
@@ -233,13 +228,17 @@ footer {
   display: flex; /* Create a flex container */
   align-items: center; /* Center items vertically */
   padding-left: 5%;
-  background-color: var(--primary-color);
+  background-color: black;
 }
 
 .guide-info {
   flex: 1; /* Allow the text to take up available space */
-  margin-right: 20px; /* Add some space between text and image */
+  padding-right: 70px; /* Add some space between text and image */
   color: var(--background-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .guide-image img {
@@ -260,14 +259,22 @@ footer {
   margin: 5px 0; /* Margin around the title */
   padding: 0; /* No padding */
   color: var(--background-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .guide-info p {
   margin: 5px 0; /* Margin around the description */
   font-weight: 400;
   font-style: italic;
-  padding: 0; /* No padding */
+  padding: 0;
   color: var(--background-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .guide-meta {
@@ -284,4 +291,271 @@ footer {
 .guide .description{
   font-size: 20px;
   font-weight: 400;
+}
+
+.guide-text{
+  padding: 0;
+  padding-left: 10%;
+  padding-right: 25%;
+  padding-top: 5%;
+}
+
+.guide-text h2{
+  padding-left: 25.5%;
+  padding-top: 5%;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.guide-text h3{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.guide-text p{
+  font-size: 18px;
+  padding-top: 0.5%;
+  padding-bottom: 2%;
+  font-weight: 400;
+}
+
+.guide-end .guide-meta{
+  padding: 0;
+  padding-top: 5%;
+  padding-left: 22%;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.signup-container {
+  margin: 20px;
+}
+
+button.signup-button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--background-color); /* Adjust color as needed */
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid var(--background-color);
+  background-color: var(--primary-color); /* Adjust color as needed */
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: darken(var(--primary-color), 10%); /* Darken the color on hover */
+}
+
+.signup-message {
+  margin-top: 10px;
+  color: var(--primary-color); /* Change color as needed */
+  font-weight: 600;
+}
+
+.newsletter{
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--primary-color);
+  padding: 0;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.newsletter h2{
+  padding: 0;
+  padding-bottom: 2%;
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newsletter p{
+  padding: 0;
+  padding-bottom: 2%;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--background-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newsletter .read-more-footer{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.footer {
+  grid-area: foot;
+  background-color: black; /* Black background */
+  color: white; /* White text color */
+  padding: 30px 0px; /* Padding at top and bottom */
+  margin-top: 10%;
+  text-align: center; /* Center-align text */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto; /* Center content horizontally */
+  padding: 0 20px;
+}
+
+footer h2{
+  font-family: Poppins;
+  color: var(--background-color);
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.footer p {
+  margin: 0;
+  font-family: Poppins;
+  padding-left: 20%;
+  padding-right: 20%;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--background-color);
+}
+
+.footer-links {
+  margin-top: 10px;
+  padding-left: 19%;
+  padding-right: 20%;
+}
+
+.footer-links a {
+  color: white; /* White link color */
+  margin: 0 10px; /* Space between links */
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.guide-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between articles */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2% 2%;
+}
+
+.guide-card-details {
+  flex: 1;
+  max-width: 35%;
+  padding-bottom: 3%;
+  padding-left: 3%;
+  padding-top: 3%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 6px 20px rgba(0, 0, 0, 0.1); /* Creates a soft floating effect */
+  transition: box-shadow 0.3s ease; /* Optional: adds a smooth shadow transition */
+}
+
+.guide-card-info {
+  max-width: 70%; /* Limit width of text content */
+}
+
+.guide-card-info h3 {
+  font-size: 20px; /* Font size for the title */
+  margin: 5px 0; /* Margin around the title */
+  padding: 0; /* No padding */
+}
+
+.guide-card-info p {
+  color: #555; /* Text color for description */
+  margin: 5px 0; /* Margin around the description */
+  padding: 0; /* No padding */
+}
+
+.guide-card-meta {
+  margin-top: 10px; /* Space above meta information */
+  font-size: 0.9em; /* Smaller font size for meta */
+  color: #777; /* Color for meta information */
+}
+
+.guide-card-image img {
+  width: 300px; /* Set a fixed width for images */
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Cover to maintain aspect ratio */
+}
+
+.read-more-page h2{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.guide-card-read-more{
+  padding: 0;
+  padding-top: 15%;
+}
+
+.comments-section {
+  margin: 0 auto; /* Center the comments section */
+  width: 60%; /* Set a fixed width for the comments section */
+  padding: 10px; /* Add some padding to the comments section */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.comments-section .comment {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px; /* Space between comments */
+  border: 1px solid #e0e0e0; /* Border for each comment */
+  padding: 10px; /* Add some padding inside each comment */
+  border-radius: 8px; /* Optional: Add rounded corners to comments */
+}
+
+.comment-text {
+  margin-left: 10px; /* Space between profile icon and text */
+  width: calc(100% - 80px); /* Adjust width based on the profile icon width */
+}
+
+.profile-icon {
+  width: 70px; /* Set width for profile icon */
+  height: 70px; /* Set height for profile icon */
+  border-radius: 50%; /* Make it circular */
+}
+
+.username {
+  font-weight: 600; /* Make username bold */
+  font-size: 12px;
+}
+
+.comment p {
+  margin: 0;
+  margin-top: 2%;
+  padding: 0;
+  font-weight: 400;
+}
+
+.guide-end .view-comments-button {
+  margin-left: 40%;
+  margin-bottom: 5%;
+  padding: 1% 1%;
+}
+
+.reply-button {
+  color: black; /* Text color */
+  padding: 0 10px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  float: right; /* Position the button to the right */
+  background-color: none;
 }
