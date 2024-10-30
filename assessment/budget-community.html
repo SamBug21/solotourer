@@ -71,77 +71,8 @@
     <div>
       <main>
 
-        <div class="top-content-recomspage">
-          <div class="topnav">
-            <input type="text" placeholder="Search..." aria-label="Search">
-          </div>
-          <div class="nav_buttons">
-            <!--Type = button - Does not have any default behavior like submitting a form.-->
-            <a href="#discussion-form">
-              <button type="button" class="navigation-button">Discussion Board</button>
-            </a>
-            <button type="button" class="navigation-button">Notifications</button>
-          </div>
-        </div>
-
-
-        <div class="community-titles">
-          <h2>Your communities</h2>
-        </div>
-
-          <!-- Slideshow container code reference: https://www.w3schools.com/howto/howto_js_slideshow.asp--> 
-          <div class="slideshow-container">
-
-            <!-- Full-width images with number and caption text -->
-            <div class="mySlides">
-              <div class="slide-container">
-                <div class="image-container">
-                  <a href="budget-community.html">
-                    <img src="./images/budget.jpg"style="width:100%;">
-                    <div class="text">Budget</div>
-                  </a>
-                </div>
-                <div class="image-container">
-                  <img src="./images/nature.jpg" style="width:100%;">
-                  <div class="text">Nature</div>
-                </div>
-              </div>
-            </div>
-            <div class="mySlides">
-              <div class="slide-container">
-                <div class="image-container">
-                  <img src="./images/cultural.jpg" style="width: 100%;">
-                  <div class="text">Cultural Experiences</div>
-                </div>
-
-                <div class="image-container">
-                  <img src="./images/foodie.jpg" style="width:100%;">
-                  <div class="text">Foodie Adventures</div>
-                </div>
-
-              </div>
-            </div>
-          <!-- Next and previous buttons -->
-          <!--Anchor tag used to perform an action.-->
-          <!--Onclick specifies when link is clicked, execute plusSlides with argument -1, indicating that function should show previous slide in slideshow.-->
-          <!--&#10094 represents special character (left-pointing arrow (◀)) in HTML character reference format.-->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          </div>
-          <br>
-
-          <!-- The dots/circles -->
-          <div style="text-align:left">
-          <!-- Indicate current slide-->
-          <!--Span - inline container to group content for styling or apply JS functions.-->
-          <!--Onclick attribute specifies that when dot is clicked, it executes a JS function called currentSlide with an argument of 1, 2,3 or 4 based on slide number-->
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-          </div>
-
           <section id="discussion-form" class="discussion-form">
-            <h2>Post a New Discussion</h2>
+            <h2>Start a New Discussion</h2>
             <form id="postForm">
                 <textarea id="postContent" placeholder="What's on your mind?" required></textarea>
                 <button type="submit">Submit</button>
@@ -152,6 +83,7 @@
         <div class="posts">
             <h2>Recent Posts</h2>
         </div>
+
         <div id="postFeed"></div>
 
       </main>

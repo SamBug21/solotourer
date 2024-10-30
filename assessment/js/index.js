@@ -231,3 +231,41 @@ document.addEventListener('DOMContentLoaded', function() {
     // Make scroll function global
     window.scrollToSection = scrollToSection;
 });
+
+
+// Initialize sections
+function toggleSectionVisibility(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const hiddenItems = section.querySelectorAll('.item.hidden');
+      // Toggle visibility of hidden items
+      hiddenItems.forEach((item) => {
+        item.classList.toggle('hidden');
+      });
+  
+      const seeMoreButton = section.querySelector('.see-more');
+      if (seeMoreButton) {
+        // Update the "See more" / "See less" text
+        const isHidden = hiddenItems[0].classList.contains('hidden');
+        seeMoreButton.querySelector('p').textContent = isHidden ? 'See more' : 'See less';
+  
+        // Scroll to the top of the section if items are expanded
+        if (!isHidden) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          // Scroll back to the top of the section if items are collapsed
+          section.parentElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+}
+  
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all "See more" buttons
+    const seeMoreButtons = document.querySelectorAll(".see-more");
+  
+    seeMoreButtons.forEach((button) => {
+      const sectionId = button.closest('.gallery').id;
+      button.addEventListener("click", () => toggleSectionVisibility(sectionId));
+    });
+});

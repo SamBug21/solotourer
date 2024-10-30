@@ -40,12 +40,11 @@ main {
   grid-area: main;
 }
 
-/* Specific Styles for Navigation Buttons in #nav_buttons */
+/* Specific Styles for Navigation Buttons in Community page */
 .nav_buttons {
   padding: 0;
   padding-left: 15%;
   padding-bottom: 2%;
-  /* margin-top: 5%; */
 }
 
 
@@ -55,7 +54,7 @@ main {
   background-color: var(--primary-color);
   color: var(--background-color);
   border: 1px solid var(--border-color);
-  border-radius: 50px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -81,15 +80,17 @@ main {
   display: flex;               /* Use flexbox layout */
   align-items: center;        /* Center items vertically */
   justify-content: center;     /* Center items horizontally */
-  gap: 20px;     
+  gap: 100px;     
   background-color: var(--primary-color); 
   padding: 0;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .title-container4 img {
-  max-width: 100%;            /* Ensure the image is responsive */
-  height: 200px;               /* Maintain aspect ratio */
-  width: 200px; 
+  width: 300px; 
+  max-width: 100%;
+  height: 300px;
   padding: 0;
 }
 
@@ -101,6 +102,7 @@ main {
   color: var(--background-color);
   padding: 0;
   text-align: left;
+  font-size: 40px;
 }
 
 .title-container4 h3 {
@@ -113,10 +115,9 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding-top: 10%;
+  padding-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
-  padding-bottom: 10%;
 }
 
 .emergency-container div {
@@ -293,38 +294,46 @@ main {
 }
 
 .guide-text{
-  padding: 0;
-  padding-left: 10%;
-  padding-right: 25%;
-  padding-top: 5%;
+  padding: 5% 10%;
 }
 
 .guide-text h2{
-  padding-left: 25.5%;
+  padding: 0;
   padding-top: 5%;
+  padding-left: 10%;
   font-weight: 700;
   font-size: 22px;
 }
 
 .guide-text h3{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
+  padding: 1% 10%;
 }
 
 .guide-text p{
-  font-size: 18px;
+  font-size: 16px;
+  padding: 0;
   padding-top: 0.5%;
   padding-bottom: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
   font-weight: 400;
 }
 
 .guide-end .guide-meta{
   padding: 0;
   padding-top: 5%;
-  padding-left: 22%;
+  padding-left: 18%;
   font-weight: 500;
   font-size: 15px;
 }
+
+.guide-end span{
+  padding: 0;
+  padding-right: 2%;
+}
+
 
 .signup-container {
   margin: 20px;
@@ -334,13 +343,7 @@ button.signup-button {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  color: var(--background-color); /* Adjust color as needed */
   padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 2px solid var(--background-color);
-  background-color: var(--primary-color); /* Adjust color as needed */
-  transition: background-color 0.3s ease;
 }
 
 .signup-button:hover {
@@ -387,6 +390,11 @@ button.signup-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+h2.read-more-page {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .newsletter .read-more-footer{
@@ -567,7 +575,8 @@ footer h2{
   }
 
   .container img{
-    height: 100%;
+    width: 100%;
+    height: 300px;
   }
 
   .title-container4{
@@ -603,23 +612,23 @@ footer h2{
 
   .top-left{
     width: 90%;
-    top: 60%;
+    top: 70%;
   }
 
   .top-left h1{
     font-size: 18px;
     padding: 0;
-    padding-left: 5%;
+    padding-left: 10%;
     margin: 0;
     margin-bottom: 2%;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .top-left h3{
     font-size: 12px;
     padding: 0;
-    padding-left: 5%;
-    text-align: center;
+    padding-left: 10%;
+    /* text-align: center; */
   }
 
   .article-list {
@@ -682,6 +691,220 @@ footer h2{
   
   .read-button:hover {
     background-color: var(--hover-color); /* Darker shade on hover */
+  }
+
+  /* Styling for each article */
+  .guide-top {
+    display:flex; /* Create a flex container */
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .guide-info {
+    flex: 1; /* Allow the text to take up available space */
+    height: 100px;
+    color: var(--background-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 5% 0;
+    margin-bottom: 5%;
+  }
+
+  .guide-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: add rounded corners */
+    padding: 0;
+    margin: 0;
+  }
+
+  .guide-info h3 {
+    font-size: 20px; /* Font size for the title */
+    font-weight: 600;
+    margin: 0;
+    margin-top: 15%;
+    text-align: center;
+  }
+
+
+  .guide .author{
+    font-style: normal;
+    font-weight: 12px;
+  }
+
+  .guide .description{
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  
+  .guide-text{
+    justify-content: center;
+    align-items: center;
+  }
+
+  .guide-text h2{
+    padding-top: 5%;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .guide-text h3{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0;
+    padding-top: 5%;
+    padding-bottom: 2%;
+  }
+
+  .guide-text p{
+    font-weight: 400;
+    padding: 0;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    font-size: 12px;
+  }
+  
+  .guide-end .guide-meta{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px; /* Space above meta information */
+    margin-left: 10%;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .guide-end .view-comments-button{
+    margin: 5% 0;
+    padding: 2px 2px;
+    width: 40%;
+    font-size: 12px;
+  }
+
+  
+  .comments-section{
+    margin: 0;
+    margin-left: 7%;
+  }
+
+  .comments-section .comment{
+    width: 300px;
+  }
+
+  .reply-button{
+    font-size: 10px;
+    margin-top: 5%;
+  }
+
+  .signup-container {
+    margin: 20px;
+  }
+
+  button.signup-button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--background-color); /* Adjust color as needed */
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid var(--background-color);
+    background-color: var(--primary-color); /* Adjust color as needed */
+    transition: background-color 0.3s ease;
+  }
+
+  .signup-button:hover {
+    background-color: darken(var(--primary-color), 10%); /* Darken the color on hover */
+  }
+
+  .signup-message {
+    margin-top: 10px;
+    color: var(--primary-color); /* Change color as needed */
+    font-weight: 600;
+  }
+
+  .newsletter{
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15%;
+    margin-bottom: 15%;
+  }
+
+  .newsletter h2{
+    font-size: 25px;
+  }
+
+  .newsletter p{
+    padding-bottom: 5%;
+    padding-left: 14%;
+    padding-right: 14%;
+    font-size: 12px;
+  }
+
+  .rm-footer{
+    width: 400px;
+  }
+
+  .rm-footer input[type="text"]::placeholder {
+    font-size: 12px; /* Adjust the size as needed */
+    color: var(--border-color); /* Optional: Change the placeholder color */
+}
+
+  .rm-footer .searchInput{
+    width: 350px;
+  }
+
+  .rm-footer .signup-button{
+    width: 90px;
+    font-size: 12px;
+  }
+
+  .newsletter .read-more-footer{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .guide-cards {
+    flex-direction: column;
+  }
+
+  .guide-card-details {
+    width: 100%; /* Full width on mobile */
+    max-width: 90%;
+    margin-left: 5%;
+  }
+
+  .guide-card-info h3 {
+    font-size: 18px; /* Adjust text size for smaller screens */
+    font-weight: 600;
+    width: 300px;
+  }
+
+  .guide-card-info p {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .guide-card-read-more{
+    padding: 0;
+    padding-top: 10%;
+    padding-bottom: 5%;
+  }
+
+  .guide-card-read-more .button {
+    padding: 5px 10px;
+    margin: 0;
+    margin-bottom: 20px;
   }
 
   .footer {

@@ -311,6 +311,7 @@ textarea {
   margin: 0 auto;
 }
 
+
 /* Style the top navigation */
 .top-content {
   margin-top: 2%;
@@ -386,7 +387,7 @@ textarea {
 .ham-menu span {
   height: 4px;
   width: 70%;
-  background-color: var(--primary-color); /* Default bar color */
+  background-color: var(--text-color); /* Default bar color */
   border-radius: 25px;
   margin: 2px 0; /* Space between bars */
   transition: .3s ease;
@@ -500,7 +501,7 @@ nav {
 
 .see-more {
   padding: 0;
-  padding: 5px 10px;
+  padding: 15px 10px;
   margin-left: 25%;
   cursor: pointer;
 }
@@ -594,6 +595,12 @@ nav {
 .visa .arrow{
   padding: 0;
   margin-left: 87%;
+}
+
+.user-profile-sample{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 /* Media query for mobile */

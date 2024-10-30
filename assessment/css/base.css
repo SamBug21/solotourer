@@ -28,6 +28,10 @@ h1{
     color: var(--text-color); /* Access a custom property in variable root */
 }
 
+.activities h1{
+  margin-top: 10%;
+}
+
 h2{
   font-size: 20px;
   font-weight: 500;
@@ -51,6 +55,20 @@ h2.read-more-page{
 }
 
 .events-titles h2{
+  padding: 0;
+  padding-left: 16%;
+  padding-bottom: 2%;
+  padding-top: 5%;
+}
+
+.index-title h2{
+  padding: 0;
+  padding-left: 16%;
+  padding-bottom: 2%;
+  padding-top: 5%;
+}
+
+.community-titles h2{
   padding: 0;
   padding-left: 16%;
   padding-bottom: 2%;
@@ -658,10 +676,9 @@ Text overlay styles */
   align-items: center;
   justify-content: center;
   background-color: var(--primary-color);
-  height: 150px;
-  padding-top: 8%;
+  height: 250px;
+  padding-top: 5%;
   padding-left: 20%;
-  margin-bottom: 5%;
 }
 
 .top-content-recomspage .nav_buttons{
@@ -712,7 +729,6 @@ Text overlay styles */
 
 .nav_buttons-event .navigation-button {
   font-size: 14px;  /* Smaller font size */
-  padding: 8px 15px; /* Smaller padding */
   background-color: var(--primary-color);
   color: var(--background-color);
   border: 1px solid var(--border-color);

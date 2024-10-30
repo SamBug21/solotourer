@@ -1,84 +1,56 @@
 // Constants for API interaction
-// components.js
-
-// Using these values to identify yourself and the zone where your data is stored when interacting with the API 
 const studentNumber = "s4889410";
 const uqcloudZoneId = "99ad41a3";
-
-// Create headers object once as a constant that will store key value pairs to send to server 
 const headers = new Headers();
-// Adds header with key student_number and uqcloud_zone_id and values from both
 headers.append("student_number", studentNumber);
 headers.append("uqcloud_zone_id", uqcloudZoneId);
 
-// Function to submit the event form - THE POST request
-// export makes it available to other JS files
-export function submitEventForm(formData, handleSuccess, handleError) { // formData : holds data from form, handleSuccess and Error tells function to run if successful or error
-    // Sending post request to the URL
+// API Functions
+export function submitEventForm(formData, handleSuccess, handleError) {
     fetch('https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/', {
-        method: 'POST', // Wants to send data
-        headers: headers, // Sends headers (student number and cloud zone id)
-        body: formData // Sends form data to server
+        method: 'POST',
+        headers: headers,
+        body: formData
     })
-
-    // Wait for server response
     .then(response => {
-        // If server responds error, run this
         if (!response.ok) {
-            // convert response from JSON to Javascript
             return response.json().then(err => {
-                // Logs server error message
                 console.error('Server error response:', err);
                 throw new Error(err.detail || 'Something went wrong');
             });
         }
-        return response.json(); // Return the response as JSON
+        return response.json();
     })
-    // if successful however, run this
     .then(result => {
-        // Logs result (server's confirmation)
         console.log('Event created:', result);
-        // calls success handler, passing created event
         handleSuccess(result);
     })
-
-    // If network issue, log error to console and call error handler
     .catch(error => {
-        console.error('Error:', error.message); // Log detailed error
-        handleError(error); // Call the error handler
+        console.error('Error:', error.message);
+        handleError(error);
     });
 }
 
-// Function to fetch events from the API - GET request to URL to retrieve data
-// Do function based on success or error 
 export function fetchEvents(displayEvents, handleGetError) {
     fetch("https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericevent/", {
         method: "GET",
-        headers: headers, // Sends headers (student number and zone ID)
+        headers: headers,
     })
     .then(response => {
-        // If response is not okay, throw error)
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        // Convert JSON response
         return response.json();
     })
-
-    // if successful, call displayEvents(data) to show events on page.
     .then(data => {
-        displayEvents(data); // Call the success handler
+        displayEvents(data);
     })
-
-    // If error, call error handler and pass error 
     .catch(error => {
-        handleGetError(error); // Call the error handler
+        handleGetError(error);
     });
 }
 
-
-
-// Single DOMContentLoaded event listener
+// Wait for DOM to be fully loaded before adding event listeners
 document.addEventListener("DOMContentLoaded", function() {
     // Navigation menu functionality
     const hamMenu = document.querySelector(".ham-menu");
@@ -123,29 +95,69 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Initialize sections
-    const sections = ['todo-section', 'food-drink-section', 'accommodations-section', 'visa-section'];
-    
-    sections.forEach(sectionId => {
+    // Section toggle functionality
+    function toggleSection(sectionId) {
         const section = document.getElementById(sectionId);
-        if (section) {
-            // Hide items after the first three
-            const items = section.querySelectorAll('.item');
+        if (!section) return;
+        
+        const items = section.querySelectorAll('.item');
+        const seeMoreToggle = section.querySelector('.see-more');
+        
+        if (items.length > 0) {
+            const isExpanded = Array.from(items).slice(3).some(item => !item.classList.contains('hidden'));
+            
+            // Toggle visibility of items after the first three
             items.forEach((item, index) => {
-                if (index >= 4) {
-                    item.classList.add('hidden');
+                if (index >= 3) {
+                    if (isExpanded) {
+                        item.classList.add('hidden');
+                    } else {
+                        item.classList.remove('hidden');
+                    }
                 }
             });
             
-            // Add click event listeners to see more/less buttons
-            const seeMoreToggle = section.querySelector('.see-more');
+            // Update the toggle button text and arrow
             if (seeMoreToggle) {
-                // Remove any existing onclick attribute
-                seeMoreToggle.removeAttribute('onclick');
-                // Add event listener
-                seeMoreToggle.addEventListener('click', () => toggleSection(sectionId));
+                const textElement = seeMoreToggle.querySelector('p') || seeMoreToggle.firstChild;
+                const arrowElement = seeMoreToggle.querySelector('.arrow');
+                
+                if (textElement) {
+                    textElement.textContent = isExpanded ? 'See more' : 'See less';
+                }
+                if (arrowElement) {
+                    arrowElement.textContent = isExpanded ? '⌄' : '▲';
+                }
             }
         }
+    }
+    
+    // Initialize sections when DOM is loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        // Initialize sections with only 3 items visible
+        const sections = ['todo-section', 'food-drink-section', 'accommodations-section', 'visa-section'];
+        
+        sections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                // Hide items after the first three
+                const items = section.querySelectorAll('.item');
+                items.forEach((item, index) => {
+                    if (index >= 3) {
+                        item.classList.add('hidden');
+                    }
+                });
+                
+                // Add click event listeners to see more/less buttons
+                const seeMoreToggle = section.querySelector('.see-more');
+                if (seeMoreToggle) {
+                    // Remove any existing onclick attribute
+                    seeMoreToggle.removeAttribute('onclick');
+                    // Add event listener
+                    seeMoreToggle.addEventListener('click', () => toggleSection(sectionId));
+                }
+            }
+        });
     });
 
     // Comments functionality
