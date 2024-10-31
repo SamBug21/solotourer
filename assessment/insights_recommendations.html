@@ -56,7 +56,7 @@
           <a class="active" href="insights_recommendations.html">Insights and Recommendations</a>
         </nav>
   
-        <a class = "cta" href ="#"><button>Contact</button></a>
+        <a class = "cta" href ="contact.html"><button>Contact</button></a>
   
         <div class="off-screen-menu">
           <ul>
@@ -72,7 +72,7 @@
       <main>
         <div class="top-content-recomspage">
           <div class="topnav">
-            <input type="text" placeholder="Search..." aria-label="Search">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
           </div>
         </div>
 
@@ -116,7 +116,7 @@
                 </div>
     
                 <!-- Hidden additional items -->
-                <div class="item hidden">
+                <div class="item hidden hideable">
                     <img src="./images/adventure5.jpg" alt="Photo of woman on Kayak">
                     <div class="info">
                         <h3>Kayaking</h3>
@@ -124,7 +124,7 @@
                         <span>Rating: ★★★☆☆</span>
                     </div>
                 </div>
-                <div class="item hidden">
+                <div class="item hidden hideable">
                   <img src="./images/adventure6.webp" alt="Photograph of Cachoeira do Buracão caves">
                   <div class="info">
                       <h3>Cachoeira do Buracão Caves</h3>
@@ -132,7 +132,7 @@
                       <span>Rating: ★★★☆☆</span>
                   </div>
                 </div>
-                <div class="item hidden">
+                <div class="item hidden hideable">
                   <img src="./images/adventure7.webp" alt="Blue Grotto Caves">
                   <div class="info">
                     <h3>Blue Grotto in Bonito, Mato Grosso do Sul</h3>
@@ -140,7 +140,7 @@
                     <span>Rating: ★★★☆☆</span>
                   </div>
                 </div>
-                <div class="item hidden">
+                <div class="item hidden hideable">
                   <img src="./images/adventure8.jpeg" alt="Pantanal">
                   <div class="info">
                       <h3>Pantanal</h3>
@@ -150,7 +150,7 @@
                 </div>
                 <div class="see-more">
                   <p>See more</p>
-                  <span class="arrow">⌄</span>
+                  <span class="arrow">▼</span>
                 </div>
             </div>
         </section>
@@ -194,7 +194,7 @@
             </div>
 
             <!-- Hidden additional items -->
-            <div class="item hidden">
+            <div class="item hidden hideable">
                 <img src="./images/food-drink5.jpg" alt="Gastrô Hub">
                 <div class="info">
                     <h3>Gastrô Hub Belo Horizonte</h3>
@@ -202,7 +202,7 @@
                     <span>Rating: ★★★☆☆</span>
                 </div>
             </div>
-            <div class="item hidden">
+            <div class="item hidden hideable">
               <img src="./images/food-drink6.jpg" alt="La Macelleria Lourdes">
               <div class="info">
                   <h3>La Macelleria Lourdes</h3>
@@ -210,7 +210,7 @@
                   <span>Rating: ★★★☆☆</span>
               </div>
             </div>
-            <div class="item hidden">
+            <div class="item hidden hideable">
               <img src="./images/food-drink7.jpg" alt="Raiz Cozinha">
               <div class="info">
                   <h3>Raiz Cozinha Fortaleza</h3>
@@ -218,7 +218,7 @@
                   <span>Rating: ★★★☆☆</span>
               </div>
             </div>
-            <div class="item hidden">
+            <div class="item hidden hideable">
               <img src="./images/food-drink8.jpg" alt="Piselli Brasília">
               <div class="info">
                   <h3>Piselli Brasília</h3>
@@ -228,7 +228,7 @@
             </div>
             <div class="see-more">
               <p>See more</p>
-              <span class="arrow">⌄</span>
+              <span class="arrow">▼</span>
             </div>
           </div>
         </section>
@@ -273,7 +273,7 @@
             </div>
 
             <!-- Hidden additional items -->
-            <div class="item hidden">
+            <div class="item hidden hideable">
                 <img src="./images/accomodation5.jpg" alt="Grand Carimã Resort & Convention Center">
                 <div class="info">
                     <h3>Grand Carimã Resort & Convention Center</h3>
@@ -281,7 +281,7 @@
                     <span>Rating: ★★★☆☆</span>
                 </div>
             </div>
-            <div class="item hidden">
+            <div class="item hidden hideable">
               <img src="./images/accomodation6.jpg" alt="Treehouse in Alto Paraíso de Goiás">
               <div class="info">
                   <h3>Treehouse in Alto Paraíso de Goiás, Brazil</h3>
@@ -291,7 +291,7 @@
             </div>
             <div class="see-more">
               <p>See more</p>
-              <span class="arrow">⌄</span>
+              <span class="arrow">▼</span>
             </div>
           </div>
         </section>
@@ -331,14 +331,14 @@
             </div>
 
             <!-- Hidden additional items -->
-            <div class="item hidden">
+            <div class="item hidden hideable">
                 <img src="./images/visa5.jpg" alt="Photo of GoPro, sunglasses and passport on map">
                 <div class="info">
                     <h3>Visa exempted countries!</h3>
                     <p>Find out if your country has been added to the list!</p>
                 </div>
             </div>
-            <div class="item hidden">
+            <div class="item hidden hideable">
               <img src="./images/visa6.jpg" alt="Photo of passport and visa application">
               <div class="info">
                   <h3>Visa application process</h3>
@@ -347,7 +347,7 @@
           </div>
             <div class="see-more">
               <p>See more</p>
-              <span class="arrow">⌄</span>
+              <span class="arrow">▼</span>
             </div>
           </div>
         </section>
@@ -371,9 +371,9 @@
           I critically reviewed and edited all AI-generated content to ensure it reflects my own
           understanding and perspective.</p>
         <nav class="footer-links">
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <a href="#privacy">Privacy Policy</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
         </nav>
         <!-- &copy is unicode equivalent for copyright symbol (©)-->
         <p>&copy; 2024 Your Name. All rights reserved.</p>

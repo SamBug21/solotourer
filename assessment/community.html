@@ -55,7 +55,7 @@
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
 
-      <a class = "cta" href ="#"><button>Contact</button></a>
+      <a class = "cta" href ="contact.html"><button>Contact</button></a>
 
       <div class="off-screen-menu">
         <ul>
@@ -73,17 +73,49 @@
 
         <div class="top-content-recomspage">
           <div class="topnav">
-            <input type="text" placeholder="Search..." aria-label="Search">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
           </div>
           <div class="nav_buttons">
-            <!--Type = button - Does not have any default behavior like submitting a form.-->
             <a href="#discussion-form">
-              <button type="button" class="navigation-button">Discussion Board</button>
+                <button type="button" class="navigation-button">Discussion Board</button>
             </a>
-            <button type="button" class="navigation-button">Notifications</button>
+            <button type="button" class="navigation-button" id="notificationButton">Notifications</button>
           </div>
         </div>
 
+        <!-- Notification Popup -->
+        <div class="notifications-popup" id="communityNotificationsPopup" style="display: none;">
+          <div class="popup-content">
+            <span class="close-popup" id="closeCommunityNotificationsPopup">&times;</span>
+            <h2>Notifications</h2>
+            <div id="notificationsList">
+              <p>New member joined #Budget community!</p>
+              <a href ="#" class="notification-btn">
+                  <button class="view-button">View</button>
+              </a>
+            </div>
+            <div id="notificationsList">
+              <p>You have 3 new messages.</p>
+              <a href ="#" class="notification-btn">
+                  <button class="view-button">View</button>
+              </a>
+            </div>
+            <div id="notificationsList">
+              <p>Your post was liked by Alice</p>
+              <a href ="#" class="notification-btn">
+                  <button class="view-button">View</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-message-popup" id="viewMessagePopup" style="display: none;">
+          <div class="popup-content">
+            <span class="close-view-message-popup" id="closeViewMessagePopup">&times;</span>
+            <h2>Functionality Not Implemented</h2>
+            <p>This functionality has not been implemented yet.</p>
+          </div>
+        </div>
 
         <div class="community-titles">
           <h2>Your communities</h2>
@@ -159,7 +191,6 @@
             <h2>Recent Posts</h2>
         </div>
         <div id="postFeed"></div>
-
       </main>
 
       <footer class="footer">
@@ -168,9 +199,9 @@
           I critically reviewed and edited all AI-generated content to ensure it reflects my own
           understanding and perspective.</p>
         <nav class="footer-links">
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-          <a href="#privacy">Privacy Policy</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
         </nav>
         <!-- &copy is unicode equivalent for copyright symbol (©)-->
         <p>&copy; 2024 Your Name. All rights reserved.</p>

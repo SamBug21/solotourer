@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Information about webpage that helps browsers and search engines understand the page better.-->
+  <head>
+    <!--Charset - character encoding that doc will use-->
+    <!--UTF-8 - Capable of encoding all possible characters in Unicode(standardized system for encoding  and representing text in devices) so good for international use-->
+    <meta charset="UTF-8" />
+    <!--Setting viewport(area that is visible to user based on device) settings for webpage.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link to manifest file -->
+    <link rel="manifest" href="./js/manifest.json"> <!--Connects web application to manifest file (improves user experience and functionality)-->
+    <meta name="theme-color" content="#ABD451"> <!--Sets theme color for browser’s UI for mobile devices.-->
+    <!-- Only needed if you have an apple phone -->
+    <link rel="logo" sizes="192x192" href="/DECO7140/assessment/icons/frame_67.png"> <!-- specifies icon for application (specific requirements for iOS-->
+
+
+    <!-- service worker registration -->
+    <script>
+      //checks if the browser supports service workers
+      if ('serviceWorker' in navigator) {  
+        // Set up event listener to window object, triggers when the entire page has finished loading + syntax for defining anonymous functions
+        window.addEventListener('load', () => {
+          // If service worker registered at /js/serviceWorker.js, default scope would be path /js/. Service worker can control any URL that starts with /js/
+          // Register service worker using register method of the serviceWorker object - handles cache and background processes
+          navigator.serviceWorker.register('js/serviceWorker.js')
+            // Execute the function within then() block or tells user about potential error. The registration object contains details about service worker that was registered.
+            .then((registration) => { 
+            //logs message to console(often for debugging), scope property of registration object shows scope in which service worker operates (essentially, which URLs it can control).
+              console.log('Service Worker registered with scope: ', registration.scope); 
+            })
+            //Specify what should happen if the Promise fails (code inside the .catch() block will run.) + error - helps you understand the issue
+            .catch((error) => {
+              // Prints message to the console, along with the details of the error.
+              console.log('Service Worker registration failed: ', error);
+            });
+        });
+      }
+    </script>
+    <!-- Preconnect informs browser to establish early connections to the specified origin.-->
+    <!--<link> used for external resources such as, stylesheets (CSS), icons, and other files and not clickable.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--Cross-origin - Browser will make the request to href without including any credentials (like cookies or HTTP authentication)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Link external resources to webpage, specifies font family, styles of font to load, normal (0) or italic (1), font to show while Poppins loads, relationship with resource is a stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!--hypertext reference attribute specifies URL (Uniform Resource Locator) of the resource you want to link to.-->
+    <!--Stylesheet, which contains CSS rules for styling in the same directory as this HTML file-->
+    <link rel="stylesheet" href="./css/css_reset.css"/>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/components.css"/>
+    <link rel="stylesheet" href="./css/layout.css"/>
+    
+    <!--<script> tag used to include JavaScript files in your web page, Modules (organize JS code into separate files + import/export functions, objects, or variables between them.-->
+    <!--Embed or reference JavaScript + defer which tells the browser to download script in the background while HTML is being read and interpreted.-->
+    <script type="module" src="js/page_load_message.js" defer></script>
+    <script type="module" src="js/index.js" defer></script>
+    <script type="module" src="./js/components.js" defer></script>
+
+    <!-- Appears in the browser tab and is used by search engines.-->
+    <title>Home</title>
+  </head>
+  <body id="gridcontainer">
+    <header>
+      <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
+      <a href="index.html">
+        <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
+      </a>
+
+      <nav>
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+      <nav id="flexnavbar">
+        <a class="active" href="index.html">Home</a>
+        <a href="safetyguides.html">Safety Guides</a>
+        <a href="events.html">Events</a>
+        <a href="community.html">Community</a>
+        <a href="insights_recommendations.html">Insights and Recommendations</a>
+      </nav>
+
+      <a class = "cta" href ="contact.html"><button>Contact</button></a>
+
+      <div class="off-screen-menu">
+        <ul>
+          <a href="index.html">Home</a>
+          <a href="safetyguides.html">Safety Guides</a>
+          <a href="events.html">Events</a>
+          <a class="active" href="community.html">Community</a>
+          <a href="insights_recommendations.html">Insights and Recommendations</a>
+        </ul>
+      </div>
+
+    </header>
+    <main>
+
+      <div class="contact-container">
+        <div class="title-container-contact">
+            <div class="container-headings">
+                <div class="contact-title">
+                  <h1>Contact Us!</h1>
+                </div>
+                <h2>Any concerns or suggestions?</h2>
+                <p>Send us a message!</p>
+            </div>
+        </div>
+        <div class="form">
+            <form id="contactForm" action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <!-- Confirmation message -->
+            <div id="confirmationMessage" style="display: none; color: green; margin-top: 20px;">
+                Your message has been sent! You will receive an email shortly.
+            </div>
+        </div>
+      </div>
+     
+    </main>
+    <footer class="footer">
+      <h2>Acknowledgements</h2>
+      <p>In this report, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
+        I critically reviewed and edited all AI-generated content to ensure it reflects my own
+        understanding and perspective.</p>
+      <nav class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+      <!-- &copy is unicode equivalent for copyright symbol (©)-->
+      <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

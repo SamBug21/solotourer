@@ -5,7 +5,7 @@ button {
   font-size: 16px;
   color: var(--background-color);
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   border: none;
   background-color: var(--primary-color);
@@ -16,13 +16,17 @@ button:hover {
   background-color: var(--primary-color);
 }
 
+header button{
+  margin-top: 5%;
+}
+
 a.button {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: var(--background-color);
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   border: none;
   background-color: var(--primary-color);
@@ -93,7 +97,7 @@ color: var(--background-color);
 font-size: 18px; 
 padding: 5px;
 text-align: left;
-}  */
+} 
 
 /* Navigation for slideshow */
 .prev,
@@ -104,6 +108,7 @@ text-align: left;
   width: auto;
   margin-top: -22px;
   padding: 16px;
+  margin-left: 15px;
   color: var(--background-color);
   font-weight: bold;
   font-size: 2vw;
@@ -137,6 +142,7 @@ text-align: left;
   font-weight: 2vw;
   font-size: 15px;
   padding: 8px;
+  margin-left: 2%;
   width: 100%;
   text-align: left;
 }
@@ -417,7 +423,7 @@ textarea {
 
 /* off-screen-menu */
 .off-screen-menu {
-  background-color: var(--background-color);
+  background-color:  rgba(239, 239, 239, 0.915);
   height: 100vh;
   width: 100%;
   max-width: 450px;
@@ -436,10 +442,9 @@ textarea {
 
 .off-screen-menu.active {
   right: 0; /* Slide in from the right */
-  padding-right: 5%;
   flex-direction: column;
   list-style-type: none; /* Remove bullet points */
-  width: 100%; /* Make the list take the full width of the menu */
+  width: 60%; /* Make the list take the full width of the menu */
 }
 
 .off-screen-menu li {
@@ -672,6 +677,45 @@ nav {
   display: none;
 }
 
+.notifications-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 30%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* Hidden by default */
+}
+
+.popup-content {
+  padding: 20px;
+  margin: 5%;
+}
+
+.close-popup {
+  cursor: pointer;
+  float: right;
+  font-size: 18px;
+}
+
+#notificationsList {
+  list-style: none;
+  padding: 0;
+  display:flex;
+}
+
+#notificationsList p{
+  padding: 0;
+  margin: 0;
+  width: 300px;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 5%;
+  margin-left: 8%;
+}
 
 /* Media query for mobile */
 @media (max-width: 768px) {
@@ -784,13 +828,13 @@ nav {
 
   .activities h2{
     padding: 0;
-    padding-left: 16%;
+    padding-left: 11%;
   }
 
   
   .food-drink h2{
     padding: 0;
-    padding-left: 16%;
+    padding-left: 11%;
   }
   
   .food-drink .see-more {
@@ -815,7 +859,7 @@ nav {
   
   .accommodations h2{
     padding: 0;
-    padding-left: 16%;
+    padding-left: 11%;
   }
   
   .accommodations .see-more{
@@ -833,16 +877,44 @@ nav {
   
   .visa h2{
     padding: 0;
-    padding-left: 16%;
+    padding-left: 11%;
   }
   
   .visa .see-more {
     margin-left: 26%;
+    margin-bottom: 10%;
   }
   
   .visa .arrow{
     padding: 0;
     margin-left: 45%;
+  }
+
+  .insights-modal .modal-content{
+    height: 30%;
+  }
+
+  .insights-modal h2{
+    padding: 0;
+    padding-left: 10%;
+  }
+
+  .insights-modal p{
+    padding: 0;
+    padding-left: 10%;
+    padding-right: 12%;
+    padding-bottom: 5%;
+  }
+
+  .modal-content{
+    padding: 0;
+    padding-top: 5%;
+    width: 70%;
+    height: auto;
+    margin: 0;
+    margin-left: 15%;
+    margin-top: 50%;
+    padding-bottom: 10%;
   }
 
   nav {
@@ -851,7 +923,10 @@ nav {
   }
 
   .top-content-recomspage{
-    height: 120px;
+    height: 60px;
+    background-color: var(--background-color);
+    padding:0;
+    padding-left: 10%;
   }
 
   .discussion-form{
@@ -884,16 +959,19 @@ nav {
     width: 270px;
     padding: 5%;
     margin: 0;
+    align-items: center;
+    justify-content: center;
   }
   
   .discussion-form button {
-    padding: 5px 8px;
+    padding: 5px 20px;
     font-size: 12px;
     margin-top: 5%;
     margin-left: 35%;
     margin-bottom: 5%;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
   }
   
   .post-actions {

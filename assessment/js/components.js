@@ -96,41 +96,39 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Section toggle functionality
-    function toggleSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (!section) return;
+    // function toggleSection(sectionId) {
+    //     const section = document.getElementById(sectionId);
+    //     if (!section) return;
         
-        const items = section.querySelectorAll('.item');
-        const seeMoreToggle = section.querySelector('.see-more');
+    //     const items = section.querySelectorAll('.item');
+    //     const seeMoreToggle = section.querySelector('.see-more');
         
-        if (items.length > 0) {
-            const isExpanded = Array.from(items).slice(3).some(item => !item.classList.contains('hidden'));
+    //     if (items.length > 0) {
+    //         const isExpanded = Array.from(items).slice(3).some(item => !item.classList.contains('hidden'));
             
-            // Toggle visibility of items after the first three
-            items.forEach((item, index) => {
-                if (index >= 3) {
-                    if (isExpanded) {
-                        item.classList.add('hidden');
-                    } else {
-                        item.classList.remove('hidden');
-                    }
-                }
-            });
+    //         items.forEach((item, index) => {
+    //             if (index >= 3) {
+    //                 if (isExpanded) {
+    //                     item.classList.add('hidden');
+    //                 } else {
+    //                     item.classList.remove('hidden');
+    //                 }
+    //             }
+    //         });
             
-            // Update the toggle button text and arrow
-            if (seeMoreToggle) {
-                const textElement = seeMoreToggle.querySelector('p') || seeMoreToggle.firstChild;
-                const arrowElement = seeMoreToggle.querySelector('.arrow');
+    //         if (seeMoreToggle) {
+    //             const textElement = seeMoreToggle.querySelector('p') || seeMoreToggle.firstChild;
+    //             const arrowElement = seeMoreToggle.querySelector('.arrow');
                 
-                if (textElement) {
-                    textElement.textContent = isExpanded ? 'See more' : 'See less';
-                }
-                if (arrowElement) {
-                    arrowElement.textContent = isExpanded ? '⌄' : '▲';
-                }
-            }
-        }
-    }
+    //             if (textElement) {
+    //                 textElement.textContent = isExpanded ? 'See more' : 'See less';
+    //             }
+    //             if (arrowElement) {
+    //                 arrowElement.textContent = isExpanded ? '⌄' : '▲';
+    //             }
+    //         }
+    //     }
+    // }
     
     // Initialize sections when DOM is loaded
     document.addEventListener("DOMContentLoaded", function() {
@@ -214,33 +212,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 case 0:
                     eventInfo = {
                         title: "Carnival",
-                        description: "Enjoy the festivities of Carnival with parades, music, and dance!",
-                        host: "City Council",
-                        date: "February 12, 2024"
+                        description: "Enjoy the festivities of Carnival with parades, music, and dance! Visit our site to book now!",
+                        host: "Rio City Council",
+                        date: "February 12, 2025"
                     };
                     break;
                 case 1:
                     eventInfo = {
                         title: "DJ Night",
-                        description: "Dance the night away with our amazing DJs spinning the best tracks.",
-                        host: "Club XYZ",
-                        date: "March 5, 2024"
+                        description: "Dance the night away with our amazing DJs spinning the best tracks. Book your tickets now!",
+                        host: "XYZ Club",
+                        date: "March 5, 2025"
                     };
                     break;
                 case 2:
                     eventInfo = {
                         title: "Music Festival",
-                        description: "Join us for a day of live music from various artists.",
-                        host: "Festival Org",
-                        date: "April 15, 2024"
+                        description: "Join us for a day of live music from various artists. Head to our site to reserve your seats.",
+                        host: "BrazilFests",
+                        date: "April 15, 2025"
                     };
                     break;
                 case 3:
                     eventInfo = {
                         title: "Night Club",
-                        description: "Experience the vibrant nightlife at our top-rated night club.",
-                        host: "Nightlife Inc.",
-                        date: "May 20, 2024"
+                        description: "Experience the vibrant nightlife at our top-rated night club. Tickets on sale now!",
+                        host: "Nightlife Rio",
+                        date: "May 20, 2025"
                     };
                     break;
                 default:
@@ -359,3 +357,66 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
+// Notifications View More Pop-up error button
+
+document.addEventListener('DOMContentLoaded', () => {
+    const notificationsButton = document.getElementById('notificationButton');
+    const notificationsPopup = document.getElementById('communityNotificationsPopup');
+    const closePopup = document.getElementById('closeCommunityNotificationsPopup');
+    const viewButtons = document.querySelectorAll('.view-button'); // Get all view buttons
+
+    // Show notifications popup
+    if (notificationsButton) {
+        notificationsButton.addEventListener('click', () => {
+            notificationsPopup.style.display = 'block';
+        });
+    }
+
+    // Close notifications popup
+    if (closePopup) {
+        closePopup.addEventListener('click', () => {
+            notificationsPopup.style.display = 'none';
+        });
+    }
+
+    // Close notifications popup when clicking outside
+    window.addEventListener('click', (event) => {
+        if (event.target === notificationsPopup) {
+            notificationsPopup.style.display = 'none';
+        }
+    });
+
+    // Show the alert when a view button is clicked
+    viewButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default anchor action
+            alert("This functionality has not been implemented yet."); // Show the default popup
+        });
+    });
+});
+
+// Search bar reload on safety guides page
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("keypress", (event) => {
+        // Check if the Enter key (key code 13) is pressed
+        if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default action (optional)
+        // Reload the page
+        location.reload();
+        }
+    });
+});
+
+
+// Search bar reload on community page
+document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        const query = this.value;
+        // Redirect to the same page with the query as a URL parameter
+        window.location.href = `community.html?search=${encodeURIComponent(query)}`;
+    }
+});

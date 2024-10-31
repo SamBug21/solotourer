@@ -32,6 +32,17 @@ h1{
   margin-top: 10%;
 }
 
+.privacy-title h1{
+  margin: 0;
+  margin-top: 5%;
+}
+
+.contact-title h1{
+  margin: 5% 0;
+  text-align: left;
+  margin-bottom: 5%;
+}
+
 h2{
   font-size: 20px;
   font-weight: 500;
@@ -73,6 +84,13 @@ h2.read-more-page{
   padding-left: 16%;
   padding-bottom: 2%;
   padding-top: 5%;
+}
+
+.title-logo {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  margin-left: 240px;
 }
 
 h3{
@@ -920,6 +938,12 @@ Apply specific styles based on certain conditions*/
     margin: 10px auto;
   }
 
+  .top-content-recomspage .topnav input[type=text] {
+    width: 90%; /* Set width to 50% */
+    margin: 0;
+    height: 40px;
+  }
+
   .nav_buttons {
     flex-direction: column; /* Stack buttons vertically */
   }
@@ -952,9 +976,25 @@ Apply specific styles based on certain conditions*/
     padding-left: 6%;
   }
 
+  .index-title h2{
+    padding: 0;
+    padding-left: 6%;
+    padding-bottom: 2%;
+  }
+
   .events-titles h2{
     padding: 0;
     padding-left: 6%;
+  }
+
+  .events-slide-titles h2{
+    padding: 0;
+    padding-left: 5%;
+    padding-bottom: 2%;
+  }
+
+  .privacy-title h1{
+    font-size: 18px;
   }
 
   .nav_buttons .navigation-button {
@@ -1054,10 +1094,13 @@ Apply specific styles based on certain conditions*/
     width: 90%;
     margin: auto; /* Center it horizontally */
     border-radius: 5px;
+    margin-bottom: 10%;
+    background-color: var(--background-color);
   }
   
   .wrapper h2 {
     font-size: 18px;
+    color: var(--text-color);
   }
 
   .form-container {
@@ -1074,6 +1117,13 @@ Apply specific styles based on certain conditions*/
     padding: 5px;
     margin-top: 5%;
     border-radius: 5px;
+  }
+
+  .title-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    margin-left: 40px;
   }
 
 }

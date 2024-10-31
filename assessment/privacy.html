@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Information about webpage that helps browsers and search engines understand the page better.-->
+  <head>
+    <!--Charset - character encoding that doc will use-->
+    <!--UTF-8 - Capable of encoding all possible characters in Unicode(standardized system for encoding  and representing text in devices) so good for international use-->
+    <meta charset="UTF-8" />
+    <!--Setting viewport(area that is visible to user based on device) settings for webpage.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link to manifest file -->
+    <link rel="manifest" href="./js/manifest.json"> <!--Connects web application to manifest file (improves user experience and functionality)-->
+    <meta name="theme-color" content="#ABD451"> <!--Sets theme color for browser’s UI for mobile devices.-->
+    <!-- Only needed if you have an apple phone -->
+    <link rel="logo" sizes="192x192" href="/DECO7140/assessment/icons/frame_67.png"> <!-- specifies icon for application (specific requirements for iOS-->
+
+    <!-- Preconnect informs browser to establish early connections to the specified origin.-->
+    <!--<link> used for external resources such as, stylesheets (CSS), icons, and other files and not clickable.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--Cross-origin - Browser will make the request to href without including any credentials (like cookies or HTTP authentication)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Link external resources to webpage, specifies font family, styles of font to load, normal (0) or italic (1), font to show while Poppins loads, relationship with resource is a stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!--hypertext reference attribute specifies URL (Uniform Resource Locator) of the resource you want to link to.-->
+    <!--Stylesheet, which contains CSS rules for styling in the same directory as this HTML file-->
+    <link rel="stylesheet" href="./css/css_reset.css"/>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/components.css"/>
+    <link rel="stylesheet" href="./css/layout.css"/>
+    
+    <!--<script> tag used to include JavaScript files in your web page, Modules (organize JS code into separate files + import/export functions, objects, or variables between them.-->
+    <!--Embed or reference JavaScript + defer which tells the browser to download script in the background while HTML is being read and interpreted.-->
+    <script type="module" src="js/index.js" defer></script>
+    <script type="module" src="js/components.js" defer></script>
+    <script type="module" src="js/page_load_message.js" defer></script>
+    <script type="module" src="js/manifest.json" defer></script>
+
+    <!-- Appears in the browser tab and is used by search engines.-->
+    <title>Home</title>
+  </head>
+  <body id="gridcontainer">
+    <header>
+      <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
+      <a href="index.html">
+        <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
+      </a>
+
+      <nav>
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+      <nav id="flexnavbar">
+        <a href="index.html">Home</a>
+        <a href="safetyguides.html">Safety Guides</a>
+        <a class="active" href="events.html">Events</a>
+        <a href="community.html">Community</a>
+        <a href="insights_recommendations.html">Insights and Recommendations</a>
+      </nav>
+
+      <a class = "cta" href ="contact.html"><button>Contact</button></a>
+
+      <div class="off-screen-menu">
+        <ul>
+          <a href="index.html">Home</a>
+          <a href="safetyguides.html">Safety Guides</a>
+          <a href="events.html">Events</a>
+          <a class="active" href="community.html">Community</a>
+          <a href="insights_recommendations.html">Insights and Recommendations</a>
+        </ul>
+      </div>
+    </header>
+    <main>
+        <div class="privacy-title">
+            <h1>Privacy Policy for Solo Tourer</h1>
+        </div>
+
+      <div class="guide-text">
+        <h2>Introduction</h2>
+        <p>Solo Tourer is committed to safeguarding your privacy and ensuring that your personal information is protected. This Privacy Policy explains how we collect, use, share, and protect your data when you use our app and website, designed to help women aged 23 to 29 solo travel confidently and safely in Rio de Janeiro, Brazil.</p>
+        <h2>1. Information We Collect</h2>
+        <p>We collect personal information to enhance your experience on our platform and provide safe and community-centered travel services. The types of information we may collect include:</p>
+        <p>Personal Information: Name, email address, age, and contact information to verify identity, create accounts, and provide tailored services.</p>
+        <p>Travel Preferences and Community Engagement: Interests, travel preferences, event RSVPs, and community interactions to help match you with relevant events, tips, and fellow travelers.</p>
+        <p>Location Data: With your consent, we may collect location data to enhance safety features, provide real-time recommendations, and suggest nearby events.</p>
+        <p>Device Information: Information about your device, including operating system, device ID, and browser type, to improve platform functionality and support.</p>
+        <h2>2. How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <p>Provide Core Services: Enable features such as travel tips, community events, and safety alerts.</p>
+        <p>Enhance User Experience: Tailor content, events, and community recommendations to your profile.</p>
+        <p>Ensure Safety: Provide real-time safety notifications and emergency contact options when enabled.</p>
+        <p>Communicate with You: Respond to inquiries, notify you about changes to our services, and send event or safety-related updates.</p>
+        <h2>3. Information Sharing and Disclosure</h2>
+        <p>We may share your information with third parties only in the following circumstances:</p>
+        <p>With Your Consent: If you choose to connect with community members, only limited profile details will be visible to others.</p>
+        <p>Service Providers: We work with trusted third parties who assist in operating our platform, including hosting, analytics, and communication services.</p>
+        <p>Legal Obligations: We may disclose your information if required by law or to protect our users and our rights.</p>
+        <h2>4. Your Choices</h2>
+        <p>You have control over your personal information:</p>
+        <p>Account Settings: You may update or delete your account information in your settings.</p>
+        <p>Location Data: Enable or disable location services through your device settings at any time.</p>
+        <p>Community Preferences: Manage your visibility in community events or opt out of notifications.</p>
+        <h2>5. Security of Your Information</h2>
+        <p>We use industry-standard security measures to protect your data from unauthorized access or disclosure. However, please be aware that no system is completely secure, and we cannot guarantee the absolute security of your information.</p>
+        <h2>6. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We encourage you to review it periodically to stay informed about how we are protecting your information.</p>
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us.</p>
+    </div>
+
+    </main>
+    <footer class="footer">
+      <h2>Acknowledgements</h2>
+      <p>In this report, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
+        I critically reviewed and edited all AI-generated content to ensure it reflects my own
+        understanding and perspective.</p>
+    <nav class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </nav>
+      <!-- &copy is unicode equivalent for copyright symbol (©)-->
+      <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

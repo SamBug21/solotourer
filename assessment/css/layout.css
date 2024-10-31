@@ -79,23 +79,197 @@ main {
 .title-container4 {
   display: flex;               /* Use flexbox layout */
   align-items: center;        /* Center items vertically */
-  justify-content: center;     /* Center items horizontally */
   gap: 100px;     
   background-color: var(--primary-color); 
-  padding: 0;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding: 0 10.5%;
+  padding-top: 5%;
 }
 
-.title-container4 img {
-  width: 300px; 
-  max-width: 100%;
-  height: 300px;
-  padding: 0;
+.title-container{
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
 }
+
+.text-left-image-right{
+  display:flex;
+  align-items: flex-start; /* Align to start */
+  padding-top: 15%;
+  padding-left: 10%;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.text-left-image-right .context-images{
+  padding: 0;
+  padding-right: 15%;
+}
+
+.text-left-image-right .text-image{
+  padding: 0;
+  /* padding-top: 5%; */
+}
+
+.contact-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 70%;
+  margin: 5% auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.contact-container2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 10%;
+  gap: 20px;
+}
+
+.title-container-contact {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+}
+
+.title-container-contact h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.title-container-contact h3 {
+  font-size: 10px;
+  width: 90%;
+}
+
+.title-container-contact p {
+  font-size: 10px;
+  font-weight: 400;
+  width: 90%;
+}
+
+.contact-container {
+  padding: 20px;
+}
+
+.container-headings p {
+  font-size: 12px;
+  padding: 0;
+  margin-bottom: 5%;
+}
+
+.title-container-contact {
+  display: flex;
+  gap: 20px; /* Adds space between the image and text */
+}
+
+.title-container-contact img {
+  max-width: 600px; /* Sets a max width for the image */
+  width: 100%; /* Makes the image responsive */
+  height: auto; /* Maintains the image aspect ratio */
+}
+
+.form {
+  flex: 1;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Make the layout stack on smaller screens */
+@media (max-width: 768px) {
+  .contact-container {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-left: 7%;
+    width: 100%;
+  }
+
+  .title-container-contact,
+  .form {
+      width: 100%;
+  }
+
+  .form input[type="text"],
+  .form input[type="email"],
+  .form textarea {
+    width: 90%;
+  }
+
+  .contact-container{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-container2 {
+    width: 90%;
+  }
+
+  .contact-container2 img{
+    margin-bottom: 15%;
+  }
+
+  .form form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    margin-bottom: 15%;
+  }
+
+  .form button{
+    margin: 0;
+    width: 90%;
+  }
+  
+}
+
 
 .container-headings {
-  text-align: left;      /* Align text to the left */
+  text-align: left;
+  margin: 5%;
+  margin-top: 0;
+  margin-right: 10%;
 }
 
 .title-container4 h1 {
@@ -115,30 +289,48 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding-top: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding: 5% 10%;
 }
 
 .emergency-container div {
   padding: 20px;
-  padding-top: 10%;
-  padding-bottom: 10%;
   color: white;
   font-size: 20px;
   font-weight: bold;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.rescue { background-color: #e63946; }
-.hospital { background-color: #9ae3c9; color: black; }
-.parents { background-color: #f4a261; }
-.police { background-color: #457b9d; }
+.emergency-numbers{
+  background-color: var(--primary-color);
+}
+
+.emergency-container h2 {
+  padding: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.emergency-container p {
+  padding: 5px 0 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+
+.rescue { background-color: #E3170A; }
+.hospital { background-color: #64B7B6; color: black; }
+.parents { background-color: #F6AE2D; }
+.police { background-color: #072AC8; }
 .firefighter { background-color: #f77f00; }
-.friends { background-color: #7b2cbf; }
+.friends { background-color: #AC7DDB; }
 
 
 .filter-section {
@@ -195,10 +387,10 @@ main {
 }
 
 .article-image img {
-  width: 400px; /* Set a fixed width for images */
-  height: 250px; /* Fixed height for images */
-  object-fit: cover; /* Cover to maintain aspect ratio */
-  border-radius: 5px; /* Rounded corners for images */
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 /* Author and additional info styling */
@@ -219,7 +411,18 @@ main {
 }
 
 .read-button:hover {
-  background-color: var(--hover-color); /* Darker shade on hover */
+  background-color: var(--hover-color);
+}
+
+.notification-btn button{
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 12px;
+  color: var(text-color);
+  text-decoration: none;
+  border-radius: 5px; 
+  margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 
@@ -344,6 +547,7 @@ button.signup-button {
   font-weight: 500;
   font-size: 16px;
   padding: 5px 10px;
+  border: 2px solid white;
 }
 
 .signup-button:hover {
@@ -361,11 +565,8 @@ button.signup-button {
   flex-direction: column;
   justify-content: center;
   background-color: var(--primary-color);
-  padding: 0;
-  padding-bottom: 5%;
-  padding-top: 5%;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 5% 0;
+  margin-top: 5%;
 }
 
 .newsletter h2{
@@ -410,7 +611,6 @@ h2.read-more-page {
   background-color: black; /* Black background */
   color: white; /* White text color */
   padding: 30px 0px; /* Padding at top and bottom */
-  margin-top: 10%;
   text-align: center; /* Center-align text */
 }
 
@@ -425,6 +625,7 @@ footer h2{
   color: var(--background-color);
   padding-left: 20%;
   padding-right: 20%;
+  margin-top: 2%;
 }
 
 .footer p {
@@ -461,6 +662,17 @@ footer h2{
   max-width: 1200px;
   margin: 0 auto;
   padding: 2% 2%;
+}
+
+.read-more-container{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between articles */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2% 2%;
+  margin-bottom: 5%;
 }
 
 .guide-card-details {
@@ -600,18 +812,54 @@ footer h2{
     font-size: 15px;
   }
 
-  .emergency-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    padding-top: 15%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 5%;
+  .title-container-contact{
+    width: 100%;
+    /* margin-top: 10%; */
+    gap: 0;
+    flex-direction: column;
   }
 
-  .emergency-container div{
+  .title-container-contact img{
+    width: 300px;
+    height: auto;
+  }
+
+  .title-container-contact h1{
+    font-size: 20px;
+  }
+
+  .title-container-contact h2{
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5%;
+  }
+
+  .title-container-contact h3{
+    font-size: 15px;
+  }
+
+  .emergency-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .emergency-container div {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .emergency-container h2{
     font-size: 12px;
+    text-align: center;
+  }
+  
+  .emergency-container p{
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
   .top-left{
@@ -637,7 +885,7 @@ footer h2{
 
   .article-list {
     width: 90%;
-    margin-right: 10%;
+    margin: 0;
   }
   
   /* Styling for each article */
@@ -691,6 +939,7 @@ footer h2{
     padding: 3px 8px; /* Padding for button */
     bottom: 10%;
     font-size: 12px;
+    border-radius: 5px;
   }
   
   .read-button:hover {
@@ -751,6 +1000,7 @@ footer h2{
   .guide-text{
     justify-content: center;
     align-items: center;
+    margin-bottom: 5%;
   }
 
   .guide-text h2{
@@ -841,7 +1091,6 @@ footer h2{
     flex-direction: column;
     justify-content: center;
     margin-top: 15%;
-    margin-bottom: 15%;
   }
 
   .newsletter h2{
@@ -917,7 +1166,6 @@ footer h2{
     background-color: black; /* Black background */
     color: white; /* White text color */
     padding: 30px 0px; /* Padding at top and bottom */
-    margin-top: 10%;
     text-align: center; /* Center-align text */
   }
   

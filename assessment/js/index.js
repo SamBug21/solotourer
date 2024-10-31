@@ -237,18 +237,28 @@ document.addEventListener('DOMContentLoaded', function() {
 function toggleSectionVisibility(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
-      const hiddenItems = section.querySelectorAll('.item.hidden');
-      // Toggle visibility of hidden items
-      hiddenItems.forEach((item) => {
+      // Select all items with the "hideable" class
+      const hideableItems = section.querySelectorAll('.hideable');
+      console.log(hideableItems.length);
+
+      // Toggle the "hidden" class for each hideable item
+      hideableItems.forEach((item) => {
         item.classList.toggle('hidden');
       });
-  
+
       const seeMoreButton = section.querySelector('.see-more');
       if (seeMoreButton) {
+
+        const arrow = seeMoreButton.querySelector('.arrow'); // Select the arrow element
+
+        // Check if the first hideable item is still hidden
+        const isHidden = hideableItems[0].classList.contains('hidden');
         // Update the "See more" / "See less" text
-        const isHidden = hiddenItems[0].classList.contains('hidden');
         seeMoreButton.querySelector('p').textContent = isHidden ? 'See more' : 'See less';
-  
+
+        arrow.textContent = isHidden ? '▼' : '▲'; // Change to downward arrow for "See more", upward arrow for "See less"
+
+
         // Scroll to the top of the section if items are expanded
         if (!isHidden) {
           section.scrollIntoView({ behavior: 'smooth' });
@@ -259,13 +269,64 @@ function toggleSectionVisibility(sectionId) {
       }
     }
 }
-  
+
 document.addEventListener("DOMContentLoaded", () => {
     // Select all "See more" buttons
     const seeMoreButtons = document.querySelectorAll(".see-more");
-  
+
     seeMoreButtons.forEach((button) => {
       const sectionId = button.closest('.gallery').id;
       button.addEventListener("click", () => toggleSectionVisibility(sectionId));
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.getElementById("contactForm");
+    const confirmationMessage = document.getElementById("confirmationMessage");
+
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the form from actually submitting
+
+        // Show the confirmation message
+        confirmationMessage.style.display = "block";
+
+        // Reload the page after a delay of 3 seconds
+        setTimeout(() => {
+            location.reload();
+        }, 3000);
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const notificationsButton = document.getElementById('notificationButton');
+    const notificationsPopup = document.getElementById('communityNotificationsPopup');
+    const closePopup = document.getElementById('closeCommunityNotificationsPopup');
+  
+    console.log(notificationsButton); // Check if the button is selected
+    console.log(notificationsPopup); // Check if the popup is selected
+    console.log(closePopup); // Check if the close button is selected
+  
+    if (notificationsButton) {
+      notificationsButton.addEventListener('click', () => {
+        console.log('Notifications button clicked');
+        notificationsPopup.style.display = 'block';
+      });
+    }
+  
+    if (closePopup) {
+      closePopup.addEventListener('click', () => {
+        notificationsPopup.style.display = 'none';
+      });
+    }
+  
+    // Optional: Close the popup when clicking outside of it
+    window.addEventListener('click', (event) => {
+      if (event.target === notificationsPopup) {
+        notificationsPopup.style.display = 'none';
+      }
+    });
+});
+
