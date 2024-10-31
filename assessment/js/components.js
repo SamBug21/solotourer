@@ -173,3 +173,189 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("Reply functionality not implemented yet.");
     };
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Modal elements
+    const modal = document.getElementById("eventModal");
+    const modalTitle = document.getElementById("eventTitle");
+    const modalDescription = document.getElementById("eventDescription");
+    const modalHost = document.getElementById("eventHost");
+    const modalDate = document.getElementById("eventDate");
+    const closeModal = document.getElementsByClassName("close")[0];
+
+    // Function to show modal with specific content
+    function openModal(title, description, host, date) {
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        modalHost.textContent = `Host: ${host}`;
+        modalDate.textContent = `Date: ${date}`;
+        modal.style.display = "block";
+    }
+
+    // Close the modal
+    closeModal.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    // Click outside of modal to close it
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    // Event listeners for each image
+    const images = document.querySelectorAll(".image-container");
+    images.forEach((image, index) => {
+        image.addEventListener("click", () => {
+            let eventInfo;
+            switch (index) {
+                case 0:
+                    eventInfo = {
+                        title: "Carnival",
+                        description: "Enjoy the festivities of Carnival with parades, music, and dance!",
+                        host: "City Council",
+                        date: "February 12, 2024"
+                    };
+                    break;
+                case 1:
+                    eventInfo = {
+                        title: "DJ Night",
+                        description: "Dance the night away with our amazing DJs spinning the best tracks.",
+                        host: "Club XYZ",
+                        date: "March 5, 2024"
+                    };
+                    break;
+                case 2:
+                    eventInfo = {
+                        title: "Music Festival",
+                        description: "Join us for a day of live music from various artists.",
+                        host: "Festival Org",
+                        date: "April 15, 2024"
+                    };
+                    break;
+                case 3:
+                    eventInfo = {
+                        title: "Night Club",
+                        description: "Experience the vibrant nightlife at our top-rated night club.",
+                        host: "Nightlife Inc.",
+                        date: "May 20, 2024"
+                    };
+                    break;
+                default:
+                    eventInfo = {
+                        title: "Event",
+                        description: "Event details are available.",
+                        host: "Unknown",
+                        date: "TBA"
+                    };
+            }
+            openModal(eventInfo.title, eventInfo.description, eventInfo.host, eventInfo.date);
+        });
+    });
+});
+
+  
+// Modal for events page slideshows
+document.addEventListener('DOMContentLoaded', function() {
+    // Automatically initialize all slideshow containers
+    const slideshowContainers = document.querySelectorAll('.slideshow-container');
+    slideshowContainers.forEach(container => new Slideshow(container));
+
+    const modal = document.getElementById("modal");
+    const modalTitle = modal.querySelector(".modal-title");
+    const modalDetails = modal.querySelector(".modal-description");
+    const modalHost = modal.querySelector(".modal-host");
+    const modalDate = modal.querySelector(".modal-date");
+
+    // Function to open modal with data
+    function openModal(imageContainer) {
+        const title = imageContainer.querySelector("h2").textContent;
+        const description = imageContainer.querySelector("p").textContent;
+        const host = imageContainer.getAttribute("data-host");  // Get host from data attribute
+        const date = imageContainer.getAttribute("data-date");  // Get date from data attribute
+
+        modalTitle.textContent = title;
+        modalDetails.textContent = description;
+        modalHost.textContent = `Host: ${host}`;  // Display host
+        modalDate.textContent = `Date: ${date}`;  // Display date
+
+        modal.style.display = "block";
+    }
+
+    // Close modal when 'X' is clicked
+    document.querySelector(".close").onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Set up click listeners on each image container
+    document.querySelectorAll('.new-image-container').forEach(container => {
+        container.addEventListener("click", () => {
+            openModal(container);
+        });
+    });
+
+    // Close modal when clicking outside the content area
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+});
+
+
+// Modal functionality for items in Insights and Recommendations page
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the correct modal elements from insights_recommendations.html
+    const modal = document.getElementById("insightsModal");
+    const modalClose = document.getElementById("insightsModalClose");
+    const modalTitle = modal?.querySelector("#insightsModalTitle");
+    
+    // Function to open the modal with data
+    function openModal(container) {
+        if (!modal || !modalTitle) return;
+        
+        // Get info from the clicked item
+        const title = container.querySelector(".info h3")?.textContent;
+        const content = container.querySelector(".info")?.innerHTML;
+        
+        modalTitle.textContent = title;
+        // Add a new div for content if needed
+        const modalContent = modal.querySelector(".modal-content");
+        if (modalContent) {
+            // Clear existing content except close button and title
+            const contentDiv = modalContent.querySelector(".modal-body") || document.createElement("div");
+            contentDiv.className = "modal-body";
+            contentDiv.innerHTML = content;
+            
+            // Only append if it's not already there
+            if (!modalContent.querySelector(".modal-body")) {
+                modalContent.appendChild(contentDiv);
+            }
+        }
+        
+        modal.style.display = "block";
+    }
+    
+    // Add click listeners to all gallery items
+    const galleryItems = document.querySelectorAll('.gallery .item');
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => openModal(item));
+    });
+    
+    // Close button functionality
+    if (modalClose) {
+        modalClose.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+    }
+    
+    // Click outside modal to close
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+

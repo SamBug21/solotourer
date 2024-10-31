@@ -118,11 +118,11 @@
         <div class="mySlides">
           <div class="slide-container">
             <div class="image-container">
-              <img src="./images/Carnival_Brazil.png" style="width:100%;">
+              <img src="./images/event2.jpg" style="width:100%;">
               <div class="text">Carnival</div>
             </div>
             <div class="image-container">
-              <img src="./images/DJ_Night.png" style="width:100%;">
+              <img src="./images/event4.jpg" style="width:100%;">
               <div class="text">DJ Night</div>
             </div>
           </div>
@@ -130,16 +130,18 @@
         <div class="mySlides">
           <div class="slide-container">
             <div class="image-container">
-              <img src="./images/Music_Festival.png" style="width: 100%;">
+              <img src="./images/event_sample1.jpg" style="width: 100%;">
               <div class="text">Music Festival</div>
             </div>
 
             <div class="image-container">
-              <img src="./images/Night_Club.png" style="width:100%;">
+              <img src="./images/event5.jpg" style="width:100%;">
               <div class="text">Night Club</div>
             </div>
 
           </div>
+
+
         </div>
         <!-- Next and previous buttons -->
         <!--Anchor tag used to perform an action.-->
@@ -157,6 +159,16 @@
       <!--Onclick attribute specifies that when dot is clicked, it executes a JS function called currentSlide with an argument of 1, 2,3 or 4 based on slide number-->
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+
+      <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="eventTitle">Event Title</h2>
+            <p id="eventDescription">Event description goes here.</p>
+            <p id="eventHost">Host: [Host Name]</p>
+            <p id="eventDate">Date: [Event Date]</p>
+        </div>
       </div>
 
 

@@ -580,11 +580,15 @@ footer h2{
   }
 
   .title-container4{
+    width: 100%;
     padding-left: 10%;
     margin-top: 10%;
+    gap: 0;
   }
 
   .title-container4 img{
+    width: 200px;
+    height: 200px;
     padding-right: 2%;
   }
 
@@ -750,6 +754,7 @@ footer h2{
   }
 
   .guide-text h2{
+    padding: 0;
     padding-top: 5%;
     font-weight: 700;
     font-size: 18px;

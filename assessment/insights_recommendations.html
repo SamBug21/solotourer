@@ -37,7 +37,7 @@
       <header>
         <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
         <a href="index.html">
-          <img class = "logo" src="./icons/Frame 68.png" alt = "Logo">
+          <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
         </a>
   
         <nav>
@@ -82,19 +82,19 @@
             <h2>To Do in Brazil</h2>
             <div class="gallery" id="todo-section">
                 <!-- Initial 4 items -->
-                <div class="item">
+                <div class="item" role="button">
                     <img src="./images/adventure1.jpg" alt="Photograph of a woman with ziplining gear">
                     <div class="info">
-                        <h3>Top 5 Adventures</h3>
-                        <p>Explore the best adventure spots in Foz do Iguaçu</p>
+                        <h3>Brazil Adventures Ziplining</h3>
+                        <p>Zip lining tours at $60 for the next few months!</p>
                         <span>Rating: ★★★★☆</span>
                     </div>
                 </div>
                 <div class="item">
                   <img src="./images/adventure2.jpg" alt="Photo of two women scuba diving">
                   <div class="info">
-                      <h3>Swim with sharks in Fernando de Noronha</h3>
-                      <p>6 Places to explore the seas!</p>
+                      <h3>Swim with the sharks!</h3>
+                      <p>6 spots tour: Explore Fernando de Noronha's seas! Visit our site to find out more.</p>
                       <span>Rating: ★★★★☆</span>
                   </div>
                 </div>
@@ -102,15 +102,15 @@
                   <img src="./images/adventure3.jpg" alt="Activity 1">
                   <div class="info">
                       <h3>The Amazon!</h3>
-                      <p>4 secret spots for photography lovers!</p>
+                      <p>A tour of 4 hidden gems for photography lovers! Book now on our site!</p>
                       <span>Rating: ★★★★☆</span>
                   </div>
                 </div>
                 <div class="item">
                   <img src="./images/adventure4.jpg" alt="Activity 1">
                   <div class="info">
-                      <h3>Get away from the city!</h3>
-                      <p>Relax under the sun at 3 spots in Foz do Iguaçu!</p>
+                      <h3>Want to get away from the city?</h3>
+                      <p>Relax under the sun in Foz do Iguaçu!</p>
                       <span>Rating: ★★★★☆</span>
                   </div>
                 </div>
@@ -351,6 +351,17 @@
             </div>
           </div>
         </section>
+
+
+        <!-- Insights Page Modal Structure -->
+        <div class="modal insights-modal" id="insightsModal" style="display: none;">
+          <div class="modal-content">
+              <span class="close" id="insightsModalClose">&times;</span>
+              <h2 id="insightsModalTitle"></h2>
+              <p id="insightsModalContent"></p>
+          </div>
+        </div>
+
 
 
       </main>
