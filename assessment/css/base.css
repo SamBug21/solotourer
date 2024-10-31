@@ -909,6 +909,11 @@ Apply specific styles based on certain conditions*/
   header {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    background-color: var(--background-color);
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
   }
 
   .logo {

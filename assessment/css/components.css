@@ -372,8 +372,8 @@ textarea {
   /* Navigation for slideshow */
   .prev,
   .next {
-    padding: 5%;
-    top: 45%;
+    top: 48%;
+    padding: 0 5px;
   }
 }
 
@@ -743,6 +743,7 @@ nav {
   .top-content {
     padding: 0;
     padding-bottom: 5%;
+    padding-top: 15%;
   }
 
   .top-content .top-nav {
@@ -755,11 +756,22 @@ nav {
   }
 
   .slideshow-container {
-    max-width: 90%; /* Adjust to your desired max width */
+    width: 90%;
+    max-width: 100%; /* Adjust to your desired max width */
+    display: flex;
+    margin: 0 10px;
+  }
+
+  .image-container {
+    width: 100%; /* Ensures each image container spans the entire width */
+    margin-bottom: 10px; /* Adds spacing between image containers */
   }
   
   .image-container img {
-    border-radius: 8px; /* Apply border-radius */
+    border-radius: 0; /* Apply border-radius */
+    box-sizing: border-box; /* Includes padding and border in the total width calculation */
+    width: 100%; /* Ensures each image container spans the entire width */
+    flex: 1 1 100%; /* Change to 1 image per slide */
   }
   
   .image-container .text {
@@ -927,6 +939,7 @@ nav {
     background-color: var(--background-color);
     padding:0;
     padding-left: 10%;
+    margin-top: 20%;
   }
 
   .discussion-form{
