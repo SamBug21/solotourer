@@ -29,12 +29,12 @@
     
     <!--<script> tag used to include JavaScript files in your web page, Modules (organize JS code into separate files + import/export functions, objects, or variables between them.-->
     <!--Embed or reference JavaScript + defer which tells the browser to download script in the background while HTML is being read and interpreted.-->
-    <script type="module" src="js/page_load_message.js" defer></script>
     <script type="module" src="js/index.js" defer></script>
-    <script type="module" src="./js/components.js" defer></script>
+    <script type="module" src="js/components.js" defer></script>
+    <script type="module" src="js/page_load_message.js" defer></script>
 
     <!-- Appears in the browser tab and is used by search engines.-->
-    <title>Home</title>
+    <title>References</title>
   </head>
   <body id="gridcontainer">
     <header>
@@ -52,9 +52,9 @@
       </nav>
 
       <nav id="flexnavbar">
-        <a class="active" href="index.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
-        <a href="events.html">Events</a>
+        <a class="active" href="events.html">Events</a>
         <a href="community.html">Community</a>
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
@@ -70,56 +70,31 @@
           <a href="insights_recommendations.html">Insights and Recommendations</a>
         </ul>
       </div>
-
     </header>
     <main>
-
-      <div class="contact-container">
-        <div class="title-container-contact">
-            <div class="container-headings">
-                <div class="contact-title">
-                  <h1>Contact Us!</h1>
-                </div>
-                <h2>Any concerns or suggestions?</h2>
-                <p>Send us a message!</p>
-            </div>
+        <div class="privacy-title">
+            <h1>References</h1>
         </div>
-        <div class="form">
-            <form id="contactForm" action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-
-            <!-- Confirmation message -->
-            <div id="confirmationMessage" style="display: none; color: green; margin-top: 20px;">
-                Your message has been sent! You will receive an email shortly.
-            </div>
+        <div class="guide-text">
+            <h2>References</h2>
+            <p>Solo Tourer is </p>
+            <h2>Image References</h2>
+            <p>Solo Tourer is </p>
         </div>
-      </div>
-     
+
     </main>
     <footer class="footer">
       <h2>Acknowledgements</h2>
       <p>In this website, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
         I critically reviewed and edited all AI-generated content to ensure it reflects my own
         understanding and perspective.</p>
-      <nav class="footer-links">
+    <nav class="footer-links">
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="references.html">References</a>
-      </nav>
+    </nav>
       <!-- &copy is unicode equivalent for copyright symbol (©)-->
       <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>

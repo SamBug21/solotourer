@@ -106,9 +106,10 @@ text-align: left;
   position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
   top: 38%;
   width: auto;
+  margin: 0;
   margin-top: -22px;
   padding: 16px;
-  margin-left: 15px;
+  /* margin-left: 15px; */
   color: var(--background-color);
   font-weight: bold;
   font-size: 2vw;
@@ -373,10 +374,10 @@ textarea {
   .prev,
   .next {
     top: 48%;
-    padding: 0 5px;
+    padding: 0 10px;
+    color: var(--background-color);
   }
 }
-
 
 /* ham menu */
 .ham-menu {
@@ -423,7 +424,7 @@ textarea {
 
 /* off-screen-menu */
 .off-screen-menu {
-  background-color:  rgba(239, 239, 239, 0.915);
+  background-color:  rgba(244, 242, 247, 0.915);
   height: 100vh;
   width: 100%;
   max-width: 450px;
@@ -432,9 +433,8 @@ textarea {
   right: -450px; /* Hidden off-screen */
   display: flex;
   flex-direction: column;
-  align-items: center;    
-  justify-content: center;
-  text-align: center;
+  align-items: center; 
+  text-align: left;
   font-size: 3rem;
   transition: .3s ease;
   z-index: 1000; /* Ensure this is lower than the hamburger menu */
@@ -447,6 +447,10 @@ textarea {
   width: 60%; /* Make the list take the full width of the menu */
 }
 
+.off-screen-menu ul{
+  margin-top: 30%;
+}
+
 .off-screen-menu li {
   width: 100%; /* Ensure each item takes full width */
 }
@@ -456,6 +460,7 @@ textarea {
   padding: 15px; /* Add padding for better touch targets */
   color: #000; /* Change text color */
   text-decoration: none; /* Remove underline from links */
+  margin-left: 15%;
 }
 
 /* Hover effect for links */
@@ -756,7 +761,6 @@ nav {
   }
 
   .slideshow-container {
-    width: 90%;
     max-width: 100%; /* Adjust to your desired max width */
     display: flex;
     margin: 0 10px;
@@ -944,6 +948,7 @@ nav {
 
   .discussion-form{
     padding: 0;
+    margin-top: 20%;
   }
   
   .discussion-form,

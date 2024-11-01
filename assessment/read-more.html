@@ -8,35 +8,10 @@
     <!--Setting viewport(area that is visible to user based on device) settings for webpage.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Link to manifest file -->
-    <link rel="manifest" href="./js/manifest.json"> <!--Connects web application to manifest file (improves user experience and functionality)-->
     <meta name="theme-color" content="#ABD451"> <!--Sets theme color for browser’s UI for mobile devices.-->
     <!-- Only needed if you have an apple phone -->
     <link rel="logo" sizes="192x192" href="/DECO7140/assessment/icons/frame_67.png"> <!-- specifies icon for application (specific requirements for iOS-->
 
-
-    <!-- service worker registration -->
-    <script>
-      //checks if the browser supports service workers
-      if ('serviceWorker' in navigator) {  
-        // Set up event listener to window object, triggers when the entire page has finished loading + syntax for defining anonymous functions
-        window.addEventListener('load', () => {
-          // If service worker registered at /js/serviceWorker.js, default scope would be path /js/. Service worker can control any URL that starts with /js/
-          // Register service worker using register method of the serviceWorker object - handles cache and background processes
-          navigator.serviceWorker.register('js/serviceWorker.js')
-            // Execute the function within then() block or tells user about potential error. The registration object contains details about service worker that was registered.
-            .then((registration) => { 
-            //logs message to console(often for debugging), scope property of registration object shows scope in which service worker operates (essentially, which URLs it can control).
-              console.log('Service Worker registered with scope: ', registration.scope); 
-            })
-            //Specify what should happen if the Promise fails (code inside the .catch() block will run.) + error - helps you understand the issue
-            .catch((error) => {
-              // Prints message to the console, along with the details of the error.
-              console.log('Service Worker registration failed: ', error);
-            });
-        });
-      }
-    </script>
     <!-- Preconnect informs browser to establish early connections to the specified origin.-->
     <!--<link> used for external resources such as, stylesheets (CSS), icons, and other files and not clickable.-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,21 +29,19 @@
     
     <!--<script> tag used to include JavaScript files in your web page, Modules (organize JS code into separate files + import/export functions, objects, or variables between them.-->
     <!--Embed or reference JavaScript + defer which tells the browser to download script in the background while HTML is being read and interpreted.-->
-    <script type="module" src="js/index.js" defer></script>
-    <script type="module" src="js/components.js" defer></script>
     <script type="module" src="js/page_load_message.js" defer></script>
-    <script type="module" src="js/manifest.json" defer></script>
+    <script type="module" src="js/index.js" defer></script>
+    <script type="module" src="./js/components.js" defer></script>
 
     <!-- Appears in the browser tab and is used by search engines.-->
-    <title>Home</title>
+    <title>Read More</title>
   </head>
   <body id="gridcontainer">
     <header>
-      <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
       <a href="index.html">
-        <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
+        <img class="logo" src="./icons/Frame-68.png" alt="Logo">
       </a>
-
+    
       <nav>
         <div class="ham-menu">
           <span></span>
@@ -76,23 +49,23 @@
           <span></span>
         </div>
       </nav>
-
+    
       <nav id="flexnavbar">
-        <a href="index.html">Home</a>
+        <a class="active" href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
-        <a class="active" href="events.html">Events</a>
+        <a href="events.html">Events</a>
         <a href="community.html">Community</a>
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
-
-      <a class = "cta" href ="contact.html"><button>Contact</button></a>
-
+    
+      <a class="cta" href="contact.html"><button>Contact</button></a>
+    
       <div class="off-screen-menu">
         <ul>
           <a href="index.html">Home</a>
           <a href="safetyguides.html">Safety Guides</a>
           <a href="events.html">Events</a>
-          <a class="active" href="community.html">Community</a>
+          <a href="community.html">Community</a>
           <a href="insights_recommendations.html">Insights and Recommendations</a>
         </ul>
       </div>
@@ -136,6 +109,8 @@
         <h2>Conclusion</h2>
         <p>By staying vigilant and following these safety tips, you can enjoy all that Brasilia has to offer. From its stunning architecture to its vibrant culture, Brasilia is a captivating destination waiting to be explored. Safe travels!</p>
       </div>
+
+      
       <div class="guide-end">
         <div class="guide-meta">
           <span>1d ago</span>
@@ -186,67 +161,67 @@
       <div>
         <h2 class="read-more-page">Read More</h2>
       </div>
-        <div class="guide-cards">
-          <!-- First Article -->
-            <div class="guide-card-details">
-              <div class="guide-card-info">
-                <div class="guide-card-image">
-                  <img src="./images/braisilia.jpg" alt="Sao Paulo" />
-                </div>
-                <p>Claire Willows</p>
-                <h3>Brasilia Travel Safety Guide</h3>
-                <p class="author">Don't let the fear stop you!</p>
-                <div class="article-meta">
-                    <span>1d ago</span> | 
-                    <span>224 views</span> | 
-                    <span>6 comments</span>
-                </div>
-                <div class="guide-card-read-more">
-                  <a href="./read-more.html" class="button">Read More</a>
-                </div>
+      <div class="guide-cards">
+        <!-- First Article -->
+          <div class="guide-card-details">
+            <div class="guide-card-info">
+              <div class="guide-card-image">
+                <img src="./images/braisilia.jpg" alt="Sao Paulo" />
+              </div>
+              <p>Claire Willows</p>
+              <h3>Brasilia Travel Safety Guide</h3>
+              <p class="author">Don't let the fear stop you!</p>
+              <div class="article-meta">
+                  <span>1d ago</span> | 
+                  <span>224 views</span> | 
+                  <span>6 comments</span>
+              </div>
+              <div class="guide-card-read-more">
+                <a href="./read-more.html" class="button">Read More</a>
               </div>
             </div>
-            <!-- Second Article -->
-            <div class="guide-card-details">
-              <div class="guide-card-info">
-                <div class="guide-card-image">
-                  <img src="./images/sao paulo.jpg" alt="Sao Paulo" />
-                </div>
-                <p>Alexis Bianchi</p>
-                <h3>Sao Paulo Travel Safety Guide</h3>
-                <p class="author">Top tips for staying safe!</p>
-                <div class="guide-card-meta">
-                    <span>Aug 20</span> | 
-                    <span>3K views</span> | 
-                    <span>9 comments</span>
-                </div>
-                <div class="guide-card-read-more">
-                  <a href="./read-more.html" class="button">Read More</a>
-                </div>
+          </div>
+          <!-- Second Article -->
+          <div class="guide-card-details">
+            <div class="guide-card-info">
+              <div class="guide-card-image">
+                <img src="./images/sao paulo.jpg" alt="Sao Paulo" />
+              </div>
+              <p>Alexis Bianchi</p>
+              <h3>Sao Paulo Travel Safety Guide</h3>
+              <p class="author">Top tips for staying safe!</p>
+              <div class="guide-card-meta">
+                  <span>Aug 20</span> | 
+                  <span>3K views</span> | 
+                  <span>9 comments</span>
+              </div>
+              <div class="guide-card-read-more">
+                <a href="./read-more.html" class="button">Read More</a>
               </div>
             </div>
-            <!-- Third Article -->
-            <div class="guide-card-details">
-              <div class="guide-card-info">
-                <div class="guide-card-image">
-                  <img src="./images/Rio de Janeiro.jpg" alt="Rio de Janeiro" />
-                </div>
-                <p>Poppy Evans</p>
-                <h3>Travelling to Rio de Janeiro?</h3>
-                <p class="author">5 tips for staying safe!</p>
-                <div class="guide-card-meta">
-                    <span>1d ago</span> | 
-                    <span>224 views</span> | 
-                    <span>6 comments</span>
-                </div>
-                <div class="guide-card-read-more">
-                  <a href="./read-more.html" class="button">Read More</a>
-                </div>
+          </div>
+          <!-- Third Article -->
+          <div class="guide-card-details">
+            <div class="guide-card-info">
+              <div class="guide-card-image">
+                <img src="./images/Rio de Janeiro.jpg" alt="Rio de Janeiro" />
+              </div>
+              <p>Poppy Evans</p>
+              <h3>Travelling to Rio de Janeiro?</h3>
+              <p class="author">5 tips for staying safe!</p>
+              <div class="guide-card-meta">
+                  <span>1d ago</span> | 
+                  <span>224 views</span> | 
+                  <span>6 comments</span>
+              </div>
+              <div class="guide-card-read-more">
+                <a href="./read-more.html" class="button">Read More</a>
               </div>
             </div>
-        </div>
+          </div>
+      </div>
 
-      <div class="read-more-container"
+      <div class="read-more-container">
         <div class="guide-cards">
           <!-- First Article -->
             <div class="guide-card-details">
@@ -311,13 +286,14 @@
     </main>
     <footer class="footer">
       <h2>Acknowledgements</h2>
-      <p>In this report, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
+      <p>In this website, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
         I critically reviewed and edited all AI-generated content to ensure it reflects my own
         understanding and perspective.</p>
       <nav class="footer-links">
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy.html">Privacy Policy</a>
+        <a href="references.html">References</a>
       </nav>
       <!-- &copy is unicode equivalent for copyright symbol (©)-->
       <p>&copy; 2024 Your Name. All rights reserved.</p>
