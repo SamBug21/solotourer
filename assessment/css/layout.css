@@ -1,3 +1,4 @@
+/* Navigation and grid*/
 #navigation-bar {
   display: grid; /* turn this element into a grid container */
   height: 100vh; /* make the grid container take up 100% ofthe window height */
@@ -40,29 +41,101 @@ main {
   grid-area: main;
 }
 
-/* Specific Styles for Navigation Buttons in Community page */
-.nav_buttons {
-  padding: 0;
-  padding-left: 15%;
-  padding-bottom: 2%;
+/* Hamburger menu */
+.ham-menu {
+  display: none; 
+  flex-direction: column; 
+  bottom: 55px;
+  width: 40px;
+  margin-left: auto;
+  position: relative;
+  z-index: 2000;
 }
 
-
-.nav_buttons .navigation-button {
-  font-size: 14px;  /* Smaller font size */
-  padding: 8px 15px; /* Smaller padding */
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* Style each bar */
+.ham-menu span {
+  height: 4px;
+  width: 70%;
+  background-color: var(--text-color); /* Default bar color */
+  border-radius: 25px;
+  margin: 2px 0; /* Space between bars */
+  transition: .3s ease;
 }
 
-.nav_buttons .navigation-button:hover {
-  background-color: var(--hover-color);
+/* Active state styles */
+.ham-menu.active span {
+  background-color: var(--primary-color); /* Change color when active */
 }
 
+.ham-menu.active span:nth-child(1) {
+  top: 50%; /* Adjust the first bar */
+  transform: translate(-10%, 300%) rotate(45deg); /* Rotate to form X */
+}
+
+.ham-menu.active span:nth-child(2) {
+  opacity: 0; /* Hide the middle bar */
+  height: 0;
+  margin: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+  top: 50%; /* Adjust the third bar */
+  transform: translate(-10%, 120%) rotate(-45deg); /* Rotate to form X */
+}
+
+/* off-screen-menu */
+.off-screen-menu {
+  background-color:  rgba(244, 242, 247, 0.915);
+  height: 100vh;
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  top: 0;
+  right: -450px; /* Hidden off-screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: left;
+  font-size: 3rem;
+  transition: .3s ease;
+  z-index: 1000; /* Ensure this is lower than the hamburger menu */
+}
+
+.off-screen-menu.active {
+  right: 0; /* Slide in from the right */
+  flex-direction: column;
+  list-style-type: none; /* Remove bullet points */
+  width: 60%; /* Make the list take the full width of the menu */
+}
+
+.off-screen-menu ul{
+  margin-top: 30%;
+}
+
+.off-screen-menu li {
+  width: 100%; /* Ensure each item takes full width */
+}
+
+.off-screen-menu a {
+  display: block; /* Make each link a block element */
+  padding: 15px; /* Add padding for better touch targets */
+  color: #000; /* Change text color */
+  text-decoration: none; /* Remove underline from links */
+  margin-left: 15%;
+}
+
+/* Hover effect for links */
+.off-screen-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Change background on hover */
+}
+
+/* nav */
+nav {
+  padding: 1rem;
+  display: flex;
+}
+
+/* Main photo on homepage*/
 .container {
   position: relative;
   text-align: center;
@@ -76,9 +149,10 @@ main {
   object-fit: cover;
 }
 
-.title-container4 {
-  display: flex;               /* Use flexbox layout */
-  align-items: center;        /* Center items vertically */
+/* Emergency numbers on homepage */
+.title-container {
+  display: flex;
+  align-items: center;
   gap: 100px;     
   background-color: var(--primary-color); 
   padding: 0 10.5%;
@@ -91,9 +165,9 @@ main {
   align-items: flex-start;
 }
 
-.text-left-image-right{
+/* .text-left-image-right{
   display:flex;
-  align-items: flex-start; /* Align to start */
+  align-items: flex-start;
   padding-top: 15%;
   padding-left: 10%;
   justify-content: flex-start;
@@ -107,9 +181,9 @@ main {
 
 .text-left-image-right .text-image{
   padding: 0;
-  /* padding-top: 5%; */
-}
+} */
 
+/* Contact us form on Contact Page and text on About page*/
 .contact-container {
   display: flex;
   align-items: flex-start;
@@ -131,10 +205,13 @@ main {
   gap: 20px;
 }
 
+/* Contact Us form*/
 .title-container-contact {
   flex: 1;
   padding: 0;
   margin: 0;
+  display: flex;
+  gap: 20px; /* Adds space between the image and text */
 }
 
 .title-container-contact h2 {
@@ -154,8 +231,11 @@ main {
   width: 90%;
 }
 
-.contact-container {
-  padding: 20px;
+/* Contact Page Text*/
+
+.container-headings {
+  padding: 0;
+  padding-top: 20px;
 }
 
 .container-headings p {
@@ -164,17 +244,13 @@ main {
   margin-bottom: 5%;
 }
 
-.title-container-contact {
-  display: flex;
-  gap: 20px; /* Adds space between the image and text */
-}
-
 .title-container-contact img {
   max-width: 600px; /* Sets a max width for the image */
   width: 100%; /* Makes the image responsive */
   height: auto; /* Maintains the image aspect ratio */
 }
 
+/* Form on Add Events Page*/
 .form {
   flex: 1;
 }
@@ -213,73 +289,21 @@ main {
   background-color: var(--hover-color);
 }
 
-/* Make the layout stack on smaller screens */
-@media (max-width: 768px) {
-  .contact-container {
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    margin-left: 7%;
-    width: 100%;
-  }
-
-  .title-container-contact,
-  .form {
-      width: 100%;
-  }
-
-  .form input[type="text"],
-  .form input[type="email"],
-  .form textarea {
-    width: 90%;
-  }
-
-  .contact-container{
-    width: 90%;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .contact-container2 {
-    width: 90%;
-  }
-
-  .contact-container2 img{
-    margin-bottom: 15%;
-  }
-
-  .form form {
-    display: flex;
-    flex-direction: column;
-    padding-left: 5%;
-    margin-bottom: 15%;
-  }
-
-  .form button{
-    margin: 0;
-    width: 90%;
-  }
-  
-}
-
-
-.container-headings {
+/* Image and text on About page */
+.contact-container2 .container-headings {
   text-align: left;
-  margin: 5%;
-  margin-top: 0;
-  margin-right: 10%;
+  padding-top: 25%;
 }
 
-.title-container4 h1 {
+/* Emergency contact text in Homepage*/
+.title-container h1 {
   color: var(--background-color);
   padding: 0;
   text-align: left;
   font-size: 40px;
 }
 
-.title-container4 h3 {
+.title-container h3 {
   color: var(--background-color);
   padding: 0;
   text-align: left;
@@ -333,12 +357,12 @@ main {
 .friends { background-color: #AC7DDB; }
 
 
-.filter-section {
+/* .filter-section {
   padding: 20px;
   text-align: center;
-}
+} */
 
-
+/* Guides list on Safety Guides page*/
 .article-list {
   display: flex;
   flex-direction: column;
@@ -349,41 +373,41 @@ main {
   margin-top: 5%;
 }
 
-/* Styling for each article */
+/* Styling for each guide on safety guides page */
 .article {
   display: flex;
-  justify-content: space-between; /* Space between image and text */
-  border-bottom: 1px solid #e0e0e0; /* Separator line */
-  padding-bottom: 20px; /* Space below each article */
-  margin-bottom: 20px; /* Space below each article */
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .article-details {
   display: flex;
-  justify-content: space-between; /* Space between image and text */
-  width: 100%; /* Use full width */
+  justify-content: space-between;
+  width: 100%;
 }
 
 .article-info {
-  max-width: 70%; /* Limit width of text content */
+  max-width: 70%;
 }
 
 .article-info h3 {
-  font-size: 20px; /* Font size for the title */
-  margin: 5px 0; /* Margin around the title */
-  padding: 0; /* No padding */
+  font-size: 20px;
+  margin: 5px 0;
+  padding: 0;
 }
 
 .article-info p {
-  color: #555; /* Text color for description */
-  margin: 5px 0; /* Margin around the description */
-  padding: 0; /* No padding */
+  color: #555;
+  margin: 5px 0; 
+  padding: 0;
 }
 
 .article-meta {
-  margin-top: 10px; /* Space above meta information */
-  font-size: 0.9em; /* Smaller font size for meta */
-  color: #777; /* Color for meta information */
+  margin-top: 10px; 
+  font-size: 0.9em;
+  color: #777;
 }
 
 .article-image img {
@@ -395,19 +419,19 @@ main {
 
 /* Author and additional info styling */
 .author {
-  font-size: 0.9em; /* Smaller font size for author */
-  color: #555; /* Color for author name */
+  font-size: 0.9em; 
+  color: #555; 
 }
 
 .read-button {
-  display: inline-block; /* Make it a block element for better spacing */
-  padding: 10px 15px; /* Padding for button */
-  background-color: var(--primary-color); /* Button background color */
-  color: white; /* Text color */
-  text-decoration: none; /* Remove underline */
-  border-radius: 5px; /* Rounded corners */
-  margin-top: 10px; /* Space above the button */
-  transition: background-color 0.3s; /* Transition for hover effect */
+  display: inline-block;
+  padding: 10px 15px; 
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px; 
+  transition: background-color 0.3s;
 }
 
 .read-button:hover {
@@ -425,11 +449,10 @@ main {
   transition: background-color 0.3s;
 }
 
-
-/* Styling for each article */
+/* Styling for visa page */
 .guide-top {
-  display: flex; /* Create a flex container */
-  align-items: center; /* Center items vertically */
+  display: flex;
+  align-items: center;
   padding-left: 5%;
   background-color: black;
 }
@@ -445,22 +468,21 @@ main {
 }
 
 .guide-image img {
-  max-width: 100%; /* Ensure the image is responsive */
-  height: 600px; /* Maintain aspect ratio */
-  border-radius: 5px; /* Optional: add rounded corners */
+  max-width: 100%;
+  height: 600px;
 }
 
 .guide-details {
   display: flex;
-  justify-content: space-between; /* Space between image and text */
-  width: 100%; /* Use full width */
+  justify-content: space-between;
+  width: 100%;
 }
 
 .guide-info h3 {
-  font-size: 40px; /* Font size for the title */
+  font-size: 40px; 
   font-weight: 600;
-  margin: 5px 0; /* Margin around the title */
-  padding: 0; /* No padding */
+  margin: 5px 0; 
+  padding: 0;
   color: var(--background-color);
   text-align: center;
   display: flex;
@@ -481,8 +503,8 @@ main {
 }
 
 .guide-meta {
-  margin-top: 10px; /* Space above meta information */
-  font-size: 12px; /* Smaller font size for meta */
+  margin-top: 10px; 
+  font-size: 12px;
   padding-left: 15%;
 }
 
@@ -537,7 +559,7 @@ main {
   padding-right: 2%;
 }
 
-
+/* Newsletter signup feature on Read More Page*/
 .signup-container {
   margin: 20px;
 }
@@ -551,12 +573,12 @@ button.signup-button {
 }
 
 .signup-button:hover {
-  background-color: darken(var(--primary-color), 10%); /* Darken the color on hover */
+  background-color: darken(var(--primary-color), 10%); 
 }
 
 .signup-message {
   margin-top: 10px;
-  color: var(--primary-color); /* Change color as needed */
+  color: var(--primary-color); 
   font-weight: 600;
 }
 
@@ -605,18 +627,17 @@ h2.read-more-page {
   justify-content: center;
 }
 
-
 .footer {
   grid-area: foot;
-  background-color: black; /* Black background */
-  color: white; /* White text color */
-  padding: 30px 0px; /* Padding at top and bottom */
-  text-align: center; /* Center-align text */
+  background-color: black; 
+  color: white; 
+  padding: 30px 0px;
+  text-align: center; 
 }
 
 .footer-content {
   max-width: 1200px;
-  margin: 0 auto; /* Center content horizontally */
+  margin: 0 auto;
   padding: 0 20px;
 }
 
@@ -641,39 +662,41 @@ footer h2{
 .footer-links {
   display: flex;
   margin-top: 10px;
-  padding: 0 10%;
-  padding-left: 12%;
+  padding: 0;
+  gap:20px;
+  padding-left: 20%;
 }
 
 .footer-links a {
-  color: white; /* White link color */
-  margin: 5px 0; /* Space between links */
+  color: white; 
+  margin: 5px 0; 
   text-decoration: none;
 }
 
 .footer-links a:hover {
-  text-decoration: underline; /* Underline on hover */
-}
-
-.guide-cards {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px; /* Space between articles */
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2% 2%;
+  text-decoration: underline; 
 }
 
 .read-more-container{
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* Space between articles */
+  gap: 20px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2% 2%;
   margin-bottom: 5%;
+}
+
+/* Guide Cards in read more section of read more page and visa page */
+.guide-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2% 2%;
 }
 
 .guide-card-details {
@@ -683,35 +706,35 @@ footer h2{
   padding-left: 3%;
   padding-top: 3%;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 6px 20px rgba(0, 0, 0, 0.1); /* Creates a soft floating effect */
-  transition: box-shadow 0.3s ease; /* Optional: adds a smooth shadow transition */
+  transition: box-shadow 0.3s ease; /* Adds a smooth shadow transition */
 }
 
 .guide-card-info {
-  max-width: 70%; /* Limit width of text content */
+  max-width: 70%;
 }
 
 .guide-card-info h3 {
-  font-size: 20px; /* Font size for the title */
-  margin: 5px 0; /* Margin around the title */
-  padding: 0; /* No padding */
+  font-size: 20px;
+  margin: 5px 0; 
+  padding: 0;
 }
 
 .guide-card-info p {
-  color: #555; /* Text color for description */
-  margin: 5px 0; /* Margin around the description */
-  padding: 0; /* No padding */
+  color: #555;
+  margin: 5px 0;
+  padding: 0;
 }
 
 .guide-card-meta {
-  margin-top: 10px; /* Space above meta information */
-  font-size: 0.9em; /* Smaller font size for meta */
-  color: #777; /* Color for meta information */
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #777;
 }
 
 .guide-card-image img {
-  width: 300px; /* Set a fixed width for images */
-  height: 200px; /* Fixed height for images */
-  object-fit: cover; /* Cover to maintain aspect ratio */
+  width: 300px; 
+  height: 200px; 
+  object-fit: cover;
 }
 
 .read-more-page h2{
@@ -726,35 +749,37 @@ footer h2{
   padding-top: 15%;
 }
 
+/* Comment section of read more page and visa page */
+
 .comments-section {
-  margin: 0 auto; /* Center the comments section */
-  width: 60%; /* Set a fixed width for the comments section */
-  padding: 10px; /* Add some padding to the comments section */
-  border-radius: 8px; /* Optional: Add rounded corners */
+  margin: 0 auto;
+  width: 60%; 
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .comments-section .comment {
   display: flex;
-  align-items: center; /* Align items vertically */
-  margin-bottom: 10px; /* Space between comments */
-  border: 1px solid #e0e0e0; /* Border for each comment */
-  padding: 10px; /* Add some padding inside each comment */
-  border-radius: 8px; /* Optional: Add rounded corners to comments */
+  align-items: center;
+  margin-bottom: 10px; 
+  border: 1px solid #e0e0e0; 
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .comment-text {
-  margin-left: 10px; /* Space between profile icon and text */
-  width: calc(100% - 80px); /* Adjust width based on the profile icon width */
+  margin-left: 10px; 
+  width: calc(100% - 80px); 
 }
 
 .profile-icon {
-  width: 70px; /* Set width for profile icon */
-  height: 70px; /* Set height for profile icon */
-  border-radius: 50%; /* Make it circular */
+  width: 70px; 
+  height: 70px;
+  border-radius: 50%; 
 }
 
 .username {
-  font-weight: 600; /* Make username bold */
+  font-weight: 600;
   font-size: 12px;
 }
 
@@ -772,18 +797,28 @@ footer h2{
 }
 
 .reply-button {
-  color: black; /* Text color */
-  padding: 0 10px; /* Add some padding */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  float: right; /* Position the button to the right */
+  color: black;
+  padding: 0 10px;
+  border-radius: 5px;
+  cursor: pointer; 
+  float: right; 
   background-color: none;
 }
 
 @media only screen and (max-width: 600px) {
 
+  .hamburger {
+    display: flex; /* Show hamburger menu on mobile */
+  }
+
+  .ham-menu {
+    display: flex;
+  }
+
+  /* Main photo on homepage*/
   .container {
     height: 300px;
+    margin-top: 10%;
     margin-bottom: 10%;
   }
 
@@ -792,7 +827,7 @@ footer h2{
     height: 300px;
   }
 
-  .title-container4{
+  .title-container{
     width: 100%;
     padding: 10%;
     padding-top: 15%;
@@ -800,23 +835,22 @@ footer h2{
     gap: 0;
   }
 
-  .title-container4 img{
+  .title-container img{
     width: 200px;
     height: 200px;
     padding-right: 2%;
   }
 
-  .title-container4 h1{
+  .title-container h1{
     font-size: 20px;
   }
 
-  .title-container4 h3{
+  .title-container h3{
     font-size: 15px;
   }
 
   .title-container-contact{
     width: 100%;
-    /* margin-top: 10%; */
     gap: 0;
     flex-direction: column;
   }
@@ -875,14 +909,12 @@ footer h2{
     padding-left: 10%;
     margin: 0;
     margin-bottom: 2%;
-    /* text-align: center; */
   }
 
   .top-left h3{
     font-size: 12px;
     padding: 0;
     padding-left: 10%;
-    /* text-align: center; */
   }
 
   .article-list {
@@ -893,16 +925,16 @@ footer h2{
   /* Styling for each article */
   .article {
     display: flex;
-    justify-content: space-between; /* Space between image and text */
+    justify-content: space-between; 
     border-bottom: 1px solid #e0e0e0; /* Separator line */
-    padding-bottom: 20px; /* Space below each article */
-    margin-bottom: 20px; /* Space below each article */
+    padding-bottom: 20px; 
+    margin-bottom: 20px;
     margin-right: 10%;
     width: 75%;
   }
   
   .article-details {
-    width: 75%; /* Use full width */
+    width: 75%;
   }
   
   .article-info {
@@ -912,11 +944,11 @@ footer h2{
   }
   
   .article-info h3 {
-    font-size: 14px; /* Font size for the title */
+    font-size: 14px;
   }
   
   .article-info p {
-    color: #555; /* Text color for description */
+    color: #555;
     font-size: 10px;
   }
   
@@ -925,8 +957,8 @@ footer h2{
   }
   
   .article-image img {
-    width: 200px; /* Set a fixed width for images */
-    height: 140px; /* Fixed height for images */
+    width: 200px; 
+    height: 140px;
     margin: 0;
     margin-left: 5%;
   }
@@ -938,19 +970,19 @@ footer h2{
 
   a.button{
     padding: 0;
-    padding: 3px 8px; /* Padding for button */
+    padding: 3px 8px;
     bottom: 10%;
     font-size: 12px;
     border-radius: 5px;
   }
   
   .read-button:hover {
-    background-color: var(--hover-color); /* Darker shade on hover */
+    background-color: var(--hover-color);
   }
 
   /* Styling for each article */
   .guide-top {
-    display:flex; /* Create a flex container */
+    display:flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
@@ -975,15 +1007,17 @@ footer h2{
     width: 100%;
     max-width: 100%;
     height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Optional: add rounded corners */
     padding: 0;
     margin: 0;
   }
 
   .guide-info h3 {
-    font-size: 20px; /* Font size for the title */
+    font-size: 20px;
     font-weight: 600;
     margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
     margin-top: 15%;
     text-align: center;
   }
@@ -999,7 +1033,6 @@ footer h2{
     font-weight: 400;
   }
 
-  
   .guide-text{
     justify-content: center;
     align-items: center;
@@ -1034,7 +1067,7 @@ footer h2{
     flex-direction: column;
     padding: 0;
     margin: 0;
-    margin-top: 15px; /* Space above meta information */
+    margin-top: 15px;
     margin-left: 10%;
     font-weight: 400;
     font-size: 12px;
@@ -1070,22 +1103,22 @@ footer h2{
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color: var(--background-color); /* Adjust color as needed */
+    color: var(--background-color); 
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
     border: 2px solid var(--background-color);
-    background-color: var(--primary-color); /* Adjust color as needed */
+    background-color: var(--primary-color);
     transition: background-color 0.3s ease;
   }
 
   .signup-button:hover {
-    background-color: darken(var(--primary-color), 10%); /* Darken the color on hover */
+    background-color: darken(var(--primary-color), 10%);
   }
 
   .signup-message {
     margin-top: 10px;
-    color: var(--primary-color); /* Change color as needed */
+    color: var(--primary-color);
     font-weight: 600;
   }
 
@@ -1112,8 +1145,8 @@ footer h2{
   }
 
   .rm-footer input[type="text"]::placeholder {
-    font-size: 12px; /* Adjust the size as needed */
-    color: var(--border-color); /* Optional: Change the placeholder color */
+    font-size: 12px;
+    color: var(--border-color);
 }
 
   .rm-footer .searchInput{
@@ -1131,18 +1164,19 @@ footer h2{
     justify-content: center;
   }
 
+  /* Guide Cards in read more section of read more page and visa page */
   .guide-cards {
     flex-direction: column;
   }
 
   .guide-card-details {
-    width: 100%; /* Full width on mobile */
+    width: 100%;
     max-width: 90%;
     margin-left: 5%;
   }
 
   .guide-card-info h3 {
-    font-size: 18px; /* Adjust text size for smaller screens */
+    font-size: 18px;
     font-weight: 600;
     width: 300px;
   }
@@ -1166,29 +1200,112 @@ footer h2{
 
   .footer {
     grid-area: foot;
-    background-color: black; /* Black background */
-    color: white; /* White text color */
-    padding: 30px 0px; /* Padding at top and bottom */
-    text-align: center; /* Center-align text */
+    background-color: black;
+    color: white;
+    padding: 30px 0px; 
+    text-align: center;
   }
   
   .footer-content {
     max-width: 1200px;
-    margin: 0 auto; /* Center content horizontally */
+    margin: 0 auto;
     padding: 0 20px;
   }
   
   footer h2{
     font-size: 15px;
-    text-align: center; /* Center-align text */
+    text-align: center;
     padding-bottom: 0;
   }
   
   .footer p {
     font-size: 11px;
   }
+
+  .footer-links {
+    display: flex;
+    padding-left: 30%;
+    gap: 10px;
+  }
   
   .footer-links a {
     font-size: 10px;
+  }
+
+  .contact-container {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-left: 7%;
+    width: 100%;
+  }
+
+  .contact-container img{
+    margin-left: 3%;
+  }
+
+  .contact-title{
+    margin-top: 30%;
+  }
+
+  .login-title{
+    margin-top: 30%;
+  }
+
+  .privacy-title h1{
+    font-size: 20px;
+    margin-top: 20%;
+  }
+
+  .title-container-contact,
+  .form {
+      width: 100%;
+  }
+
+  .form input[type="text"],
+  .form input[type="email"],
+  .form textarea {
+    width: 90%;
+  }
+
+    .form form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    margin-bottom: 15%;
+  }
+
+  .form button{
+    margin: 0;
+    width: 90%;
+    margin-bottom: 3%;
+  }
+
+  .contact-container{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Contact us form on Contact Page and text on About page*/
+  .contact-container2 {
+    width: 90%;
+  }
+
+  .contact-container2 img{
+    margin-bottom: 15%;
+    margin-right: 5%;
+  }
+
+  .container-headings{
+    padding: 5%;
+  }
+  
+  .contact-container2 .container-headings {
+    padding: 5%;
+    padding-top: 10%;
+    padding-bottom: 20%;
   }
 }

@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--Information about webpage that helps browsers and search engines understand the page better.-->
   <head>
-    <!--Charset - character encoding that doc will use-->
-    <!--UTF-8 - Capable of encoding all possible characters in Unicode(standardized system for encoding  and representing text in devices) so good for international use-->
     <meta charset="UTF-8" />
-    <!--Setting viewport(area that is visible to user based on device) settings for webpage.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Preconnect informs browser to establish early connections to the specified origin.-->
-    <!--<link> used for external resources such as, stylesheets (CSS), icons, and other files and not clickable.-->
+    <meta name="theme-color" content="#ABD451"> <!--Sets theme color for browser’s UI for mobile devices.-->
+    <link rel="logo" sizes="192x192" href="/DECO7140/assessment/icons/frame_67.png"> <!-- specifies icon for application (specific requirements for iOS-->
+
+    <!--Font from Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!--Cross-origin - Browser will make the request to href without including any credentials (like cookies or HTTP authentication)-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Link external resources to webpage, specifies font family, styles of font to load, normal (0) or italic (1), font to show while Poppins loads, relationship with resource is a stylesheet -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
-    <!--hypertext reference attribute specifies URL (Uniform Resource Locator) of the resource you want to link to.-->
-    <!--Stylesheet, which contains CSS rules for styling in the same directory as this HTML file-->
+    <!--Javascript Files-->
     <link rel="stylesheet" href="./css/css_reset.css"/>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/components.css"/>
     <link rel="stylesheet" href="./css/layout.css"/>
     
-    <!--<script>: JavaScript files in web page, Modules (organize JS code into separate files + import/export functions, objects, or variables between them.-->
-    <!--Embed or reference JavaScript + defer which tells the browser to download script in the background while HTML is being read and interpreted.-->
+    <!--CSS Files-->
     <script type="module" src="js/page_load_message.js" defer></script>
     <script type="module" src="js/index.js" defer></script>
     <script type="module" src="./js/components.js" defer></script>
 
-    <!-- Appears in the browser tab and is used by search engines.-->
     <title>Budget</title>
   </head>
+
   <body>
     <header>
-      <!-- <a> - used to create hyperlinks, to navigate to another webpage, section of the same page, or an external resource + is clickable.-->
+      <!--Logo-->
       <a href="index.html">
         <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
       </a>
 
+      <!--Hamburger Menu-->
       <nav>
         <div class="ham-menu">
           <span></span>
@@ -47,43 +42,47 @@
         </div>
       </nav>
 
+      <!--Navigation Bar-->
       <nav id="flexnavbar">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
         <a href="events.html">Events</a>
-        <a class="active" href="community.html">Community</a>
+        <a href="community.html">Community</a>
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
 
-      <a class = "cta" href ="contact.html"><button>Contact</button></a>
+      <a class = "cta" href ="login.html"><button>Login</button></a>
 
+      <!--Hamburger Menu-->
       <div class="off-screen-menu">
         <ul>
           <a href="index.html">Home</a>
           <a href="safetyguides.html">Safety Guides</a>
           <a href="events.html">Events</a>
-          <a class="active" href="community.html">Community</a>
+          <a href="community.html">Community</a>
           <a href="insights_recommendations.html">Insights and Recommendations</a>
+          <a href="login.html">Login</a>
         </ul>
       </div>
 
     </header>
+
     <div>
       <main>
-
-          <section id="discussion-form" class="discussion-form">
-            <h2>Start a New Discussion</h2>
-            <form id="postForm">
-                <textarea id="postContent" placeholder="What's on your mind?" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
+        
+        <!--Discussion Board to Create Posts-->
+        <section id="discussion-form" class="discussion-form">
+          <h2>Start a New Discussion</h2>
+          <form id="postForm">
+              <textarea id="postContent" placeholder="What's on your mind?" required></textarea>
+              <button type="submit">Submit</button>
+          </form>
         </section>
 
-
+        <!--Discussion Board Posts-->
         <div class="posts">
             <h2>Recent Posts</h2>
         </div>
-
         <div id="postFeed"></div>
 
       </main>
@@ -97,11 +96,10 @@
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
           <a href="privacy.html">Privacy Policy</a>
-          <a href="references.html">References</a>
         </nav>
-        <!-- &copy is unicode equivalent for copyright symbol (©)-->
         <p>&copy; 2024 Your Name. All rights reserved.</p>
       </footer>
+
     </div>
   </body>
 </html>

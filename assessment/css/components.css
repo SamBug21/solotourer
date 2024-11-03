@@ -37,32 +37,18 @@ a.button:hover {
   background-color: var(--primary-color);
 }
 
-
-.date-container {
-  display: flex;
-  justify-content: flex-end; /* Aligns items to the right */
-  margin-top: 20px; /* Optional spacing from other elements */
-  padding-right: 15%;
-  border-radius: 5;
-}
-
-.datefield {
-  width: 150px;
-  padding: 0;
-}
-
 /* Slideshow Styles */
 .slideshow-container {
   position: relative; /* Even if moved, original space is kept empty */
-  max-width: 70%; /* Adjust to your desired max width */
-  margin: 0 auto; /* Center the slideshow */
+  width: 70%;
+  margin: 0 auto;
   overflow: hidden;
   padding-bottom: 10%;
 }
 
 .slide-container {
   display: flex; /* Flexbox for side-by-side images */
-  width: 100%; /* Ensure it fills the parent container */
+  width: 100%;
 }
 
 .image-container {
@@ -70,12 +56,13 @@ a.button:hover {
   width: 100%; /* Each image takes full width */
   aspect-ratio: 1;
   overflow: hidden;
+  border-radius: 15px; /* Apply border-radius */
+  margin: 10px;
 }
 
 .image-container img {
   width: 100%; /* Fill the container's width */
   height: 100%; /* Fixed height */
-  padding: 1%;
   object-fit: cover; /* Maintain aspect ratio and cover the container */
   border-radius: 15px; /* Apply border-radius */
 }
@@ -88,28 +75,13 @@ a.button:hover {
   justify-content: center;
 }
 
-/* Text overlay styles */
-/* .slide-container  .text {
-position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
-/* bottom: 10px; 
-left: 10px;
-color: var(--background-color);
-font-size: 18px; 
-padding: 5px;
-text-align: left;
-} 
-
 /* Navigation for slideshow */
 .prev,
 .next {
   cursor: pointer;
   position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
-  top: 38%;
-  width: auto;
-  margin: 0;
-  margin-top: -22px;
-  padding: 16px;
-  /* margin-left: 15px; */
+  top: 40%;
+  transform: translateY(-50%);
   color: var(--background-color);
   font-weight: bold;
   font-size: 2vw;
@@ -120,18 +92,49 @@ text-align: left;
 }
 
 /* Left 0 and Right 0 means they are positioned at the left and rightmost edges of the parent element (slideshow container)*/
-.prev {
-  left: 0;
+.index-arrows .prev {
+  padding: 0;
+  margin: 0;
+  padding-left: 30px;
 }
 
-.next {
+
+.index-arrows .next {
   right: 0;
+  padding: 0;
+  margin: 0;
+  padding-right: 30px;
+}
+
+.community-arrows .prev {
+  padding: 0;
+  margin: 0;
+  padding-left: 40px;
+}
+
+
+.community-arrows .next {
+  right: 0;
+  padding: 0;
+  margin: 0;
+  padding-right: 30px;
 }
 
 /* Black background color for navigation arrows */
 .prev:hover,
 .next:hover {
   color: var(--text-color);
+}
+
+.image-container a {
+  width: 100%;
+  height: 100%;
+}
+
+.image-container a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Caption text */
@@ -163,7 +166,7 @@ text-align: left;
   } /* End point of animation */
 }
 
-/* Discussion board */
+/* Discussion board on Community Page*/
 .discussion-form {
   background: var(--background-color);
   padding: 10px;
@@ -275,6 +278,8 @@ textarea {
   width: 100%;
 }
 
+/* Interaction features on discussion board */
+
 .like-button {
   background: transparent;
   border: none;
@@ -364,115 +369,130 @@ textarea {
   background-color: var(--hover-color);
 }
 
+/* Specific Styles for Navigation Buttons in Community page */
+.nav_buttons {
+  padding: 0;
+  padding-left: 19em;
+  padding-bottom: 2%;
+}
+
+.nav_buttons .navigation-button {
+  font-size: 14px;  /* Smaller font size */
+  padding: 8px 15px; /* Smaller padding */
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav_buttons .navigation-button:hover {
+  background-color: var(--hover-color);
+}
+
 .read-more {
   padding: 0;
   padding-top: 40%;
 }
 
-@media only screen and (max-width: 600px) {
-  /* Navigation for slideshow */
-  .prev,
-  .next {
-    top: 48%;
-    padding: 0 10px;
-    color: var(--background-color);
-  }
-}
-
-/* ham menu */
-.ham-menu {
-  display: none; /* Ensure it displays in flexbox mode */
-  flex-direction: column; /* Align the bars in a column */
-  bottom: 38px;
-  width: 40px;
-  margin-left: auto;
-  position: relative;
-  z-index: 2000; /* Ensure this is higher than the off-screen menu's z-index */
-}
-
-/* Style each bar */
-.ham-menu span {
-  height: 4px;
-  width: 70%;
-  background-color: var(--text-color); /* Default bar color */
-  border-radius: 25px;
-  margin: 2px 0; /* Space between bars */
-  transition: .3s ease;
-}
-
-/* Active state styles */
-.ham-menu.active span {
-  background-color: var(--primary-color); /* Change color when active */
-}
-
-.ham-menu.active span:nth-child(1) {
-  top: 50%; /* Adjust the first bar */
-  transform: translate(-10%, 300%) rotate(45deg); /* Rotate to form X */
-}
-
-.ham-menu.active span:nth-child(2) {
-  opacity: 0; /* Hide the middle bar */
-  height: 0;
-  margin: 0;
-}
-
-.ham-menu.active span:nth-child(3) {
-  top: 50%; /* Adjust the third bar */
-  transform: translate(-10%, 120%) rotate(-45deg); /* Rotate to form X */
-}
-
-
-/* off-screen-menu */
-.off-screen-menu {
-  background-color:  rgba(244, 242, 247, 0.915);
-  height: 100vh;
-  width: 100%;
-  max-width: 450px;
+/* Pop-up boxes for images in slideshows on the Events Page */
+.modal {
+  display: none; /* Hidden by default */
   position: fixed;
+  z-index: 2500; /* Sit on top */
+  padding-top: 60px;
+  left: 0;
   top: 0;
-  right: -450px; /* Hidden off-screen */
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  text-align: left;
-  font-size: 3rem;
-  transition: .3s ease;
-  z-index: 1000; /* Ensure this is lower than the hamburger menu */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
 }
 
-.off-screen-menu.active {
-  right: 0; /* Slide in from the right */
-  flex-direction: column;
-  list-style-type: none; /* Remove bullet points */
-  width: 60%; /* Make the list take the full width of the menu */
+/* Modal Content Inside */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  margin-top: 10%;
+  border: 1px solid #888;
+  width: 50%;
+  height: 50%;
+  border-radius: 10px;
 }
 
-.off-screen-menu ul{
-  margin-top: 30%;
+.modal-content h2{
+  padding:0 10%;
+  padding-top: 8%;
+  padding-bottom: 5%;
 }
 
-.off-screen-menu li {
-  width: 100%; /* Ensure each item takes full width */
+.modal-content p{
+  font-size: 15px;
+  padding: 2% 10%;
 }
 
-.off-screen-menu a {
-  display: block; /* Make each link a block element */
-  padding: 15px; /* Add padding for better touch targets */
-  color: #000; /* Change text color */
-  text-decoration: none; /* Remove underline from links */
-  margin-left: 15%;
+.modal-content span{
+  padding: 0;
+  padding: 2% 10%;
 }
 
-/* Hover effect for links */
-.off-screen-menu a:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Change background on hover */
+/* Modal Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-/* nav */
-nav {
-  padding: 1rem;
-  display: flex;
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
+
+/* Pop-up boxes for items */
+
+.insights-modal .modal-content{
+  height: 40%;
+}
+
+.insights-modal h2{
+  padding: 0;
+  padding-left: 10%;
+  padding-top: 7%;
+}
+
+.modal-body h3{
+  display: none;
+}
+
+.notifications-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 30%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* Hidden by default */
+}
+
+.popup-content {
+  padding: 20px;
+  margin: 5%;
+}
+
+.close-popup {
+  cursor: pointer;
+  float: right;
+  font-size: 18px;
+}
+
+/* Items in Insights and Recommendations Page*/
 
 .gallery {
   display: flex;
@@ -509,6 +529,7 @@ nav {
   margin-bottom: 2%;
 }
 
+/* Toggle for hidden items */
 .see-more {
   padding: 0;
   padding: 15px 10px;
@@ -534,6 +555,7 @@ nav {
   display: none;
 }
 
+/* Item section headings and elements */
 .activities h2{
   padding: 0;
   padding-left: 11%;
@@ -613,99 +635,37 @@ nav {
   border-radius: 50%;
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 2500; /* Sit on top */
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+/* Read more button for visa section of Insights and Recoms page*/
+.visa-section .visa-button{
+  margin: 0;
 }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  margin-top: 10%;
-  border: 1px solid #888;
-  width: 50%;
-  height: 50%;
-  border-radius: 10px;
+.modal-body .visa-button{
+  margin: 0;
+  margin-top: 5%;
+  margin-left: 30%;
+  padding: 5px 0;
 }
 
-.modal-content h2{
-  padding:0 10%;
-  padding-top: 8%;
-  padding-bottom: 5%;
+.visa-button{
+  padding: 5px 10px;
+  border: none;
+  background-color: var(--primary-color); /* Your desired color */
+  color: white;
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+  width: 40%;
 }
 
-.modal-content p{
+.signup-message{
   font-size: 15px;
-  padding: 2% 10%;
+  text-align: center;
+  align-items: center;
+  /* padding-right: 20%; */
+  color: var(--primary-color);
 }
 
-.modal-content span{
-  padding: 0;
-  padding: 2% 10%;
-}
-
-/* Close button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.insights-modal .modal-content{
-  height: 40%;
-}
-
-.insights-modal h2{
-  padding: 0;
-  padding-left: 10%;
-  padding-top: 7%;
-}
-
-.modal-body h3{
-  display: none;
-}
-
-.notifications-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  height: 30%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  display: none; /* Hidden by default */
-}
-
-.popup-content {
-  padding: 20px;
-  margin: 5%;
-}
-
-.close-popup {
-  cursor: pointer;
-  float: right;
-  font-size: 18px;
-}
-
+/* Notification popup on Community Page */
 #notificationsList {
   list-style: none;
   padding: 0;
@@ -722,8 +682,70 @@ nav {
   margin-left: 8%;
 }
 
+.back-to-top {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Newsletter signup on the read more page */
+.read-more-footer {
+  align-items: center;
+  justify-content: center;
+}
+
+.read-more-footer .rm-footer {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  padding: 8px;
+  width: 100%;
+}
+
+/* Style the search box */
+.rm-footer input[type="text"] {
+  width: 50%;
+  max-width: 600px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px; 
+  box-sizing: border-box;
+}
+
+/* Style the search button */
+.rm-footer button {
+  padding: 5px 10px;
+  border: none;
+  background-color: var(--primary-color); /* Your desired color */
+  color: white;
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  width: 8%;
+}
+
+.rm-footer button:hover {
+  background-color: var(--hover-color);
+}
+
+.form login{
+  width: 90%;
+}
+
 /* Media query for mobile */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
 
   body{
     font-size: 12px;
@@ -737,14 +759,11 @@ nav {
     display: none;
   }
 
-  .hamburger {
-    display: flex; /* Show hamburger menu on mobile */
+  .create-account-message{
+    margin: 0 20% 10% 10%;
   }
 
-  .ham-menu {
-    display: flex; /* Ensure the hamburger menu shows */
-  }
-
+  /* Search bar */
   .top-content {
     padding: 0;
     padding-bottom: 5%;
@@ -760,22 +779,56 @@ nav {
     width: 80%;
   }
 
+  /* Slideshow */
+  .community-slideshow{
+    margin: 0;
+    padding-right: 12%;
+  }
+
   .slideshow-container {
-    max-width: 100%; /* Adjust to your desired max width */
-    display: flex;
-    margin: 0 10px;
+    position: relative; /* Even if moved, original space is kept empty */
+    width: 90%;
+    margin: 0; /* Center the slideshow */
+    margin-left: 5%;
+    overflow: hidden;
+    padding-bottom: 10%;
+  }
+
+  .community-slideshow  .slideshow-container {
+    width: 100%;
+  }
+
+  .mySlides{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slide-container {
+    display: flex; /* Flexbox for side-by-side images */
+    width: 100%; /* Ensure it fills the parent container */
   }
 
   .image-container {
-    width: 100%; /* Ensures each image container spans the entire width */
-    margin-bottom: 10px; /* Adds spacing between image containers */
+    border-radius: 15px;
+    width: 100%; 
+    margin: 10px 5px;
   }
   
   .image-container img {
-    border-radius: 0; /* Apply border-radius */
     box-sizing: border-box; /* Includes padding and border in the total width calculation */
     width: 100%; /* Ensures each image container spans the entire width */
-    flex: 1 1 100%; /* Change to 1 image per slide */
+  }
+
+  .image-container a {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .image-container a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .image-container .text {
@@ -786,8 +839,53 @@ nav {
     border-radius: 5%;
     text-align: center;
     justify-content: center;
-  }  
+  }
   
+  /* Navigation for slideshow */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
+    top: 42%;
+    transform: translateY(-50%);
+    color: var(--background-color);
+    font-weight: bold;
+    font-size: 2vw;
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none; /* Prevent users from accidentally selecting text while interacting with those elements. */
+    z-index: 10; /*  Arrows will appear on top of the slideshow images even as they change. */
+  }
+  
+  /* Left 0 and Right 0 means they are positioned at the left and rightmost edges of the parent element (slideshow container)*/
+  .index-arrows .prev {
+    left: 0;
+    padding: 0;
+    margin: 0;
+    padding-left: 15px;
+  }
+
+  .index-arrows .next {
+    right: 0;
+    padding: 0;
+    margin: 0;
+    padding-right: 15px;
+  }
+  
+  .community-arrows .prev {
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .community-arrows .next {
+    right: 0;
+    padding: 0;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  /* Items in Insights and Recommendations Page*/
   .item {
     flex: 1 1 calc(50% - 20px); /* 2 items per row on tablet/small screens */
     width: 10%;
@@ -815,27 +913,6 @@ nav {
     padding: 0;
     margin-top: 2%;
     margin-bottom: 5%;
-  }
-
-  .see-more {
-    padding: 0;
-    padding-top: 10%;
-    padding-left: 15%;
-    cursor: pointer;
-  }
-  
-  .see-more p{
-    font-size: 12px;
-    font-weight: 400;
-    width: 100%;
-    padding: 0;
-  }
-  
-  .arrow{
-    padding: 0;
-    padding-left: 40%;
-    transition: transform 0.3s ease; /* Smooth rotation */
-    display: inline-block; /* Ensure it rotates correctly */
   }
 
   .activities h1{
@@ -906,6 +983,29 @@ nav {
     margin-left: 45%;
   }
 
+  /* Toggle for hidden items */
+  .see-more {
+    padding: 0;
+    padding-top: 10%;
+    padding-left: 15%;
+    cursor: pointer;
+  }
+  
+  .see-more p{
+    font-size: 12px;
+    font-weight: 400;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .arrow{
+    padding: 0;
+    padding-left: 40%;
+    transition: transform 0.3s ease; /* Smooth rotation */
+    display: inline-block; /* Ensure it rotates correctly */
+  }
+
+  /* Popup for when items are clicked on */
   .insights-modal .modal-content{
     height: 30%;
   }
@@ -938,6 +1038,7 @@ nav {
     margin: 0;
   }
 
+  /* Search bar in insights and recoms page */
   .top-content-recomspage{
     height: 60px;
     background-color: var(--background-color);
@@ -946,6 +1047,7 @@ nav {
     margin-top: 20%;
   }
 
+  /* Search bar in Community Page */
   .discussion-form{
     padding: 0;
     margin-top: 20%;
@@ -961,6 +1063,7 @@ nav {
     margin-top: 5%;
   }
 
+  /* Post content on community discussion board */
   .user-info{
     font-size: 14px;
     font-weight: 600;
@@ -1030,53 +1133,36 @@ nav {
   #postFeed {
     width: 90%;
   }
-}
 
+  /* Back to top button on Events page */
+  .back-to-top {
+    display: block;
+  }
+  
+  /* Adjust position when footer is visible */
+  .back-to-top.above-footer {
+    bottom: 80px; /* Adjust this value based on your footer height */
+  }
 
-/* Style the top navigation */
-.read-more-footer {
-  align-items: center;
-  justify-content: center;
-}
-
-.read-more-footer .rm-footer {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  padding: 8px; /* Padding around the nav */
-  width: 100%; /* Ensure it spans the full width */
-}
-
-/* Style the search box */
-.rm-footer input[type="text"] {
-  width: 50%; /* Set width to 50% */
-  max-width: 600px; /* Optional: limit max width for larger screens */
-  padding: 6px;
-  border: 1px solid #ccc; /* Add border for better visibility */
-  border-radius: 4px; /* Rounded corners */
-  margin-right: 8px; /* Space between input and button */
-  box-sizing: border-box;
-}
-
-/* Style the search button */
-.rm-footer button {
-  padding: 5px 10px;
-  border: none;
-  background-color: var(--primary-color); /* Your desired color */
-  color: white;
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer;
-  width: 8%;
-}
-
-.rm-footer button:hover {
-  background-color: var(--hover-color);
-}
-
-.signup-message{
-  font-size: 15px;
-  text-align: center;
-  align-items: center;
-  /* padding-right: 20%; */
-  color: var(--primary-color);
+  .visa-section .visa-button{
+    margin: 0;
+  }
+  
+  .modal-body .visa-button{
+    margin: 0;
+    margin-top: 5%;
+    margin-left: 25%;
+    padding: 5px 0;
+  }
+  
+  .visa-button{
+    padding: 2px 2px;
+    border: none;
+    background-color: var(--primary-color); /* Your desired color */
+    color: white;
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer;
+    width: 50%;
+    font-size: 10px;
+  }
 }

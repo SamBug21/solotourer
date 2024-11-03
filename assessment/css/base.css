@@ -43,6 +43,12 @@ h1{
   margin-bottom: 5%;
 }
 
+.login-title h1{
+  margin: 5% 0;
+  text-align: left;
+  margin-bottom: 5%;
+}
+
 h2{
   font-size: 20px;
   font-weight: 500;
@@ -145,100 +151,7 @@ a, button {
   font-size: 13px;
   color:var(--text-color);
   text-decoration: none; /*  Remove default underline */
-  padding: 0 10px;
 }
-
-.menu-toggle {
-  display: none;
-}
-
-
-#events-section {
-  display: flex;
-  flex-direction: column; /* Stack events vertically */
-  justify-content: center;
-  align-items: center;
-  gap: 20px; /* Space between event sections */
-  width: 800px; /* Adjust as needed */
-  margin: 0 auto;
-}
-
-.event {
-  display: flex; /* Align items horizontally */
-  gap: 20px; /* Space between left and right sections */
-  height: 200px;
-  align-items: stretch;
-}
-
-.event-left {
-  flex: 1; /* Middle image on the right */
-  position: relative;
-  height: 25px;
-}
-
-.event-left-top img{
-  flex: 1.5; /* Make top image taller to match the two images on the right */
-  position: relative;
-  height: 168px;
-}
-
-.event-left-bottom img{
-  flex: 1; /* Bottom image takes less space */
-  position: relative;
-  height: 75px;
-}
-
-.event-right {
-  flex: 1; /* Right section takes less space */
-  display: flex;
-  flex-direction: column; /* Stack images vertically */
-  gap: 10px; /*Space between images */
-}
-
-.event-right-top {
-  flex: 1; /* Top image on the right */
-  position: relative;
-  height: 75px; /* Maintain aspect ratio */
-}
-
-.event-right-middle {
-  flex: 1; /* Middle image on the right */
-  position: relative;
-  height: 75px;
-}
-
-.event-right-bottom {
-  flex: 1; /* Bottom image on the right */
-  position: relative;
-  height: 75px;
-}
-
-.event-right-top img{
-  height: 75px;
-}
-
-.event-right-middle img{
-  height: 75px;
-}
-
-.event-right-bottom img{
-  height: 75px;
-}
-
-.event img {
-  width: 635px; /* Responsive images */
-  object-fit: cover;
-}
-
-.event-left-bottom .event-name {
-  position: absolute;
-  left: 10px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-  padding: 8px;
-  border-radius: 4px;
-}
-
 
 /* Navigation styles */
 #flexnavbar {
@@ -247,11 +160,15 @@ a, button {
   align-items: center; /* Based on vertical space, as long as container height is filled, items are centred accordingly. */
   grid-area: nav;
   padding-left: 15%;
+  justify-content: center;
+  padding-right: 20%;
 }
 
 /* select all the <a> elements inside my #flexnavbar container */
 #flexnavbar > a {
   flex:1; /* each element tries to take up an equal amount of space */
+  flex: none;
+  padding: 3px 10px;
 }
 
 #flexnavbar a {
@@ -341,12 +258,10 @@ input[type="file"] {
 .event-card {
   background-color: #ffffff;
   border-radius: 10px;
-  border: 2px solid var(--primary-color); 
+  border: 1px solid var(--primary-color); 
   padding: 15px;
-  width: 400px; /* Adjust width to match */
+  width: 400px;
   margin: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
 
 .event-card p{
@@ -355,10 +270,6 @@ input[type="file"] {
 
 .event-card h3{
   padding: 0%;
-}
-
-.event-card:hover {
-  transform: scale(1.05); 
 }
 
 /* Event header - title section */
@@ -477,7 +388,6 @@ input[type="file"] {
   box-sizing: border-box;
 }
 
-
 .new-image-container .new-text{
   position: absolute;
   width: 50%;
@@ -488,7 +398,6 @@ input[type="file"] {
   bottom: 25%;
   padding-left: 0;
 }
-
 
 Text overlay styles */
 .new-slide-container .text {
@@ -566,130 +475,7 @@ Text overlay styles */
 }
 
 
-/* Slideshow Styles */
-.second-slideshow-container {
-  position: relative; /* Even if moved, original space is kept empty */
-  max-width: 70%; /* Adjust to your desired max width */
-  margin: 0 auto; /* Center the slideshow */
-  overflow: hidden;
-}
-
-.second-slide-container {
-  display: flex; /* Flexbox for side-by-side images */
-  width: 100%; /* Ensure it fills the parent container */
-}
-
-.second-slide-container .second-slide-container{
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
-.second-image-container {
-  position: relative; /* Won't push other elements around or be affected by them.*/
-  width: 100%; /* Each image takes full width */
-  aspect-ratio: 1;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.second-image-container img {
-  width: 100%; 
-  height: 60%; 
-  padding: 1%;
-  object-fit: cover;
-  border-radius: 10px; 
-  box-sizing: border-box;
-}
-
-
-.second-image-container .new-text{
-  position: absolute;
-  width: 50%;
-  background: #333333;
-  color: white;
-  text-align:left;
-  font-weight: 600;
-  bottom: 45%;
-  padding-left: 0;
-}
-
-
-Text overlay styles */
-.second-slide-container .text {
-  position: absolute; 
-  bottom: 10px; 
-  left: 10px;
-  color: var(--background-color);
-  font-size: 18px; 
-  padding: 5px;
-  text-align: left;
-} 
-
-/* Caption text */
-.second-text {
-  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
-  bottom: 16px;
-  left: 16px;
-  color: var(--background-color);
-  font-weight: 2vw;
-  font-size: 15px;
-  padding: 8px;
-  width: 100%;
-  text-align: center;
-  z-index: 2;
-}
-
-.second-text h2, .second-text p{
-  text-align: center;
-}
-
-
-.second-text h2{
-  padding: 0;
-  color: var(--background-color);
-  font-weight: 600;
-}
-
-.second-text p{
-  padding: 0;
-  color: var(--background-color);
-  margin-top: 5px;
-  font-weight: 400;
-}
-
-/* Navigation for slideshow */
-.second-prev, .second-next {
-  cursor: pointer;
-  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
-  top: 28%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: var(--background-color);
-  font-weight: bold;
-  font-size: 2vw;
-  transition: 0.6s ease;
-  border-radius: 3px;
-  user-select: none; /* Prevent users from accidentally selecting text while interacting with those elements. */
-  z-index: 10; /*  Arrows will appear on top of the slideshow images even as they change. */
-}
-
-
-/* Left 0 and Right 0 means they are positioned at the left and rightmost edges of the parent element (slideshow container)*/
-.second-prev {
-  left: 0;
-}
-
-.second-next {
-  right: 0;
-}
-
-/* Black background color for navigation arrows */
-.second-prev:hover, .second-next:hover {
-  color: var(--text-color);
-}
-
+/* Search bar in insights and recoms page */
 .top-content-recomspage{
   align-items: center;
   justify-content: center;
@@ -720,46 +506,7 @@ Text overlay styles */
   box-sizing: border-box;
 }
 
-.event-button{
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: var(--background-color);
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: none;
-  background-color: var(--primary-color);
-  transition: background-color 0.3s ease;
-}
-  
-.event-button:hover {
-  background-color: var(--primary-color);
-}
-
-/* Specific Styles for Navigation Buttons in #nav_buttons */
-.nav_buttons-event {
-  padding: 0;
-  padding-left: 15%;
-  padding-bottom: 2%;
-}
-
-
-.nav_buttons-event .navigation-button {
-  font-size: 14px;  /* Smaller font size */
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.nav_buttons-event .navigation-button:hover {
-  background-color: var(--hover-color);
-}
-
-/* Top left text */
+/* Title text on homepage*/
 .top-left {
   position: absolute;
   width: 30%;
@@ -781,8 +528,25 @@ Text overlay styles */
   text-align: left;
 }
 
-.nav_buttons-event {
-  margin-right: 15px; /* Adjusts right alignment */
+.nav_buttons-event{
+  margin: 0;
+  margin-left: 15px; /* Adjusts right alignment */
+  display: flex;
+}
+
+.nav_buttons-event2{
+  margin: 0;
+  margin-left: 15px; /* Adjusts right alignment */
+  display: flex;
+}
+
+.nav_buttons-event2 h2{
+  margin-left: 100px;
+  /* margin-right: 950px; */
+}
+
+.nav_buttons-event2 button{
+  margin-left: 960px;
 }
 
 .nav-links {
@@ -812,28 +576,6 @@ Apply specific styles based on certain conditions*/
     padding: 8px 0;
     text-align: left;
     width: 100%;
-  }
-
-  .menu-list{
-    padding: 0;
-    padding-bottom: 5%;
-    padding-right: 50%;
-  }
-  
-
-  .menu-toggle {
-    display: block; /* Show the menu toggle button in mobile view */
-    font-size: 14px;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    border: none;
-    cursor: pointer;
-  }
-
-
-  cta. button {
-    font-size: 10px;
   }
 
   /* Organizing different sections of layout for clear and structured layout. */
@@ -880,6 +622,7 @@ Apply specific styles based on certain conditions*/
   
   .topnav {
     align-items: center; /* Center items */
+    margin-top: 5%;
   }
   
   .topnav input[type=text] {
@@ -887,24 +630,6 @@ Apply specific styles based on certain conditions*/
     margin: 8px 0; /* Space between input and button */
   }
 
-}
-
-@media screen and (min-width: 600px) {
-  #flexnavbar {
-    justify-content: center;
-    padding-right: 15%;
-  }
-
-  #flexnavbar > a {
-    flex: none;
-    padding: 3px 10px;
-  }
-
-}
-
-
-/* Styles for mobile devices (up to 600px wide) */
-@media only screen and (max-width: 600px) {
   /* Make the logo and navbar items stack vertically */
   header {
     display: flex;
@@ -920,8 +645,8 @@ Apply specific styles based on certain conditions*/
     width: 15%; /* Adjust logo size */
     margin: 0;
     margin-right: 25%;
+    margin-left: 2%;
     bottom: 10px;
-    padding: 0;
   }
 
   #flexnavbar {
@@ -953,7 +678,7 @@ Apply specific styles based on certain conditions*/
     flex-direction: column; /* Stack buttons vertically */
   }
 
-  .nav_buttons .navigation-button {
+  .nav_buttons .navigation-button2 {
     margin-bottom: 10px;
   }
 
@@ -983,11 +708,12 @@ Apply specific styles based on certain conditions*/
 
   .index-title h2{
     padding: 0;
-    padding-left: 4%;
-    padding-bottom: 2%;
+    padding-left: 7%;
   }
 
   .events-titles h2{
+    margin:0;
+    margin-right: 95px;
     padding: 0;
     padding-left: 6%;
   }
@@ -1002,7 +728,13 @@ Apply specific styles based on certain conditions*/
     font-size: 18px;
   }
 
-  .nav_buttons .navigation-button {
+  .community-titles h2{
+    padding: 0;
+    padding-top: 5%;
+    padding-left: 10%;
+  }
+
+  .nav_buttons .navigation-button2 {
     padding: 10px 20px;
   }
   
@@ -1018,8 +750,23 @@ Apply specific styles based on certain conditions*/
   .nav_buttons-event {
     display: block; /* Show the button in mobile view */
     padding: 0;
-    padding-left: 6%;
+    margin: 0;
     margin: 2% 0;
+  }
+
+  .nav_buttons-event h2{
+    margin: 0;
+  }
+  
+  .navigation-button2{
+    margin: 0;
+    margin-left: 5%;
+  }
+
+  .navigation-button2 button{
+    margin: 0;
+    width: 100%;
+    font-size: 12px;
   }
   
   .upcoming-title {
@@ -1028,7 +775,7 @@ Apply specific styles based on certain conditions*/
   }
 
   /* Styles for smaller button text */
-  .nav_buttons-event a.navigation-button {
+  .nav_buttons-event a.navigation-button2 {
     font-size: 10px; /* Smaller font size */
     padding: 5px 10px; /* Smaller padding */
   }
@@ -1129,6 +876,7 @@ Apply specific styles based on certain conditions*/
     height: 100px;
     margin: 0;
     margin-left: 40px;
+    margin-top: 20%;
   }
 
 }
