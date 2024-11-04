@@ -1,10 +1,10 @@
-// Debug helper
-console.log("JavaScript file loaded");
+//All content below has been created or edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/
 
 // Debug helper
 console.log("JavaScript file loaded");
 
 // Slideshow functionality
+// Slideshow container code reference: https://www.w3schools.com/howto/howto_js_slideshow.asp
 class Slideshow {
     constructor(container) {
         this.container = container;
@@ -101,12 +101,7 @@ class Carousel {
     }
 }
 
-// Post functionality
-document.addEventListener('DOMContentLoaded', () => {
-    // Instantiate the postForm class
-    const postManager = new postForm();
-});
-
+// Post functionality on Community Page
 class postForm {
     constructor() {
         this.initialize();
@@ -161,6 +156,11 @@ class postForm {
             </div>
         `;
 
+        const likeButton = postDiv.querySelector('.like-button');
+        if (likeButton) {
+            likeButton.addEventListener('click', (e) => this.toggleLike(e.currentTarget));
+        }
+
         const postActions = postDiv.querySelector('.post-actions');
         if (postActions) {
             postActions.appendChild(saveButton);
@@ -192,6 +192,7 @@ class postForm {
         }
     }
 
+    // W3Schools. (n.d.). JavaScript alert. W3Schools. https://www.w3schools.com/js/tryit.asp?filename=tryjs_alert
     commentPost() {
         alert("Comment functionality not implemented yet.");
     }
@@ -206,7 +207,15 @@ class postForm {
     }
 }
 
-// Scroll functionality
+let postManager; // Declare globally
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Instantiate the postForm class
+    postManager = new postForm();
+});
+
+// Scroll functionality buttons on Community Page and Events Page
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -234,6 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Initialize sections
+// See More button on Insights and Recoms Page 
 function toggleSectionVisibility(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -280,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+// Contact Form on Contact page
 document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.getElementById("contactForm");
     const confirmationMessage = document.getElementById("confirmationMessage");
@@ -299,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+// Notifications Button on Community Page
 document.addEventListener('DOMContentLoaded', () => {
     const notificationsButton = document.getElementById('notificationButton');
     const notificationsPopup = document.getElementById('communityNotificationsPopup');

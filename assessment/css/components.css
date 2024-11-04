@@ -1,3 +1,6 @@
+/*All content below has been created or edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/ */
+/* Content below has been created or edited with the help of Worthy, P. (2024). Guides [Instructional manual]. University of Queensland. */
+
 /* Global Button Styles */
 button {
   font-family: "Poppins", sans-serif;
@@ -92,6 +95,7 @@ a.button:hover {
 }
 
 /* Left 0 and Right 0 means they are positioned at the left and rightmost edges of the parent element (slideshow container)*/
+/* Arrows on Slideshow on homepage (index.html) */
 .index-arrows .prev {
   padding: 0;
   margin: 0;
@@ -106,12 +110,12 @@ a.button:hover {
   padding-right: 30px;
 }
 
+/* Arrows on Slideshow on community page (community.html) */
 .community-arrows .prev {
   padding: 0;
   margin: 0;
   padding-left: 40px;
 }
-
 
 .community-arrows .next {
   right: 0;
@@ -120,7 +124,6 @@ a.button:hover {
   padding-right: 30px;
 }
 
-/* Black background color for navigation arrows */
 .prev:hover,
 .next:hover {
   color: var(--text-color);
@@ -139,7 +142,7 @@ a.button:hover {
 
 /* Caption text */
 .text {
-  position: absolute; /* Won't push other elements around or be affected by them for example the image underneath this text */
+  position: absolute;
   bottom: 16px;
   left: 16px;
   color: var(--background-color);
@@ -788,7 +791,7 @@ textarea {
   .slideshow-container {
     position: relative; /* Even if moved, original space is kept empty */
     width: 90%;
-    margin: 0; /* Center the slideshow */
+    margin: 0;
     margin-left: 5%;
     overflow: hidden;
     padding-bottom: 10%;
@@ -817,7 +820,7 @@ textarea {
   
   .image-container img {
     box-sizing: border-box; /* Includes padding and border in the total width calculation */
-    width: 100%; /* Ensures each image container spans the entire width */
+    width: 100%;
   }
 
   .image-container a {
@@ -854,7 +857,7 @@ textarea {
     transition: 0.6s ease;
     border-radius: 3px;
     user-select: none; /* Prevent users from accidentally selecting text while interacting with those elements. */
-    z-index: 10; /*  Arrows will appear on top of the slideshow images even as they change. */
+    z-index: 10;
   }
   
   /* Left 0 and Right 0 means they are positioned at the left and rightmost edges of the parent element (slideshow container)*/
@@ -929,7 +932,8 @@ textarea {
     padding: 0;
     padding-left: 11%;
   }
-  
+
+  /* See More button and arrow for sections */
   .food-drink .see-more {
     margin: 0;
     margin-left: 25%;
@@ -983,7 +987,7 @@ textarea {
     margin-left: 45%;
   }
 
-  /* Toggle for hidden items */
+  /* Toggle for hidden items in Insights and Recoms page */
   .see-more {
     padding: 0;
     padding-top: 10%;
@@ -1001,11 +1005,11 @@ textarea {
   .arrow{
     padding: 0;
     padding-left: 40%;
-    transition: transform 0.3s ease; /* Smooth rotation */
-    display: inline-block; /* Ensure it rotates correctly */
+    transition: transform 0.3s ease;
+    display: inline-block;
   }
 
-  /* Popup for when items are clicked on */
+  /* Popup window for when items are clicked on */
   .insights-modal .modal-content{
     height: 30%;
   }
@@ -1144,6 +1148,7 @@ textarea {
     bottom: 80px; /* Adjust this value based on your footer height */
   }
 
+  /* Popup window for visa section with read more button on insights and recoms page */
   .visa-section .visa-button{
     margin: 0;
   }

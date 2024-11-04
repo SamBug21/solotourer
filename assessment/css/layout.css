@@ -1,3 +1,6 @@
+/*All content below has been created or edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/ */
+/* Content below has been created or edited with the help of Worthy, P. (2024). Guides [Instructional manual]. University of Queensland. */
+
 /* Navigation and grid*/
 #navigation-bar {
   display: grid; /* turn this element into a grid container */
@@ -15,7 +18,7 @@
 }
 
 header {
-  display: flex; /* It makes the container a flexbox and be able to align more flexibily*/
+  display: flex; /* Be able to align more flexibily*/
   padding: 5px;
   grid-area: header;
 }
@@ -23,7 +26,7 @@ header {
 /* Grid container layout */
 #gridcontainer {
   display: grid; /* Turns element into grid container so its children (grid items) can be arranged into rows and columns.*/
-  height: 100vh; /* 100 % of the viewport height */
+  height: 100vh;
     grid-template-areas: /* Define a visual layout of grid items using named areas */
     "header header header"
     "nav nav nav"
@@ -33,7 +36,6 @@ header {
   grid-template-rows: auto auto 1fr auto; /*set the row height, auto - automatically adjust based on the content within them, 1fr will take up remaining space*/
 }
 
-/* Main and footer areas */
 main {
   display: flex;
   flex-direction: column;
@@ -165,24 +167,6 @@ nav {
   align-items: flex-start;
 }
 
-/* .text-left-image-right{
-  display:flex;
-  align-items: flex-start;
-  padding-top: 15%;
-  padding-left: 10%;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.text-left-image-right .context-images{
-  padding: 0;
-  padding-right: 15%;
-}
-
-.text-left-image-right .text-image{
-  padding: 0;
-} */
-
 /* Contact us form on Contact Page and text on About page*/
 .contact-container {
   display: flex;
@@ -211,7 +195,7 @@ nav {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 20px; /* Adds space between the image and text */
+  gap: 20px;
 }
 
 .title-container-contact h2 {
@@ -232,7 +216,6 @@ nav {
 }
 
 /* Contact Page Text*/
-
 .container-headings {
   padding: 0;
   padding-top: 20px;
@@ -245,9 +228,9 @@ nav {
 }
 
 .title-container-contact img {
-  max-width: 600px; /* Sets a max width for the image */
-  width: 100%; /* Makes the image responsive */
-  height: auto; /* Maintains the image aspect ratio */
+  max-width: 600px;
+  width: 100%;
+  height: auto;
 }
 
 /* Form on Add Events Page*/
@@ -348,7 +331,6 @@ nav {
   border-radius: 10px;
 }
 
-
 .rescue { background-color: #E3170A; }
 .hospital { background-color: #64B7B6; color: black; }
 .parents { background-color: #F6AE2D; }
@@ -356,11 +338,6 @@ nav {
 .firefighter { background-color: #f77f00; }
 .friends { background-color: #AC7DDB; }
 
-
-/* .filter-section {
-  padding: 20px;
-  text-align: center;
-} */
 
 /* Guides list on Safety Guides page*/
 .article-list {
@@ -417,7 +394,7 @@ nav {
   border-radius: 5px;
 }
 
-/* Author and additional info styling */
+/* Description and read more button styling */
 .author {
   font-size: 0.9em; 
   color: #555; 
@@ -627,6 +604,7 @@ h2.read-more-page {
   justify-content: center;
 }
 
+/* Footer styling */
 .footer {
   grid-area: foot;
   background-color: black; 
@@ -750,7 +728,6 @@ footer h2{
 }
 
 /* Comment section of read more page and visa page */
-
 .comments-section {
   margin: 0 auto;
   width: 60%; 
@@ -805,8 +782,10 @@ footer h2{
   background-color: none;
 }
 
+/* Media query for mobile */
 @media only screen and (max-width: 600px) {
 
+  /* Hamburger menu */
   .hamburger {
     display: flex; /* Show hamburger menu on mobile */
   }
@@ -845,6 +824,7 @@ footer h2{
     font-size: 20px;
   }
 
+  /* Heading styles */
   .title-container h3{
     font-size: 15px;
   }
@@ -875,6 +855,7 @@ footer h2{
     font-size: 15px;
   }
 
+  /* Emergency section on homepage */
   .emergency-container {
     display: flex;
     flex-direction: column;
@@ -917,6 +898,7 @@ footer h2{
     padding-left: 10%;
   }
 
+  /* Guides on Safety Guides page */
   .article-list {
     width: 90%;
     margin: 0;
@@ -980,7 +962,7 @@ footer h2{
     background-color: var(--hover-color);
   }
 
-  /* Styling for each article */
+  /* Guides in visa page */
   .guide-top {
     display:flex;
     flex-direction: column;
@@ -1021,7 +1003,6 @@ footer h2{
     margin-top: 15%;
     text-align: center;
   }
-
 
   .guide .author{
     font-style: normal;
@@ -1073,6 +1054,7 @@ footer h2{
     font-size: 12px;
   }
 
+  /* Comments section on Visa Page */
   .guide-end .view-comments-button{
     margin: 5% 0;
     padding: 2px 2px;
@@ -1080,7 +1062,6 @@ footer h2{
     font-size: 12px;
   }
 
-  
   .comments-section{
     margin: 0;
     margin-left: 7%;
@@ -1095,6 +1076,7 @@ footer h2{
     margin-top: 5%;
   }
 
+  /* Newsletter sign up on Visa Page */
   .signup-container {
     margin: 20px;
   }
@@ -1198,6 +1180,7 @@ footer h2{
     margin-bottom: 20px;
   }
 
+  /* Footer Styling */
   .footer {
     grid-area: foot;
     background-color: black;
@@ -1232,6 +1215,7 @@ footer h2{
     font-size: 10px;
   }
 
+  /* Contact Us Form o Contact Page */
   .contact-container {
     display: block;
     flex-direction: column;
@@ -1289,7 +1273,7 @@ footer h2{
     justify-content: center;
   }
 
-  /* Contact us form on Contact Page and text on About page*/
+  /* Text and image on About page*/
   .contact-container2 {
     width: 90%;
   }

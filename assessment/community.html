@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--Font from Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <!--CSS Files-->
-    <link rel="stylesheet" href="./css/css_reset.css"/>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/components.css"/>
-    <link rel="stylesheet" href="./css/layout.css"/>
-    
+    <link rel="stylesheet" href="./css/css_reset.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+
     <!--JavaScript Files-->
     <script type="module" src="js/page_load_message.js" defer></script>
     <script type="module" src="js/index.js" defer></script>
@@ -22,17 +25,26 @@
 
     <title>Community</title>
   </head>
-  
+
   <body>
     <header>
       <!--Logo-->
-      <a href="index.html">
-        <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
+      <a href="index.html" aria-label="Go to homepage">
+        <img class="logo" src="./icons/Frame-68.png" alt="Logo" />
       </a>
 
       <!--Hamburger Menu-->
+      <!--Referenced from ByteGrad . (2023, February 24). Responsive Navbar With Animated Hamburger Menu (HTML, CSS & JS)  [Video]. YouTube. https://www.youtube.com/watch?v=YIVXOMvXmNE-->
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <nav>
-        <div class="ham-menu">
+        <div
+          class="ham-menu"
+          aria-label="Toggle menu"
+          tabindex="0"
+          role="button"
+          aria-pressed="false"
+          aria-expanded="false"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -40,7 +52,7 @@
       </nav>
 
       <!--Navigation Bar-->
-      <nav id="flexnavbar">
+      <nav id="flexnavbar" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
         <a href="events.html">Events</a>
@@ -48,66 +60,107 @@
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
 
-      <a class = "cta" href ="login.html"><button>Login</button></a>
+      <a class="cta" href="login.html" aria-label="Login to your account"
+        ><button>Login</button></a
+      >
 
       <!--Hamburger Menu-->
-      <div class="off-screen-menu">
+      <div class="off-screen-menu" aria-label="Off-screen menu">
         <ul>
           <a href="index.html">Home</a>
           <a href="safetyguides.html">Safety Guides</a>
           <a href="events.html">Events</a>
           <a class="active" href="community.html">Community</a>
-          <a href="insights_recommendations.html">Insights and Recommendations</a>
+          <a href="insights_recommendations.html"
+            >Insights and Recommendations</a
+          >
           <a href="login.html">Login</a>
         </ul>
       </div>
-
     </header>
     <main>
-
       <!-- Search bar for users to search through community dicussion boards -->
+      <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <div class="top-content-recomspage">
         <div class="topnav">
-          <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search..."
+            aria-label="Search"
+          />
         </div>
-        <div class="nav_buttons">
+        <div class="nav_buttons" aria-label="Navigation buttons">
           <a href="#discussion-form">
-              <button type="button" class="navigation-button">Discussion Board</button>
+            <button
+              type="button"
+              class="navigation-button"
+              aria-label="Go to Discussion Board"
+            >
+              Discussion Board
+            </button>
           </a>
-          <button type="button" class="navigation-button" id="notificationButton">Notifications</button>
+          <button
+            type="button"
+            class="navigation-button"
+            id="notificationButton"
+            aria-label="Open Notifications"
+          >
+            Notifications
+          </button>
         </div>
       </div>
 
       <!-- Notification Popup -->
-      <div class="notifications-popup" id="communityNotificationsPopup" style="display: none;">
+      <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+      <div
+        class="notifications-popup"
+        id="communityNotificationsPopup"
+        style="display: none"
+      >
         <div class="popup-content">
-          <span class="close-popup" id="closeCommunityNotificationsPopup">&times;</span>
+          <span
+            class="close-popup"
+            id="closeCommunityNotificationsPopup"
+            aria-label="Close Notifications Popup"
+            >&times;</span
+          >
           <h2>Notifications</h2>
           <div id="notificationsList">
             <p>New member joined #Budget community!</p>
-            <a href ="#" class="notification-btn">
-                <button class="view-button">View</button>
+            <a href="#" class="notification-btn">
+              <button class="view-button">View</button>
             </a>
           </div>
           <div id="notificationsList">
             <p>You have 3 new messages.</p>
-            <a href ="#" class="notification-btn">
-                <button class="view-button">View</button>
+            <a href="#" class="notification-btn">
+              <button class="view-button">View</button>
             </a>
           </div>
           <div id="notificationsList">
             <p>Your post was liked by Alice</p>
-            <a href ="#" class="notification-btn">
-                <button class="view-button">View</button>
+            <a href="#" class="notification-btn">
+              <button class="view-button">View</button>
             </a>
           </div>
         </div>
       </div>
 
       <!--Notification button popup window-->
-      <div class="view-message-popup" id="viewMessagePopup" style="display: none;">
+      <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+      <div
+        class="view-message-popup"
+        id="viewMessagePopup"
+        style="display: none"
+      >
         <div class="popup-content">
-          <span class="close-view-message-popup" id="closeViewMessagePopup">&times;</span>
+          <span
+            class="close-view-message-popup"
+            id="closeViewMessagePopup"
+            aria-label="Close Message Popup"
+            >&times;</span
+          >
           <h2>Functionality Not Implemented</h2>
           <p>This functionality has not been implemented yet.</p>
         </div>
@@ -118,21 +171,36 @@
       </div>
 
       <!--Slideshow of communities-->
-      <div class="community-slideshow">
-        <!-- Slideshow container code reference: https://www.w3schools.com/howto/howto_js_slideshow.asp--> 
+      <div class="community-slideshow" aria-label="Community slideshow">
+        <!-- Slideshow container code reference: https://www.w3schools.com/howto/howto_js_slideshow.asp-->
+        <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
         <div class="slideshow-container">
           <!-- Full-width images with caption text -->
           <div class="mySlides">
             <div class="slide-container">
               <div class="image-container">
-                <a href="budget-community.html">
-                  <img src="./images/budget.jpg"style="width:100%;">
+                <a
+                  href="budget-community.html"
+                  aria-label="Go to Budget Community"
+                >
+                  <img
+                    src="./images/budget.jpg"
+                    alt="Photo of pink piggy bank"
+                    style="width: 100%"
+                  />
                   <div class="text">Budget</div>
                 </a>
               </div>
               <div class="image-container">
-                <a href="budget-community.html">
-                  <img src="./images/nature.jpg" style="width:100%;">
+                <a
+                  href="budget-community.html"
+                  aria-label="Go to Nature Community"
+                >
+                  <img
+                    src="./images/nature.jpg"
+                    alt="Photo of Mountain and Botafogo Beach in Rio de Janeiro"
+                    style="width: 100%"
+                  />
                   <div class="text">Nature</div>
                 </a>
               </div>
@@ -141,51 +209,85 @@
           <div class="mySlides">
             <div class="slide-container">
               <div class="image-container">
-                <a href="budget-community.html">
-                  <img src="./images/cultural.jpg"style="width:100%;">
+                <a
+                  href="budget-community.html"
+                  aria-label="Go to Cultural Community"
+                >
+                  <img
+                    src="./images/cultural.jpg"
+                    alt="Photo of woman smiling under sunlight in a street"
+                    style="width: 100%"
+                  />
                   <div class="text">Cultural</div>
                 </a>
               </div>
 
               <div class="image-container">
-                <a href="budget-community.html">
-                  <img src="./images/foodie.jpg" style="width:100%;">
+                <a
+                  href="budget-community.html"
+                  aria-label="Go to Foodie Adventures Community"
+                >
+                  <img
+                    src="./images/foodie.jpg"
+                    alt="Photo of restaurant tables and chairs"
+                    style="width: 100%"
+                  />
                   <div class="text">Foodie Adventures</div>
                 </a>
               </div>
-
             </div>
           </div>
           <!-- Next and previous buttons -->
           <div class="community-arrows">
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="prev" onclick="plusSlides(-1)" aria-label="Previous slide"
+              >&#10094;</a
+            >
+            <a class="next" onclick="plusSlides(1)" aria-label="Next slide"
+              >&#10095;</a
+            >
           </div>
         </div>
       </div>
-      <br>
+      <br />
 
       <!--Discussion Board to Create Posts-->
-      <section id="discussion-form" class="discussion-form">
+      <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+      <section
+        id="discussion-form"
+        class="discussion-form"
+        aria-label="Discussion Form Section"
+      >
         <h2>Post a New Discussion</h2>
-        <form id="postForm">
-            <textarea id="postContent" placeholder="What's on your mind?" required></textarea>
-            <button type="submit">Submit</button>
+        <form id="postForm" aria-label="Post a new discussion form">
+          <textarea
+            id="postContent"
+            placeholder="What's on your mind?"
+            required
+          ></textarea>
+          <button type="submit">Submit</button>
         </form>
       </section>
 
       <!--Discussion Board Posts-->
-      <div class="posts">
-          <h2>Recent Posts</h2>
+      <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+      <div class="posts" aria-label="Recent posts section">
+        <h2>Recent Posts</h2>
       </div>
       <div id="postFeed"></div>
     </main>
 
     <footer class="footer">
       <h2>Acknowledgements</h2>
-      <p>In this website, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
-        I critically reviewed and edited all AI-generated content to ensure it reflects my own
-        understanding and perspective.</p>
+      <p>
+        In this website development, I used ChatGPT and ClaudeAI to support code
+        debugging and optimisation and assist with code writing and
+        productivity, particularly to help suggest code snippets and/or refactor
+        existing code. I critically reviewed and edited all AI-generated content
+        to ensure it reflects my own understanding and perspective. I have
+        applied the GenAI and MT Usage Framework to ensure my use of these tools
+        supports my learning objectives and adheres to academic integrity
+        standards.
+      </p>
       <nav class="footer-links">
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>

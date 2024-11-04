@@ -3,20 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <meta name="theme-color" content="#ABD451"> <!--Sets theme color for browser’s UI for mobile devices.-->
-    <link rel="logo" sizes="192x192" href="/DECO7140/assessment/icons/frame_67.png"> <!-- specifies icon for application (specific requirements for iOS-->
+
+    <meta name="theme-color" content="#ABD451" />
+    <!--Sets theme color for browser’s UI for mobile devices.-->
+    <link
+      rel="logo"
+      sizes="192x192"
+      href="/DECO7140/assessment/icons/frame_67.png"
+    />
+    <!-- specifies icon for application (specific requirements for iOS-->
 
     <!--Font from Google Fonts.-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <!--CSS Files-->
-    <link rel="stylesheet" href="./css/css_reset.css"/>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/components.css"/>
-    <link rel="stylesheet" href="./css/layout.css"/>
+    <link rel="stylesheet" href="./css/css_reset.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
 
     <!--JavaScript Files-->
     <script type="module" src="js/page_load_message.js" defer></script>
@@ -25,42 +34,59 @@
 
     <title>Read More</title>
   </head>
-  
+
   <body id="gridcontainer">
     <header>
       <!--Logo-->
-      <a href="index.html">
-        <img class="logo" src="./icons/Frame-68.png" alt="Logo">
+      <a href="index.html" aria-label="Go to homepage">
+        <img
+          class="logo"
+          src="./icons/Frame-68.png"
+          alt="Logo of Solo Tourer"
+        />
       </a>
-    
+
       <!--Hamburger Menu-->
+      <!--Referenced from ByteGrad . (2023, February 24). Responsive Navbar With Animated Hamburger Menu (HTML, CSS & JS)  [Video]. YouTube. https://www.youtube.com/watch?v=YIVXOMvXmNE-->
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <nav>
-        <div class="ham-menu">
+        <div
+          class="ham-menu"
+          aria-label="Toggle menu"
+          tabindex="0"
+          role="button"
+          aria-pressed="false"
+          aria-expanded="false"
+        >
           <span></span>
           <span></span>
           <span></span>
         </div>
       </nav>
-    
+
       <!--Navigation Bar-->
-      <nav id="flexnavbar">
+      <nav id="flexnavbar" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
         <a href="events.html">Events</a>
         <a href="community.html">Community</a>
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
-    
-      <a class = "cta" href ="login.html"><button>Login</button></a>
-    
+
+      <a class="cta" href="login.html" aria-label="Login to your account"
+        ><button>Login</button></a
+      >
+
       <!--Hamburger Menu-->
-      <div class="off-screen-menu">
+      <div class="off-screen-menu" aria-label="Off-screen menu">
         <ul>
           <a href="index.html">Home</a>
           <a href="safetyguides.html">Safety Guides</a>
           <a href="events.html">Events</a>
           <a href="community.html">Community</a>
-          <a href="insights_recommendations.html">Insights and Recommendations</a>
+          <a href="insights_recommendations.html"
+            >Insights and Recommendations</a
+          >
           <a href="login.html">Login</a>
         </ul>
       </div>
@@ -69,42 +95,92 @@
       <!-- Top section of the Visa Page -->
       <div class="guide">
         <div class="guide-page">
-            <div class="guide-top">
-                <div class="guide-info">
-                    <h3>Brasilia Travel Safety Guide</h3>
-                    <p class="description">Don't let the fear stop you!</p>
-                    <p class="author">By Claire Willows</p>
-                    <p>October 26 2024</p>
-                </div>
-                <div class="guide-image">
-                    <img src="./images/sao paulo.jpg" alt="Sao Paulo" />
-                </div>
+          <div class="guide-top">
+            <div class="guide-info">
+              <h3>Brasilia Travel Safety Guide</h3>
+              <p class="description">Don't let the fear stop you!</p>
+              <p class="author">By Claire Willows</p>
+              <p>October 26 2024</p>
             </div>
+            <div class="guide-image">
+              <img src="./images/sao paulo.jpg" alt="Sao Paulo" />
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Text content of guide -->
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <div class="guide-text">
         <h2>Introduction</h2>
-        <p>Brasilia, the capital of Brazil, is renowned for its modernist architecture and unique urban planning. While the city offers an array of cultural attractions and beautiful parks, it is essential to prioritize safety to ensure a pleasant visit. This guide provides practical tips and recommendations for a safe and enjoyable experience in Brasilia.</p>
-        <p>Brasilia is divided into several sectors, each with its distinct purpose, such as residential, commercial, and governmental areas. The city's layout makes navigation relatively straightforward; however, being aware of your surroundings is crucial.</p>
+        <p>
+          Brasilia, the capital of Brazil, is renowned for its modernist
+          architecture and unique urban planning. While the city offers an array
+          of cultural attractions and beautiful parks, it is essential to
+          prioritize safety to ensure a pleasant visit. This guide provides
+          practical tips and recommendations for a safe and enjoyable experience
+          in Brasilia.
+        </p>
+        <p>
+          Brasilia is divided into several sectors, each with its distinct
+          purpose, such as residential, commercial, and governmental areas. The
+          city's layout makes navigation relatively straightforward; however,
+          being aware of your surroundings is crucial.
+        </p>
         <h2>Safety Tips</h2>
         <h3>1. Stay Aware of Your Surroundings</h3>
-        <p>Always be conscious of your environment, especially in crowded areas or when using public transportation. Keep an eye on your belongings and avoid displaying expensive items like jewelry or electronics.</p>
+        <p>
+          Always be conscious of your environment, especially in crowded areas
+          or when using public transportation. Keep an eye on your belongings
+          and avoid displaying expensive items like jewelry or electronics.
+        </p>
         <h3>2. Use Trusted Transportation</h3>
-        <p>Opt for reputable taxi services or rideshare apps like Uber, especially at night. Public transportation can be an option, but it’s advisable to use it during daylight hours and avoid empty buses or metro cars.</p>
+        <p>
+          Opt for reputable taxi services or rideshare apps like Uber,
+          especially at night. Public transportation can be an option, but it’s
+          advisable to use it during daylight hours and avoid empty buses or
+          metro cars.
+        </p>
         <h3>3. Choose Your Accommodation Wisely</h3>
-        <p>Research hotels or hostels in safe neighborhoods. Areas like Asa Sul and Asa Norte are generally more secure, with easy access to tourist attractions.</p>
+        <p>
+          Research hotels or hostels in safe neighborhoods. Areas like Asa Sul
+          and Asa Norte are generally more secure, with easy access to tourist
+          attractions.
+        </p>
         <h3>4. Be Cautious at Night</h3>
-        <p>While Brasilia is relatively safe compared to other Brazilian cities, it's best to avoid wandering alone after dark, especially in less populated areas. Stick to well-lit streets and consider traveling in groups.</p>
+        <p>
+          While Brasilia is relatively safe compared to other Brazilian cities,
+          it's best to avoid wandering alone after dark, especially in less
+          populated areas. Stick to well-lit streets and consider traveling in
+          groups.
+        </p>
         <h3>5. Learn Basic Portuguese Phrases</h3>
-        <p>While many Brazilians speak English, knowing a few key phrases in Portuguese can enhance your interactions and help in emergency situations. Simple phrases like “onde fica?” (where is?) and “ajuda!” (help!) can be invaluable.</p>
+        <p>
+          While many Brazilians speak English, knowing a few key phrases in
+          Portuguese can enhance your interactions and help in emergency
+          situations. Simple phrases like “onde fica?” (where is?) and “ajuda!”
+          (help!) can be invaluable.
+        </p>
         <h3>6. Local Customs and Etiquette</h3>
-        <p>Understanding local customs can also enhance your safety and interactions. Brazilians are friendly and welcoming, so greeting people politely and respecting cultural norms can foster positive encounters.</p>
+        <p>
+          Understanding local customs can also enhance your safety and
+          interactions. Brazilians are friendly and welcoming, so greeting
+          people politely and respecting cultural norms can foster positive
+          encounters.
+        </p>
         <h3>7. Stay Informed</h3>
-        <p>Keep up-to-date with local news and advisories, especially regarding demonstrations or events that may affect your travel plans. Registering with your embassy can also provide additional support.</p>
+        <p>
+          Keep up-to-date with local news and advisories, especially regarding
+          demonstrations or events that may affect your travel plans.
+          Registering with your embassy can also provide additional support.
+        </p>
         <h2>Conclusion</h2>
-        <p>By staying vigilant and following these safety tips, you can enjoy all that Brasilia has to offer. From its stunning architecture to its vibrant culture, Brasilia is a captivating destination waiting to be explored. Safe travels!</p>
+        <p>
+          By staying vigilant and following these safety tips, you can enjoy all
+          that Brasilia has to offer. From its stunning architecture to its
+          vibrant culture, Brasilia is a captivating destination waiting to be
+          explored. Safe travels!
+        </p>
       </div>
 
       <div class="guide-end">
@@ -113,72 +189,215 @@
           <span>1d ago</span>
           <span>224 views</span>
           <span>3 comments</span>
-          <button class="view-comments-button" onclick="toggleComments()">View Comments</button>
+          <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+          <button
+            class="view-comments-button"
+            onclick="toggleComments()"
+            aria-label="View comments section"
+          >
+            View Comments
+          </button>
         </div>
-        
+
         <!--Sample comment section to visa guide-->
-        <div class="comments-section" id="commentsSection" style="display: none;">
+        <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+        <div
+          class="comments-section"
+          id="commentsSection"
+          style="display: none"
+        >
           <div class="comment">
-            <img src="./images/user_profile2.jpg" alt="User 1" class="profile-icon" />
+            <img
+              src="./images/user_profile2.jpg"
+              alt="User 1 profile picture"
+              class="profile-icon"
+            />
             <div class="comment-text">
               <span class="username">Kayli Bell</span>
-              <p>Loved this article! I especially appreciated the section on public transport safety. Very useful!🚍</p>
-              <a class="reply-button" onclick="replyPost(event, this)">Reply</a>
+              <p>
+                Loved this article! I especially appreciated the section on
+                public transport safety. Very useful!🚍
+              </p>
+              <a
+                class="reply-button"
+                onclick="replyPost(event, this)"
+                aria-label="Reply to Kayli Bell's comment"
+                >Reply</a
+              >
             </div>
           </div>
           <div class="comment">
-              <img src="./images/user_profile3.jpg" alt="User 2" class="profile-icon" />
-              <div class="comment-text">
-                <span class="username">Lia Anderson</span>
-                <p>Awesome guide! The accommodation section is particularly helpful. Keep up the great work! 👏</p>
-                <a class="reply-button" onclick="replyPost(event, this)">Reply</a>
-              </div>
+            <img
+              src="./images/user_profile3.jpg"
+              alt="User 2 profile picture"
+              class="profile-icon"
+            />
+            <div class="comment-text">
+              <span class="username">Lia Anderson</span>
+              <p>
+                Awesome guide! The accommodation section is particularly
+                helpful. Keep up the great work! 👏
+              </p>
+              <a
+                class="reply-button"
+                onclick="replyPost(event, this)"
+                aria-label="Reply to Lia Anderson's comment"
+                >Reply</a
+              >
+            </div>
           </div>
           <div class="comment">
-              <img src="./images/user_profile4.jpg" alt="User 3" class="profile-icon" />
-              <div class="comment-text">
-                <span class="username">Emma Lim</span>
-                <p>This guide is a lifesaver! I feel much more prepared for my trip. Thanks for the tips! 🌟</p>
-                <a class="reply-button" onclick="replyPost(event, this)">Reply</a>
-              </div>
+            <img
+              src="./images/user_profile4.jpg"
+              alt="User 3 profile picture"
+              class="profile-icon"
+            />
+            <div class="comment-text">
+              <span class="username">Emma Lim</span>
+              <p>
+                This guide is a lifesaver! I feel much more prepared for my
+                trip. Thanks for the tips! 🌟
+              </p>
+              <a
+                class="reply-button"
+                onclick="replyPost(event, this)"
+                aria-label="Reply to Emma Lim's comment"
+                >Reply</a
+              >
             </div>
+          </div>
         </div>
       </div>
 
       <!-- Solo Tourer Newsletter Sign Up -->
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <div class="newsletter">
         <h2>Solo Tourer Newsletter</h2>
         <p>Our biggest stories, handpicked for you, written by you.</p>
         <div class="read-more-footer">
           <div class="rm-footer">
-            <input type="text" id="searchInput" placeholder="Enter your email" aria-label="Email">
-            <button class="signup-button">Sign Up!</button>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Enter your email"
+              aria-label="Email for newsletter sign-up"
+            />
+            <button
+              class="signup-button"
+              aria-label="Sign up for the Solo Tourer newsletter"
+            >
+              Sign Up!
+            </button>
           </div>
-          <p class="signup-message" id="signupMessage" style="display: none;"></p>
+          <p
+            class="signup-message"
+            id="signupMessage"
+            style="display: none"
+          ></p>
         </div>
       </div>
 
       <div>
         <h2 class="read-more-page">Read More</h2>
       </div>
+
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <!--First Section-->
       <div class="guide-cards">
         <!-- First Article -->
+        <div class="guide-card-details">
+          <div class="guide-card-info">
+            <div class="guide-card-image">
+              <img src="./images/braisilia.jpg" alt="Brasilia" />
+            </div>
+            <p>Claire Willows</p>
+            <h3>Brasilia Travel Safety Guide</h3>
+            <p class="author">Don't let the fear stop you!</p>
+            <div class="article-meta">
+              <span>1d ago</span> | <span>224 views</span> |
+              <span>6 comments</span>
+            </div>
+            <div class="guide-card-read-more">
+              <a
+                href="./read-more.html"
+                class="button"
+                aria-label="Read more about Brasilia Travel Safety Guide"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Second Article -->
+        <div class="guide-card-details">
+          <div class="guide-card-info">
+            <div class="guide-card-image">
+              <img src="./images/sao paulo.jpg" alt="Sao Paulo" />
+            </div>
+            <p>Alexis Bianchi</p>
+            <h3>Sao Paulo Travel Safety Guide</h3>
+            <p class="author">Top tips for staying safe!</p>
+            <div class="guide-card-meta">
+              <span>Aug 20</span> | <span>3K views</span> |
+              <span>9 comments</span>
+            </div>
+            <div class="guide-card-read-more">
+              <a
+                href="./read-more.html"
+                class="button"
+                aria-label="Read more about Sao Paulo Travel Safety Guide"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Third Article -->
+        <div class="guide-card-details">
+          <div class="guide-card-info">
+            <div class="guide-card-image">
+              <img src="./images/Rio de Janeiro.jpg" alt="Rio de Janeiro" />
+            </div>
+            <p>Poppy Evans</p>
+            <h3>Travelling to Rio de Janeiro?</h3>
+            <p class="author">5 tips for staying safe!</p>
+            <div class="guide-card-meta">
+              <span>1d ago</span> | <span>224 views</span> |
+              <span>6 comments</span>
+            </div>
+            <div class="guide-card-read-more">
+              <a
+                href="./read-more.html"
+                class="button"
+                aria-label="Read more about Travelling to Rio de Janeiro"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Second Section-->
+      <div class="read-more-container">
+        <div class="guide-cards">
+          <!-- First Article -->
           <div class="guide-card-details">
             <div class="guide-card-info">
               <div class="guide-card-image">
-                <img src="./images/braisilia.jpg" alt="Sao Paulo" />
+                <img src="./images/sao-luis.jpeg" alt="Sao Luis" />
               </div>
-              <p>Claire Willows</p>
-              <h3>Brasilia Travel Safety Guide</h3>
-              <p class="author">Don't let the fear stop you!</p>
+              <p>Katherine Levine</p>
+              <h3>Sao Luis Travel Safety Guide</h3>
+              <p class="author">Embrace the adventure with confidence!</p>
               <div class="article-meta">
-                  <span>1d ago</span> | 
-                  <span>224 views</span> | 
-                  <span>6 comments</span>
+                <span>4d ago</span> | <span>340 views</span> |
+                <span>8 comments</span>
               </div>
               <div class="guide-card-read-more">
-                <a href="./read-more.html" class="button">Read More</a>
+                <a
+                  href="./read-more.html"
+                  class="button"
+                  aria-label="Read more about Sao Luis Travel Safety Guide"
+                  >Read More</a
+                >
               </div>
             </div>
           </div>
@@ -186,18 +405,22 @@
           <div class="guide-card-details">
             <div class="guide-card-info">
               <div class="guide-card-image">
-                <img src="./images/sao paulo.jpg" alt="Sao Paulo" />
+                <img src="./images/belo-horizonte.jpg" alt="Belo Horizonte" />
               </div>
-              <p>Alexis Bianchi</p>
-              <h3>Sao Paulo Travel Safety Guide</h3>
-              <p class="author">Top tips for staying safe!</p>
+              <p>Aisha Das</p>
+              <h3>Belo Horizonte Safety Guide</h3>
+              <p class="author">Travel smart and enjoy every moment.</p>
               <div class="guide-card-meta">
-                  <span>Aug 20</span> | 
-                  <span>3K views</span> | 
-                  <span>9 comments</span>
+                <span>Oct 23</span> | <span>2K views</span> |
+                <span>9 comments</span>
               </div>
               <div class="guide-card-read-more">
-                <a href="./read-more.html" class="button">Read More</a>
+                <a
+                  href="./read-more.html"
+                  class="button"
+                  aria-label="Read more about Belo Horizonte Safety Guide"
+                  >Read More</a
+                >
               </div>
             </div>
           </div>
@@ -205,100 +428,47 @@
           <div class="guide-card-details">
             <div class="guide-card-info">
               <div class="guide-card-image">
-                <img src="./images/Rio de Janeiro.jpg" alt="Rio de Janeiro" />
+                <img src="./images/curitiba.webp" alt="Curtiba" />
               </div>
-              <p>Poppy Evans</p>
-              <h3>Travelling to Rio de Janeiro?</h3>
-              <p class="author">5 tips for staying safe!</p>
+              <p>Alma Nilsson</p>
+              <h3>Welcome to Curtiba!</h3>
+              <p class="author">Navigate Brasilia with peace of mind.</p>
               <div class="guide-card-meta">
-                  <span>1d ago</span> | 
-                  <span>224 views</span> | 
-                  <span>6 comments</span>
+                <span>1d ago</span> | <span>224 views</span> |
+                <span>6 comments</span>
               </div>
               <div class="guide-card-read-more">
-                <a href="./read-more.html" class="button">Read More</a>
+                <a
+                  href="./read-more.html"
+                  class="button"
+                  aria-label="Read more about Welcome to Curtiba"
+                  >Read More</a
+                >
               </div>
             </div>
           </div>
-      </div>
-
-      <!--Second Section-->
-      <div class="read-more-container">
-        <div class="guide-cards">
-          <!-- First Article -->
-            <div class="guide-card-details">
-              <div class="guide-card-info">
-                <div class="guide-card-image">
-                  <img src="./images/sao-luis.jpeg" alt="Sao Luis" />
-                </div>
-                <p>Katherine Levine</p>
-                <h3>Sao Luis Travel Safety Guide</h3>
-                <p class="author">Embrace the adventure with confidence!</p>
-                <div class="article-meta">
-                    <span>4d ago</span> | 
-                    <span>340 views</span> | 
-                    <span>8 comments</span>
-                </div>
-                <div class="guide-card-read-more">
-                  <a href="./read-more.html" class="button">Read More</a>
-                </div>
-              </div>
-            </div>
-            <!-- Second Article -->
-            <div class="guide-card-details">
-              <div class="guide-card-info">
-                <div class="guide-card-image">
-                  <img src="./images/belo-horizonte.jpg" alt="Belo Horizonte" />
-                </div>
-                <p>Aisha Das</p>
-                <h3>Belo Horizonte Safety Guide</h3>
-                <p class="author">Travel smart and enjoy every moment.</p>
-                <div class="guide-card-meta">
-                    <span>Oct 23</span> | 
-                    <span>2K views</span> | 
-                    <span>9 comments</span>
-                </div>
-                <div class="guide-card-read-more">
-                  <a href="./read-more.html" class="button">Read More</a>
-                </div>
-              </div>
-            </div>
-            <!-- Third Article -->
-            <div class="guide-card-details">
-              <div class="guide-card-info">
-                <div class="guide-card-image">
-                  <img src="./images/curitiba.webp" alt="Curtiba" />
-                </div>
-                <p>Alma Nilsson</p>
-                <h3>Welcome to Curtiba!</h3>
-                <p class="author">Navigate Brasilia with peace of mind.</p>
-                <div class="guide-card-meta">
-                    <span>1d ago</span> | 
-                    <span>224 views</span> | 
-                    <span>6 comments</span>
-                </div>
-                <div class="guide-card-read-more">
-                  <a href="./read-more.html" class="button">Read More</a>
-                </div>
-              </div>
-            </div>
         </div>
       </div>
-
     </main>
 
     <footer class="footer">
       <h2>Acknowledgements</h2>
-      <p>In this website, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
-        I critically reviewed and edited all AI-generated content to ensure it reflects my own
-        understanding and perspective.</p>
-      <nav class="footer-links">
+      <p>
+        In this website development, I used ChatGPT and ClaudeAI to support code
+        debugging and optimisation and assist with code writing and
+        productivity, particularly to help suggest code snippets and/or refactor
+        existing code. I critically reviewed and edited all AI-generated content
+        to ensure it reflects my own understanding and perspective. I have
+        applied the GenAI and MT Usage Framework to ensure my use of these tools
+        supports my learning objectives and adheres to academic integrity
+        standards.
+      </p>
+      <nav class="footer-links" aria-label="Footer navigation">
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy.html">Privacy Policy</a>
       </nav>
       <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
-
   </body>
 </html>

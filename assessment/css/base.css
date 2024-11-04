@@ -1,4 +1,8 @@
+/*All content below has been created or edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/ */
+/* Content below related to API has been created or edited with the help of Worthy, P. (2024). Guides [Instructional manual]. University of Queensland. */
+
 /* Importing Google Font - Poppins */
+/*Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {  /* selects all elements on the page.*/
@@ -7,7 +11,6 @@
   padding: 0;
   font-family: "Poppins", sans-serif; /* Set font for all elements */
 }
-
 
 :root { /* Highest level of the document tree (HTML) '--' used for custom property */
   --primary-color: #6412EA;  /* Primary color (e.g., brand color) */
@@ -49,6 +52,10 @@ h1{
   margin-bottom: 5%;
 }
 
+.budget-title h1{
+  margin-top:5%;
+}
+
 h2{
   font-size: 20px;
   font-weight: 500;
@@ -82,7 +89,6 @@ h2.read-more-page{
   padding: 0;
   padding-left: 16%;
   padding-bottom: 2%;
-  /* padding-top: 5%; */
 }
 
 .community-titles h2{
@@ -108,7 +114,7 @@ h3{
 }
 
 h4{
-  padding: 25px 0 25px 250px; /*Top, right, bottom, left */
+  padding: 25px 0 25px 250px;
   font-size: 15px;
   font-weight: 300;
   text-align: left;
@@ -116,7 +122,7 @@ h4{
 }
 
 h5 {
-  padding: 25px 0 25px 250px; /*Top, right, bottom, left */
+  padding: 25px 0 25px 250px;
   font-size: 12px;
   font-weight: 300;
   text-align: left;
@@ -124,7 +130,7 @@ h5 {
 }
 
 p {
-  padding: 25px 0 25px 250px; /*Top, right, bottom, left */
+  padding: 25px 0 25px 250px;
   font-size: 11px;
   font-weight: 200;
   text-align: left;
@@ -150,7 +156,7 @@ a, button {
   font-weight: 500;
   font-size: 13px;
   color:var(--text-color);
-  text-decoration: none; /*  Remove default underline */
+  text-decoration: none;
 }
 
 /* Navigation styles */
@@ -164,15 +170,15 @@ a, button {
   padding-right: 20%;
 }
 
-/* select all the <a> elements inside my #flexnavbar container */
+
 #flexnavbar > a {
-  flex:1; /* each element tries to take up an equal amount of space */
+  flex: 1;
   flex: none;
   padding: 3px 10px;
 }
 
 #flexnavbar a {
-  text-decoration: none; /*  Remove default underline */
+  text-decoration: none;
   color: var(--text-color);
   text-align: center;
   margin: 0 15px; /* Adds space between navigation links */
@@ -188,13 +194,14 @@ a, button {
   font-weight: 600;
 }
 
+/* Add Event Form*/
 .wrapper {
   width: 75vw;
-  margin: 50px auto; /* Center it horizontally */
+  margin: 50px auto;
   background-color: var(--primary-color); 
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Creating a shadow effect */
 }
 
 .wrapper h2 {
@@ -354,15 +361,15 @@ input[type="file"] {
 
 /* Slideshow Styles */
 .new-slideshow-container {
-  position: relative; /* Even if moved, original space is kept empty */
-  max-width: 70%; /* Adjust to your desired max width */
-  margin: 0 auto; /* Center the slideshow */
-  overflow: hidden;
+  position: relative;
+  max-width: 70%;
+  margin: 0 auto;
+  overflow: hidden; /* Hides Overflowing Content */
 }
 
 .new-slide-container {
   display: flex; /* Flexbox for side-by-side images */
-  width: 100%; /* Ensure it fills the parent container */
+  width: 100%;
 }
 
 .new-slide-container .new-slide-container{
@@ -373,7 +380,7 @@ input[type="file"] {
 
 .new-image-container {
   position: relative; /* Won't push other elements around or be affected by them.*/
-  width: 100%; /* Each image takes full width */
+  width: 100%;
   aspect-ratio: 1;
   overflow: hidden;
   box-sizing: border-box;
@@ -399,7 +406,7 @@ input[type="file"] {
   padding-left: 0;
 }
 
-Text overlay styles */
+/* Text overlay styles */
 .new-slide-container .text {
   position: absolute; 
   bottom: 10px; 
@@ -530,13 +537,13 @@ Text overlay styles */
 
 .nav_buttons-event{
   margin: 0;
-  margin-left: 15px; /* Adjusts right alignment */
+  margin-left: 15px;
   display: flex;
 }
 
 .nav_buttons-event2{
   margin: 0;
-  margin-left: 15px; /* Adjusts right alignment */
+  margin-left: 15px;
   display: flex;
 }
 
@@ -554,15 +561,14 @@ Text overlay styles */
   left: -100%; /* Hide off-screen */
   top: 0;
   height: 100%;
-  width: 250px; /* Adjust based on your design */
-  background-color: white; /* Set background color */
-  transition: left 0.3s ease; /* Transition for slide effect */
-  z-index: 1000; /* Ensure it's on top */
+  width: 250px;
+  background-color: white;
+  transition: left 0.3s ease;
+  z-index: 1000;
 }
 
 
-/* Defining styles for devices smaller than 800px wide 
-Apply specific styles based on certain conditions*/
+/* Defining styles for devices smaller than 800px wide */
 @media (max-width:750px) {
   #flexnavbar {
     flex-direction: column; /* Stack the links vertically */
@@ -626,8 +632,8 @@ Apply specific styles based on certain conditions*/
   }
   
   .topnav input[type=text] {
-    width: 100%; /* Full width for mobile */
-    margin: 8px 0; /* Space between input and button */
+    width: 100%;
+    margin: 8px 0;
   }
 
   /* Make the logo and navbar items stack vertically */
@@ -642,7 +648,7 @@ Apply specific styles based on certain conditions*/
   }
 
   .logo {
-    width: 15%; /* Adjust logo size */
+    width: 15%;
     margin: 0;
     margin-right: 25%;
     margin-left: 2%;
@@ -650,26 +656,26 @@ Apply specific styles based on certain conditions*/
   }
 
   #flexnavbar {
-    flex-direction: column; /* Stack the links vertically */
-    align-items: flex-start; /* Align links to the left */
-    padding: 10px; /* Add some padding around the navbar */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
 
   #flexnavbar a {
-    font-size: 14px; /* Reduce font size */
-    padding: 8px 0; /* Adjust padding for mobile view */
-    text-align: left; /* Align text to the left */
-    width: 100%; /* Make links take the full width */
+    font-size: 14px;
+    padding: 8px 0;
+    text-align: left;
+    width: 100%;
   }
 
   /* Style for buttons and inputs */
   .topnav input {
-    width: 80%; /* Make search input take full width */
+    width: 80%;
     margin: 10px auto;
   }
 
   .top-content-recomspage .topnav input[type=text] {
-    width: 90%; /* Set width to 50% */
+    width: 90%;
     margin: 0;
     height: 40px;
   }
@@ -684,7 +690,7 @@ Apply specific styles based on certain conditions*/
 
   /* Adjust image sizes for mobile */
   .slideshow-container img {
-    width: 100%; /* Ensure images are responsive */
+    width: 100%;
   }
 
   /* Adjust footer text */
@@ -693,9 +699,8 @@ Apply specific styles based on certain conditions*/
     font-size: 14px;
   }
 
-
   body {
-    font-size: 16px; /* Reduce base font size */
+    font-size: 16px;
   }
 
   h2 {
@@ -727,7 +732,6 @@ Apply specific styles based on certain conditions*/
   .privacy-title h1{
     font-size: 18px;
   }
-
   .community-titles h2{
     padding: 0;
     padding-top: 5%;
@@ -748,7 +752,7 @@ Apply specific styles based on certain conditions*/
   }
 
   .nav_buttons-event {
-    display: block; /* Show the button in mobile view */
+    display: block;
     padding: 0;
     margin: 0;
     margin: 2% 0;
@@ -770,21 +774,19 @@ Apply specific styles based on certain conditions*/
   }
   
   .upcoming-title {
-    margin-right: auto; /* Push the title to the left */
+    margin-right: auto;
     padding-bottom: 5%;
   }
 
   /* Styles for smaller button text */
   .nav_buttons-event a.navigation-button2 {
-    font-size: 10px; /* Smaller font size */
-    padding: 5px 10px; /* Smaller padding */
+    font-size: 10px;
+    padding: 5px 10px;
   }
 
   .new-slideshow-container,
   .second-slideshow-container {
-    max-width: 90%; 
-    
-    /* Full width for smaller screens */
+    max-width: 90%;     
   }
 
   .new-slideshow-container{
@@ -793,8 +795,8 @@ Apply specific styles based on certain conditions*/
 
   .new-image-container,
   .second-image-container {
-    height: auto; /* Allow height to adjust */
-    aspect-ratio: auto; /* Remove fixed aspect ratio */
+    height: auto;
+    aspect-ratio: auto;
   }
 
   .new-slideshow-container img{
@@ -819,14 +821,13 @@ Apply specific styles based on certain conditions*/
 
   .new-text,
   .second-text {
-    font-size: 14px; /* Adjust text size for mobile */
-    padding: 5px; /* Reduce padding */
+    font-size: 14px;
+    padding: 5px;
   }
 
   .new-prev, .new-next,
   .second-prev, .second-next {
-    font-size: 10px; /* Responsive font size for buttons */
-    /* padding: 1px; */
+    font-size: 10px;
   }
 
   .new-prev, .new-next{
@@ -844,7 +845,7 @@ Apply specific styles based on certain conditions*/
 
   .wrapper {
     width: 90%;
-    margin: auto; /* Center it horizontally */
+    margin: auto;
     border-radius: 5px;
     margin-bottom: 10%;
     background-color: var(--background-color);

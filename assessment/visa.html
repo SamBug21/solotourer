@@ -4,20 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="theme-color" content="#ABD451"> <!--Theme color for browser’s UI for mobile devices.-->
-    <link rel="logo" sizes="192x192" href="/DECO7140/assessment/icons/frame_67.png"> <!-- For apple phone -->
+    <meta name="theme-color" content="#ABD451" />
+    <!--Theme color for browser’s UI for mobile devices.-->
+    <link
+      rel="logo"
+      sizes="192x192"
+      href="/DECO7140/assessment/icons/frame_67.png"
+    />
+    <!-- For apple phone -->
 
     <!--Font from Google Fonts.-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <!--CSS Files-->
-    <link rel="stylesheet" href="./css/css_reset.css"/>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/components.css"/>
-    <link rel="stylesheet" href="./css/layout.css"/>
-    
+    <link rel="stylesheet" href="./css/css_reset.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+
     <!--JavaScript Files-->
     <script type="module" src="js/index.js" defer></script>
     <script type="module" src="js/components.js" defer></script>
@@ -29,13 +38,26 @@
   <body id="gridcontainer">
     <header>
       <!--Logo-->
-      <a href="index.html">
-        <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
+      <a href="index.html" aria-label="Go to homepage">
+        <img
+          class="logo"
+          src="./icons/Frame-68.png"
+          alt="Logo of Solo Tourer"
+        />
       </a>
 
       <!--Hamburger Menu-->
+      <!--Referenced from ByteGrad . (2023, February 24). Responsive Navbar With Animated Hamburger Menu (HTML, CSS & JS)  [Video]. YouTube. https://www.youtube.com/watch?v=YIVXOMvXmNE-->
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <nav>
-        <div class="ham-menu">
+        <div
+          class="ham-menu"
+          aria-label="Toggle menu"
+          tabindex="0"
+          role="button"
+          aria-pressed="false"
+          aria-expanded="false"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -43,7 +65,7 @@
       </nav>
 
       <!--Navigation Bar-->
-      <nav id="flexnavbar">
+      <nav id="flexnavbar" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
         <a href="events.html">Events</a>
@@ -51,16 +73,20 @@
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
 
-      <a class = "cta" href ="login.html"><button>Login</button></a>
+      <a class="cta" href="login.html" aria-label="Login to your account"
+        ><button>Login</button></a
+      >
 
       <!--Hamburger Menu-->
-      <div class="off-screen-menu">
+      <div class="off-screen-menu" aria-label="Off-screen menu">
         <ul>
           <a href="index.html">Home</a>
           <a href="safetyguides.html">Safety Guides</a>
           <a href="events.html">Events</a>
           <a href="community.html">Community</a>
-          <a class="active" href="insights_recommendations.html">Insights and Recommendations</a>
+          <a class="active" href="insights_recommendations.html"
+            >Insights and Recommendations</a
+          >
           <a href="login.html">Login</a>
         </ul>
       </div>
@@ -70,163 +96,328 @@
       <!-- Top section of the Visa Page -->
       <div class="guide">
         <div class="guide-page">
-            <div class="guide-top">
-                <div class="guide-info">
-                    <h3>Updated Visa Rules for Brazil: What Travelers Need to Know</h3>
-                    <p class="author">By Claire Willows</p>
-                    <p>October 26 2024</p>
-                </div>
-                <div class="guide-image">
-                    <img src="./images/visa2.jpg" alt="Photo of suitcase, camera, sunglasses and passport on floor"/>
-                </div>
+          <div class="guide-top">
+            <div class="guide-info">
+              <h3>
+                Updated Visa Rules for Brazil: What Travelers Need to Know
+              </h3>
+              <p class="author">By Claire Willows</p>
+              <p>October 26 2024</p>
             </div>
+            <div class="guide-image">
+              <img
+                src="./images/visa2.jpg"
+                alt="Photo of suitcase, camera, sunglasses and passport on floor"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Text content of visa guide -->
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <div class="guide-text">
         <h2>Updated Visa Rules for Brazil: What Travelers Need to Know</h2>
-        <p>As of November 2024, Brazil has implemented new visa regulations that impact travelers planning to visit the country. These updates aim to streamline the visa application process and enhance the travel experience for international visitors. Here’s what you need to know about the recent changes.</p>
+        <p>
+          As of November 2024, Brazil has implemented new visa regulations that
+          impact travelers planning to visit the country. These updates aim to
+          streamline the visa application process and enhance the travel
+          experience for international visitors. Here’s what you need to know
+          about the recent changes.
+        </p>
         <h3>1. Visa Categories and Eligibility</h3>
-        <p>Brazil offers various visa categories, including tourist, business, student, and work visas. As part of the recent updates:</p>
-        <p>Tourist Visa: Citizens from most countries, including the United States, Canada, and members of the European Union, can enter Brazil visa-free for stays of up to 90 days. However, travelers should ensure their passport is valid for at least six months beyond their intended stay.</p>
-        <p>Business Visa: Business travelers will continue to require a visa for stays exceeding 90 days. New regulations allow for easier documentation requirements for short-term business trips.</p>
-        <p>Student Visa: Students wishing to study in Brazil must obtain a student visa. Recent updates have simplified the application process, now requiring fewer documents and allowing for online submission.</p>
+        <p>
+          Brazil offers various visa categories, including tourist, business,
+          student, and work visas. As part of the recent updates:
+        </p>
+        <p>
+          Tourist Visa: Citizens from most countries, including the United
+          States, Canada, and members of the European Union, can enter Brazil
+          visa-free for stays of up to 90 days. However, travelers should ensure
+          their passport is valid for at least six months beyond their intended
+          stay.
+        </p>
+        <p>
+          Business Visa: Business travelers will continue to require a visa for
+          stays exceeding 90 days. New regulations allow for easier
+          documentation requirements for short-term business trips.
+        </p>
+        <p>
+          Student Visa: Students wishing to study in Brazil must obtain a
+          student visa. Recent updates have simplified the application process,
+          now requiring fewer documents and allowing for online submission.
+        </p>
         <h3>2. e-Visa Option</h3>
-        <p>Brazil has expanded its e-Visa program, allowing travelers from eligible countries to apply for their visas online. The e-Visa process is straightforward and reduces the need for in-person visits to Brazilian consulates or embassies.</p>
-        <p>Eligible Countries: Citizens from Australia, Japan, and several European countries can apply for an e-Visa, making it more convenient for tourists and business travelers.</p>
-        <p>Processing Time: The processing time for an e-Visa is typically 5 to 10 business days, so applicants are encouraged to apply well in advance of their travel dates.</p>
+        <p>
+          Brazil has expanded its e-Visa program, allowing travelers from
+          eligible countries to apply for their visas online. The e-Visa process
+          is straightforward and reduces the need for in-person visits to
+          Brazilian consulates or embassies.
+        </p>
+        <p>
+          Eligible Countries: Citizens from Australia, Japan, and several
+          European countries can apply for an e-Visa, making it more convenient
+          for tourists and business travelers.
+        </p>
+        <p>
+          Processing Time: The processing time for an e-Visa is typically 5 to
+          10 business days, so applicants are encouraged to apply well in
+          advance of their travel dates.
+        </p>
         <h3>3. COVID-19 Regulations</h3>
-        <p>Travelers should also be aware of the ongoing COVID-19 regulations that may affect their entry into Brazil. As of now:</p>
-        <p>Vaccination Requirements: Fully vaccinated travelers are allowed entry without the need for a negative COVID-19 test. Unvaccinated travelers may need to provide proof of a negative test taken within 72 hours prior to departure.</p>
-        <p>Health Declaration: All travelers must complete a health declaration form upon arrival, detailing their health status and any potential COVID-19 exposure.</p>
+        <p>
+          Travelers should also be aware of the ongoing COVID-19 regulations
+          that may affect their entry into Brazil. As of now:
+        </p>
+        <p>
+          Vaccination Requirements: Fully vaccinated travelers are allowed entry
+          without the need for a negative COVID-19 test. Unvaccinated travelers
+          may need to provide proof of a negative test taken within 72 hours
+          prior to departure.
+        </p>
+        <p>
+          Health Declaration: All travelers must complete a health declaration
+          form upon arrival, detailing their health status and any potential
+          COVID-19 exposure.
+        </p>
         <h3>4. Extension of Stay</h3>
-        <p>For travelers who wish to stay longer than their allotted visa period, Brazil has made it easier to apply for an extension.</p>
-        <p>Application Process: Extensions can be requested online through the Federal Police website, with a processing fee applicable. It is advisable to apply for an extension at least 30 days before the visa expires.</p>
+        <p>
+          For travelers who wish to stay longer than their allotted visa period,
+          Brazil has made it easier to apply for an extension.
+        </p>
+        <p>
+          Application Process: Extensions can be requested online through the
+          Federal Police website, with a processing fee applicable. It is
+          advisable to apply for an extension at least 30 days before the visa
+          expires.
+        </p>
         <h3>5. Conclusion</h3>
-        <p>These updated visa rules reflect Brazil's commitment to welcoming international visitors while ensuring a smooth entry process. Travelers planning a trip to Brazil should stay informed of these changes and ensure they have the necessary documentation for a hassle-free experience.</p>
-        <p>For further details on specific visa categories and the application process, visit the official Brazilian government website or consult your nearest Brazilian embassy or consulate.</p>
+        <p>
+          These updated visa rules reflect Brazil's commitment to welcoming
+          international visitors while ensuring a smooth entry process.
+          Travelers planning a trip to Brazil should stay informed of these
+          changes and ensure they have the necessary documentation for a
+          hassle-free experience.
+        </p>
+        <p>
+          For further details on specific visa categories and the application
+          process, visit the official Brazilian government website or consult
+          your nearest Brazilian embassy or consulate.
+        </p>
       </div>
 
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <div class="guide-end">
         <!--Guide meta (Sample)-->
-        <div class="guide-meta">
-          <span>1d ago</span> 
-          <span>224 views</span> 
+        <div class="guide-meta" aria-label="Guide meta information">
+          <span>1d ago</span>
+          <span>224 views</span>
           <span>6 comments</span>
-          <button class="view-comments-button" onclick="toggleComments()">View Comments</button>
+          <button
+            class="view-comments-button"
+            onclick="toggleComments()"
+            aria-label="View comments section"
+          >
+            View Comments
+          </button>
         </div>
 
         <!--Sample comment section to visa guide-->
-        <div class="comments-section" id="commentsSection" style="display: none;">
+        <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+        <div
+          class="comments-section"
+          id="commentsSection"
+          style="display: none"
+        >
           <div class="comment">
-            <img src="./images/user_profile2.jpg" alt="User 1" class="profile-icon" />
+            <img
+              src="./images/user_profile2.jpg"
+              alt="Profile picture of Kayli Bell"
+              class="profile-icon"
+            />
             <div class="comment-text">
               <span class="username">Kayli Bell</span>
-              <p>Loved this article! I especially appreciated the section on COVID-19 Regulations. Very useful!🚍</p>
-              <a class="reply-button" onclick="replyPost(event, this)">Reply</a>
+              <p>
+                Loved this article! I especially appreciated the section on
+                COVID-19 Regulations. Very useful!🚍
+              </p>
+              <a
+                class="reply-button"
+                onclick="replyPost(event, this)"
+                aria-label="Reply to Kayli Bell"
+                >Reply</a
+              >
             </div>
           </div>
           <div class="comment">
-              <img src="./images/user_profile3.jpg" alt="User 2" class="profile-icon" />
-              <div class="comment-text">
-                <span class="username">Lia Anderson</span>
-                <p>Awesome guide! The Extension of Stay section is particularly helpful. Keep up the great work! 👏</p>
-                <a class="reply-button" onclick="replyPost(event, this)">Reply</a>
-              </div>
+            <img
+              src="./images/user_profile3.jpg"
+              alt="Profile picture of Lia Anderson"
+              class="profile-icon"
+            />
+            <div class="comment-text">
+              <span class="username">Lia Anderson</span>
+              <p>
+                Awesome guide! The Extension of Stay section is particularly
+                helpful. Keep up the great work! 👏
+              </p>
+              <a
+                class="reply-button"
+                onclick="replyPost(event, this)"
+                aria-label="Reply to Lia Anderson"
+                >Reply</a
+              >
+            </div>
           </div>
           <div class="comment">
-              <img src="./images/user_profile4.jpg" alt="User 3" class="profile-icon" />
-              <div class="comment-text">
-                <span class="username">Emma Lim</span>
-                <p>This guide is a lifesaver! I feel much more prepared for my trip. Thanks for the tips! 🌟</p>
-                <a class="reply-button" onclick="replyPost(event, this)">Reply</a>
-              </div>
+            <img
+              src="./images/user_profile4.jpg"
+              alt="Profile picture of Emma Lim"
+              class="profile-icon"
+            />
+            <div class="comment-text">
+              <span class="username">Emma Lim</span>
+              <p>
+                This guide is a lifesaver! I feel much more prepared for my
+                trip. Thanks for the tips! 🌟
+              </p>
+              <a
+                class="reply-button"
+                onclick="replyPost(event, this)"
+                aria-label="Reply to Emma Lim"
+                >Reply</a
+              >
             </div>
+          </div>
         </div>
       </div>
 
       <!--List of more guides for users to read. -->
       <div>
-        <h2 class="read-more-page">Read More</h2>
+        <h2
+          class="read-more-page"
+          aria-label="Section heading for additional guides"
+        >
+          Read More
+        </h2>
       </div>
 
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <div class="guide-cards">
         <!-- First Guide -->
-          <div class="guide-card-details">
-            <div class="guide-card-info">
-              <div class="guide-card-image">
-                <img src="./images/visa5.jpg" alt="Photo of GoPro, sunglasses and passport on map" />
-              </div>
-              <p>Claire Willows</p>
-              <h3>Visa exempted countries!</h3>
-              <p class="author">Find out if your country has been added to the list!</p>
-              <div class="article-meta">
-                  <span>1d ago</span> | 
-                  <span>224 views</span> | 
-                  <span>6 comments</span>
-              </div>
-              <div class="guide-card-read-more">
-                <a href="./visa.html" class="button">Read More</a>
-              </div>
+        <div
+          class="guide-card-details"
+          aria-label="Guide card for Visa exempted countries by Claire Willows"
+        >
+          <div class="guide-card-info">
+            <div class="guide-card-image">
+              <img
+                src="./images/visa5.jpg"
+                alt="Photo of GoPro, sunglasses and passport on map"
+              />
+            </div>
+            <p aria-label="Author: Claire Willows">Claire Willows</p>
+            <h3 aria-label="Guide title: Visa exempted countries">
+              Visa exempted countries!
+            </h3>
+            <p class="author">
+              Find out if your country has been added to the list!
+            </p>
+            <div class="article-meta" aria-label="Meta information">
+              <span>1d ago</span> | <span>224 views</span> |
+              <span>6 comments</span>
+            </div>
+            <div class="guide-card-read-more">
+              <a
+                href="./visa.html"
+                class="button"
+                aria-label="Read more about Visa exempted countries by Claire Willows"
+                >Read More</a
+              >
             </div>
           </div>
-          
-          <!-- Second Guide -->
-          <div class="guide-card-details">
-            <div class="guide-card-info">
-              <div class="guide-card-image">
-                <img src="./images/visa6.jpg" alt="Photo of passport and visa application" />
-              </div>
-              <p>Alexis Bianchi</p>
-              <h3>Visa application process</h3>
-              <p class="author">Find out how to apply for a visa!</p>
-              <div class="guide-card-meta">
-                  <span>Aug 20</span> | 
-                  <span>3K views</span> | 
-                  <span>9 comments</span>
-              </div>
-              <div class="guide-card-read-more">
-                <a href="./visa.html" class="button">Read More</a>
-              </div>
-            </div>
-          </div>
+        </div>
 
-          <!-- Third Guide -->
-          <div class="guide-card-details">
-            <div class="guide-card-info">
-              <div class="guide-card-image">
-                <img src="./images/visa3.jpg" alt="Photo of cash, card, sunglasses, passport hat and map on table." />
-              </div>
-              <p>Poppy Evans</p>
-              <h3>Visa and money, all you need to know</h3>
-              <p class="author">Feel prepared for a smooth airport experience</p>
-              <div class="guide-card-meta">
-                  <span>1d ago</span> | 
-                  <span>224 views</span> | 
-                  <span>6 comments</span>
-              </div>
-              <div class="guide-card-read-more">
-                <a href="./visa.html" class="button">Read More</a>
-              </div>
+        <!-- Second Guide -->
+        <div
+          class="guide-card-details"
+          aria-label="Guide card for Visa application process by Alexis Bianchi"
+        >
+          <div class="guide-card-info">
+            <div class="guide-card-image">
+              <img
+                src="./images/visa6.jpg"
+                alt="Photo of passport and visa application"
+              />
+            </div>
+            <p aria-label="Author: Alexis Bianchi">Alexis Bianchi</p>
+            <h3>Visa application process</h3>
+            <p class="author">Find out how to apply for a visa!</p>
+            <div class="guide-card-meta" aria-label="Meta information">
+              <span>Aug 20</span> | <span>3K views</span> |
+              <span>9 comments</span>
+            </div>
+            <div class="guide-card-read-more">
+              <a
+                href="./visa.html"
+                class="button"
+                aria-label="Read more about the Visa application process by Alexis Bianchi"
+                >Read More</a
+              >
             </div>
           </div>
+        </div>
+
+        <!-- Third Guide -->
+        <div
+          class="guide-card-details"
+          aria-label="Guide card for Visa and money by Poppy Evans"
+        >
+          <div class="guide-card-info">
+            <div class="guide-card-image">
+              <img
+                src="./images/visa3.jpg"
+                alt="Photo of cash, card, sunglasses, passport hat and map on table."
+              />
+            </div>
+            <p aria-label="Author: Poppy Evans">Poppy Evans</p>
+            <h3>Visa and money, all you need to know</h3>
+            <p class="author">Feel prepared for a smooth airport experience</p>
+            <div class="guide-card-meta" aria-label="Meta information">
+              <span>1d ago</span> | <span>224 views</span> |
+              <span>6 comments</span>
+            </div>
+            <div class="guide-card-read-more">
+              <a
+                href="./visa.html"
+                class="button"
+                aria-label="Read more about Visa and money by Poppy Evans"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
-
     </main>
 
     <footer class="footer">
       <h2>Acknowledgements</h2>
-      <p>In this website, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
-        I critically reviewed and edited all AI-generated content to ensure it reflects my own
-        understanding and perspective.</p>
-      <nav class="footer-links">
+      <p>
+        In this website development, I used ChatGPT and ClaudeAI to support code
+        debugging and optimisation and assist with code writing and
+        productivity, particularly to help suggest code snippets and/or refactor
+        existing code. I critically reviewed and edited all AI-generated content
+        to ensure it reflects my own understanding and perspective. I have
+        applied the GenAI and MT Usage Framework to ensure my use of these tools
+        supports my learning objectives and adheres to academic integrity
+        standards.
+      </p>
+      <nav class="footer-links" aria-label="Footer navigation">
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy.html">Privacy Policy</a>
       </nav>
       <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
-
   </body>
 </html>

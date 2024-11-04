@@ -4,20 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="theme-color" content="#ABD451"> <!--Sets theme color for browser’s UI for mobile devices.-->
-    <link rel="logo" sizes="192x192" href="/DECO7140/assessment/icons/frame_67.png"> <!-- specifies icon for application (specific requirements for iOS-->
+    <meta name="theme-color" content="#ABD451" />
+    <!--Sets theme color for browser’s UI for mobile devices.-->
+    <link
+      rel="logo"
+      sizes="192x192"
+      href="/DECO7140/assessment/icons/frame_67.png"
+    />
+    <!-- specifies icon for application (specific requirements for iOS-->
 
     <!--Font from Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <!--JavaScript Files-->
-    <link rel="stylesheet" href="./css/css_reset.css"/>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/components.css"/>
-    <link rel="stylesheet" href="./css/layout.css"/>
-    
+    <link rel="stylesheet" href="./css/css_reset.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+
     <!--JavaScript Files-->
     <script type="module" src="js/page_load_message.js" defer></script>
     <script type="module" src="js/index.js" defer></script>
@@ -29,13 +38,26 @@
   <body id="gridcontainer">
     <header>
       <!--Logo-->
-      <a href="index.html">
-        <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
+      <a href="index.html" aria-label="Go to homepage">
+        <img
+          class="logo"
+          src="./icons/Frame-68.png"
+          alt="Logo of Solo Tourer"
+        />
       </a>
 
       <!--Hamburger Menu-->
+      <!--Referenced from ByteGrad . (2023, February 24). Responsive Navbar With Animated Hamburger Menu (HTML, CSS & JS)  [Video]. YouTube. https://www.youtube.com/watch?v=YIVXOMvXmNE-->
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <nav>
-        <div class="ham-menu">
+        <div
+          class="ham-menu"
+          aria-label="Toggle menu"
+          tabindex="0"
+          role="button"
+          aria-pressed="false"
+          aria-expanded="false"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -43,7 +65,7 @@
       </nav>
 
       <!--Navigation Bar-->
-      <nav id="flexnavbar">
+      <nav id="flexnavbar" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
         <a href="events.html">Events</a>
@@ -51,67 +73,101 @@
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
 
-      <a class = "cta" href ="login.html"><button>Login</button></a>
+      <a class="cta" href="login.html" aria-label="Login to your account"
+        ><button>Login</button></a
+      >
 
       <!--Hamburger Menu-->
-      <div class="off-screen-menu">
+      <div class="off-screen-menu" aria-label="Off-screen menu">
         <ul>
           <a href="index.html">Home</a>
           <a href="safetyguides.html">Safety Guides</a>
           <a href="events.html">Events</a>
           <a href="community.html">Community</a>
-          <a href="insights_recommendations.html">Insights and Recommendations</a>
+          <a href="insights_recommendations.html"
+            >Insights and Recommendations</a
+          >
           <a class="active" href="login.html">Login</a>
         </ul>
       </div>
-
     </header>
 
     <main>
-
       <!--Contact Us Form-->
       <div class="contact-container">
         <div class="title-container-contact">
-            <div class="container-headings">
-                <div class="contact-title">
-                  <h1>Join the community!</h1>
-                </div>
-                <h2>Login or Create an Account</h2>
+          <div class="container-headings">
+            <div class="contact-title">
+              <h1>Join the community!</h1>
             </div>
+            <h2>Login or Create an Account</h2>
+          </div>
         </div>
-        
+
+        <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
         <div class="form">
-            <form id="contactForm" action="#" method="post">
-                <label for="name">Username or Email:</label>
-                <input type="text" id="name" name="name" required>
+          <form
+            id="contactForm"
+            action="#"
+            method="post"
+            aria-label="Contact Form"
+          >
+            <label for="name">Username or Email:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              aria-required="true"
+              aria-label="Username or email input field"
+            />
 
-                <label for="subject">Password:</label>
-                <input type="text" id="subject" name="subject" required>
-                <div class="login-create">
-                  <a href="index.html">
-                    <button type="button">Login</button>
-                  </a>
-                  
-                  <a href="create-account.html">
-                    <button type="button">Create Account</button>
-                  </a>
-                </div>
-            </form>
+            <label for="subject">Password:</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              aria-required="true"
+              aria-label="Password input field"
+            />
+            <div class="login-create">
+              <a href="index.html">
+                <button type="button" aria-label="Login button">Login</button>
+              </a>
 
-            <!-- Confirmation message -->
-            <div id="confirmationMessage" style="display: none; color: green; margin-top: 20px;">
-                You have successfully logged in!
+              <a href="create-account.html">
+                <button type="button" aria-label="Create account button">
+                  Create Account
+                </button>
+              </a>
             </div>
+          </form>
+
+          <!-- Confirmation message -->
+          <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+          <div
+            id="confirmationMessage"
+            style="display: none; color: green; margin-top: 20px"
+          >
+            You have successfully logged in!
+          </div>
         </div>
       </div>
-     
     </main>
     <footer class="footer">
       <h2>Acknowledgements</h2>
-      <p>In this website, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
-        I critically reviewed and edited all AI-generated content to ensure it reflects my own
-        understanding and perspective.</p>
-      <nav class="footer-links">
+      <p>
+        In this website development, I used ChatGPT and ClaudeAI to support code
+        debugging and optimisation and assist with code writing and
+        productivity, particularly to help suggest code snippets and/or refactor
+        existing code. I critically reviewed and edited all AI-generated content
+        to ensure it reflects my own understanding and perspective. I have
+        applied the GenAI and MT Usage Framework to ensure my use of these tools
+        supports my learning objectives and adheres to academic integrity
+        standards.
+      </p>
+      <nav class="footer-links" aria-label="Footer navigation">
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy.html">Privacy Policy</a>

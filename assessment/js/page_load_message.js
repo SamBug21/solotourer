@@ -1,11 +1,4 @@
-
-// variables
-
-// module code
-// page_load_message.js
-
-// Define the module
-// page_load_message.js
+//All content below has been created or edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/
 
 // Define the module (new constant variable named PageLoadMessage) + function that runs as soon as it's defined (private)
 const PageLoadMessage = (() => {

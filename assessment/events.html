@@ -27,12 +27,14 @@
     <header>
       <!--Logo-->
       <a href="index.html">
-        <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
+        <img class = "logo" src="./icons/Frame-68.png" alt = "Logo of Solo Tourer">
       </a>
 
       <!--Hamburger Menu-->
+      <!--Referenced from ByteGrad . (2023, February 24). Responsive Navbar With Animated Hamburger Menu (HTML, CSS & JS)  [Video]. YouTube. https://www.youtube.com/watch?v=YIVXOMvXmNE-->
+      <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
       <nav>
-        <div class="ham-menu">
+        <div class="ham-menu" aria-label="Toggle menu" tabindex="0" role="button" aria-pressed="false" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
@@ -40,7 +42,7 @@
       </nav>
 
       <!--Navigation Bar-->
-      <nav id="flexnavbar">
+      <nav id="flexnavbar" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="safetyguides.html">Safety Guides</a>
         <a class="active" href="events.html">Events</a>
@@ -48,10 +50,10 @@
         <a href="insights_recommendations.html">Insights and Recommendations</a>
       </nav>
 
-      <a class = "cta" href ="login.html"><button>Login</button></a>
+      <a class = "cta" href ="login.html" aria-label="Login to your account"><button>Login</button></a>
 
       <!--Hamburger Menu-->
-      <div class="off-screen-menu">
+      <div class="off-screen-menu" aria-label="Off-screen menu">
         <ul>
           <a href="index.html">Home</a>
           <a href="safetyguides.html">Safety Guides</a>
@@ -67,21 +69,23 @@
     <div>
       <main>
         <!-- Search bar for users to search through guides and recommendations -->
+         <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
         <div class="top-content">
           <div class="topnav">
-            <input type="text" id="searchInput" placeholder="Filter..." aria-label="Filter">
+            <input type="text" id="searchInput" placeholder="Filter..." aria-label="Search Guides and Recommendations">
           </div>
 
           <!--Navigation buttons for users to skip to specific topic (ex. adventure, sport, sightseeing) based on interest-->
-          <div class="nav_buttons">
+          <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+          <div class="nav_buttons" aria-label="Topic Navigation">
             <a href="#new-slideshow-container slideshow2">
-              <button type="button" class="navigation-button">Adventure</button>
+              <button type="button" class="navigation-button" aria-label="Navigate to Adventure Events">Adventure</button>
             </a>
             <a href="#new-slideshow-container slideshow3">
-              <button type="button" class="navigation-button">Sport</button>
+              <button type="button" class="navigation-button" aria-label="Navigate to Sport Events">Sport</button>
             </a>
             <a href="#new-slideshow-container slideshow4">
-              <button type="button" class="navigation-button">Sightseeing</button>
+              <button type="button" class="navigation-button" aria-label="Navigate to Sightseeing Events">Sightseeing</button>
             </a>
           </div>
         </div>
@@ -92,8 +96,9 @@
         </div>
 
         <!-- Slideshow container code reference: https://www.w3schools.com/howto/howto_js_slideshow.asp--> 
+        <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
         <!--Slideshow for upcoming events/tours-->
-        <div class="new-slideshow-container slideshow1">
+        <div class="new-slideshow-container slideshow1" aria-label="Upcoming Events Slideshow">
           <div class="mySlides">
             <div class="new-slide-container">
               <div class="new-image-container" data-host="Rio Fest. Inc" data-date="March 5, 2025">
@@ -130,8 +135,8 @@
               </div>
             </div>
           </div>
-          <a class="new-prev" onclick="slideshow1.plusSlides(-1)">&#10094;</a>
-          <a class="new-next" onclick="slideshow1.plusSlides(1)">&#10095;</a>
+          <a class="new-prev" onclick="slideshow1.plusSlides(-1)" aria-label="Previous Slide">&#10094;</a>
+          <a class="new-next" onclick="slideshow1.plusSlides(1)" aria-label="Next Slide">&#10095;</a>
         </div>
 
 
@@ -140,22 +145,25 @@
           <div class="events-titles">
             <h2>Upcoming</h2>
           </div>  
-          <a href="./add-event.html" class="navigation-button2">
+          <a href="./add-event.html" class="navigation-button2" aria-level="Add your own Event">
             <button>Add your own event</button>
           </a>
         </div>
 
         <!-- Section for displaying events -->
-        <div id="events-container">
+        <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+        <!--Created with the help of Worthy, P. (2024). API documentation Generic Event [Instructional manual]. University of Queensland.-->
+        <div id="events-container" aria-label="Events List">
           <!-- The event cards will be dynamically injected here -->
         </div>
 
+        <!--Slideshows created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
         <!--Slideshow for adventure related tours-->
         <div class="events-slide-titles">
           <h2>Adventure</h2>
         </div>
         <!-- Second Slideshow -->
-        <div class="new-slideshow-container slideshow2" id="new-slideshow-container slideshow2">
+        <div class="new-slideshow-container slideshow2" id="new-slideshow-container slideshow2" aria-label="Adventure Events Slideshow">
           <div class="mySlides">
             <div class="new-slide-container">
               <div class="new-image-container" data-host="Brazil Adventures" data-date="Oct 2024 - January 2025">
@@ -192,15 +200,15 @@
               </div>
             </div>
           </div>
-          <a class="new-prev" onclick="slideshow2.plusSlides(-1)">&#10094;</a>
-          <a class="new-next" onclick="slideshow2.plusSlides(1)">&#10095;</a>
+          <a class="new-prev" onclick="slideshow2.plusSlides(-1)" aria-label="Previous Slide">&#10094;</a>
+          <a class="new-next" onclick="slideshow2.plusSlides(1)" aria-label="Next Slide">&#10095;</a>
         </div>
 
         <!--Slideshow for sports related tours/recommendations-->
         <div class="events-slide-titles">
           <h2>Sport</h2>
         </div>
-        <div class="new-slideshow-container slideshow3" id="new-slideshow-container slideshow3">
+        <div class="new-slideshow-container slideshow3" id="new-slideshow-container slideshow3" aria-label="Sports Events Slideshow">
           <div class="mySlides">
             <div class="new-slide-container">
               <div class="new-image-container" data-host="Rio Sports Inc." data-date="April 5, 2024">
@@ -237,15 +245,15 @@
               </div>
             </div>
           </div>
-          <a class="new-prev" onclick="slideshow3.plusSlides(-1)">&#10094;</a>
-          <a class="new-next" onclick="slideshow3.plusSlides(1)">&#10095;</a>
+          <a class="new-prev" onclick="slideshow3.plusSlides(-1)" aria-label="Previous Slide">&#10094;</a>
+          <a class="new-next" onclick="slideshow3.plusSlides(1)" aria-label="Next Slide">&#10095;</a>
         </div>
         
         <!--Slideshow for sightseeing related tours-->
         <div class="events-slide-titles">
           <h2>Sightseeing</h2>
         </div>
-        <div class="new-slideshow-container slideshow4" id="new-slideshow-container slideshow4">
+        <div class="new-slideshow-container slideshow4" id="new-slideshow-container slideshow4" aria-label="Sightseeing Events Slideshow">
           <div class="mySlides">
             <div class="new-slide-container">
               <div class="new-image-container" data-host="Amazing Brazil" data-date="All year round">
@@ -282,11 +290,12 @@
               </div>
             </div>
           </div>
-          <a class="new-prev" onclick="slideshow4.plusSlides(-1)">&#10094;</a>
-          <a class="new-next" onclick="slideshow4.plusSlides(1)">&#10095;</a>
+          <a class="new-prev" onclick="slideshow4.plusSlides(-1)" aria-label="Previous Slide">&#10094;</a>
+          <a class="new-next" onclick="slideshow4.plusSlides(1)" aria-label="Next Slide">&#10095;</a>
         </div>
 
         <!-- Events Page Popup Window (Modal) -->
+         <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
         <div id="modal" class="modal">
           <div class="modal-content">
               <span class="close" onclick="closeModal()">&times;</span>
@@ -302,10 +311,14 @@
 
     <footer class="footer">
       <h2>Acknowledgements</h2>
-      <p>In this website, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
-        I critically reviewed and edited all AI-generated content to ensure it reflects my own
-        understanding and perspective.</p>
-      <nav class="footer-links">
+      <p>In this website development, I used ChatGPT and ClaudeAI to support code debugging and
+        optimisation and assist with code writing and productivity, particularly to help suggest
+        code snippets and/or refactor existing code. I critically reviewed and edited all AI-generated content to ensure it reflects my own
+        understanding and perspective.
+    
+        I have applied the GenAI and MT Usage Framework to ensure my use of these tools supports
+        my learning objectives and adheres to academic integrity standards.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy.html">Privacy Policy</a>

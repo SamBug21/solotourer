@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--Font from Google Fonts.-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <!--CSS Files-->
-    <link rel="stylesheet" href="./css/css_reset.css"/>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/components.css"/>
-    <link rel="stylesheet" href="./css/layout.css"/>
+    <link rel="stylesheet" href="./css/css_reset.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
 
     <!--JavaScript Files-->
     <script type="module" src="js/index.js" defer></script>
@@ -27,206 +30,280 @@
     <div id="gridcontainer">
       <header>
         <!--Logo-->
-        <a href="index.html">
-          <img class = "logo" src="./icons/Frame-68.png" alt = "Logo">
+        <a href="index.html" aria-label="Go to homepage">
+          <img
+            class="logo"
+            src="./icons/Frame-68.png"
+            alt="Logo of Solo Tourer"
+          />
         </a>
-  
+
         <!--Hamburger Menu-->
+        <!--Referenced from ByteGrad . (2023, February 24). Responsive Navbar With Animated Hamburger Menu (HTML, CSS & JS)  [Video]. YouTube. https://www.youtube.com/watch?v=YIVXOMvXmNE-->
+        <!--Edited with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
         <nav>
-          <div class="ham-menu">
+          <div
+            class="ham-menu"
+            aria-label="Toggle menu"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+            aria-expanded="false"
+          >
             <span></span>
             <span></span>
             <span></span>
           </div>
         </nav>
-  
+
         <!--Navigation Bar-->
-        <nav id="flexnavbar">
+        <nav id="flexnavbar" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="safetyguides.html">Safety Guides</a>
           <a href="events.html">Events</a>
           <a href="community.html">Community</a>
-          <a class="active" href="insights_recommendations.html">Insights and Recommendations</a>
+          <a class="active" href="insights_recommendations.html"
+            >Insights and Recommendations</a
+          >
         </nav>
-  
-        <a class = "cta" href ="login.html"><button>Login</button></a>
-  
+
+        <a class="cta" href="login.html" aria-label="Login to your account"
+          ><button>Login</button></a
+        >
+
         <!--Hamburger Menu-->
-        <div class="off-screen-menu">
+        <div class="off-screen-menu" aria-label="Off-screen menu">
           <ul>
             <a href="index.html">Home</a>
             <a href="safetyguides.html">Safety Guides</a>
             <a href="events.html">Events</a>
             <a href="community.html">Community</a>
-            <a class="active" href="insights_recommendations.html">Insights and Recommendations</a>
+            <a class="active" href="insights_recommendations.html"
+              >Insights and Recommendations</a
+            >
             <a href="login.html">Login</a>
           </ul>
         </div>
-  
       </header>
 
       <main>
         <!-- Search bar for users to search through guides and recommendations -->
         <div class="top-content-recomspage">
           <div class="topnav">
-            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search..."
+              aria-label="Search"
+            />
           </div>
         </div>
 
         <!--Activites Recommendations Section-->
+        <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
         <section id="activities" class="activities">
-            <h1>Traveller’s favourites</h1>
-            <h2>To Do in Brazil</h2>
-            <div class="gallery" id="todo-section">
-                <!-- Initial 4 items -->
-                <div class="item" role="button">
-                    <img src="./images/adventure1.jpg" alt="Photograph of a woman with ziplining gear">
-                    <div class="info">
-                        <h3>Brazil Adventures Ziplining</h3>
-                        <p>Zip lining tours at $60 for the next few months! Book a tour on BrazAventuras.com.</p>
-                        <span>Rating: ★★★★☆</span>
-                    </div>
-                </div>
-                <div class="item">
-                  <img src="./images/adventure2.jpg" alt="Photo of two women scuba diving">
-                  <div class="info">
-                      <h3>Swim with the sharks!</h3>
-                      <p>6 spots tour: Explore Fernando de Noronha's seas! Visit our site (NoranhaSeas.org) to find out more.</p>
-                      <span>Rating: ★★★★☆</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <img src="./images/adventure3.jpg" alt="Activity 1">
-                  <div class="info">
-                      <h3>The Amazon!</h3>
-                      <p>A tour of 4 hidden gems for photography lovers! Book now on AmazingBrazil.org!</p>
-                      <span>Rating: ★★★★☆</span>
-                  </div>
-                </div>
-                <div class="item">
-                  <img src="./images/adventure4.jpg" alt="Activity 1">
-                  <div class="info">
-                      <h3>Want to get away from the city?</h3>
-                      <p>Relax under the sun in Foz do Iguaçu! Visit IguaçuTours.net to make a booking.</p>
-                      <span>Rating: ★★★★☆</span>
-                  </div>
-                </div>
-    
-                <!-- Hidden additional items -->
-                <div class="item hidden hideable">
-                    <img src="./images/adventure5.jpg" alt="Photo of woman on Kayak">
-                    <div class="info">
-                        <h3>Kayaking</h3>
-                        <p>3 peaceful yet adventurous kayak experiences through Kayakzone.org!</p>
-                        <span>Rating: ★★★☆☆</span>
-                    </div>
-                </div>
-                <div class="item hidden hideable">
-                  <img src="./images/adventure6.webp" alt="Photograph of Cachoeira do Buracão caves">
-                  <div class="info">
-                      <h3>Cachoeira do Buracão Caves</h3>
-                      <p>2 day trip to Cachoeira do Buracão. Book now on BuracãoCaves.org</p>
-                      <span>Rating: ★★★☆☆</span>
-                  </div>
-                </div>
-                <div class="item hidden hideable">
-                  <img src="./images/adventure7.webp" alt="Blue Grotto Caves">
-                  <div class="info">
-                    <h3>Blue Grotto in Bonito, Mato Grosso do Sul</h3>
-                    <p>Explore the natural beauty of Blue Grotto through our exclusive tours. Visit our site now (BlueGrotto.com)!</p>
-                    <span>Rating: ★★★☆☆</span>
-                  </div>
-                </div>
-                <div class="item hidden hideable">
-                  <img src="./images/adventure8.jpeg" alt="Pantanal">
-                  <div class="info">
-                      <h3>Pantanal</h3>
-                      <p>Explore the tropical wetlands of Pantanal via PantanalTours!</p>
-                      <span>Rating: ★★★☆☆</span>
-                  </div>
-                </div>
-                <!--See More button to expand and reveal hidden items-->
-                <div class="see-more">
-                  <p>See more</p>
-                  <span class="arrow">▼</span>
-                </div>
+          <h1>Traveller’s favourites</h1>
+          <h2>To Do in Brazil</h2>
+          <div class="gallery" id="todo-section">
+            <!-- Initial 4 items -->
+            <div class="item" role="button">
+              <img
+                src="./images/adventure1.jpg"
+                alt="Photograph of a woman with ziplining gear"
+              />
+              <div class="info">
+                <h3>Brazil Adventures Ziplining</h3>
+                <p>
+                  Zip lining tours at $60 for the next few months! Book a tour
+                  on BrazAventuras.com.
+                </p>
+                <span>Rating: ★★★★☆</span>
+              </div>
             </div>
+            <div class="item">
+              <img
+                src="./images/adventure2.jpg"
+                alt="Photo of two women scuba diving"
+              />
+              <div class="info">
+                <h3>Swim with the sharks!</h3>
+                <p>
+                  6 spots tour: Explore Fernando de Noronha's seas! Visit our
+                  site (NoranhaSeas.org) to find out more.
+                </p>
+                <span>Rating: ★★★★☆</span>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="./images/adventure3.jpg"
+                alt="Photograph of river in the Amazon rainforest during sunset"
+              />
+              <div class="info">
+                <h3>The Amazon!</h3>
+                <p>
+                  A tour of 4 hidden gems for photography lovers! Book now on
+                  AmazingBrazil.org!
+                </p>
+                <span>Rating: ★★★★☆</span>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="./images/adventure4.jpg"
+                alt="Photograph of women looking at river view in a forest."
+              />
+              <div class="info">
+                <h3>Want to get away from the city?</h3>
+                <p>
+                  Relax under the sun in Foz do Iguaçu! Visit IguaçuTours.net to
+                  make a booking.
+                </p>
+                <span>Rating: ★★★★☆</span>
+              </div>
+            </div>
+
+            <!-- Hidden additional items -->
+            <div class="item hidden hideable">
+              <img
+                src="./images/adventure5.jpg"
+                alt="Photo of woman on Kayak"
+              />
+              <div class="info">
+                <h3>Kayaking</h3>
+                <p>
+                  3 peaceful yet adventurous kayak experiences through
+                  Kayakzone.org!
+                </p>
+                <span>Rating: ★★★☆☆</span>
+              </div>
+            </div>
+            <div class="item hidden hideable">
+              <img
+                src="./images/adventure6.webp"
+                alt="Photograph of Cachoeira do Buracão caves"
+              />
+              <div class="info">
+                <h3>Cachoeira do Buracão Caves</h3>
+                <p>
+                  2 day trip to Cachoeira do Buracão. Book now on
+                  BuracãoCaves.org
+                </p>
+                <span>Rating: ★★★☆☆</span>
+              </div>
+            </div>
+            <div class="item hidden hideable">
+              <img
+                src="./images/adventure7.webp"
+                alt="Photograph of Blue Grotto Caves"
+              />
+              <div class="info">
+                <h3>Blue Grotto in Bonito, Mato Grosso do Sul</h3>
+                <p>
+                  Explore the natural beauty of Blue Grotto through our
+                  exclusive tours. Visit our site now (BlueGrotto.com)!
+                </p>
+                <span>Rating: ★★★☆☆</span>
+              </div>
+            </div>
+            <div class="item hidden hideable">
+              <img
+                src="./images/adventure8.jpeg"
+                alt="Photograph of Pantanal Wetlands"
+              />
+              <div class="info">
+                <h3>Pantanal</h3>
+                <p>
+                  Explore the tropical wetlands of Pantanal via PantanalTours!
+                </p>
+                <span>Rating: ★★★☆☆</span>
+              </div>
+            </div>
+            <!--See More button to expand and reveal hidden items-->
+            <div class="see-more">
+              <p aria-label="See more activities">See more</p>
+              <span class="arrow">▼</span>
+            </div>
+          </div>
         </section>
 
         <!--Food and Drink Recommendations Section-->
         <section id="food-drink" class="food-drink">
           <h2>Food and Drink</h2>
           <div class="gallery" id="food-drink-section">
-               <!-- Initial 4 items -->
-              <div class="item">
-                <img src="./images/food-drink1.jpg" alt="Noah Gastronomia Paulista">
-                <div class="info">
-                    <h3>Noah Gastronomia Paulista Sao Paulo</h3>
-                    <p>Brazilian and Italian Food</p>
-                    <span>Rating: ★★★★☆</span>
-                </div>
-            </div>
+            <!-- Initial 4 items -->
             <div class="item">
-              <img src="./images/food-drink2.jpg" alt="Terrazza Rooftop">
+              <img
+                src="./images/food-drink1.jpg"
+                alt="Noah Gastronomia Paulista"
+              />
               <div class="info">
-                  <h3>Terrazza Rooftop Sao Paulo</h3>
-                  <p>Japanese and Brazilian Food</p>
-                  <span>Rating: ★★★★☆</span>
+                <h3>Noah Gastronomia Paulista Sao Paulo</h3>
+                <p>Brazilian and Italian Food</p>
+                <span>Rating: ★★★★☆</span>
               </div>
             </div>
             <div class="item">
-              <img src="./images/food-drink3.jpg" alt="Maguje">
+              <img src="./images/food-drink2.jpg" alt="Terrazza Rooftop" />
               <div class="info">
-                  <h3>Maguje Rio de Janeiro</h3>
-                  <p>Bar and Brewery</p>
-                  <span>Rating: ★★★★☆</span>
+                <h3>Terrazza Rooftop Sao Paulo</h3>
+                <p>Japanese and Brazilian Food</p>
+                <span>Rating: ★★★★☆</span>
               </div>
             </div>
             <div class="item">
-              <img src="./images/food-drink4.jpg" alt="Clássico Beach Club">
+              <img src="./images/food-drink3.jpg" alt="Maguje" />
               <div class="info">
-                  <h3>Clássico Beach Club in Rio de Janeiro</h3>
-                  <p>Coffee and Bar</p>
-                  <span>Rating: ★★★★☆</span>
+                <h3>Maguje Rio de Janeiro</h3>
+                <p>Bar and Brewery</p>
+                <span>Rating: ★★★★☆</span>
+              </div>
+            </div>
+            <div class="item">
+              <img src="./images/food-drink4.jpg" alt="Clássico Beach Club" />
+              <div class="info">
+                <h3>Clássico Beach Club in Rio de Janeiro</h3>
+                <p>Coffee and Bar</p>
+                <span>Rating: ★★★★☆</span>
               </div>
             </div>
 
             <!-- Hidden additional items -->
             <div class="item hidden hideable">
-                <img src="./images/food-drink5.jpg" alt="Gastrô Hub">
-                <div class="info">
-                    <h3>Gastrô Hub Belo Horizonte</h3>
-                    <p>Italian and Chinese</p>
-                    <span>Rating: ★★★☆☆</span>
-                </div>
-            </div>
-            <div class="item hidden hideable">
-              <img src="./images/food-drink6.jpg" alt="La Macelleria Lourdes">
+              <img src="./images/food-drink5.jpg" alt="Gastrô Hub" />
               <div class="info">
-                  <h3>La Macelleria Lourdes</h3>
-                  <p>Steakhouse</p>
-                  <span>Rating: ★★★☆☆</span>
+                <h3>Gastrô Hub Belo Horizonte</h3>
+                <p>Italian and Chinese</p>
+                <span>Rating: ★★★☆☆</span>
               </div>
             </div>
             <div class="item hidden hideable">
-              <img src="./images/food-drink7.jpg" alt="Raiz Cozinha">
+              <img src="./images/food-drink6.jpg" alt="La Macelleria Lourdes" />
               <div class="info">
-                  <h3>Raiz Cozinha Fortaleza</h3>
-                  <p>Bar and Restaurant</p>
-                  <span>Rating: ★★★☆☆</span>
+                <h3>La Macelleria Lourdes</h3>
+                <p>Steakhouse</p>
+                <span>Rating: ★★★☆☆</span>
               </div>
             </div>
             <div class="item hidden hideable">
-              <img src="./images/food-drink8.jpg" alt="Piselli Brasília">
+              <img src="./images/food-drink7.jpg" alt="Raiz Cozinha" />
               <div class="info">
-                  <h3>Piselli Brasília</h3>
-                  <p>Italian</p>
-                  <span>Rating: ★★★☆☆</span>
+                <h3>Raiz Cozinha Fortaleza</h3>
+                <p>Bar and Restaurant</p>
+                <span>Rating: ★★★☆☆</span>
+              </div>
+            </div>
+            <div class="item hidden hideable">
+              <img src="./images/food-drink8.jpg" alt="Piselli Brasília" />
+              <div class="info">
+                <h3>Piselli Brasília</h3>
+                <p>Italian</p>
+                <span>Rating: ★★★☆☆</span>
               </div>
             </div>
             <!--See More button to expand and reveal hidden items-->
             <div class="see-more">
-              <p>See more</p>
+              <p aria-label="See more activities">See more</p>
               <span class="arrow">▼</span>
             </div>
           </div>
@@ -237,60 +314,81 @@
           <h1>Essentials</h1>
           <h2>Accommodations</h2>
           <div class="gallery" id="accommodations-section">
-               <!-- Initial 4 items -->
-              <div class="item">
-                <img src="./images/accomodation1.jpg" alt="Hotel Colline de France">
-                <div class="info">
-                    <h3>Hotel Colline de France</h3>
-                    <p>Includes a Spa, Fitness center, Sauna, Massage and Swimming pool</p>
-                    <span>Rating: ★★★★☆</span>
-                </div>
-            </div>
+            <!-- Initial 4 items -->
             <div class="item">
-              <img src="./images/accomodation2.jpg" alt="Photograph of a Cabin Interior">
+              <img
+                src="./images/accomodation1.jpg"
+                alt="Hotel Colline de France"
+              />
               <div class="info">
-                  <h3>Entire cabin in Rio de Janeiro, Brazil</h3>
-                  <p>Cabin on mountain with view</p>
-                  <span>Rating: ★★★★☆</span>
+                <h3>Hotel Colline de France</h3>
+                <p>
+                  Includes a Spa, Fitness center, Sauna, Massage and Swimming
+                  pool
+                </p>
+                <span>Rating: ★★★★☆</span>
               </div>
             </div>
             <div class="item">
-              <img src="./images/accomodation3.jpg" alt="Ubatuba Praia Hotel">
+              <img
+                src="./images/accomodation2.jpg"
+                alt="Photograph of a Cabin Interior"
+              />
               <div class="info">
-                  <h3>Ubatuba Praia Hotel Sao Paulo</h3>
-                  <p>Includes Swimming Pool, Snorkelling, Buffet</p>
-                  <span>Rating: ★★★★☆</span>
+                <h3>Entire cabin in Rio de Janeiro, Brazil</h3>
+                <p>Cabin on mountain with view</p>
+                <span>Rating: ★★★★☆</span>
               </div>
             </div>
             <div class="item">
-              <img src="./images/accomodation4.jpg" alt="Rio Hotel by Bourbon">
+              <img src="./images/accomodation3.jpg" alt="Ubatuba Praia Hotel" />
               <div class="info">
-                  <h3>Rio Hotel by Bourbon Sao Paulo</h3>
-                  <p>Private Parking and City view</p>
-                  <span>Rating: ★★★★☆</span>
+                <h3>Ubatuba Praia Hotel Sao Paulo</h3>
+                <p>Includes Swimming Pool, Snorkelling, Buffet</p>
+                <span>Rating: ★★★★☆</span>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="./images/accomodation4.jpg"
+                alt="Rio Hotel by Bourbon"
+              />
+              <div class="info">
+                <h3>Rio Hotel by Bourbon Sao Paulo</h3>
+                <p>Private Parking and City view</p>
+                <span>Rating: ★★★★☆</span>
               </div>
             </div>
 
             <!-- Hidden additional items -->
             <div class="item hidden hideable">
-                <img src="./images/accomodation5.jpg" alt="Grand Carimã Resort & Convention Center">
-                <div class="info">
-                    <h3>Grand Carimã Resort & Convention Center</h3>
-                    <p>Outdoor swimming pool, spa and wellness centre and fitness centre</p>
-                    <span>Rating: ★★★☆☆</span>
-                </div>
+              <img
+                src="./images/accomodation5.jpg"
+                alt="Grand Carimã Resort & Convention Center"
+              />
+              <div class="info">
+                <h3>Grand Carimã Resort & Convention Center</h3>
+                <p>
+                  Outdoor swimming pool, spa and wellness centre and fitness
+                  centre
+                </p>
+                <span>Rating: ★★★☆☆</span>
+              </div>
             </div>
             <div class="item hidden hideable">
-              <img src="./images/accomodation6.jpg" alt="Treehouse in Alto Paraíso de Goiás">
+              <img
+                src="./images/accomodation6.jpg"
+                alt="Treehouse in Alto Paraíso de Goiás"
+              />
               <div class="info">
-                  <h3>Treehouse in Alto Paraíso de Goiás, Brazil</h3>
-                  <p>Caption for activity 5</p>
-                  <span>Rating: ★★★☆☆</span>
+                <h3>Treehouse in Alto Paraíso de Goiás, Brazil</h3>
+                <p>Caption for activity 5</p>
+                <span>Rating: ★★★☆☆</span>
               </div>
             </div>
             <!--See More button to expand and reveal hidden items-->
             <div class="see-more">
-              <p>See more</p>
+              <p aria-label="See more activities">See more</p>
               <span class="arrow">▼</span>
             </div>
           </div>
@@ -300,111 +398,143 @@
         <section id="visa" class="visa">
           <h2>Visa</h2>
           <div class="gallery" id="visa-section">
-              <!-- Initial 4 items -->
-              <div class="item">
-                <img src="./images/visa1.jpg" alt="Photo of map, camera, cash and passport">
-                <div class="info">
-                    <h3>Visa Guide 101</h3>
-                    <p>What you need to know about visas before coming to Brazil</p>
-                    <a href="visa.html" >
-                      <button class="visa-button">Read More</button>
-                    </a>
-                </div>
-            </div>
-            <div class="item"  href="visa.html">
-              <img src="./images/visa2.jpg" alt="Photo of suitcase, camera, sunglasses and passport on floor">
+            <!-- Initial 4 items -->
+            <div class="item">
+              <img
+                src="./images/visa1.jpg"
+                alt="Photo of map, camera, cash and passport"
+              />
               <div class="info">
-                  <h3>All about the new visa rules</h3>
-                  <p>Updates to visa restrictions Brazil</p>
-                  <a href="visa.html" >
-                    <button class="visa-button">Read More</button>
-                  </a>
+                <h3>Visa Guide 101</h3>
+                <p>What you need to know about visas before coming to Brazil</p>
+                <a href="visa.html">
+                  <button class="visa-button">Read More</button>
+                </a>
               </div>
             </div>
             <div class="item" href="visa.html">
-              <img src="./images/visa3.jpg" alt="Photo of cash, card, sunglasses, passport hat and map on table.">
+              <img
+                src="./images/visa2.jpg"
+                alt="Photo of suitcase, camera, sunglasses and passport on floor"
+              />
               <div class="info">
-                  <h3>Visa and money, all you need to know</h3>
-                  <p>Feel prepared for a smooth airport experience</p>
-                  <a href="visa.html" >
-                    <button class="visa-button">Read More</button>
-                  </a>
+                <h3>All about the new visa rules</h3>
+                <p>Updates to visa restrictions Brazil</p>
+                <a href="visa.html">
+                  <button class="visa-button">Read More</button>
+                </a>
               </div>
             </div>
             <div class="item" href="visa.html">
-              <img src="./images/visa4.jpg" alt="Photo of women holding passport in front of a ferris wheel">
+              <img
+                src="./images/visa3.jpg"
+                alt="Photo of cash, card, sunglasses, passport hat and map on table."
+              />
               <div class="info">
-                  <h3>Visa information for European travellers</h3>
-                  <p>Flying from Europe? Here is what you need to know!</p>
-                  <a href="visa.html" >
-                    <button class="visa-button">Read More</button>
-                  </a>
+                <h3>Visa and money, all you need to know</h3>
+                <p>Feel prepared for a smooth airport experience</p>
+                <a href="visa.html">
+                  <button class="visa-button">Read More</button>
+                </a>
+              </div>
+            </div>
+            <div class="item" href="visa.html">
+              <img
+                src="./images/visa4.jpg"
+                alt="Photo of women holding passport in front of a ferris wheel"
+              />
+              <div class="info">
+                <h3>Visa information for European travellers</h3>
+                <p>Flying from Europe? Here is what you need to know!</p>
+                <a href="visa.html">
+                  <button class="visa-button">Read More</button>
+                </a>
               </div>
             </div>
 
             <!-- Hidden additional items -->
             <div class="item hidden hideable">
-                <img src="./images/visa5.jpg" alt="Photo of GoPro, sunglasses and passport on map">
-                <div class="info">
-                    <h3>Visa exempted countries!</h3>
-                    <p>Find out if your country has been added to the list!</p>
-                    <a href="visa.html" >
-                      <button class="visa-button">Read More</button>
-                    </a>
-                </div>
+              <img
+                src="./images/visa5.jpg"
+                alt="Photo of GoPro, sunglasses and passport on map"
+              />
+              <div class="info">
+                <h3>Visa exempted countries!</h3>
+                <p>Find out if your country has been added to the list!</p>
+                <a href="visa.html">
+                  <button class="visa-button">Read More</button>
+                </a>
+              </div>
             </div>
             <div class="item hidden hideable">
-              <img src="./images/visa6.jpg" alt="Photo of passport and visa application">
+              <img
+                src="./images/visa6.jpg"
+                alt="Photo of passport and visa application"
+              />
               <div class="info">
-                  <h3>Visa application process</h3>
-                  <p>Find out how to apply for a visa!</p>
-                  <a href="visa.html" >
-                    <button class="visa-button">Read More</button>
-                  </a>
+                <h3>Visa application process</h3>
+                <p>Find out how to apply for a visa!</p>
+                <a href="visa.html">
+                  <button class="visa-button">Read More</button>
+                </a>
               </div>
-          </div>
+            </div>
             <!--See More button to expand and reveal hidden items-->
             <div class="see-more">
-              <p>See more</p>
+              <p aria-label="See more activities">See more</p>
               <span class="arrow">▼</span>
             </div>
           </div>
         </section>
 
-
         <!-- Insights Page Popup Window (Modal) -->
-        <div class="modal insights-modal" id="insightsModal" style="display: none;">
+        <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+        <div
+          class="modal insights-modal"
+          id="insightsModal"
+          style="display: none"
+        >
           <div class="modal-content">
-              <span class="close" id="insightsModalClose">&times;</span>
-              <h2 id="insightsModalTitle"></h2>
-              <p id="insightsModalContent"></p>
+            <span class="close" id="insightsModalClose">&times;</span>
+            <h2 id="insightsModalTitle"></h2>
+            <p id="insightsModalContent"></p>
           </div>
         </div>
 
         <!-- Popup window (Modal) -->
-        <div class="modal visa-modal" id="visaModal" style="display: none;">
+        <!--Created with the help of OpenAI. (2024). ChatGPT (November 2024 version) [Large language model]. https://chat.openai.com/-->
+        <div class="modal visa-modal" id="visaModal" style="display: none">
           <div class="modal-content">
-              <span class="close" id="visaModalClose">&times;</span>
-              <h2 id="visaModalTitle">Visa Title</h2>
-              <p id="visaModalContent">Detailed information about the Visa goes here.</p>
+            <span class="close" aria-label="Close modal" id="visaModalClose"
+              >&times;</span
+            >
+            <h2 id="visaModalTitle">Visa Title</h2>
+            <p id="visaModalContent">
+              Detailed information about the Visa goes here.
+            </p>
           </div>
         </div>
-
       </main>
 
       <footer class="footer">
         <h2>Acknowledgements</h2>
-        <p>In this website, I used ChatGPT to suggest code snippets, to identify bugs and to refine comments.
-          I critically reviewed and edited all AI-generated content to ensure it reflects my own
-          understanding and perspective.</p>
-        <nav class="footer-links">
+        <p>
+          In this website development, I used ChatGPT and ClaudeAI to support
+          code debugging and optimisation and assist with code writing and
+          productivity, particularly to help suggest code snippets and/or
+          refactor existing code. I critically reviewed and edited all
+          AI-generated content to ensure it reflects my own understanding and
+          perspective. I have applied the GenAI and MT Usage Framework to ensure
+          my use of these tools supports my learning objectives and adheres to
+          academic integrity standards.
+        </p>
+        <nav class="footer-links" aria-label="Footer navigation">
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
           <a href="privacy.html">Privacy Policy</a>
         </nav>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
       </footer>
-
     </div>
     <script type="module" src="js/index.js" defer></script>
     <script type="module" src="js/components.js" defer></script>
